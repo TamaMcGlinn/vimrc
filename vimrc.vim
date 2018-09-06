@@ -26,12 +26,38 @@ nmap <silent> <c-l> :wincmd l<CR>
 colorscheme gummybears
 
 " Configure tabs
-set noexpandtab
+set expandtab
 set copyindent
 set preserveindent
 set softtabstop=0
 set shiftwidth=2
 set tabstop=2
+
+" Allow hidden buffers to have changes
+set hidden
+
+" Custom commands start with space
+let mapleader = " "
+set timeoutlen=120
+
+nmap <Leader>v :e ~/vimrc/vimrc.vim<CR>
+
+" Bindings for using tags
+nmap <Leader>t :!ctags -R<CR><CR> 	" Generate tags
+nmap <Leader>g :TlistOpen<CR>				" Show tags
+
+" Terminal settings
+:tnoremap <ESC> <C-\><C-n>
+if has("win32")
+  " Note, you need to empty the file Git\etc\motd
+  " to get rid of the 'Welcome to Git' message
+  set shell=cmd.exe
+  set shellcmdflag=/c\ \"C:\\Progra~2\\Git\\bin\\bash.exe\ --login\ -c\"
+
+  " Leader c for commandline, Leader e to exit
+  nmap <Leader>c :term<CR>acmd.exe /c "C:\\Progra~2\Git\bin\bash.exe --login -i"<CR>
+  :tnoremap <Leader>e exit<CR>exit<CR>
+endif
 
 " reload vimrc file on write
 if has("autocmd")
