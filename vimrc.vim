@@ -38,13 +38,25 @@ set hidden
 
 " Custom commands start with space
 let mapleader = " "
-set timeoutlen=120
+set timeoutlen=180
 
 nmap <Leader>v :e ~/vimrc/vimrc.vim<CR>
 
-" Bindings for using tags
+" Remove search highlight
+nmap <Leader>d :nohl<CR>
+
+" CTags
 nmap <Leader>t :!ctags -R<CR><CR> 	" Generate tags
 nmap <Leader>g :TlistOpen<CR>				" Show tags
+
+" Tabs
+nmap <Leader>o :tabe<CR>
+nmap <Leader>x :tabc<CR>
+nmap <Leader>h :tabN<CR>
+nmap <Leader>l :tabn<CR>
+
+" IDE stuff
+nmap <F4> :!make<CR>
 
 " Terminal settings
 :tnoremap <ESC> <C-\><C-n>
