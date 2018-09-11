@@ -40,8 +40,6 @@ set hidden
 let mapleader = " "
 set timeoutlen=180
 
-nmap <Leader>v :e ~/vimrc/vimrc.vim<CR>
-
 " Remove search highlight
 nmap <Leader>d :nohl<CR>
 
@@ -55,7 +53,30 @@ nmap <Leader>x :tabc<CR>
 nmap <Leader>h :tabN<CR>
 nmap <Leader>l :tabn<CR>
 
-" IDE stuff
+" Sessions
+fu! SaveSess()
+  execute 'mksession! D:/Software/vimsessions/default.vim'
+endfunction
+fu! RestoreSess()
+  if filereadable('D:/Software/vimsessions/default.vim')
+    execute 'source D:/Software/vimsessions/default.vim'
+    if bufexists(1)
+      for l in range(1, bufnr('$'))
+        if bufwinnr(l) == -1
+          exec 'sbuffer ' . l
+        endif
+      endfor
+    endif
+  endif
+endfunction
+augroup session_save_restore " {
+  autocmd!
+  autocmd VimLeave * call SaveSess()
+  autocmd VimEnter * nested call RestoreSess()
+augroup END " }
+set sessionoptions-=options  " Don't save options
+
+" Compiling
 nmap <F4> :!make<CR>
 
 " Terminal settings
@@ -65,23 +86,19 @@ if has("win32")
   " to get rid of the 'Welcome to Git' message
   set shell=cmd.exe
   set shellcmdflag=/c\ \"C:\\Progra~2\\Git\\bin\\bash.exe\ --login\ -c\"
-
   " Leader c for commandline, Leader e to exit
   nmap <Leader>c :term<CR>acmd.exe /c "C:\\Progra~2\Git\bin\bash.exe --login -i"<CR>
   :tnoremap <Leader>e exit<CR>exit<CR>
 endif
 
-" reload vimrc file on write
-if has("autocmd")
-	" when we reload this vimrc file, that would add an additional 'reload self'
-	" command to the bufwrite event, so if you kept saving your vimrc you would
-	" get an exponentially slower editor - augroup means it only does it once
-	augroup reload_vimrc " {
-		autocmd!
-		" Every symbolic link needs to be seperately added here
-		autocmd bufwritepost vimrc.vim source $MYVIMRC
-		autocmd bufwritepost $MYVIMRC source $MYVIMRC
-	augroup END " }
-endif
+" Edit configuration
+nmap <Leader>v :e ~/vimrc/vimrc.vim<CR>
 
-cd C:\code
+" reload vimrc file on write
+augroup reload_vimrc " {
+	autocmd!
+	" Every symbolic link needs to be seperately added here
+	autocmd bufwritepost vimrc.vim source $MYVIMRC
+	autocmd bufwritepost $MYVIMRC source $MYVIMRC
+augroup END " }
+
