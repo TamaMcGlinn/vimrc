@@ -33,25 +33,45 @@ set softtabstop=0
 set shiftwidth=2
 set tabstop=2
 
+" Set textwidth
+set tw=100
+
+" Set default window height, for C-W =
+"set winheight=38
+nmap <Leader>b 10<C-W>+<CR>
+
 " Allow hidden buffers to have changes
 set hidden
 
 " Custom commands start with space
 let mapleader = " "
-set timeoutlen=180
+set timeoutlen=230
+
+" Change directory to current file
+nmap <Leader>q :cd %:p:h<CR>
 
 " Remove search highlight
 nmap <Leader>d :nohl<CR>
 
 " CTags
-nmap <Leader>t :!ctags -R<CR><CR> 	" Generate tags
-nmap <Leader>g :TlistOpen<CR>				" Show tags
+nmap <Leader>t :!ctags -R<CR><CR> 	" Generate tags, note that <Leader>ix is preferable
+nmap <Leader>g :TlistToggle<CR>			" Show tags
+
+" CScope
+if has("cscope")
+  set csto=0
+  set cst
+  " CScope mappings
+  map <Leader>ff :cs find 3 <C-R>=expand("<cword>")<CR><CR>
+  map <Leader>fw :cs find 0 <C-R>=expand("<cword>")<CR><CR>
+endif
 
 " Tabs
 nmap <Leader>o :tabe<CR>
 nmap <Leader>x :tabc<CR>
 nmap <Leader>h :tabN<CR>
 nmap <Leader>l :tabn<CR>
+nmap <Leader>a :args src\/* \| tab sall<CR>
 
 " Sessions
 fu! SaveSess()
@@ -60,24 +80,29 @@ endfunction
 fu! RestoreSess()
   if filereadable('D:/Software/vimsessions/default.vim')
     execute 'source D:/Software/vimsessions/default.vim'
-    if bufexists(1)
-      for l in range(1, bufnr('$'))
-        if bufwinnr(l) == -1
-          exec 'sbuffer ' . l
-        endif
-      endfor
+  endif
+  if has("cscope")
+    " add CScope database in current directory
+    if filereadable("cscope.out")
+      silent cs add cscope.out
     endif
   endif
 endfunction
-augroup session_save_restore " {
-  autocmd!
-  autocmd VimLeave * call SaveSess()
-  autocmd VimEnter * nested call RestoreSess()
-augroup END " }
+"augroup session_save_restore " {
+  "autocmd!
+  "autocmd VimLeave * call SaveSess()
+  "autocmd VimEnter * nested call RestoreSess()
+"augroup END " }
+nmap <Leader>ss :call SaveSess()<CR>
+nmap <Leader>sl :call RestoreSess()<CR>
 set sessionoptions-=options  " Don't save options
 
 " Compiling
-nmap <F4> :!make<CR>
+nmap <Leader>ii :!make<CR>
+nmap <Leader>it :!make test<CR>
+nmap <Leader>ic :!make clean<CR>
+nmap <Leader>ix :!make tags<CR>
+nmap <Leader>ir :!make regenerate_tests<CR>
 
 " Terminal settings
 :tnoremap <ESC> <C-\><C-n>
@@ -87,8 +112,8 @@ if has("win32")
   set shell=cmd.exe
   set shellcmdflag=/c\ \"C:\\Progra~2\\Git\\bin\\bash.exe\ --login\ -c\"
   " Leader c for commandline, Leader e to exit
-  nmap <Leader>c :term<CR>acmd.exe /c "C:\\Progra~2\Git\bin\bash.exe --login -i"<CR>
-  :tnoremap <Leader>e exit<CR>exit<CR>
+  nmap <Leader>cc :term<CR>acmd.exe /c "C:\\Progra~2\Git\bin\bash.exe --login -i"<CR>
+  :tnoremap <Leader>ce exit<CR>exit<CR>
 endif
 
 " Edit configuration
