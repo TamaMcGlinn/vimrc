@@ -1,5 +1,75 @@
+let hostname=hostname()
+if hostname != "WBLSATSF22S01"
+  " dein Scripts-----------------------------
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
+
+  " Required:
+  set runtimepath+=~/code/dein/repos/github.com/Shougo/dein.vim
+
+  " Required:
+  call dein#begin('~/code/dein')
+
+  " Let dein manage dein
+  " Required:
+  call dein#add('Shougo/dein.vim')
+
+  " Add or remove your plugins here:
+  call dein#add('vim-scripts/Ada-Bundle')
+  call dein#add('vim-scripts/taglist.vim')
+  call dein#add('nacitar/a.vim')
+  call dein#add('sjl/gundo.vim')
+  call dein#add('easymotion/vim-easymotion')
+
+  "call dein#add('machakann/vim-highlightedyank')
+  "call dein#add('osyo-manga/vim-marching')
+  "call dein#add('vim-scripts/YankRing.vim')
+  "call dein#add('fntlnz/atags.vim')
+  "call dein#add('steffanc/cscopemaps.vim')
+  "call dein#add('tpope/vim-fugitive')
+  "call dein#add('xolox/vim-misc') " Required for xolox plugins
+  "call dein#add('xolox/vim-session')
+  "call dein#add('tpope/vim-unimpaired')
+  "call dein#add('tpope/vim-abolish')
+  "call dein#add('godlygeek/tabular')
+  "call dein#add('neomake/neomake')
+  "call dein#add('airblade/vim-gitgutter')
+  "call dein#add('chrisbra/Recover.vim')
+  "call dein#add('nelstrom/vim-markdown-folding')
+  "call dein#add('rhysd/conflict-marker.vim')
+  "call dein#add('vim-scripts/mru.vim')
+  "call dein#add('tpope/vim-ragtag')
+  "call dein#add('tpope/vim-surround')
+  "call dein#add('tpope/vim-repeat')
+  "call dein#add('tpope/vim-speeddating')
+  "call dein#add('bronson/vim-trailing-whitespace')
+  "call dein#add('jreybert/vimagit')
+  "call dein#add('justmao945/vim-clang')
+
+  " Required:
+  call dein#end()
+
+  let dein#enable_notification = 1
+
+  " Required:
+  filetype plugin indent on
+
+  " If you want to install not installed plugins on startup.
+  if dein#check_install()
+    call dein#install()
+  endif
+
+  "End dein Scripts-------------------------
+endif " End of hostname check, what follows must work without internet
+
+set runtimepath^=~/vimrc
+
 " Use visual bell (no beeping)
 set visualbell
+
+" Allow mouse to change split size
+set mouse=a
 
 " Relative line numbers for all but the current line (absolute)
 set number
@@ -74,12 +144,17 @@ nmap <Leader>l :tabn<CR>
 nmap <Leader>a :args src\/* \| tab sall<CR>
 
 " Sessions
+if has("win32")
+  let sessionfile="D:/Software/vimsessions/default.vim"
+else
+  let sessionfile="~/vimsession.vim"
+endif
 fu! SaveSess()
-  execute 'mksession! D:/Software/vimsessions/default.vim'
+  execute 'mksession! ' . g:sessionfile
 endfunction
 fu! RestoreSess()
-  if filereadable('D:/Software/vimsessions/default.vim')
-    execute 'source D:/Software/vimsessions/default.vim'
+  if filereadable(g:sessionfile)
+    execute 'source ' . g:sessionfile
   endif
   if has("cscope")
     " add CScope database in current directory
@@ -114,6 +189,9 @@ if has("win32")
   " Leader c for commandline, Leader e to exit
   nmap <Leader>cc :term<CR>acmd.exe /c "C:\\Progra~2\Git\bin\bash.exe --login -i"<CR>
   :tnoremap <Leader>ce exit<CR>exit<CR>
+else
+  nmap <Leader>cc :term<CR>A
+  :tnoremap <Leader>ce exit<CR>
 endif
 
 " Edit configuration
