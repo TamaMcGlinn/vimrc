@@ -21,31 +21,31 @@ if hostname != "WBLSATSF22S01"
   call dein#add('nacitar/a.vim')
   call dein#add('sjl/gundo.vim')
   call dein#add('easymotion/vim-easymotion')
+  call dein#add('vim-scripts/YankRing.vim')
 
-  "call dein#add('machakann/vim-highlightedyank')
-  "call dein#add('osyo-manga/vim-marching')
-  "call dein#add('vim-scripts/YankRing.vim')
-  "call dein#add('fntlnz/atags.vim')
-  "call dein#add('steffanc/cscopemaps.vim')
-  "call dein#add('tpope/vim-fugitive')
-  "call dein#add('xolox/vim-misc') " Required for xolox plugins
-  "call dein#add('xolox/vim-session')
-  "call dein#add('tpope/vim-unimpaired')
-  "call dein#add('tpope/vim-abolish')
-  "call dein#add('godlygeek/tabular')
-  "call dein#add('neomake/neomake')
-  "call dein#add('airblade/vim-gitgutter')
-  "call dein#add('chrisbra/Recover.vim')
-  "call dein#add('nelstrom/vim-markdown-folding')
-  "call dein#add('rhysd/conflict-marker.vim')
-  "call dein#add('vim-scripts/mru.vim')
-  "call dein#add('tpope/vim-ragtag')
-  "call dein#add('tpope/vim-surround')
-  "call dein#add('tpope/vim-repeat')
-  "call dein#add('tpope/vim-speeddating')
-  "call dein#add('bronson/vim-trailing-whitespace')
-  "call dein#add('jreybert/vimagit')
-  "call dein#add('justmao945/vim-clang')
+  call dein#add('machakann/vim-highlightedyank')
+  call dein#add('osyo-manga/vim-marching')
+  call dein#add('fntlnz/atags.vim')
+  call dein#add('steffanc/cscopemaps.vim')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('xolox/vim-misc') " Required for xolox plugins
+  call dein#add('xolox/vim-session')
+  call dein#add('tpope/vim-unimpaired')
+  call dein#add('tpope/vim-abolish')
+  call dein#add('godlygeek/tabular')
+  call dein#add('neomake/neomake')
+  call dein#add('airblade/vim-gitgutter')
+  call dein#add('chrisbra/Recover.vim')
+  call dein#add('nelstrom/vim-markdown-folding')
+  call dein#add('rhysd/conflict-marker.vim')
+  call dein#add('vim-scripts/mru.vim')
+  call dein#add('tpope/vim-ragtag')
+  call dein#add('tpope/vim-surround')
+  call dein#add('tpope/vim-repeat')
+  call dein#add('tpope/vim-speeddating')
+  call dein#add('bronson/vim-trailing-whitespace')
+  call dein#add('jreybert/vimagit')
+  call dein#add('justmao945/vim-clang')
 
   " Required:
   call dein#end()
@@ -64,6 +64,8 @@ if hostname != "WBLSATSF22S01"
 endif " End of hostname check, what follows must work without internet
 
 set runtimepath^=~/vimrc
+
+let g:session_autoload = 'no'
 
 " Use visual bell (no beeping)
 set visualbell
