@@ -54,6 +54,9 @@ endif
 
 "End dein Scripts-------------------------
 
+" fix for yankring message on startup 'target STRING not available'
+let g:yankring_clipboard_monitor=0
+
 set runtimepath^=~/vimrc
 
 let g:session_autoload = 'no'
@@ -71,10 +74,6 @@ set relativenumber
 " just one character wide
 set numberwidth=1
 
-" grey for all lines but current, which is white
-highlight LineNr ctermfg=grey
-highlight CursorLineNr ctermfg=white
-
 " Move thrice as fast
 nnoremap <silent> <C-Y> 3<C-Y>
 nnoremap <silent> <C-E> 3<C-E>
@@ -87,6 +86,8 @@ nmap <silent> <c-l> :wincmd l<CR>
 
 " Configure colors
 colorscheme gummybears
+" Make non-current lines a little lighter, 241 instead of 237
+hi LineNr ctermfg=241
 
 " Configure tabs
 set expandtab
@@ -144,7 +145,7 @@ nmap <Leader>l :tabn<CR>
 if has("win32")
   let sessionfile="D:/Software/vimsessions/default.vim"
 else
-  let sessionfile="~/vimsessions/default.vim"
+  let sessionfile="/home/tama/vimsessions/default.vim"
 endif
 fu! SaveSess()
   execute 'mksession! ' . g:sessionfile
