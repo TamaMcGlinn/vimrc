@@ -178,17 +178,19 @@ nmap <Leader>ix :!make tags<CR>
 nmap <Leader>ir :!make regenerate_tests<CR>
 
 " Terminal settings
+" cc for commandline, cs for split first, ce to exit
 :tnoremap <ESC> <C-\><C-n>
 if has("win32")
   " Note, you need to empty the file Git\etc\motd
   " to get rid of the 'Welcome to Git' message
   set shell=cmd.exe
   set shellcmdflag=/c\ \"C:\\Progra~2\\Git\\bin\\bash.exe\ --login\ -c\"
-  " Leader c for commandline, Leader e to exit
   nmap <Leader>cc :term<CR>acmd.exe /c "C:\\Progra~2\Git\bin\bash.exe --login -i"<CR>
+  nmap <Leader>cs :sp<CR>:wincmd j<CR>:term<CR>acmd.exe /c "C:\\Progra~2\Git\bin\bash.exe --login -i"<CR>
   :tnoremap <Leader>ce exit<CR>exit<CR>
 else
   nmap <Leader>cc :term<CR>A
+  nmap <Leader>cs :sp<CR>:wincmd j<CR>:term<CR>A
   :tnoremap <Leader>ce exit<CR>
 endif
 
