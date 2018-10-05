@@ -15,12 +15,13 @@ call dein#add('Shougo/dein.vim')
 " Add or remove your plugins here:
 call dein#add('vim-scripts/Ada-Bundle')
 call dein#add('vim-scripts/taglist.vim')
+call dein#add('vim-scripts/mru.vim')
 call dein#add('nacitar/a.vim')
 call dein#add('sjl/gundo.vim')
 call dein#add('easymotion/vim-easymotion')
 call dein#add('vim-scripts/YankRing.vim')
 call dein#add('tpope/vim-surround')
-call dein#add('vim-scripts/mru.vim')
+call dein#add('tpope/vim-repeat')
 
 "call dein#add('fntlnz/atags.vim')
 "call dein#add('steffanc/cscopemaps.vim')
@@ -36,7 +37,6 @@ call dein#add('vim-scripts/mru.vim')
 "call dein#add('nelstrom/vim-markdown-folding')
 "call dein#add('rhysd/conflict-marker.vim')
 "call dein#add('tpope/vim-ragtag')
-"call dein#add('tpope/vim-repeat')
 "call dein#add('jreybert/vimagit')
 
 " Required:
