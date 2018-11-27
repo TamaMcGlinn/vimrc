@@ -126,6 +126,13 @@ nmap <Leader>oh :GundoToggle<CR>			        " Show file history
 nmap <Leader>ot :TlistToggle<CR>			        " Show tags
 nmap <Leader>oa :args src\/* \| tab sall<CR>  " Open src/*
 
+" Git
+map <silent> <F8> /^\(<\{7\}\\|>\{7\}\\|=\{7\}\\|\|\{7\}\)\( \\|$\)<cr>            " jump to next conflict marker in git
+fu! OpenUnmerged()
+  execute 'args ' . system("git ls-files --unmerged | cut -f2 | sort -u | sed -r 's/ /\\\\ /g' | paste -sd ' ' -")
+endfunction
+map <silent> <F7> :call OpenUnmerged()<CR>
+
 " CScope
 if has("cscope")
   set csto=0
