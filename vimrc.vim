@@ -150,16 +150,16 @@ nmap <Leader>l :tabn<CR>
 
 " Sessions
 if has("win32")
-  let sessionfile="D:/Software/vimsessions/default.vim"
+  let sessiondir="C:\\Users\\bc2scf22\\vimsessions\\"
 else
-  let sessionfile="/home/tama/vimsessions/default.vim"
+  let sessiondir="/home/tama/vimsessions/"
 endif
-fu! SaveSess()
-  execute 'mksession! ' . g:sessionfile
+fu! SaveSession( file )
+  execute 'mksession! ' . g:sessiondir . a:file . '.vim'
 endfunction
-fu! RestoreSess()
-  if filereadable(g:sessionfile)
-    execute 'source ' . g:sessionfile
+fu! RestoreSession( file )
+  if filereadable( g:sessiondir . a:file . '.vim' )
+    execute 'source ' . g:sessiondir . a:file . '.vim'
   endif
   if has("cscope")
     " add CScope database in current directory
@@ -168,13 +168,11 @@ fu! RestoreSess()
     endif
   endif
 endfunction
-"augroup session_save_restore " {
-  "autocmd!
-  "autocmd VimLeave * call SaveSess()
-  "autocmd VimEnter * nested call RestoreSess()
-"augroup END " }
-nmap <Leader>ss :call SaveSess()<CR>
-nmap <Leader>sl :call RestoreSess()<CR>
+
+nmap <Leader>ss :call SaveSession( 'default' )<CR>
+nmap <Leader>sl :call RestoreSession( 'default' )<CR>
+nmap <Leader>sw :call SaveSession( input('Save Session: ') )<CR>
+nmap <Leader>so :call RestoreSession( input('Load Session: ') )<CR>
 set sessionoptions-=options  " Don't save options
 
 " Compiling
