@@ -87,7 +87,9 @@ nmap <silent> <c-l> :wincmd l<CR>
 " Configure colors
 colorscheme gummybears
 " Make non-current lines a little lighter, 241 instead of 237
-hi LineNr ctermfg=241
+" I have edited this into gummybears.vim, since the following 
+" line required reload of vimrc to work
+"hi LineNr ctermfg=248
 
 " Configure tabs
 set expandtab
