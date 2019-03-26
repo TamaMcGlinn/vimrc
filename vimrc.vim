@@ -230,7 +230,11 @@ else
 endif
 
 " Edit configuration
-nmap <Leader>v :e ~/vimrc/vimrc.vim<CR>
+nmap <Leader>vv :e ~/vimrc/vimrc.vim<CR>
+nmap <Leader>vg :e ~/.gitconfig<CR>
+nmap <Leader>vi :e ~/.gitignore<CR>
+nmap <Leader>vr :e ~/.bashrc<CR>
+nmap <Leader>vd :e ~/bash/doskey.cmd<CR>
 
 " reload vimrc file on write
 augroup reload_vimrc " {
