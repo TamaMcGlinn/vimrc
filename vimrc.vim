@@ -113,6 +113,9 @@ set hidden
 let mapleader = " "
 set timeoutlen=230
 
+" After :set spell, also autocomplete from the dictionary; .wbuti is standard
+set complete=.,w,b,u,t,i,kspell
+
 " Change directory to current file
 nmap <Leader>q :cd %:p:h<CR>
 
