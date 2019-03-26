@@ -180,12 +180,14 @@ nmap <Leader>sw :call SaveSession( input('Save Session: ') )<CR>
 nmap <Leader>so :call RestoreSession( input('Load Session: ') )<CR>
 set sessionoptions-=options  " Don't save options
 
-" Compiling
+" Makefile
 nmap <Leader>ii :!make<CR>
 nmap <Leader>it :!make test<CR>
 nmap <Leader>ic :!make clean<CR>
-nmap <Leader>ix :!make tags<CR>
 nmap <Leader>ir :!make regenerate_tests<CR>
+
+" Tags
+nmap <Leader>ix :!adatags.sh<CR>
 
 " NetRW settings
 if has("win32")
