@@ -117,7 +117,22 @@ set timeoutlen=230
 set complete=.,w,b,u,t,i,kspell
 
 " Change directory to current file
-nnoremap <Leader>q :cd %:p:h<CR>
+fu! DirToCurrent()
+  if &buftype ==# 'terminal'
+    let line=getline('.')
+    if line =~ "^[^> ]*@[^> ]*"
+      let bashdir=join(split(line)[2:])
+      let dir=escape(substitute(bashdir[1].':'.bashdir[2:], "/", "\\", ""), ' \')
+    else
+      let dir=substitute(line, ">.*", "", "")
+    endif
+  else
+    let dir=expand('%:p:h')
+  endif
+  :exe "cd ".dir
+  :echom "cd ".dir
+endfunction
+nnoremap <Leader>q :call DirToCurrent()<CR>
 
 " Remove search highlight
 nnoremap <Leader>d :nohl<CR>
