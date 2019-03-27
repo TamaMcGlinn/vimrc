@@ -222,12 +222,21 @@ if has("win32")
   nnoremap <Leader>cs :sp<CR>:wincmd j<CR>:term<CR>adoskey.cmd<CR>cls<CR>cmd.exe /c "C:\\Progra~1\Git\bin\bash.exe --login -i"<CR>clear<CR>
   nnoremap <Leader>cd :term<CR>adoskey.cmd<CR>cls<CR>
   nnoremap <Leader>csd :sp<CR>:wincmd j<CR>:term<CR>adoskey.cmd<CR>cls<CR>
-  :tnoremap <Leader>ce exit<CR>exit<CR>
 else
   nnoremap <Leader>cc :term<CR>A
   nnoremap <Leader>cs :sp<CR>:wincmd j<CR>:term<CR>A
-  :tnoremap <Leader>ce exit<CR>
 endif
+
+augroup TerminalMappings
+  autocmd!
+  if has("win32")
+    autocmd TermOpen * nnoremap <buffer> <C-E> aexit<CR>exit<CR>
+    autocmd TermOpen * tnoremap <buffer> <C-E> exit<CR>exit<CR>
+  else
+    autocmd TermOpen * nnoremap <buffer> <C-E> aexit<CR>
+    autocmd TermOpen * tnoremap <buffer> <C-E> exit<CR>
+  endif
+augroup END
 
 " Edit configuration
 nnoremap <Leader>vv :e ~/vimrc/vimrc.vim<CR>
