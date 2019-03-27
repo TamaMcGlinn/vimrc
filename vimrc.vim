@@ -79,10 +79,10 @@ nnoremap <silent> <C-Y> 3<C-Y>
 nnoremap <silent> <C-E> 3<C-E>
 
 " Use ctrl-[hjkl] to select the active split!
-nmap <silent> <c-k> :wincmd k<CR>
-nmap <silent> <c-j> :wincmd j<CR>
-nmap <silent> <c-h> :wincmd h<CR>
-nmap <silent> <c-l> :wincmd l<CR>
+nnoremap <silent> <c-k> :wincmd k<CR>
+nnoremap <silent> <c-j> :wincmd j<CR>
+nnoremap <silent> <c-h> :wincmd h<CR>
+nnoremap <silent> <c-l> :wincmd l<CR>
 
 " Configure colors
 colorscheme gummybears
@@ -104,7 +104,7 @@ set tw=100
 
 " Set default window height, for C-W =
 "set winheight=38
-nmap <Leader>b 10<C-W>+<CR>
+nnoremap <Leader>b 10<C-W>+<CR>
 
 " Allow hidden buffers to have changes
 set hidden
@@ -117,41 +117,41 @@ set timeoutlen=230
 set complete=.,w,b,u,t,i,kspell
 
 " Change directory to current file
-nmap <Leader>q :cd %:p:h<CR>
+nnoremap <Leader>q :cd %:p:h<CR>
 
 " Remove search highlight
-nmap <Leader>d :nohl<CR>
+nnoremap <Leader>d :nohl<CR>
 
 " CTags
-nmap <Leader>t :!ctags -R<CR><CR> 	" Generate tags, note that <Leader>ix is preferable
+nnoremap <Leader>t :!ctags -R<CR><CR> 	" Generate tags, note that <Leader>ix is preferable
 
 " Navigate
-nmap <Leader>oo :MRU<CR>			                " Show files
-nmap <Leader>oh :GundoToggle<CR>			        " Show file history
-nmap <Leader>ot :TlistToggle<CR>			        " Show tags
-nmap <Leader>oa :args src\/* \| tab sall<CR>  " Open src/*
+nnoremap <Leader>oo :MRU<CR>			                " Show files
+nnoremap <Leader>oh :GundoToggle<CR>			        " Show file history
+nnoremap <Leader>ot :TlistToggle<CR>			        " Show tags
+nnoremap <Leader>oa :args src\/* \| tab sall<CR>  " Open src/*
 
 " Git
-map <silent> <F8> /^\(<\{7\}\\|>\{7\}\\|=\{7\}\\|\|\{7\}\)\( \\|$\)<cr>            " jump to next conflict marker in git
+noremap <silent> <F8> /^\(<\{7\}\\|>\{7\}\\|=\{7\}\\|\|\{7\}\)\( \\|$\)<cr>            " jump to next conflict marker in git
 fu! OpenUnmerged()
   execute 'args ' . system("git ls-files --unmerged | cut -f2 | sort -u | sed -r 's/ /\\\\ /g' | paste -sd ' ' -")
 endfunction
-map <silent> <F7> :call OpenUnmerged()<CR>
+noremap <silent> <F7> :call OpenUnmerged()<CR>
 
 " CScope
 if has("cscope")
   set csto=0
   set cst
   " CScope mappings
-  map <Leader>ff :cs find 3 <C-R>=expand("<cword>")<CR><CR>
-  map <Leader>fw :cs find 0 <C-R>=expand("<cword>")<CR><CR>
+  noremap <Leader>ff :cs find 3 <C-R>=expand("<cword>")<CR><CR>
+  noremap <Leader>fw :cs find 0 <C-R>=expand("<cword>")<CR><CR>
 endif
 
 " Tabs
-nmap <Leader>to :tabe<CR>
-nmap <Leader>tx :tabc<CR>
-nmap <Leader>h :tabN<CR>
-nmap <Leader>l :tabn<CR>
+nnoremap <Leader>to :tabe<CR>
+nnoremap <Leader>tx :tabc<CR>
+nnoremap <Leader>h :tabN<CR>
+nnoremap <Leader>l :tabn<CR>
 
 " Sessions
 if has("win32")
@@ -174,20 +174,20 @@ fu! RestoreSession( file )
   endif
 endfunction
 
-nmap <Leader>ss :call SaveSession( 'default' )<CR>
-nmap <Leader>sl :call RestoreSession( 'default' )<CR>
-nmap <Leader>sw :call SaveSession( input('Save Session: ') )<CR>
-nmap <Leader>so :call RestoreSession( input('Load Session: ') )<CR>
+nnoremap <Leader>ss :call SaveSession( 'default' )<CR>
+nnoremap <Leader>sl :call RestoreSession( 'default' )<CR>
+nnoremap <Leader>sw :call SaveSession( input('Save Session: ') )<CR>
+nnoremap <Leader>so :call RestoreSession( input('Load Session: ') )<CR>
 set sessionoptions-=options  " Don't save options
 
 " Makefile
-nmap <Leader>ii :!make<CR>
-nmap <Leader>it :!make test<CR>
-nmap <Leader>ic :!make clean<CR>
-nmap <Leader>ir :!make regenerate_tests<CR>
+nnoremap <Leader>ii :!make<CR>
+nnoremap <Leader>it :!make test<CR>
+nnoremap <Leader>ic :!make clean<CR>
+nnoremap <Leader>ir :!make regenerate_tests<CR>
 
 " Tags
-nmap <Leader>ix :!adatags.sh<CR>
+nnoremap <Leader>ix :!adatags.sh<CR>
 
 " NetRW settings
 if has("win32")
@@ -218,23 +218,23 @@ if has("win32")
   " Note, you need to empty the file Git\etc\motd
   " to get rid of the 'Welcome to Git' message
   set shell=cmd.exe
-  nmap <Leader>cc :term<CR>adoskey.cmd<CR>cmd.exe /c "C:\\Progra~1\Git\bin\bash.exe --login -i"<CR>clear<CR>
-  nmap <Leader>cs :sp<CR>:wincmd j<CR>:term<CR>adoskey.cmd<CR>cls<CR>cmd.exe /c "C:\\Progra~1\Git\bin\bash.exe --login -i"<CR>clear<CR>
-  nmap <Leader>cd :term<CR>adoskey.cmd<CR>cls<CR>
-  nmap <Leader>csd :sp<CR>:wincmd j<CR>:term<CR>adoskey.cmd<CR>cls<CR>
+  nnoremap <Leader>cc :term<CR>adoskey.cmd<CR>cmd.exe /c "C:\\Progra~1\Git\bin\bash.exe --login -i"<CR>clear<CR>
+  nnoremap <Leader>cs :sp<CR>:wincmd j<CR>:term<CR>adoskey.cmd<CR>cls<CR>cmd.exe /c "C:\\Progra~1\Git\bin\bash.exe --login -i"<CR>clear<CR>
+  nnoremap <Leader>cd :term<CR>adoskey.cmd<CR>cls<CR>
+  nnoremap <Leader>csd :sp<CR>:wincmd j<CR>:term<CR>adoskey.cmd<CR>cls<CR>
   :tnoremap <Leader>ce exit<CR>exit<CR>
 else
-  nmap <Leader>cc :term<CR>A
-  nmap <Leader>cs :sp<CR>:wincmd j<CR>:term<CR>A
+  nnoremap <Leader>cc :term<CR>A
+  nnoremap <Leader>cs :sp<CR>:wincmd j<CR>:term<CR>A
   :tnoremap <Leader>ce exit<CR>
 endif
 
 " Edit configuration
-nmap <Leader>vv :e ~/vimrc/vimrc.vim<CR>
-nmap <Leader>vg :e ~/.gitconfig<CR>
-nmap <Leader>vi :e ~/.gitignore<CR>
-nmap <Leader>vr :e ~/.bashrc<CR>
-nmap <Leader>vd :e ~/bash/doskey.cmd<CR>
+nnoremap <Leader>vv :e ~/vimrc/vimrc.vim<CR>
+nnoremap <Leader>vg :e ~/.gitconfig<CR>
+nnoremap <Leader>vi :e ~/.gitignore<CR>
+nnoremap <Leader>vr :e ~/.bashrc<CR>
+nnoremap <Leader>vd :e ~/bash/doskey.cmd<CR>
 
 " reload vimrc file on write
 augroup reload_vimrc " {
