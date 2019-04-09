@@ -122,7 +122,7 @@ fu! DirToCurrent()
     let line=getline('.')
     if line =~ "^[^> ]*@[^> ]*"
       let bashdir=join(split(line)[2:])
-      let dir=escape(substitute(bashdir[1].':'.bashdir[2:], "/", "\\", ""), ' \')
+      let dir=substitute(escape(substitute(bashdir[1].':'.bashdir[2:], "/", "\\", ""), ' \'), "\(master\)$", "", "")
     else
       let dir=substitute(line, ">.*", "", "")
     endif
@@ -258,7 +258,7 @@ nnoremap <Leader>vv :e ~/vimrc/vimrc.vim<CR>
 nnoremap <Leader>vg :e ~/.gitconfig<CR>
 nnoremap <Leader>vi :e ~/.gitignore<CR>
 nnoremap <Leader>vr :e ~/.bashrc<CR>
-nnoremap <Leader>vd :e ~/bash/doskey.cmd<CR>
+nnoremap <Leader>vd :e ~/vimrc/bash/doskey.cmd<CR>
 
 " reload vimrc file on write
 augroup reload_vimrc " {
@@ -267,4 +267,10 @@ augroup reload_vimrc " {
 	autocmd bufwritepost vimrc.vim source $MYVIMRC
 	autocmd bufwritepost $MYVIMRC source $MYVIMRC
 augroup END " }
+
+" when looking for a file, include subdirectories recursively
+set path+=**
+
+" Display all matching files when we tab complete
+set wildmenu
 
