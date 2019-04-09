@@ -22,6 +22,8 @@ call dein#add('sjl/gundo.vim')
 call dein#add('easymotion/vim-easymotion')
 call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-repeat')
+call dein#add('Shougo/vimproc.vim')
+call dein#add('idanarye/vim-vebugger')
 
 "call dein#add('fntlnz/atags.vim')
 "call dein#add('steffanc/cscopemaps.vim')
@@ -273,4 +275,12 @@ set path+=**
 
 " Display all matching files when we tab complete
 set wildmenu
+
+" VeBugger mappings
+let g:vebugger_leader='<Leader>g'
+nnoremap <Leader>gs :VBGstartGDB 
+nnoremap <silent> <Leader>gq :VBGkill<CR>
+nnoremap <Leader>gr :VBGrawWrite run<CR>
+nnoremap <Leader>gp :VBGstepOut<CR>
+let g:vebugger_view_source_cmd='edit'
 
