@@ -37,7 +37,7 @@ call dein#add('idanarye/vim-vebugger')
 "call dein#add('airblade/vim-gitgutter')
 "call dein#add('chrisbra/Recover.vim')
 "call dein#add('nelstrom/vim-markdown-folding')
-"call dein#add('rhysd/conflict-marker.vim')
+call dein#add('rhysd/conflict-marker.vim')
 "call dein#add('tpope/vim-ragtag')
 "call dein#add('jreybert/vimagit')
 
@@ -221,12 +221,12 @@ let g:netrw_sort_options = 'i'
 let g:netrw_sort_sequence='[\/]$'
 " tree style listing
 let g:netrw_liststyle = 4
-" vspilt netrw to the left window 
+" vsplit netrw to the left window 
 let g:netrw_altv = 1
 " 30% of the screen for the netrw window, 70% for the file window
 let g:netrw_winsize = 30
 " open file in a previous buffer (right window)
-let g:netrw_browse_split = 4
+let g:netrw_browse_split = 0
 
 " Terminal settings
 " cc for commandline, cs for split first, ce to exit
