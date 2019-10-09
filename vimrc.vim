@@ -63,29 +63,27 @@ set runtimepath^=~/vimrc
 
 let g:session_autoload = 'no'
 
+" Auto read file from disk if it was changed somewhere outside editor 
+set autoread 
+" Set default dictionary for spellchecker as English 
+set spelllang=en 
 " Use visual bell (no beeping)
 set visualbell
-
 " Allow mouse to change split size
 set mouse=a
-
 " Relative line numbers for all but the current line (absolute)
 set number
 set relativenumber
-
 " just one character wide
 set numberwidth=1
-
 " Move thrice as fast
 nnoremap <silent> <C-Y> 3<C-Y>
 nnoremap <silent> <C-E> 3<C-E>
-
 " Use ctrl-[hjkl] to select the active split!
 nnoremap <silent> <c-k> :wincmd k<CR>
 nnoremap <silent> <c-j> :wincmd j<CR>
 nnoremap <silent> <c-h> :wincmd h<CR>
 nnoremap <silent> <c-l> :wincmd l<CR>
-
 " Configure colors
 colorscheme gummybears
 " Make non-current lines a little lighter, 241 instead of 237
@@ -104,16 +102,19 @@ set tabstop=2
 " Set textwidth
 set tw=100
 
-" Set default window height, for C-W =
-"set winheight=38
-nnoremap <Leader>b 10<C-W>+<CR>
-
 " Allow hidden buffers to have changes
 set hidden
 
 " Custom commands start with space
 let mapleader = " "
 set timeoutlen=230
+
+" Set default window height, for C-W =
+"set winheight=38
+nnoremap <Leader>b 10<C-W>+<CR>
+
+" reload document
+nnoremap <Leader>r :e! %<CR>
 
 " After :set spell, also autocomplete from the dictionary; .wbuti is standard
 set complete=.,w,b,u,t,i,kspell
