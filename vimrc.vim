@@ -24,6 +24,7 @@ call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-repeat')
 call dein#add('Shougo/vimproc.vim')
 call dein#add('idanarye/vim-vebugger')
+call dein#add('rhysd/conflict-marker.vim')
 
 "call dein#add('fntlnz/atags.vim')
 "call dein#add('steffanc/cscopemaps.vim')
@@ -37,7 +38,6 @@ call dein#add('idanarye/vim-vebugger')
 "call dein#add('airblade/vim-gitgutter')
 "call dein#add('chrisbra/Recover.vim')
 "call dein#add('nelstrom/vim-markdown-folding')
-call dein#add('rhysd/conflict-marker.vim')
 "call dein#add('tpope/vim-ragtag')
 "call dein#add('jreybert/vimagit')
 
@@ -150,7 +150,7 @@ nnoremap <Leader>ot :TlistToggle<CR>			        " Show tags
 nnoremap <Leader>oa :args src\/* \| tab sall<CR>  " Open src/*
 
 " Git
-noremap <silent> <F8> /^\(<\{7\}\\|>\{7\}\\|=\{7\}\\|\|\{7\}\)\( \\|$\)<cr>            " jump to next conflict marker in git
+" ]x jump to next conflict marker in git, [x is previous
 fu! OpenUnmerged()
   execute 'args ' . system("git ls-files --unmerged | cut -f2 | sort -u | sed -r 's/ /\\\\ /g' | paste -sd ' ' -")
 endfunction
