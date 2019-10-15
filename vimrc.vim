@@ -293,3 +293,56 @@ nnoremap <Leader>gw :VBGrawWrite
 nnoremap <Leader>ga :VBGclearBreakpoints<CR>
 let g:vebugger_view_source_cmd='edit'
 
+" Open file at position from compiler error on the terminal
+" e.g. foobar.adb:27:2: "X" not declared in "Y"
+" results in opening foobar.adb in the top buffer (not the terminal), and issuing '27G2|'
+" Default vim comes close with 'vt:<C-W>gf' - but:
+" 1) including the [colon][linenumber] suffix does not work as intended in NeoVim
+" 2) this does not include the column, 
+" 3) you cannot reuse the top window.
+
+fu! OpenfileInTopBuffer()
+  let selection=expand('<cfile>')
+  let elements=split(selection, ':')
+  let elementlen=len(elements)
+  let filename=elements[0]
+  if elementlen > 3
+    echoerr "gf input invalid, expected [file]:[line]:[column], got " . selection
+    return
+  endif
+  if elementlen > 1
+    let line=elements[1]
+    if elementlen > 2
+      let column=elements[2]
+    endif
+  endif
+  " switch to top buffer
+  silent execute 'wincmd k'
+  try
+    " find the file 
+    if elementlen > 1
+      " keepjumps ensures the top of the file is not added to the jumplist
+      silent execute 'keepjumps find ' . filename
+    else
+      silent execute 'find ' . filename
+      return
+    endif
+    if elementlen == 3
+      " go to the indicated line and column
+      silent execute 'normal! ' . line . 'G' . column . '|'
+    else " elementlen == 2
+      " go to the indicated line
+      silent execute 'normal! ' . line . 'G'
+    endif
+  endtry
+endfunction
+
+augroup Terminal_gf_mapping
+  autocmd!
+  if has("win32")
+    autocmd TermOpen * nnoremap <silent> <buffer> gf :call OpenfileInTopBuffer()<CR>
+  else
+    "autocmd TermOpen * nnoremap <buffer> <C-E> aexit<CR>
+  endif
+augroup END
+
