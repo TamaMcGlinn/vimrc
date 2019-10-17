@@ -22,6 +22,7 @@ call dein#add('sjl/gundo.vim')
 call dein#add('easymotion/vim-easymotion')
 call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-repeat')
+call dein#add('tpope/vim-unimpaired')
 call dein#add('Shougo/vimproc.vim')
 call dein#add('idanarye/vim-vebugger')
 call dein#add('rhysd/conflict-marker.vim')
@@ -31,7 +32,6 @@ call dein#add('rhysd/conflict-marker.vim')
 "call dein#add('tpope/vim-fugitive')
 "call dein#add('xolox/vim-misc') " Required for xolox plugins
 "call dein#add('xolox/vim-session')
-"call dein#add('tpope/vim-unimpaired')
 "call dein#add('tpope/vim-abolish')
 "call dein#add('godlygeek/tabular')
 "call dein#add('neomake/neomake')
@@ -137,8 +137,8 @@ fu! DirToCurrent()
 endfunction
 nnoremap <Leader>q :call DirToCurrent()<CR>
 
-" Remove search highlight
-nnoremap <Leader>d :nohl<CR>
+" Remove search highlight with yoh (vim-unimpaired)
+"nnoremap <silent> <Leader>d :nohl<CR>
 
 " CTags
 nnoremap <Leader>t :!ctags -R<CR><CR> 	" Generate tags, note that <Leader>ix is preferable
