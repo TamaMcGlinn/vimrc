@@ -347,3 +347,17 @@ augroup Terminal_gf_mapping
   endif
 augroup END
 
+" Current filename options:
+" vimrc.vim
+inoremap <Leader>aa <C-R>=expand("%:t")<CR>
+" C:\Users\bc2scf22\vimrc\vimrc.vim
+inoremap <Leader>af <C-R>=expand("%:p")<CR>
+" vimrc/vimrc.vim (if pwd is ~)
+inoremap <Leader>arf <C-R>=expand("%")<CR>
+" C:\Users\bc2scf22\vimrc
+inoremap <Leader>ad <C-R>=expand("%:p:h")<CR>
+" vimrc (if pwd is ~)
+inoremap <Leader>ard <C-R>=expand("%:h")<CR>
+" show full filename
+nnoremap <Leader>as :echom expand("%:p")<CR>
+
