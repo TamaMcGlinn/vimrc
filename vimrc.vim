@@ -20,11 +20,18 @@ call dein#add('vim-scripts/YankRing.vim')
 call dein#add('nacitar/a.vim')
 call dein#add('sjl/gundo.vim')
 call dein#add('easymotion/vim-easymotion')
-call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-repeat')
+call dein#add('tpope/vim-surround')
 call dein#add('Shougo/vimproc.vim')
+call dein#add('Shougo/deoplete.nvim')
 call dein#add('idanarye/vim-vebugger')
+call dein#add('dbakker/vim-paragraph-motion')
 
+call dein#add('tomtom/tcomment_vim')
+"call dein#add('tpope/vim-commentary') " don't use; same as tcomment_vim but can't uncomment paragraph of Ada code
+"call dein#add('scrooloose/nerdcommenter') " don't use - no motions
+
+" To learn:
 "call dein#add('fntlnz/atags.vim')
 "call dein#add('steffanc/cscopemaps.vim')
 "call dein#add('tpope/vim-fugitive')
@@ -101,12 +108,8 @@ set softtabstop=0
 set shiftwidth=2
 set tabstop=2
 
-" Set textwidth
-set tw=100
-
-" Set default window height, for C-W =
-"set winheight=38
-nnoremap <Leader>b 10<C-W>+<CR>
+set textwidth=0
+set wrap
 
 " Allow hidden buffers to have changes
 set hidden
@@ -114,6 +117,10 @@ set hidden
 " Custom commands start with space
 let mapleader = " "
 set timeoutlen=230
+
+" Set default window height, for C-W =
+"set winheight=38
+nnoremap <Leader>b 10<C-W>+<CR>
 
 " After :set spell, also autocomplete from the dictionary; .wbuti is standard
 set complete=.,w,b,u,t,i,kspell
@@ -123,8 +130,7 @@ fu! DirToCurrent()
   if &buftype ==# 'terminal'
     let line=getline('.')
     if line =~ "^[^> ]*@[^> ]*"
-      let bashdir=join(split(line)[2:])
-      let dir=substitute(escape(substitute(bashdir[1].':'.bashdir[2:], "/", "\\", ""), ' \'), "\(master\)$", "", "")
+      let dir=substitute(split(line,":")[1],"\\$","","")
     else
       let dir=substitute(line, ">.*", "", "")
     endif
@@ -278,6 +284,7 @@ nnoremap <Leader>vg :e ~/.gitconfig<CR>
 nnoremap <Leader>vi :e ~/.gitignore<CR>
 nnoremap <Leader>vr :e ~/.bashrc<CR>
 nnoremap <Leader>vd :e ~/vimrc/bash/doskey.cmd<CR>
+nnoremap <Leader>vc :e ~/vimrc/cvimrc.vim<CR>
 
 " reload vimrc file on write
 augroup reload_vimrc " {
@@ -300,4 +307,7 @@ nnoremap <silent> <Leader>gq :VBGkill<CR>
 nnoremap <Leader>gr :VBGrawWrite run<CR>
 nnoremap <Leader>gp :VBGstepOut<CR>
 let g:vebugger_view_source_cmd='edit'
+
+" Ada uses 3 spaces for indentation
+autocmd Filetype ada setlocal expandtab tabstop=3 shiftwidth=3 softtabstop=3
 
