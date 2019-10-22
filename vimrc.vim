@@ -20,13 +20,20 @@ call dein#add('vim-scripts/YankRing.vim')
 call dein#add('nacitar/a.vim')
 call dein#add('sjl/gundo.vim')
 call dein#add('easymotion/vim-easymotion')
-call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-repeat')
 call dein#add('tpope/vim-unimpaired')
+call dein#add('tpope/vim-surround')
 call dein#add('Shougo/vimproc.vim')
+call dein#add('Shougo/deoplete.nvim')
 call dein#add('idanarye/vim-vebugger')
 call dein#add('rhysd/conflict-marker.vim')
+call dein#add('dbakker/vim-paragraph-motion')
 
+call dein#add('tomtom/tcomment_vim')
+"call dein#add('tpope/vim-commentary') " don't use; same as tcomment_vim but can't uncomment paragraph of Ada code
+"call dein#add('scrooloose/nerdcommenter') " don't use - no motions
+
+" To learn:
 "call dein#add('fntlnz/atags.vim')
 "call dein#add('steffanc/cscopemaps.vim')
 "call dein#add('tpope/vim-fugitive')
@@ -122,8 +129,7 @@ fu! DirToCurrent()
   if &buftype ==# 'terminal'
     let line=getline('.')
     if line =~ "^[^> ]*@[^> ]*"
-      let bashdir=join(split(line)[2:])
-      let dir=substitute(escape(substitute(bashdir[1].':'.bashdir[2:], "/", "\\", ""), ' \'), "\(master\)$", "", "")
+      let dir=substitute(split(line,":")[1],"\\$","","")
     else
       let dir=substitute(line, ">.*", "", "")
     endif
@@ -189,6 +195,23 @@ fu! RestoreSession( file )
     endif
   endif
 endfunction
+
+" Presentation mode for better readability on a beamer
+syntax on
+let g:presentationmode=0
+fu! TogglePresentationMode()
+  setlocal relativenumber!
+  if g:presentationmode
+    syntax on
+    let g:presentationmode=0
+  else
+    syntax off
+    let g:presentationmode=1
+    highlight Normal ctermbg=white ctermfg=black
+    highlight LineNr ctermbg=white ctermfg=black
+  endif
+endfunction
+nnoremap <Leader>pp :call TogglePresentationMode()<CR>
 
 nnoremap <Leader>ss :call SaveSession( 'default' )<CR>
 nnoremap <Leader>sl :call RestoreSession( 'default' )<CR>
@@ -260,6 +283,7 @@ nnoremap <Leader>vg :e ~/.gitconfig<CR>
 nnoremap <Leader>vi :e ~/.gitignore<CR>
 nnoremap <Leader>vr :e ~/.bashrc<CR>
 nnoremap <Leader>vd :e ~/vimrc/bash/doskey.cmd<CR>
+nnoremap <Leader>vc :e ~/vimrc/cvimrc.vim<CR>
 
 " reload vimrc file on write
 augroup reload_vimrc " {
@@ -357,4 +381,7 @@ inoremap <Leader>ad <C-R>=expand("%:p:h")<CR>
 inoremap <Leader>ard <C-R>=expand("%:h")<CR>
 " show full filename
 nnoremap <Leader>as :echom expand("%:p")<CR>
+
+" Ada uses 3 spaces for indentation
+autocmd Filetype ada setlocal expandtab tabstop=3 shiftwidth=3 softtabstop=3
 
