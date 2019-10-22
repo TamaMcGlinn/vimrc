@@ -99,9 +99,6 @@ set softtabstop=0
 set shiftwidth=2
 set tabstop=2
 
-" Set textwidth
-set tw=100
-
 " Allow hidden buffers to have changes
 set hidden
 
