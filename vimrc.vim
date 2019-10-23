@@ -124,25 +124,28 @@ nnoremap <Leader>r :e! %<CR>
 " After :set spell, also autocomplete from the dictionary; .wbuti is standard
 set complete=.,w,b,u,t,i,kspell
 
-" Change directory to current file
-fu! DirToCurrent()
+" Change directory to current line
+fu! DirToCurrentLine()
   if &buftype ==# 'terminal'
     let line=getline('.')
-    if line =~ "^[^> ]*@[^> ]*"
-      let dir=substitute(split(line,":")[1],"\\$","","")
+    if line =~ '^[^> ]*@[^> ]* MINGW.. '
+      " USER@DOMAIN MINGW64 /c/code/with spaces
+      " USER@DOMAIN MINGW64 /c/code/in_git (master)
+      let dir=substitute(substitute(substitute(line, '.*MINGW.. /\(.\)', '\1:', ''), '([^)]*)$', '', ''), '/', '\', 'g')
+    elseif line =~ '.:[^>]*>.*'
+      " C:\Program Files\Neovim\bin>some user-input
+      let dir=substitute(line, '>.*', '', '')
     else
-      let dir=substitute(line, ">.*", "", "")
+      echoerr 'No pattern matches '.line
+      return
     endif
   else
     let dir=expand('%:p:h')
   endif
-  :exe "cd ".dir
-  :echom "cd ".dir
+  exe 'cd '.dir
+  echom 'cd '.dir
 endfunction
-nnoremap <Leader>q :call DirToCurrent()<CR>
-
-" Remove search highlight with yoh (vim-unimpaired)
-"nnoremap <silent> <Leader>d :nohl<CR>
+nnoremap <Leader>q :call DirToCurrentLine()<CR>
 
 " CTags
 nnoremap <Leader>t :!ctags -R<CR><CR> 	" Generate tags, note that <Leader>ix is preferable
