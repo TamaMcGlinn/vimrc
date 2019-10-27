@@ -323,15 +323,10 @@ let g:vebugger_view_source_cmd='edit'
 " 2) this does not include the column, 
 " 3) you cannot reuse the top window.
 
-fu! OpenfileInTopBuffer()
-  let selection=expand('<cfile>')
-  let elements=split(selection, ':')
+fu! OpenfileInTopBuffer(selection)
+  let elements=split(a:selection, ':')
   let elementlen=len(elements)
   let filename=elements[0]
-  if elementlen > 3
-    echoerr "gf input invalid, expected [file]:[line]:[column], got " . selection
-    return
-  endif
   if elementlen > 1
     let line=elements[1]
     if elementlen > 2
@@ -349,7 +344,7 @@ fu! OpenfileInTopBuffer()
       silent execute 'find ' . filename
       return
     endif
-    if elementlen == 3
+    if elementlen >= 3
       " go to the indicated line and column
       silent execute 'normal! ' . line . 'G' . column . '|'
     else " elementlen == 2
@@ -359,14 +354,21 @@ fu! OpenfileInTopBuffer()
   endtry
 endfunction
 
+function! GetVisualSelection()
+  let reg = '"'
+  let [save_reg, save_type] = [getreg(reg), getregtype(reg)]
+  normal! gv""y
+  let text = @"
+  call setreg(reg, save_reg, save_type)
+  return text
+endfunction
+
 augroup Terminal_gf_mapping
   autocmd!
-  if has("win32")
-    autocmd TermOpen * nnoremap <silent> <buffer> gf :call OpenfileInTopBuffer()<CR>
-  else
-    "autocmd TermOpen * nnoremap <buffer> <C-E> aexit<CR>
-  endif
+  autocmd TermOpen * nnoremap <silent> <buffer> gf :call OpenfileInTopBuffer( expand('<cWORD>') )<CR>
 augroup END
+
+" vnoremap <silent> gf :call OpenfileInTopBuffer( GetVisualSelection() )<CR>
 
 " Current filename options:
 " vimrc.vim
