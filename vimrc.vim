@@ -115,7 +115,7 @@ set timeoutlen=230
 
 " Set default window height, for C-W =
 "set winheight=38
-nnoremap <Leader>b 10<C-W>+<CR>
+nnoremap <Leader>b 8<C-W>+<CR>
 nnoremap <Leader>B 50<C-W>+<CR>
 
 " reload document
