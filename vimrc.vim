@@ -24,10 +24,15 @@ call dein#add('tpope/vim-repeat')
 call dein#add('tpope/vim-unimpaired')
 call dein#add('tpope/vim-surround')
 call dein#add('Shougo/vimproc.vim')
-"call dein#add('Shougo/deoplete.nvim')
+call dein#add('Shougo/deoplete.nvim')
 call dein#add('idanarye/vim-vebugger')
-call dein#add('rhysd/conflict-marker.vim')
+" call dein#add('rhysd/conflict-marker.vim')
 call dein#add('dbakker/vim-paragraph-motion')
+call dein#add('junegunn/fzf.vim')
+call dein#add('autozimu/LanguageClient-neovim', {
+    \ 'rev': 'next',
+    \ 'build': 'bash install.sh',
+    \ })
 
 call dein#add('tomtom/tcomment_vim')
 "call dein#add('tpope/vim-commentary') " don't use; same as tcomment_vim but can't uncomment paragraph of Ada code
@@ -62,6 +67,12 @@ if dein#check_install()
 endif
 
 "End dein Scripts-------------------------
+
+let g:deoplete#enable_at_startup = 1
+
+let g:LanguageClient_serverCommands = {
+    \ 'ada': ['/usr/local/ada_language_server/ada_language_server'],
+    \ }
 
 " fix for yankring message on startup 'target STRING not available'
 let g:yankring_clipboard_monitor=0
@@ -141,8 +152,8 @@ fu! DirToCurrent()
 endfunction
 nnoremap <Leader>q :call DirToCurrent()<CR>
 
-" Remove search highlight with yoh (vim-unimpaired)
-"nnoremap <silent> <Leader>d :nohl<CR>
+" Remove search highlight until next search
+nnoremap <silent> <Leader>d :noh<CR>
 
 " CTags
 nnoremap <Leader>t :!ctags -R<CR><CR> 	" Generate tags, note that <Leader>ix is preferable
@@ -220,7 +231,7 @@ nnoremap <Leader>so :call RestoreSession( input('Load Session: ') )<CR>
 set sessionoptions-=options  " Don't save options
 
 " Makefile
-nnoremap <Leader>ii :!make<CR>
+nnoremap <Leader>ii :wincmd j<CR>amake<CR>
 nnoremap <Leader>it :!make test<CR>
 nnoremap <Leader>ic :!make clean<CR>
 nnoremap <Leader>ir :!make regenerate_tests<CR>
@@ -370,20 +381,25 @@ augroup END
 
 " vnoremap <silent> gf :call OpenfileInTopBuffer( GetVisualSelection() )<CR>
 
-" Current filename options:
+" Current filename options: (TODO move to normal mode)
 " vimrc.vim
-inoremap <Leader>aa <C-R>=expand("%:t")<CR>
-" C:\Users\bc2scf22\vimrc\vimrc.vim
-inoremap <Leader>af <C-R>=expand("%:p")<CR>
-" vimrc/vimrc.vim (if pwd is ~)
-inoremap <Leader>arf <C-R>=expand("%")<CR>
-" C:\Users\bc2scf22\vimrc
-inoremap <Leader>ad <C-R>=expand("%:p:h")<CR>
-" vimrc (if pwd is ~)
-inoremap <Leader>ard <C-R>=expand("%:h")<CR>
-" show full filename
+" inoremap <Leader>aa <C-R>=expand("%:t")<CR>
+" " C:\Users\bc2scf22\vimrc\vimrc.vim
+" inoremap <Leader>af <C-R>=expand("%:p")<CR>
+" " vimrc/vimrc.vim (if pwd is ~)
+" inoremap <Leader>arf <C-R>=expand("%")<CR>
+" " C:\Users\bc2scf22\vimrc
+" inoremap <Leader>ad <C-R>=expand("%:p:h")<CR>
+" " vimrc (if pwd is ~)
+" inoremap <Leader>ard <C-R>=expand("%:h")<CR>
+" " show full filename
 nnoremap <Leader>as :echom expand("%:p")<CR>
 
 " Ada uses 3 spaces for indentation
 autocmd Filetype ada setlocal expandtab tabstop=3 shiftwidth=3 softtabstop=3
+
+" LanguageClient mappings
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
