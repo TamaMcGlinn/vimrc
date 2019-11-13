@@ -26,7 +26,7 @@ call dein#add('tpope/vim-surround')
 call dein#add('Shougo/vimproc.vim')
 call dein#add('Shougo/deoplete.nvim')
 call dein#add('idanarye/vim-vebugger')
-" call dein#add('rhysd/conflict-marker.vim')
+call dein#add('rhysd/conflict-marker.vim')
 call dein#add('dbakker/vim-paragraph-motion')
 call dein#add('junegunn/fzf.vim')
 call dein#add('autozimu/LanguageClient-neovim', {
@@ -70,9 +70,15 @@ endif
 
 let g:deoplete#enable_at_startup = 1
 
-let g:LanguageClient_serverCommands = {
-    \ 'ada': ['/usr/local/ada_language_server/ada_language_server'],
-    \ }
+if has("win32")
+  let g:LanguageClient_serverCommands = {
+      \ 'ada': ['C:\ada_language_server\ada_language_server.exe'],
+      \ }
+else
+  let g:LanguageClient_serverCommands = {
+      \ 'ada': ['/usr/local/ada_language_server/ada_language_server'],
+      \ }
+endif
 
 " fix for yankring message on startup 'target STRING not available'
 let g:yankring_clipboard_monitor=0
@@ -173,6 +179,7 @@ nnoremap <Leader>oa :args src\/* \| tab sall<CR>  " Open src/*
 
 " Git
 " ]x jump to next conflict marker in git, [x is previous
+
 fu! OpenUnmerged()
   execute 'args ' . system("git ls-files --unmerged | cut -f2 | sort -u | sed -r 's/ /\\\\ /g' | paste -sd ' ' -")
 endfunction
@@ -408,5 +415,7 @@ autocmd Filetype ada setlocal expandtab tabstop=3 shiftwidth=3 softtabstop=3
 " LanguageClient mappings
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> gr :call LanguageClient#textDocument_references()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
 
