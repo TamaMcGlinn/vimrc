@@ -71,6 +71,10 @@ endif
 let g:deoplete#enable_at_startup = 1
 
 if has("win32")
+  let g:python3_host_prog = "python.exe"
+endif
+
+if has("win32")
   let g:LanguageClient_serverCommands = {
       \ 'ada': ['C:\ada_language_server\ada_language_server.exe'],
       \ }
