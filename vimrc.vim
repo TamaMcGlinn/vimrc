@@ -28,6 +28,10 @@ call dein#add('Shougo/deoplete.nvim')
 call dein#add('idanarye/vim-vebugger')
 call dein#add('rhysd/conflict-marker.vim')
 call dein#add('dbakker/vim-paragraph-motion')
+call dein#add('junegunn/fzf', {
+    \ 'dir': '~/.fzf', 
+    \ 'build': './install --all' 
+    \ })
 call dein#add('junegunn/fzf.vim')
 call dein#add('autozimu/LanguageClient-neovim', {
     \ 'rev': 'next',
@@ -68,6 +72,7 @@ endif
 
 "End dein Scripts-------------------------
 
+let g:python3_host_prog = '/usr/local/bin/python3'
 let g:deoplete#enable_at_startup = 1
 
 if has("win32")
@@ -81,6 +86,7 @@ if has("win32")
 else
   let g:LanguageClient_serverCommands = {
       \ 'ada': ['/usr/local/ada_language_server/ada_language_server'],
+      \ 'python' : ['/usr/local/bin/pyls'],
       \ }
 endif
 
@@ -166,7 +172,6 @@ fu! DirToCurrentLine()
   exe 'cd '.dir
   echom 'cd '.dir
 endfunction
-
 nnoremap <Leader>q :call DirToCurrentLine()<CR>
 
 " Remove search highlight until next search
@@ -417,9 +422,13 @@ nnoremap <Leader>as :echom expand("%:p")<CR>
 autocmd Filetype ada setlocal expandtab tabstop=3 shiftwidth=3 softtabstop=3
 
 " LanguageClient mappings
+set signcolumn=yes 
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> gr :call LanguageClient#textDocument_references()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+nnoremap <silent> gs :call LanguageClient#textDocument_documentSymbol()<CR>
+set formatexpr=LanguageClient#textDocument_rangeFormatting_sync()
 
 
