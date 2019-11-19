@@ -1,0 +1,5 @@
+find $1 -type f | (while read filename; do \
+  fileext=${filename##*.};
+  echo $fileext;
+done) | sort | uniq
+
