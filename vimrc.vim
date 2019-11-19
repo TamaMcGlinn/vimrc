@@ -76,7 +76,7 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 let g:deoplete#enable_at_startup = 1
 
 if has("win32")
-  let g:python3_host_prog = "python.exe"
+  let g:python3_host_prog = "C:\\Program\ Files\\Python36\\python.exe"
 endif
 
 if has("win32")
