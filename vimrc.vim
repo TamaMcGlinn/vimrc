@@ -14,7 +14,7 @@ call dein#add('Shougo/dein.vim')
 
 " Add or remove your plugins here:
 call dein#add('TamaHobbit/Ada-Bundle')
-call dein#add('vim-scripts/taglist.vim')
+"call dein#add('vim-scripts/taglist.vim')
 call dein#add('vim-scripts/mru.vim')
 call dein#add('vim-scripts/YankRing.vim')
 call dein#add('nacitar/a.vim')
@@ -178,12 +178,12 @@ nnoremap <Leader>q :call DirToCurrentLine()<CR>
 nnoremap <silent> <Leader>d :noh<CR>
 
 " CTags
-nnoremap <Leader>t :!ctags -R<CR><CR> 	" Generate tags, note that <Leader>ix is preferable
+"nnoremap <Leader>t :!ctags -R<CR><CR> 	" Generate tags, note that <Leader>ix is preferable
 
 " Navigate
 nnoremap <Leader>oo :MRU<CR>			                " Show files
 nnoremap <Leader>oh :GundoToggle<CR>			        " Show file history
-nnoremap <Leader>ot :TlistToggle<CR>			        " Show tags
+"nnoremap <Leader>ot :TlistToggle<CR>			        " Show tags
 nnoremap <Leader>oa :args src\/* \| tab sall<CR>  " Open src/*
 
 " Git
@@ -260,7 +260,7 @@ nnoremap <Leader>ic :!make clean<CR>
 nnoremap <Leader>ir :!make regenerate_tests<CR>
 
 " Tags
-nnoremap <Leader>ix :!adatags.sh<CR>
+"nnoremap <Leader>ix :!adatags.sh<CR>
 
 " NetRW settings
 if has("win32")
