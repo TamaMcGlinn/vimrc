@@ -420,10 +420,12 @@ augroup END
 nnoremap <Leader>as :echom expand("%:p")<CR>
 
 " Ada uses 3 spaces for indentation
-autocmd Filetype ada setlocal expandtab tabstop=3 shiftwidth=3 softtabstop=3
+autocmd Filetype ada setlocal expandtab tabstop=3 shiftwidth=3 softtabstop=3 signcolumn=yes
+au BufRead,BufNewFile *.adb setlocal filetype=ada
+au BufRead,BufNewFile *.ads setlocal filetype=ada
 
 " LanguageClient mappings
-set signcolumn=yes 
+set signcolumn=no 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
@@ -431,5 +433,4 @@ nnoremap <silent> gr :call LanguageClient#textDocument_references()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 nnoremap <silent> gs :call LanguageClient#textDocument_documentSymbol()<CR>
 set formatexpr=LanguageClient#textDocument_rangeFormatting_sync()
-
 
