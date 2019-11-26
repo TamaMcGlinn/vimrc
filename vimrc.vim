@@ -403,7 +403,7 @@ augroup Terminal_gf_mapping
   autocmd TermOpen * nnoremap <silent> <buffer> gf :call OpenfileInTopBuffer( expand('<cWORD>') )<CR>
 augroup END
 
-" vnoremap <silent> gf :call OpenfileInTopBuffer( GetVisualSelection() )<CR>
+vnoremap <silent> gf :call OpenfileInTopBuffer( GetVisualSelection() )<CR>
 
 " Current filename options: (TODO move to normal mode)
 " vimrc.vim
@@ -427,7 +427,7 @@ au BufRead,BufNewFile *.ads setlocal filetype=ada
 " LanguageClient mappings
 set signcolumn=no 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gh :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> gr :call LanguageClient#textDocument_references()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
