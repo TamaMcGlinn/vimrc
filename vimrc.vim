@@ -405,19 +405,7 @@ augroup END
 
 vnoremap <silent> gf :call OpenfileInTopBuffer( GetVisualSelection() )<CR>
 
-" Current filename options: (TODO move to normal mode)
-" vimrc.vim
-" inoremap <Leader>aa <C-R>=expand("%:t")<CR>
-" " C:\Users\bc2scf22\vimrc\vimrc.vim
-" inoremap <Leader>af <C-R>=expand("%:p")<CR>
-" " vimrc/vimrc.vim (if pwd is ~)
-" inoremap <Leader>arf <C-R>=expand("%")<CR>
-" " C:\Users\bc2scf22\vimrc
-" inoremap <Leader>ad <C-R>=expand("%:p:h")<CR>
-" " vimrc (if pwd is ~)
-" inoremap <Leader>ard <C-R>=expand("%:h")<CR>
-" " show full filename
-nnoremap <Leader>as :echom expand("%:p")<CR>
+source currentfilename.vim
 
 " Ada uses 3 spaces for indentation
 autocmd Filetype ada setlocal expandtab tabstop=3 shiftwidth=3 softtabstop=3 signcolumn=yes
