@@ -36,6 +36,7 @@ nnoremap <Leader>ii :wincmd j<CR>amake<CR>
 nnoremap <Leader>it :!make test<CR>
 nnoremap <Leader>ic :!make clean<CR>
 nnoremap <Leader>ir :!make regenerate_tests<CR>
+nnoremap <Leader>ia :make<CR>:copen<CR>
 
 source ~/vimrc/terminal.vim
 source ~/vimrc/dir_to_current_line.vim
