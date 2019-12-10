@@ -12,7 +12,7 @@ call dein#add('tpope/vim-surround')
 call dein#add('Shougo/vimproc.vim')
 call dein#add('Shougo/deoplete.nvim')
 call dein#add('idanarye/vim-vebugger')
-call dein#add('rhysd/conflict-marker.vim')
+" call dein#add('rhysd/conflict-marker.vim')
 call dein#add('dbakker/vim-paragraph-motion')
 call dein#add('junegunn/fzf', {
     \ 'dir': '~/.fzf', 
