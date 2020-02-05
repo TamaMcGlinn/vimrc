@@ -10,6 +10,10 @@ else
       \ }
 endif
 
+let g:LanguageClient_rootMarkers = {
+        \ 'ada': ['*.gpr']
+        \ }
+
 " Mappings
 set signcolumn=no 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
