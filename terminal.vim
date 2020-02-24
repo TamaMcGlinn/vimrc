@@ -28,3 +28,6 @@ augroup END
 " Make the split bigger
 nnoremap <Leader>b 8<C-W>+<CR>
 nnoremap <Leader>B 50<C-W>+<CR>
+" Make the split wider
+nnoremap <Leader>w 8<C-W>><CR>
+nnoremap <Leader>W 56<C-W>><CR>

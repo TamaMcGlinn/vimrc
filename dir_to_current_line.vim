@@ -9,6 +9,9 @@ fu! DirToCurrentLine()
     elseif line =~ '.:[^>]*>.*'
       " C:\Program Files\Neovim\bin>some user-input
       let dir=substitute(line, '>.*', '', '')
+    elseif line =~ '^[^@> ]*@[^:>@ ]*:[^$]'
+      " tama@tama-hp-laptop:~/code/adacore/libadalang$
+      let dir=substitute(substitute(line, '$$', '', ''), '^[^@> ]*@[^:>@ ]*:', '', '')
     else
       echoerr 'No pattern matches '.line
       return

@@ -1,4 +1,4 @@
-" Add or remove your plugins here:
+call dein#add('wsdjeg/dein-ui.vim')
 call dein#add('TamaHobbit/Ada-Bundle')
 "call dein#add('vim-scripts/taglist.vim')
 call dein#add('vim-scripts/mru.vim')
