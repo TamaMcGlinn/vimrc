@@ -37,8 +37,9 @@ call dein#add('autozimu/LanguageClient-neovim', {
     \ 'rev': 'next',
     \ 'build': 'bash install.sh',
     \ })
-
 call dein#add('tomtom/tcomment_vim')
+call dein#add('TamaHobbit/vim-bible')
+
 "call dein#add('tpope/vim-commentary') " don't use; same as tcomment_vim but can't uncomment paragraph of Ada code
 "call dein#add('scrooloose/nerdcommenter') " don't use - no motions
 
@@ -140,6 +141,12 @@ nnoremap <Leader>r :e! %<CR>
 
 " After :set spell, also autocomplete from the dictionary; .wbuti is standard
 set complete=.,w,b,u,t,i,kspell
+
+function! BibleAppend()
+  echom get_visual_selection()
+endfunction
+
+vnoremap <Leader>wl :call BibleAppend()<CR>
 
 " Change directory to current file
 fu! DirToCurrent()
