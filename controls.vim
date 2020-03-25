@@ -6,8 +6,8 @@ set timeoutlen=230
 nnoremap <silent> <C-Y> 3<C-Y>
 nnoremap <silent> <C-E> 3<C-E>
 
-source ~\vimrc\cntrl_move.vim
-source ~\vimrc\navigate.vim
+source ~/vimrc/cntrl_move.vim
+source ~/vimrc/navigate.vim
 
 " reload document
 nnoremap <Leader>r :e! %<CR>

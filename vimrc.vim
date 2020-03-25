@@ -7,4 +7,5 @@ source ~/vimrc/langserver.vim
 source ~/vimrc/settings.vim
 source ~/vimrc/controls.vim
 source ~/vimrc/visuals.vim
+source ~/vimrc/bible.vim
 
