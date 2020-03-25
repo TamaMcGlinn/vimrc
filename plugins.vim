@@ -24,10 +24,13 @@ call dein#add('autozimu/LanguageClient-neovim', {
     \ 'build': 'bash install.sh',
     \ })
 
+call dein#add('vim-airline/vim-airline')
+
 call dein#add('tomtom/tcomment_vim')
 "call dein#add('tpope/vim-commentary') " don't use; same as tcomment_vim but can't uncomment paragraph of Ada code
 "call dein#add('scrooloose/nerdcommenter') " don't use - no motions
 
+call dein#add('mhinz/vim-startify')
 " To learn:
 "call dein#add('fntlnz/atags.vim')
 "call dein#add('steffanc/cscopemaps.vim')
