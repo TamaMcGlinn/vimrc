@@ -1,6 +1,7 @@
 @echo off
 
 DOSKEY ls=dir
+DOSKEY which=where
 DOSKEY c=cls
 DOSKEY bash=cmd.exe /c "C:\\Progra~1\Git\bin\bash.exe --login -i"
 
