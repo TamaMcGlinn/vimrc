@@ -1,4 +1,5 @@
 source ~\vimrc\tabsettings.vim
+source ~\vimrc\remotesettings.vim
 
 " Auto read file from disk if it was changed somewhere outside editor 
 set autoread
@@ -24,4 +25,5 @@ let g:deoplete#enable_at_startup = 1
 " gprbuild should output something to indicate where the file is found
 set makeprg=gprbuild\ -d\ -p\ -g
 set errorformat=%f:%l:%c:\ %m
+
 
