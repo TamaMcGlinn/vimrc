@@ -5,9 +5,15 @@ nnoremap <Leader>oh :GundoToggle<CR>			        " Show file history
 "nnoremap <Leader>ot :TlistToggle<CR>			        " Show tags
 nnoremap <Leader>oa :args src\/* \| tab sall<CR>  " Open src/*
 
-" Tabs
-nnoremap <Leader>to :tabe<CR>
-nnoremap <Leader>tx :tabc<CR>
-nnoremap <Leader>h :tabp<CR> " Previous tab
-nnoremap <Leader>l :tabn<CR> " Next tab
+" Tab movement
+nnoremap <Leader>tO :tabe<CR>
+nnoremap <Leader>tQ :tabc<CR>
+nnoremap <Leader>H :bprev<CR> " Previous tab
+nnoremap <Leader>L :bnext<CR> " Next tab
+
+" Buffer movement
+nnoremap <Leader>to :enew<CR>
+nnoremap <Leader>tq :bp <BAR> bd #<CR>
+nnoremap <Leader>h :bprev<CR> " Previous tab
+nnoremap <Leader>l :bnext<CR> " Next tab
 
