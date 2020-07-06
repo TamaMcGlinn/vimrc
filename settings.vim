@@ -12,6 +12,9 @@ set hidden
 " After :set spell, also autocomplete from the dictionary; .wbuti is standard
 set complete=.,w,b,u,t,i,kspell
 
+" Disable spelling checking
+set nospell
+
 " when looking for a file, include subdirectories recursively
 set path+=**
 

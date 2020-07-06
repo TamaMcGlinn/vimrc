@@ -37,3 +37,6 @@ let g:netrw_winsize = 30
 let g:netrw_browse_split = 0
 
 source ~/vimrc/presentation_mode.vim
+
+" don't highlight spelling mistakes
+hi clear SpellBad
