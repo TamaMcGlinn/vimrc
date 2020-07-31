@@ -6,14 +6,36 @@
 " 2) this does not include the column, 
 " 3) you cannot reuse the top window.
 
-fu! OpenfileInTopBuffer(selection)
-  let elements=split(a:selection, ':')
+fu! OpenfileInTopBuffer(s)
+  let selection=a:s
+  if selection[0]=='"'
+    let selection=selection[1:]
+  endif
+  if selection[-1]==','
+    let selection=selection[:-1]
+  endif
+  if selection[-1]=='"'
+    let selection=selection[:-1]
+  endif
+  if selection[1:1]==':'
+    " One letter directory assumed to be drivename under windows
+    let elements=split(selection[2:], ':')
+    let elements[0]=selection[0:1]..elements[0]
+  else
+    let elements=split(selection, ':')
+  endif
   let elementlen=len(elements)
   let filename=elements[0]
   if elementlen > 1
     let line=elements[1]
+    if matchstr(line, "^[0-9]*$")=="" " line is not a number
+      let elementlen=1
+    endif
     if elementlen > 2
       let column=elements[2]
+      if matchstr(column, "^[0-9]*$")=="" " column is not a number
+        let elementlen=2
+      endif
     endif
   endif
   " switch to top buffer
