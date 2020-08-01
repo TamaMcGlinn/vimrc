@@ -8,5 +8,6 @@ nnoremap <Leader>oa :args src\/* \| tab sall<CR>  " Open src/*
 " Tabs
 nnoremap <Leader>to :tabe<CR>
 nnoremap <Leader>tx :tabc<CR>
-nnoremap <Leader>h :tabN<CR>
-nnoremap <Leader>l :tabn<CR>
+nnoremap <Leader>h :tabp<CR> " Previous tab
+nnoremap <Leader>l :tabn<CR> " Next tab
+

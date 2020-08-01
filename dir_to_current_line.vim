@@ -5,7 +5,7 @@ fu! DirToCurrentLine()
     if line =~ '^[^> ]*@[^> ]* MINGW.. '
       " USER@DOMAIN MINGW64 /c/code/with spaces
       " USER@DOMAIN MINGW64 /c/code/in_git (master)
-      let dir=substitute(substitute(substitute(line, '.*MINGW.. /\(.\)', '\1:', ''), '([^)]*)$', '', ''), '/', '\', 'g')
+      let dir=substitute(substitute(substitute(line, '.*MINGW.. /\(.\)', '\1:', ''), '(.*)$', '', ''), '/', '\', 'g')
     elseif line =~ '.:[^>]*>.*'
       " C:\Program Files\Neovim\bin>some user-input
       let dir=substitute(line, '>.*', '', '')

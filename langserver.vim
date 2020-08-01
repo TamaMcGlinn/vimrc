@@ -2,6 +2,7 @@
 if has("win32")
   let g:LanguageClient_serverCommands = {
       \ 'ada': ['C:\ada_language_server\ada_language_server.exe'],
+      \ 'python' : ['pyls.exe'],
       \ }
 else
   let g:LanguageClient_serverCommands = {
@@ -9,6 +10,10 @@ else
       \ 'python' : ['/usr/local/bin/pyls'],
       \ }
 endif
+
+let g:LanguageClient_rootMarkers = {
+        \ 'ada': ['*.gpr']
+        \ }
 
 " Mappings
 set signcolumn=no 

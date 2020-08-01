@@ -19,10 +19,21 @@ fu! RestoreSession( file )
   endif
 endfunction
 
+fu! GetSessionFiles(ArgLead, CmdLine, CursorPos)
+  return map(split(glob(g:sessiondir . '*.vim'), "\n"), 'fnamemodify(v:val, ":t:r")')
+endfunction
+
+fu! PromptForSessionFileName(prompt)
+  call inputsave()
+  let r = input(a:prompt, '', 'customlist,GetSessionFiles')
+  call inputrestore()
+  return r
+endfunction
+
 nnoremap <Leader>ss :call SaveSession( 'default' )<CR>
 nnoremap <Leader>sl :call RestoreSession( 'default' )<CR>
-nnoremap <Leader>sw :call SaveSession( input('Save Session: ') )<CR>
-nnoremap <Leader>so :call RestoreSession( input('Load Session: ') )<CR>
+nnoremap <Leader>sw :call SaveSession( PromptForSessionFileName('Save Session: ') )<CR>
+nnoremap <Leader>so :call RestoreSession( PromptForSessionFileName('Load Session: ') )<CR>
 set sessionoptions-=options  " Don't save options
 let g:session_autoload = 'no'
 
