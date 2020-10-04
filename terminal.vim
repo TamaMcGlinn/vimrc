@@ -31,3 +31,9 @@ nnoremap <Leader>B 50<C-W>+<CR>
 " Make the split wider
 nnoremap <Leader>w 8<C-W>><CR>
 nnoremap <Leader>W 56<C-W>><CR>
+
+" Quit and return the current window to the previous buffer we were on
+nnoremap <Leader>qp :w <bar> bp <bar> bd#<CR>
+" Ensure that when we leave a git buffer by usual (:wq) which leave the buffer there
+" the buffer is still closed since editing it later wouldn't make sense
+autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
