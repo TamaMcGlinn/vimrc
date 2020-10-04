@@ -30,4 +30,11 @@ let g:deoplete#enable_at_startup = 1
 set makeprg=gprbuild\ -d\ -p\ -g
 set errorformat=%f:%l:%c:\ %m
 
+" Airline settings
+let g:airline#extensions#tabline#enabled = 1
+" Show the name of each buffer at the top
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" Startify; remove the cow that says daft things
+let g:startify_custom_header = ''
 
