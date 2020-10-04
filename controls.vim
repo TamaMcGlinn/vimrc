@@ -31,8 +31,20 @@ if has("cscope")
   noremap <Leader>fw :cs find 0 <C-R>=expand("<cword>")<CR><CR>
 endif
 
+fu! Make_In_File_Dir()
+  execute 'sp'
+  " switch to new buffer
+  silent execute 'wincmd j'
+  lcd %:p:h/..
+  execute 'term make'
+  execute 'cd' getcwd(-1)
+  " switch back to top buffer
+  silent execute 'wincmd k'
+endfunction
+
 " Makefile
-nnoremap <Leader>ii :wincmd j<CR>amake<CR>
+nnoremap <Leader>ii :!make<CR>
+nnoremap <Leader>is :call Make_In_File_Dir()<CR>
 nnoremap <Leader>it :!make test<CR>
 nnoremap <Leader>ic :!make clean<CR>
 nnoremap <Leader>ir :!make regenerate_tests<CR>
@@ -44,3 +56,4 @@ source ~/vimrc/file_hotkeys.vim
 source ~/vimrc/vebugger_mappings.vim
 source ~/vimrc/open_file_in_top_buffer.vim
 source ~/vimrc/currentfilename.vim
+source ~/vimrc/sudowrite.vim

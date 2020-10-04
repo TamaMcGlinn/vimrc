@@ -2,6 +2,7 @@
 if has("win32")
   let g:LanguageClient_serverCommands = {
       \ 'ada': ['C:\ada_language_server\ada_language_server.exe'],
+      \ 'python' : ['pyls.exe'],
       \ }
 else
   let g:LanguageClient_serverCommands = {
