@@ -7,6 +7,7 @@ else
   let g:LanguageClient_serverCommands = {
       \ 'ada': ['/usr/local/ada_language_server/ada_language_server'],
       \ 'python' : ['/usr/local/bin/pyls'],
+      \ 'cpp' : ['~/code/ccls/Release/ccls']
       \ }
 endif
 
