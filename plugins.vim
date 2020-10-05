@@ -45,6 +45,7 @@ call dein#add('tpope/vim-fugitive')
 "call dein#add('nelstrom/vim-markdown-folding')
 "call dein#add('tpope/vim-ragtag')
 call dein#add('jreybert/vimagit')
+call dein#add('chrisbra/SudoEdit.vim')
 
 call dein#add('roggan87/vim-bible')
 
