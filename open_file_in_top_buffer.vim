@@ -45,6 +45,10 @@ fu! OpenfileInTopBuffer(s)
   endif
   " switch to top buffer
   silent execute 'wincmd k'
+  " get rid of localdir if present
+  if haslocaldir()
+    execute 'cd' getcwd(-1)
+  endif
   try
     " find the file 
     if elementlen > 1
