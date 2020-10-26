@@ -26,7 +26,7 @@ fu! OpenfileInTopBuffer(s)
   endif
   let elementlen=len(elements)
   let filename=elements[0]
-  if matchstr(filename, "^.*/.*\\..*$")=="" " doesn't look like filename (/ or . missing)
+  if matchstr(filename, "^.*\\..*$")=="" " doesn't look like filename (. missing)
     if input("Really open "..filename.."? (y/n)")!="y"
       return
     endif
