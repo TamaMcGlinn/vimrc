@@ -13,8 +13,13 @@ fu! FixMissingWith()
   silent execute 'normal! gg'
 endfunction
 
-" use a with clause
-nnoremap <Leader>au yyp0cwusekJ
+fu! UseWithStatement()
+  let with_package = getline('.')
+  let use_package=substitute(with_package, '^with ', ' use ', '')
+  call setline(line('.'), with_package .. use_package)
+endfunction
+
+nnoremap <Leader>au :call UseWithStatement()<CR>
 
 augroup Terminal_fixmissing_mapping
   autocmd!
