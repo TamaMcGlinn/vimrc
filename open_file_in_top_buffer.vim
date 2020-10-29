@@ -26,6 +26,11 @@ fu! OpenfileInTopBuffer(s)
   endif
   let elementlen=len(elements)
   let filename=elements[0]
+  if matchstr(filename, "^.*\\..*$")=="" " doesn't look like filename (. missing)
+    if input("Really open "..filename.."? (y/n)")!="y"
+      return
+    endif
+  endif
   if elementlen > 1
     let line=elements[1]
     if matchstr(line, "^[0-9]*$")=="" " line is not a number
@@ -40,6 +45,10 @@ fu! OpenfileInTopBuffer(s)
   endif
   " switch to top buffer
   silent execute 'wincmd k'
+  " get rid of localdir if present
+  if haslocaldir()
+    execute 'cd' getcwd(-1)
+  endif
   try
     " find the file 
     if elementlen > 1
