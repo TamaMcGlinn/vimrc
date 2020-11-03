@@ -10,7 +10,6 @@ call dein#add('tpope/vim-repeat')
 call dein#add('tpope/vim-unimpaired')
 call dein#add('tpope/vim-surround')
 call dein#add('Shougo/vimproc.vim')
-call dein#add('Shougo/deoplete.nvim')
 call dein#add('idanarye/vim-vebugger')
 call dein#add('rhysd/conflict-marker.vim')
 call dein#add('dbakker/vim-paragraph-motion')
@@ -19,10 +18,14 @@ call dein#add('junegunn/fzf', {
     \ 'build': './install --all' 
     \ })
 call dein#add('junegunn/fzf.vim')
-call dein#add('autozimu/LanguageClient-neovim', {
-    \ 'rev': 'next',
-    \ 'build': 'bash install.sh',
-    \ })
+
+" Code completion
+" call dein#add('Shougo/deoplete.nvim')
+" call dein#add('autozimu/LanguageClient-neovim', {
+"     \ 'rev': 'next',
+"     \ 'build': 'bash install.sh',
+"     \ })
+call dein#add('neoclide/coc.nvim', { 'rev': 'release' })
 
 call dein#add('vim-airline/vim-airline')
 

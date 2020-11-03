@@ -1,5 +1,5 @@
 " Navigate
-nnoremap <Leader>oo :MRU<CR>			                " Show files
+nnoremap <Leader>op :MRU<CR>			                " Show files
 nnoremap <Leader>of :FZF<CR>			                " Find files
 nnoremap <Leader>oh :GundoToggle<CR>			        " Show file history
 "nnoremap <Leader>ot :TlistToggle<CR>			        " Show tags
