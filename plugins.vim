@@ -59,11 +59,13 @@ call dein#add('mhinz/vim-startify')
 call dein#add('mhinz/vim-signify')
 call dein#add('tpope/vim-fugitive')
 call dein#add('tpope/vim-rhubarb')
-call dein#add('junegunn/gv.vim')
 call dein#add('rhysd/conflict-marker.vim')
 call dein#add('stsewd/fzf-checkout.vim')
 " call dein#add('airblade/vim-gitgutter')
 " call dein#add('jreybert/vimagit')
+" history browsing
+call dein#add('junegunn/gv.vim')
+call dein#add('gregsexton/gitv')
 
 call dein#add('chrisbra/SudoEdit.vim')
 
