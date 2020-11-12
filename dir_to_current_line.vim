@@ -16,7 +16,7 @@ fu! DirToCurrentLine()
       let dir=substitute(line, '>.*', '', '')
     elseif line =~ '^[^@> ]*@[^:>@ ]*:[^$]'
       " tama@tama-hp-laptop:~/code/adacore/libadalang$
-      let dir=substitute(substitute(line, '$$', '', ''), '^[^@> ]*@[^:>@ ]*:', '', '')
+      let dir=substitute(substitute(line, '$.*', '', ''), '^[^@> ]*@[^:>@ ]*:', '', '')
     else
       echoerr 'No pattern matches '.line
       return
