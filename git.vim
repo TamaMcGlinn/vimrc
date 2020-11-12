@@ -25,7 +25,9 @@ nnoremap <Leader>nc :Gcommit<CR>
 nnoremap <Leader>n. :Git add .<CR>
 nnoremap <Leader>n, :Git add %<CR>
 
-nnoremap <Leader>nl :GV<CR>
+nnoremap <Leader>nb :GBranches<CR>
+
+nnoremap <Leader>nl :Flog<CR>
 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'

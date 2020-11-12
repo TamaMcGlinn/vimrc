@@ -65,7 +65,8 @@ call dein#add('stsewd/fzf-checkout.vim')
 " call dein#add('jreybert/vimagit')
 " history browsing
 call dein#add('junegunn/gv.vim')
-call dein#add('gregsexton/gitv')
+call dein#add('rbong/vim-flog')
+call dein#add('int3/vim-extradite')
 
 call dein#add('chrisbra/SudoEdit.vim')
 
