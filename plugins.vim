@@ -5,7 +5,6 @@ call dein#add('TamaHobbit/Ada-Bundle')
 call dein#add('vim-scripts/mru.vim')
 call dein#add('vim-scripts/YankRing.vim')
 call dein#add('nacitar/a.vim')
-call dein#add('sjl/gundo.vim')
 call dein#add('easymotion/vim-easymotion')
 call dein#add('tpope/vim-repeat')
 call dein#add('tpope/vim-unimpaired')
@@ -13,6 +12,10 @@ call dein#add('tpope/vim-surround')
 call dein#add('Shougo/vimproc.vim')
 call dein#add('idanarye/vim-vebugger')
 call dein#add('dbakker/vim-paragraph-motion')
+
+" Undo tree navigation
+" call dein#add('sjl/gundo.vim')
+call dein#add('simnalamburt/vim-mundo')
 
 " Fuzzy file search
 call dein#add('nvim-lua/popup.nvim')

@@ -1,6 +1,6 @@
 " Navigate
 nnoremap <Leader>pp :MRU<CR>			                " Show files
-nnoremap <Leader>oh :GundoToggle<CR>			        " Show file history
+nnoremap <Leader>oh :MundoToggle<CR>			        " Show file history
 
 " Tab movement
 nnoremap <Leader>tO :tabe<CR>

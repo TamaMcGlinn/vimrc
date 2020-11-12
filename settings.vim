@@ -42,3 +42,6 @@ set nofoldenable        " disable folding
 au WinEnter * set nofen " really disable folding
 au WinLeave * set nofen
 
+" Keep undo history across sessions
+set undofile
+set undodir=~/.vim/undo
