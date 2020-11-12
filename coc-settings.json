@@ -1,15 +1,1 @@
-{
-  // diagnostic-languageserver
-  "diagnostic-languageserver.filetypes": {
-    "vim": "vint",
-    "email": "languagetool",
-    "markdown": [ "write-good", "markdownlint" ],
-    "sh": "shellcheck",
-    "php": ["phpstan", "psalm"],
-  },
-  "diagnostic-languageserver.formatFiletypes": {
-    "lua": "lua-format",
-    "sh": "shfmt",
-    "blade": "blade-formatter",
-  }
-}
+
