@@ -38,6 +38,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " Startify; remove the cow that says daft things
 let g:startify_custom_header = ''
 
-set nofoldenable    " disable folding
-set diffopt+=context:99999  " even in vimdiff mode
+set nofoldenable        " disable folding
+au WinEnter * set nofen " really disable folding
+au WinLeave * set nofen
 
