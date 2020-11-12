@@ -22,15 +22,6 @@ fu! OpenUnmerged()
 endfunction
 noremap <silent> <F7> :call OpenUnmerged()<CR>
 
-" CScope
-if has("cscope")
-  set csto=0
-  set cst
-  " CScope mappings
-  noremap <Leader>ff :cs find 3 <C-R>=expand("<cword>")<CR><CR>
-  noremap <Leader>fw :cs find 0 <C-R>=expand("<cword>")<CR><CR>
-endif
-
 fu! Make_In_File_Dir()
   execute 'sp'
   " switch to new buffer
