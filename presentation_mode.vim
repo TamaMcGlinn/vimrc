@@ -13,4 +13,5 @@ fu! TogglePresentationMode()
     highlight LineNr ctermbg=white ctermfg=black
   endif
 endfunction
-nnoremap <Leader>pp :call TogglePresentationMode()<CR>
+
+" nnoremap <Leader>pp :call TogglePresentationMode()<CR>
