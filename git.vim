@@ -17,6 +17,7 @@ nnoremap <Leader>na :diffget //3<CR>
 nnoremap <Leader>nf :diffget //2<CR>
 
 nnoremap <Leader>np :Gpush<CR>
+nnoremap <Leader>nP :Gpush --force-with-lease<CR>
 
 nnoremap <Leader>no :GCheckout<CR>
 
@@ -29,9 +30,13 @@ nnoremap <Leader>nb :GBranches<CR>
 
 nnoremap <Leader>nl :Flog<CR>
 
-command Greview :Git! diff --staged
-nnoremap <leader>nr :Greview<cr>
+nnoremap <leader>nr :Git! diff --staged<cr>
 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
+
+augroup flog
+  autocmd FileType floggraph nno <buffer> D :<C-U>call flog#run_tmp_command('horizontal below Git diff HEAD %h')<CR>
+  autocmd FileType floggraph vno <buffer> D :<C-U>call flog#run_tmp_command("horizontal below Git diff %(h'<) %(h'>)")<CR>
+augroup END
 
