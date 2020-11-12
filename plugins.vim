@@ -35,7 +35,7 @@ call dein#add('kevinoid/vim-jsonc')
 
 " Linting
 call dein#add('dense-analysis/ale')
-call dein#add('vim-scripts/cpp_cppcheck.vim')
+" call dein#add('vim-scripts/cpp_cppcheck.vim') " Not necessary; ale includes cppcheck
 
 call dein#add('vim-airline/vim-airline')
 
