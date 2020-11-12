@@ -1,6 +1,6 @@
 " Custom commands start with space
 let mapleader = " "
-set timeoutlen=230
+set timeoutlen=430
 
 " Move thrice as fast
 nnoremap <silent> <C-Y> 3<C-Y>
