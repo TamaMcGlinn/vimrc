@@ -5,12 +5,12 @@ nnoremap <Leader>oh :MundoToggle<CR>			        " Show file history
 " Tab movement
 nnoremap <Leader>tO :tabe<CR>
 nnoremap <Leader>tQ :tabc<CR>
-nnoremap <Leader>H :tabp<CR> " Previous tab
-nnoremap <Leader>L :tabn<CR> " Next tab
+nnoremap <Leader>h :tabp<CR> " Previous tab
+nnoremap <Leader>l :tabn<CR> " Next tab
 
 " Buffer movement
 nnoremap <Leader>to :enew<CR>
 nnoremap <Leader>tq :bp <BAR> bd #<CR>
-nnoremap <Leader>h :bprev<CR> " Previous tab
-nnoremap <Leader>l :bnext<CR> " Next tab
+nnoremap <Leader>H :bprev<CR> " Previous buffer
+nnoremap <Leader>L :bnext<CR> " Next buffer
 
