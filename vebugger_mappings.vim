@@ -19,10 +19,12 @@ nnoremap <Leader>gt :VBGtoggleTerminalBuffer<CR>
 nnoremap <silent> <Leader>gq :VBGkill<CR>
 nnoremap <Leader>gr :VBGrawWrite run<CR>
 nnoremap <Leader>gg :VBGtoggleBreakpointThisLine<CR>
-nnoremap <Leader>gc :VBGcontinue<CR>
 nnoremap <Leader>g8 :VBGevalWordUnderCursor<CR>
 nnoremap <Leader>ge :VBGeval 
 nnoremap <Leader>gw :VBGrawWrite 
 nnoremap <Leader>ga :VBGclearBreakpoints<CR>
+nnoremap <Leader>gg :VBGtoggleBreakpointThisLine<CR>
+
+" nnoremap <Leader>gl :VBGrawWrite %h:
 let g:vebugger_view_source_cmd='edit'
 
