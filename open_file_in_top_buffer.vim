@@ -83,3 +83,6 @@ augroup Terminal_gf_mapping
 augroup END
 
 vnoremap <silent> gf :call OpenfileInTopBuffer( GetVisualSelection() )<CR>
+
+" with a capital is to create if it doesn't exist yet
+noremap gF :e <cfile><cr>
