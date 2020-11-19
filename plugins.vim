@@ -1,6 +1,6 @@
 call dein#add('Freed-Wu/dein-ui.vim')
 
-call dein#add('TamaHobbit/Ada-Bundle')
+call dein#add('TamaMcGlinn/Ada-Bundle')
 "call dein#add('vim-scripts/taglist.vim')
 call dein#add('vim-scripts/mru.vim')
 call dein#add('vim-scripts/YankRing.vim')
