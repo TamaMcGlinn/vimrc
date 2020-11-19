@@ -9,9 +9,13 @@ call dein#add('easymotion/vim-easymotion')
 call dein#add('tpope/vim-repeat')
 call dein#add('tpope/vim-unimpaired')
 call dein#add('tpope/vim-surround')
-call dein#add('Shougo/vimproc.vim')
-call dein#add('idanarye/vim-vebugger')
+call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('dbakker/vim-paragraph-motion')
+
+" Debugging
+" call dein#add('idanarye/vim-vebugger')
+" call dein#add('TamaMcGlinn/vim-vebugger', {'rev' : 'feature/conditional_breakpoints'})
+call dein#add('puremourning/vimspector')
 
 " Undo tree navigation
 " call dein#add('sjl/gundo.vim')
