@@ -44,7 +44,8 @@ nnoremap <Leader>ia :make<CR>:copen<CR>
 source ~/vimrc/terminal.vim
 source ~/vimrc/dir_to_current_line.vim
 source ~/vimrc/file_hotkeys.vim
-source ~/vimrc/vebugger_mappings.vim
+" source ~/vimrc/vebugger_mappings.vim
+source ~/vimrc/vimspector_mappings.vim
 source ~/vimrc/open_file_in_top_buffer.vim
 source ~/vimrc/currentfilename.vim
 source ~/vimrc/sudowrite.vim
