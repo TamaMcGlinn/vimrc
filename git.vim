@@ -24,6 +24,7 @@ nnoremap <Leader>nP :Gpush --force-with-lease<CR>
 nnoremap <Leader>no :GCheckout<CR>
 
 nnoremap <Leader>nc :Gcommit<CR>
+nnoremap <Leader>ncb :call flog#run_command("Git bundle create " . input ("bundle> ") . " --branches --tags")<CR>
 
 nnoremap <Leader>n. :Git add .<CR>
 nnoremap <Leader>n, :Git add %<CR>
@@ -36,8 +37,13 @@ let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
 
 augroup flog
+  autocmd FileType floggraph nno <buffer> b :<C-U>call flog#run_command('Git branch -B ' . input ("Branch: ") . ' %h', 0, 1)<CR>
+
   autocmd FileType floggraph nno <buffer> D :<C-U>call flog#run_tmp_command('below Git diff HEAD %h')<CR>
   autocmd FileType floggraph vno <buffer> D :<C-U>call flog#run_tmp_command("below Git diff %(h'<) %(h'>)")<CR>
+
+  autocmd FileType floggraph vno <buffer> cb :<C-U>call flog#run_command("Git bundle create " . input ("bundle> ") . " %(l'>)..%(l'<)")<CR>
+  autocmd FileType floggraph nno <buffer> cb :<C-U>call flog#run_command("Git bundle create " . input ("bundle> ") . " %(h).. --branches --tags")<CR>
 
   autocmd FileType floggraph nno <buffer> cf :<C-U>call flog#run_command('Git commit -m "fixup! %h"', 0, 1)<CR>
 
@@ -48,3 +54,10 @@ augroup flog
 augroup END
 
 let g:flog_default_arguments = { 'date' : 'short' }
+
+" Move one level up with '..' when browsing tree or blob
+autocmd User fugitive
+  \ if get(b:, 'fugitive_type', '') =~# '^\%(tree\|blob\)$' |
+  \   nnoremap <buffer> .. :edit %:h<CR> |
+  \ endif
+
