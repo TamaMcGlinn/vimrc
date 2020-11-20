@@ -1,9 +1,7 @@
-{
-  "languageserver": {
-    "efm": {
-      "command": "efm-langserver",
-      "args": [],
-      "filetypes": ["vim", "eruby", "markdown", "yaml"]
-    }
+"languageserver": {
+  "Ada": {
+    "command": "C:\ada_language_server\ada_language_server.exe",
+    "rootPatterns": ["*.gpr"],
+    "filetypes": ["ada"]
   }
 }
