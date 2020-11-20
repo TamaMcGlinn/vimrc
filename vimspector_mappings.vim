@@ -1,8 +1,3 @@
-packadd! vimspector
-
-" Clear the existing WinBar created by Vimspector
-nunmenu WinBar
-
 nnoremap <Leader>gs :call vimspector#Launch()<CR>
 nmap <Leader>gq <Plug>VimspectorStop
 nnoremap <Leader>gQ :call vimspector#Reset()<CR>
