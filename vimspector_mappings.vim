@@ -28,3 +28,18 @@ nnoremap <Leader>ge :call vimspector#Evaluate(input("Eval> "))<CR>
 vnoremap <Leader>ge :call vimspector#Evaluate(GetVisualSelection())<CR>
 
 nnoremap <Leader>gl :VimspectorShowOutput 
+
+" Show breakpoints in the UI
+augroup ZVimspectorCustomMappings
+    autocmd!
+    autocmd User VimspectorUICreated call ZVimspectorSetupUi()
+augroup end
+function! ZVimspectorSetupUi()
+    call win_gotoid(g:vimspector_session_windows.output)
+    set ft=asm
+    vert rightb copen
+    exec ":vert resize " . winwidth(g:vimspector_session_windows.output)/3
+    nnoremenu <silent> WinBar.ListBreakpoints :call vimspector#ListBreakpoints()<CR>
+    call vimspector#ListBreakpoints()
+    call win_gotoid(g:vimspector_session_windows.code)
+endfunction
