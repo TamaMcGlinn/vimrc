@@ -46,3 +46,5 @@ au WinLeave * set nofen
 " Keep undo history across sessions
 set undofile
 set undodir=~/.vim/undo
+
+let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../../src,sfr:../../include,sfr:../include,sfr:../inc,sfr:../tests'
