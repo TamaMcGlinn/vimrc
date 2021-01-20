@@ -1,4 +1,4 @@
-call dein#add('Freed-Wu/dein-ui.vim')
+call dein#add('wsdjeg/dein-ui.vim')
 
 call dein#add('TamaMcGlinn/Ada-Bundle')
 "call dein#add('vim-scripts/taglist.vim')
@@ -51,6 +51,9 @@ call dein#add('tomtom/tcomment_vim')
 "call dein#add('scrooloose/nerdcommenter') " don't use - no motions
 
 call dein#add('mhinz/vim-startify')
+
+" Build systems
+" call dein#add('bazelbuild/vim-bazel')
 
 " To learn:
 "call dein#add('fntlnz/atags.vim')
