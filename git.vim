@@ -23,6 +23,9 @@ nnoremap <Leader>nP :Git push --force-with-lease<CR>
 nnoremap <Leader>nj :Git fetch<CR>
 nnoremap <Leader>nJ :Git pull<CR>
 
+" Gerrit
+nnoremap <Leader>ngp :Git review<CR>
+
 nnoremap <Leader>no :GCheckout<CR>
 
 nnoremap <Leader>nc :Gcommit<CR>
