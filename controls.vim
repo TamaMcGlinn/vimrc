@@ -7,6 +7,7 @@ nnoremap <silent> <C-Y> 3<C-Y>
 nnoremap <silent> <C-E> 3<C-E>
 
 source ~/vimrc/cntrl_move.vim
+source ~/vimrc/move_to_tab.vim
 source ~/vimrc/navigate.vim
 
 " reload document

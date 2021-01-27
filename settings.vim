@@ -48,3 +48,24 @@ set undofile
 set undodir=~/.vim/undo
 
 let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../../src,sfr:../../include,sfr:../include,sfr:../inc,sfr:../tests'
+
+" Code autoformatting
+" augroup autoformat_settings
+"   autocmd FileType bzl AutoFormatBuffer buildifier
+"   autocmd FileType c,cpp,proto,javascript,arduino AutoFormatBuffer clang-format
+"   autocmd FileType dart AutoFormatBuffer dartfmt
+"   autocmd FileType go AutoFormatBuffer gofmt
+"   autocmd FileType gn AutoFormatBuffer gn
+"   autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+"   autocmd FileType java AutoFormatBuffer google-java-format
+"   autocmd FileType python AutoFormatBuffer yapf
+"   " Alternative: autocmd FileType python AutoFormatBuffer autopep8
+"   autocmd FileType rust AutoFormatBuffer rustfmt
+"   autocmd FileType vue AutoFormatBuffer prettier
+" augroup END
+
+" Show search index
+set shortmess-=S
+
+" Search inside selection with Alt-/
+vnoremap <M-/> <Esc>/\%V
