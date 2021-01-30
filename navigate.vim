@@ -2,6 +2,10 @@
 nnoremap <Leader>pp :MRU<CR>			                " Show files
 nnoremap <Leader>oh :MundoToggle<CR>			        " Show file history
 
+" Search
+nnoremap <Leader>pf :FZF!<CR>
+nnoremap <Leader>ps :Rg<CR>
+
 " Tab movement
 nnoremap <Leader>tO :tabe<CR>
 nnoremap <Leader>tq :tabc<CR>
