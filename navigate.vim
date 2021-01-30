@@ -14,3 +14,9 @@ nnoremap <Leader>tw :bp <BAR> bd #<CR>
 nnoremap <Leader>H :bprev<CR> " Previous buffer
 nnoremap <Leader>L :bnext<CR> " Next buffer
 
+" CD to git root
+nnoremap <Leader>qg :Gcd<CR>
+
+" Move windows to different tabs (to move entire tab, use :tabmove)
+map <Leader>tm :call MoveToNextTab()<CR><C-w>H
+map <Leader>tn :call MoveToPrevTab()<CR><C-w>H

@@ -18,8 +18,13 @@ nnoremap <Leader>ns :Gstatus<CR>
 nnoremap <Leader>na :diffget //3<CR>
 nnoremap <Leader>nf :diffget //2<CR>
 
-nnoremap <Leader>np :Gpush<CR>
-nnoremap <Leader>nP :Gpush --force-with-lease<CR>
+nnoremap <Leader>np :Git push<CR>
+nnoremap <Leader>nP :Git push --force-with-lease<CR>
+nnoremap <Leader>nj :Git fetch<CR>
+nnoremap <Leader>nJ :Git pull<CR>
+
+" Gerrit
+nnoremap <Leader>ngp :Git review<CR>
 
 nnoremap <Leader>no :GCheckout<CR>
 

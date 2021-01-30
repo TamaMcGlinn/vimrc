@@ -1,6 +1,9 @@
-call dein#add('Freed-Wu/dein-ui.vim')
+call dein#add('wsdjeg/dein-ui.vim')
 
+" Programming languages
 call dein#add('TamaMcGlinn/Ada-Bundle')
+call dein#add('pappasam/coc-jedi', {'build' : 'yarn install --frozen-lockfile && yarn build' })
+
 "call dein#add('vim-scripts/taglist.vim')
 call dein#add('vim-scripts/mru.vim')
 call dein#add('vim-scripts/YankRing.vim')
@@ -44,6 +47,14 @@ call dein#add('kevinoid/vim-jsonc')
 call dein#add('dense-analysis/ale')
 " call dein#add('vim-scripts/cpp_cppcheck.vim') " Not necessary; ale includes cppcheck
 
+" Snippets http://vimcasts.org/episodes/meet-ultisnips/
+call dein#add('sirver/UltiSnips')
+call dein#add('honza/vim-snippets')
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+call dein#add('vim-scripts/visSum.vim')
 call dein#add('vim-airline/vim-airline')
 
 call dein#add('tomtom/tcomment_vim')
@@ -51,6 +62,14 @@ call dein#add('tomtom/tcomment_vim')
 "call dein#add('scrooloose/nerdcommenter') " don't use - no motions
 
 call dein#add('mhinz/vim-startify')
+
+" Build systems
+" call dein#add('google/vim-maktaba')
+" call dein#add('bazelbuild/vim-bazel')
+
+" Code formatting
+" call dein#add('google/vim-codefmt')
+" call dein#add('google/vim-glaive')
 
 " To learn:
 "call dein#add('fntlnz/atags.vim')
