@@ -5,15 +5,19 @@ nnoremap <Leader>oh :MundoToggle<CR>			        " Show file history
 nnoremap <Leader>of :ls<CR>:b<space>
 nnoremap <Leader>om :<C-u>marks<CR>:normal! `
 
+" Search
+nnoremap <Leader>pf :FZF!<CR>
+nnoremap <Leader>ps :Rg<CR>
+
 " Tab movement
 nnoremap <Leader>tO :tabe<CR>
-nnoremap <Leader>tQ :tabc<CR>
+nnoremap <Leader>tq :tabc<CR>
 nnoremap <Leader>h :tabp<CR> " Previous tab
 nnoremap <Leader>l :tabn<CR> " Next tab
 
 " Buffer movement
-nnoremap <Leader>to :tabnew<CR>
-nnoremap <Leader>tq :bp <BAR> bd #<CR>
+nnoremap <Leader>to :enew<CR>
+nnoremap <Leader>tw :bp <BAR> bd #<CR>
 nnoremap <Leader>H :bprev<CR> " Previous buffer
 nnoremap <Leader>L :bnext<CR> " Next buffer
 
