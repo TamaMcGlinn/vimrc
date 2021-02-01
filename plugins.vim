@@ -50,9 +50,9 @@ call dein#add('dense-analysis/ale')
 " Snippets http://vimcasts.org/episodes/meet-ultisnips/
 call dein#add('sirver/UltiSnips')
 call dein#add('honza/vim-snippets')
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 call dein#add('vim-scripts/visSum.vim')
 call dein#add('vim-airline/vim-airline')
@@ -64,12 +64,12 @@ call dein#add('tomtom/tcomment_vim')
 call dein#add('mhinz/vim-startify')
 
 " Build systems
-" call dein#add('google/vim-maktaba')
-" call dein#add('bazelbuild/vim-bazel')
+call dein#add('google/vim-maktaba', { 'merged': 0 })
+" call dein#add('bazelbuild/vim-bazel', { 'merged': 0 })
 
 " Code formatting
-" call dein#add('google/vim-codefmt')
-" call dein#add('google/vim-glaive')
+call dein#add('google/vim-codefmt', { 'merged': 0 })
+" call dein#add('google/vim-glaive', { 'merged': 0 })
 
 " To learn:
 "call dein#add('fntlnz/atags.vim')

@@ -1,6 +1,9 @@
 " Navigate
 nnoremap <Leader>pp :MRU<CR>			                " Show files
 nnoremap <Leader>oh :MundoToggle<CR>			        " Show file history
+" Fly between buffers
+nnoremap <Leader>of :ls<CR>:b<space>
+nnoremap <Leader>om :<C-u>marks<CR>:normal! `
 
 " Tab movement
 nnoremap <Leader>tO :tabe<CR>

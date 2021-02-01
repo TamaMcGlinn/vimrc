@@ -10,11 +10,13 @@ function MoveToPrevTab()
   let l:tab_nr = tabpagenr('$')
   let l:cur_buf = bufnr('%')
   if tabpagenr() != 1
+    close!
     if l:tab_nr == tabpagenr('$')
       tabprev
     endif
-    vert topleft split
+    vert split
   else
+    close!
     exe "0tabnew"
   endif
   "opening current buffer in new window
@@ -30,11 +32,13 @@ function MoveToNextTab()
   let l:tab_nr = tabpagenr('$')
   let l:cur_buf = bufnr('%')
   if tabpagenr() < tab_nr
+    close!
     if l:tab_nr == tabpagenr('$')
       tabnext
     endif
     vert topleft split
   else
+    close!
     tabnew
   endif
   "opening current buffer in new window
