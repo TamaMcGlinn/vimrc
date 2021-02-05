@@ -56,6 +56,8 @@ endfunction
 
 nnoremap silent <Leader>ic :call Compile(expand('%'))<CR>
 
+nnoremap silent <Leader>ch :!chmod +x %<CR>
+
 source ~/vimrc/terminal.vim
 source ~/vimrc/dir_to_current_line.vim
 source ~/vimrc/file_hotkeys.vim

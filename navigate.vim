@@ -16,7 +16,7 @@ nnoremap <Leader>h :tabp<CR> " Previous tab
 nnoremap <Leader>l :tabn<CR> " Next tab
 
 " Buffer movement
-nnoremap <Leader>to :enew<CR>
+nnoremap <Leader>to :tabnew<CR>
 nnoremap <Leader>tw :bp <BAR> bd #<CR>
 nnoremap <Leader>H :bprev<CR> " Previous buffer
 nnoremap <Leader>L :bnext<CR> " Next buffer

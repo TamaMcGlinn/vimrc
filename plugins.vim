@@ -65,11 +65,13 @@ call dein#add('mhinz/vim-startify')
 
 " Build systems
 call dein#add('google/vim-maktaba', { 'merged': 0 })
-" call dein#add('bazelbuild/vim-bazel', { 'merged': 0 })
+call dein#add('bazelbuild/vim-bazel', { 'merged': 0 })
 
 " Code formatting
 call dein#add('google/vim-codefmt', { 'merged': 0 })
 " call dein#add('google/vim-glaive', { 'merged': 0 })
+
+call dein#add('dbeniamine/cheat.sh-vim')
 
 " To learn:
 "call dein#add('fntlnz/atags.vim')
