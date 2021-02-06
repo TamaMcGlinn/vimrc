@@ -41,6 +41,8 @@ nnoremap <Leader>n, :Git add %<CR>
 nnoremap <Leader>nb :GBranches<CR>
 
 nnoremap <Leader>nl :Flog -all<CR>:Flogjump HEAD<CR>
+nnoremap <Leader>nls :Flogsplit -all<CR>:Flogjump HEAD<CR>
+nnoremap <Leader>nlv :vertical Flogsplit -all<CR>:Flogjump HEAD<CR>
 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
@@ -70,7 +72,7 @@ augroup flog
   autocmd FileType floggraph nno <buffer> cb :<C-U>call flog#run_command("Git bundle create " . input ("bundle> ") . " %(h).. --branches --tags")<CR>
 
   " 'amend' a selected commit with whatever is staged
-  " Convention: capital letter version means 'and also commit the result'
+  " Convention: second letter as a capital means 'and also commit the result'
   autocmd FileType floggraph nno <buffer> ca :<C-U>call flog#run_command('call FixupCommit("%h")', 0, 1)<CR>
   autocmd FileType floggraph nno <buffer> cA :<C-U>call flog#run_command('call AmendCommit("%h")', 0, 1)<CR>
 
@@ -86,10 +88,16 @@ augroup flog
   autocmd FileType floggraph nno <buffer> cv :<C-U>call flog#run_command("Git reset --mixed %h", 0, 1)<CR>
   autocmd FileType floggraph nno <buffer> cV :<C-U>call flog#run_command("Git reset --hard %h", 0, 1)<CR>
 
+  " cm : Merge
   autocmd FileType floggraph nno <buffer> cm :<C-U>call flog#run_command('Git merge %l --no-ff', 0, 1)<CR>
 
   autocmd FileType floggraph nno <buffer> <silent> ]r :<C-U>call flog#next_ref()<CR>
   autocmd FileType floggraph nno <buffer> <silent> [r :<C-U>call flog#previous_ref()<CR>
+
+  autocmd FileType floggraph nno <buffer> <silent> h :<C-U>call flog#jump_to_parent()<CR>
+  autocmd FileType floggraph nno <buffer> <silent> j :<C-U>call flog#next_commit()<CR>
+  autocmd FileType floggraph nno <buffer> <silent> k :<C-U>call flog#previous_commit()<CR>
+  autocmd FileType floggraph nno <buffer> <silent> l :<C-U>call flog#jump_to_child()<CR>
 
   autocmd FileType floggraph nno <buffer> <silent> <Leader>nc :Flogjump HEAD<CR>
 
