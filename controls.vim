@@ -7,6 +7,7 @@ nnoremap <silent> <C-Y> 3<C-Y>
 nnoremap <silent> <C-E> 3<C-E>
 
 source ~/vimrc/cntrl_move.vim
+source ~/vimrc/move_to_tab.vim
 source ~/vimrc/navigate.vim
 
 " reload document
@@ -37,9 +38,25 @@ endfunction
 nnoremap <Leader>ii :!make<CR>
 nnoremap <Leader>is :call Make_In_File_Dir()<CR>
 nnoremap <Leader>it :!make test<CR>
-nnoremap <Leader>ic :!make clean<CR>
 nnoremap <Leader>ir :!make regenerate_tests<CR>
 nnoremap <Leader>ia :make<CR>:copen<CR>
+
+" Build current file
+fu! GetCompileCommand(file)
+  let s:cc_db = json_decode(readfile('compile_commands.json'))
+  let s:current_file = filter(s:cc_db, 'v:val.file=~".*".a:file')
+  return s:current_file[0].command
+endfunction
+
+fu! Compile(file)
+  let &makeprg = GetCompileCommand(a:file)
+  silent execute 'make'
+  silent execute 'copen'
+endfunction
+
+nnoremap silent <Leader>ic :call Compile(expand('%'))<CR>
+
+nnoremap silent <Leader>ch :!chmod +x %<CR>
 
 source ~/vimrc/terminal.vim
 source ~/vimrc/dir_to_current_line.vim
