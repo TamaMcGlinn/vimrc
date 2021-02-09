@@ -1,4 +1,5 @@
-source ~/vimrc/dein_framework.vim " includes plugins.vim
+" source ~/vimrc/dein_framework.vim " includes plugins.vim
+source ~/vimrc/plug_framework.vim " includes plugins.vim
 
 source ~/vimrc/first.vim
 source ~/vimrc/python.vim
