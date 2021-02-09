@@ -95,6 +95,9 @@ augroup flog
   autocmd FileType floggraph nno <buffer> <silent> ]r :<C-U>call flog#next_ref()<CR>
   autocmd FileType floggraph nno <buffer> <silent> [r :<C-U>call flog#previous_ref()<CR>
 
+  autocmd FileType floggraph nno <buffer> <silent> ]h :<C-U>call flog#jump_to_next_head()<CR>
+  autocmd FileType floggraph nno <buffer> <silent> [h :<C-U>call flog#jump_to_previous_head()<CR>
+
   autocmd FileType floggraph nno <buffer> <silent> h :<C-U>call flog#jump_to_parent()<CR>
   autocmd FileType floggraph nno <buffer> <silent> j :<C-U>call flog#down()<CR>
   autocmd FileType floggraph nno <buffer> <silent> k :<C-U>call flog#up()<CR>
