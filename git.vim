@@ -57,7 +57,8 @@ fu! AmendCommit(commit_hash) abort
 endfunction
 
 augroup flog
-  autocmd FileType floggraph nno <buffer> b :<C-U>call flog#run_command('Git checkout -b ' . input ("Branch: ") . ' %h', 0, 1)<CR>
+  autocmd FileType floggraph nno <buffer> <Leader>b :<C-U>call flog#run_command('Git checkout -b ' . input ("Branch: ") . ' %h', 0, 1)<CR>
+  autocmd FileType floggraph nno <buffer> <Leader>B :<C-U>call flog#run_command('Git checkout -B ' . input ("Branch: ") . ' %h', 0, 1)<CR>
 
   autocmd FileType floggraph nno <buffer> D :<C-U>call flog#run_tmp_command('below Git diff HEAD %h')<CR>
   " diff arbitrary commits in the graph using visual selection
