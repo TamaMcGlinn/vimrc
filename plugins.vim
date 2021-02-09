@@ -84,7 +84,10 @@ Plug 'stsewd/fzf-checkout.vim'
 " Plug 'jreybert/vimagit'
 " history browsing
 Plug 'junegunn/gv.vim'
-Plug 'rbong/vim-flog'
+
+" Plug 'rbong/vim-flog'
+Plug '~/code/vimplugins/vim-flog'
+
 Plug 'int3/vim-extradite'
 
 Plug 'chrisbra/SudoEdit.vim'
