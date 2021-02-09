@@ -10,22 +10,26 @@ let g:signify_sign_show_text = 1
 " Help like in SpaceVim
 nnoremap <Leader>n :echom '(g)p : (Gerrit)Push; s : Status; n : Diff; a/f : Select left/right; c : Commit; o : Checkout; . : Stage .; , : Stage file'<CR>
 
-nnoremap <Leader>nn :Gvdiff<CR>
+" These mappings work together, so you indicate the direction
+nnoremap <Leader>nn :Gvdiffsplit!<CR>
+nnoremap <Leader>nnh :Gdiffsplit!<CR>
+" a is the buffer on the left, f is on the right
+nnoremap <Leader>na :diffget //3<CR>
+nnoremap <Leader>nf :diffget //2<CR>
+" x is the buffer on the bottom, w is on the top
+nnoremap <Leader>nx :diffget //3<CR>
+nnoremap <Leader>nw :diffget //2<CR>
 
 nnoremap <Leader>nr :Gedit<CR>
 
 nnoremap <Leader>ns :Gstatus<CR>
-
-" a is the buffer on the left, f is on the right
-nnoremap <Leader>na :diffget //3<CR>
-nnoremap <Leader>nf :diffget //2<CR>
 
 nnoremap <Leader>np :Git push<CR>
 nnoremap <Leader>nP :Git push --force-with-lease<CR>
 nnoremap <Leader>nj :Git fetch<CR>
 nnoremap <Leader>nJ :Git pull<CR>
 
-nnoremap <Leader>na :Git blame<CR>
+nnoremap <Leader>nz :Git blame<CR>
 
 " Gerrit
 nnoremap <Leader>ngp :Git review<CR>
@@ -57,6 +61,7 @@ fu! AmendCommit(commit_hash) abort
 endfunction
 
 augroup flog
+  autocmd FileType floggraph nno <buffer> <Leader>cb :<C-U>call flog#run_command('Git checkout %l', 0, 1)<CR>
   autocmd FileType floggraph nno <buffer> <Leader>b :<C-U>call flog#run_command('Git checkout -b ' . input ("Branch: ") . ' %h', 0, 1)<CR>
   autocmd FileType floggraph nno <buffer> <Leader>B :<C-U>call flog#run_command('Git checkout -B ' . input ("Branch: ") . ' %h', 0, 1)<CR>
 
