@@ -14,6 +14,8 @@ call dein#add('tpope/vim-unimpaired')
 call dein#add('tpope/vim-surround')
 call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('dbakker/vim-paragraph-motion')
+call dein#add('junegunn/vim-peekaboo')
+call dein#add('junegunn/vim-slash')
 
 " Debugging
 " call dein#add('idanarye/vim-vebugger')
