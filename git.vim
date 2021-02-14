@@ -26,7 +26,7 @@ nnoremap <Leader>ns :Gstatus<CR>
 
 nnoremap <Leader>np :Git push<CR>
 nnoremap <Leader>nP :Git push --force-with-lease<CR>
-nnoremap <Leader>nj :Git fetch<CR>
+nnoremap <Leader>nj :Git fetch --all<CR>
 nnoremap <Leader>nJ :Git pull<CR>
 
 nnoremap <Leader>nz :Git blame<CR>
@@ -86,6 +86,10 @@ augroup flog
   autocmd FileType floggraph nno <buffer> ch :<C-U>call flog#run_command('Git cherry-pick %h --no-commit', 0, 1)<CR>
   autocmd FileType floggraph nno <buffer> cH :<C-U>call flog#run_command('Git cherry-pick %h', 0, 1)<CR>
 
+  " Rebase onto the commit
+  autocmd FileType floggraph nno <buffer> rr :<C-U>call flog#run_command('Git rebase --interactive %h', 0, 1)<CR>
+  autocmd FileType floggraph nno <buffer> rR :<C-U>call flog#run_command('Git rebase %h', 0, 1)<CR>
+  
   " Revert the commit
   autocmd FileType floggraph nno <buffer> cr :<C-U>call flog#run_command('Git revert %h --no-commit', 0, 1)<CR>
   autocmd FileType floggraph nno <buffer> cR :<C-U>call flog#run_command('Git revert %h', 0, 1)<CR>
@@ -112,7 +116,7 @@ augroup flog
 
   " Overload the same keybinding as in normal mode on any buffer; 
   " it does the same but also updates the vim-flog graph afterwards
-  autocmd FileType floggraph nno <buffer> <Leader>nj :<C-U>call flog#run_command('Git fetch', 0, 1)<CR>
+  autocmd FileType floggraph nno <buffer> <Leader>nj :<C-U>call flog#run_command('Git fetch --all', 0, 1)<CR>
 augroup END
 
 let g:flog_default_arguments = { 'date' : 'short' }

@@ -54,9 +54,8 @@ fu! Compile(file)
   silent execute 'copen'
 endfunction
 
-nnoremap silent <Leader>ic :call Compile(expand('%'))<CR>
-
-nnoremap silent <Leader>ch :!chmod +x %<CR>
+silent nnoremap <Leader>ic :call Compile(expand('%'))<CR>
+silent nnoremap <Leader>ch :!chmod +x %<CR>
 
 source ~/vimrc/terminal.vim
 source ~/vimrc/dir_to_current_line.vim
