@@ -85,8 +85,10 @@ Plug 'stsewd/fzf-checkout.vim'
 " history browsing
 Plug 'junegunn/gv.vim'
 
+Plug 'skywind3000/vim-quickui'
 " Plug 'rbong/vim-flog'
 Plug '~/code/vimplugins/vim-flog'
+Plug '~/code/vimplugins/vim-flogmenu'
 
 Plug 'int3/vim-extradite'
 
