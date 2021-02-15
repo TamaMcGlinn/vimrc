@@ -67,5 +67,7 @@ let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../../src,sfr:../../in
 " Show search index
 set shortmess-=S
 
+let g:quickui_border_style = 2
+
 " Search inside selection with Alt-/
 vnoremap <M-/> <Esc>/\%V

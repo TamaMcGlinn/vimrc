@@ -123,3 +123,7 @@ augroup flogmenu
   autocmd FileType floggraph nno <buffer> <Leader>n :<C-U>call flogmenu#open_main_contextmenu()<CR>
 augroup END
 
+" Flog menu bindings
+augroup flogmenu
+  autocmd FileType floggraph nno <buffer> <Leader>n :<C-U>call flogmenu#open_main_contextmenu()<CR>
+augroup END
