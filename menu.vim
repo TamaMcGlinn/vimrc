@@ -2,7 +2,7 @@
 " See https://github.com/skywind3000/vim-quickui/blob/master/MANUAL.md
 " clear all the menus
 
-let g:quickui_border_style = 2
+" let g:quickui_border_style = 2
 
 " call quickui#menu#reset()
 " call quickui#menu#install('&Git', [
