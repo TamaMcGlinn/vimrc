@@ -1,5 +1,5 @@
-" Configure colors
-colorscheme gummybears
+" install gruvbox colors
+autocmd vimenter * ++nested colorscheme gruvbox
 
 " Use visual bell (no beeping)
 set visualbell

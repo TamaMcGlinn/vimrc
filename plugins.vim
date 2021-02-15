@@ -14,7 +14,6 @@ Plug 'tpope/vim-surround'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'dbakker/vim-paragraph-motion'
 Plug 'junegunn/vim-peekaboo'
-Plug 'junegunn/vim-slash'
 
 " Debugging
 Plug 'puremourning/vimspector'
@@ -47,6 +46,7 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
+Plug 'morhetz/gruvbox'
 Plug 'vim-scripts/visSum.vim'
 Plug 'vim-airline/vim-airline'
 
@@ -87,8 +87,11 @@ Plug 'stsewd/fzf-checkout.vim'
 " history browsing
 Plug 'junegunn/gv.vim'
 
+Plug 'skywind3000/vim-quickui'
 " Plug 'rbong/vim-flog'
 Plug '~/code/vimplugins/vim-flog'
+" Plug 'TamaMcGlinn/vim-flogmenu'
+Plug '~/code/vimplugins/vim-flogmenu'
 
 Plug 'int3/vim-extradite'
 

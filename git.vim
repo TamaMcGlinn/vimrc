@@ -1,4 +1,3 @@
-" Change these if you want
 let g:signify_sign_add               = '+'
 let g:signify_sign_delete            = '_'
 let g:signify_sign_delete_first_line = '‾'
@@ -6,9 +5,6 @@ let g:signify_sign_change            = '~'
 
 let g:signify_sign_show_count = 1
 let g:signify_sign_show_text = 1
-
-" Help like in SpaceVim
-nnoremap <Leader>n :echom '(g)p : (Gerrit)Push; s : Status; n : Diff; a/f : Select left/right; c : Commit; o : Checkout; . : Stage .; , : Stage file'<CR>
 
 " These mappings work together, so you indicate the direction
 nnoremap <Leader>nn :Gvdiffsplit!<CR>
@@ -61,7 +57,8 @@ fu! AmendCommit(commit_hash) abort
 endfunction
 
 augroup flog
-  autocmd FileType floggraph nno <buffer> <Leader>cb :<C-U>call flog#run_command('Git checkout %l', 0, 1)<CR>
+  autocmd FileType floggraph nno <buffer> <Leader>co :<C-U>call flog#run_command('Git checkout %l', 0, 1)<CR>
+
   autocmd FileType floggraph nno <buffer> <Leader>b :<C-U>call flog#run_command('Git checkout -b ' . input ("Branch: ") . ' %h', 0, 1)<CR>
   autocmd FileType floggraph nno <buffer> <Leader>B :<C-U>call flog#run_command('Git checkout -B ' . input ("Branch: ") . ' %h', 0, 1)<CR>
 
@@ -121,9 +118,8 @@ augroup END
 
 let g:flog_default_arguments = { 'date' : 'short' }
 
-" Move one level up with '..' when browsing tree or blob
-autocmd User fugitive
-  \ if get(b:, 'fugitive_type', '') =~# '^\%(tree\|blob\)$' |
-  \   nnoremap <buffer> .. :edit %:h<CR> |
-  \ endif
+" Flog menu bindings
+augroup flogmenu
+  autocmd FileType floggraph nno <buffer> <Leader>n :<C-U>call flogmenu#open_main_contextmenu()<CR>
+augroup END
 
