@@ -13,7 +13,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'dbakker/vim-paragraph-motion'
-Plug 'junegunn/vim-peekaboo'
 
 " Debugging
 Plug 'puremourning/vimspector'
