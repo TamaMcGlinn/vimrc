@@ -10,6 +10,9 @@ source ~/vimrc/cntrl_move.vim
 source ~/vimrc/move_to_tab.vim
 source ~/vimrc/navigate.vim
 
+" open directory of current file
+nnoremap - :e %:h<CR>
+
 " reload document
 nnoremap <Leader>r :e! %<CR>
 
