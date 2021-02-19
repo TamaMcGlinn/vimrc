@@ -40,7 +40,7 @@ nnoremap <Leader>n, :Git add %<CR>
 
 nnoremap <Leader>nb :GBranches<CR>
 
-nnoremap <Leader>nl :Flog -all<CR>:Flogjump HEAD<CR>
+nnoremap <Leader>nl :Flog -all<CR>:Flogjump HEAD<CR>zz
 nnoremap <Leader>nls :Flogsplit -all<CR>:Flogjump HEAD<CR>
 nnoremap <Leader>nlv :vertical Flogsplit -all<CR>:Flogjump HEAD<CR>
 
