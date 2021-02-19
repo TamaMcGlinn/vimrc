@@ -2,7 +2,7 @@
 nnoremap <Leader>pp :MRU<CR>			                " Show files
 nnoremap <Leader>oh :MundoToggle<CR>			        " Show file history
 " Fly between buffers
-nnoremap <Leader>of :ls<CR>:b<space>
+nnoremap <Leader>of :Buffers<CR>
 nnoremap <Leader>om :<C-u>marks<CR>:normal! `
 
 " Search

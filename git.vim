@@ -40,7 +40,7 @@ nnoremap <Leader>n, :Git add %<CR>
 
 nnoremap <Leader>nb :GBranches<CR>
 
-nnoremap <Leader>nl :Flog -all<CR>:Flogjump HEAD<CR>
+nnoremap <Leader>nl :Flog -all<CR>:Flogjump HEAD<CR>zz
 nnoremap <Leader>nls :Flogsplit -all<CR>:Flogjump HEAD<CR>
 nnoremap <Leader>nlv :vertical Flogsplit -all<CR>:Flogjump HEAD<CR>
 
@@ -123,7 +123,4 @@ augroup flogmenu
   autocmd FileType floggraph nno <buffer> <Leader>n :<C-U>call flogmenu#open_main_contextmenu()<CR>
 augroup END
 
-" Flog menu bindings
-augroup flogmenu
-  autocmd FileType floggraph nno <buffer> <Leader>n :<C-U>call flogmenu#open_main_contextmenu()<CR>
-augroup END
+nnoremap <Leader>m :call flogmenu#open_main_menu()<CR>
