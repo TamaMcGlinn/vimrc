@@ -44,3 +44,6 @@ function MoveToNextTab()
   "opening current buffer in new window
   exe "b".l:cur_buf
 endfunc
+
+nnoremap <A-.> :call MoveToNextTab()<CR>
+nnoremap <A-,> :call MoveToPrevTab()<CR>
