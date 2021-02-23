@@ -40,3 +40,5 @@ source ~/vimrc/presentation_mode.vim
 
 " don't highlight spelling mistakes
 hi clear SpellBad
+
+" let g:airline

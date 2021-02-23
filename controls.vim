@@ -9,12 +9,17 @@ nnoremap <silent> <C-E> 3<C-E>
 source ~/vimrc/cntrl_move.vim
 source ~/vimrc/move_to_tab.vim
 source ~/vimrc/navigate.vim
+source ~/vimrc/google_test.vim
+source ~/vimrc/bazel.vim
 
 " open directory of current file
 nnoremap - :e %:h<CR>
 
 " reload document
 nnoremap <Leader>r :e! %<CR>
+
+" maximize 
+nnoremap \ :MaximizerToggle<CR>
 
 " Remove search highlight until next search
 nnoremap <silent> <Leader>d :noh<CR>

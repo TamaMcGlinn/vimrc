@@ -1,7 +1,6 @@
 
 " Programming languages
 Plug 'TamaMcGlinn/Ada-Bundle'
-Plug 'pappasam/coc-jedi', {'do' : 'yarn install --frozen-lockfile && yarn build' }
 
 "Plug 'vim-scripts/taglist.vim'
 Plug 'vim-scripts/mru.vim'
@@ -16,6 +15,8 @@ Plug 'dbakker/vim-paragraph-motion'
 
 " Debugging
 Plug 'puremourning/vimspector'
+Plug 'szw/vim-maximizer'
+Plug 'alepez/vim-gtest'
 
 " Undo tree navigation
 Plug 'simnalamburt/vim-mundo'
@@ -41,9 +42,9 @@ Plug 'dense-analysis/ale'
 " Snippets http://vimcasts.org/episodes/meet-ultisnips/
 Plug 'sirver/UltiSnips'
 Plug 'honza/vim-snippets'
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 Plug 'morhetz/gruvbox'
 Plug 'vim-scripts/visSum.vim'
@@ -63,6 +64,8 @@ Plug 'bazelbuild/vim-bazel'
 Plug 'google/vim-codefmt'
 " Plug 'google/vim-glaive'
 
+Plug 'farmergreg/vim-lastplace'
+
 Plug 'dbeniamine/cheat.sh-vim'
 
 " To learn:
@@ -81,8 +84,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'stsewd/fzf-checkout.vim'
-" Plug 'airblade/vim-gitgutter'
-" Plug 'jreybert/vimagit'
+
 " history browsing
 Plug 'junegunn/gv.vim'
 
@@ -97,4 +99,6 @@ Plug 'int3/vim-extradite'
 Plug 'chrisbra/SudoEdit.vim'
 
 Plug 'roggan87/vim-bible'
+
+Plug 'TamaMcGlinn/quickfixdd'
 

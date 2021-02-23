@@ -32,7 +32,7 @@ nnoremap <Leader>ngp :Git review<CR>
 
 nnoremap <Leader>no :GCheckout<CR>
 
-nnoremap <Leader>nc :Gcommit<CR>
+nnoremap <Leader>nc :Git commit<CR>
 nnoremap <Leader>ncb :call flog#run_command("Git bundle create " . input ("bundle> ") . " --branches --tags")<CR>
 
 nnoremap <Leader>n. :Git add .<CR>
@@ -43,6 +43,19 @@ nnoremap <Leader>nb :GBranches<CR>
 nnoremap <Leader>nl :Flog -all<CR>:Flogjump HEAD<CR>zz
 nnoremap <Leader>nls :Flogsplit -all<CR>:Flogjump HEAD<CR>
 nnoremap <Leader>nlv :vertical Flogsplit -all<CR>:Flogjump HEAD<CR>
+
+" History of (t)his file
+nnoremap <Leader>nt :Flog -all -path=%<CR>
+
+" History of some number of dirs up from current file
+nnoremap <Leader>ntk :Flog -all -path=%:h<CR>
+nnoremap <Leader>ntkk :Flog -all -path=%:h:h<CR>
+nnoremap <Leader>ntkkk :Flog -all -path=%:h:h:h<CR>
+nnoremap <Leader>ntkkkk :Flog -all -path=%:h:h:h:h<CR>
+nnoremap <Leader>ntkkkkk :Flog -all -path=%:h:h:h:h:h<CR>
+nnoremap <Leader>ntkkkkkk :Flog -all -path=%:h:h:h:h:h:h<CR>
+nnoremap <Leader>ntkkkkkkk :Flog -all -path=%:h:h:h:h:h:h:h<CR>
+nnoremap <Leader>ntkkkkkkkk :Flog -all -path=%:h:h:h:h:h:h:h:h<CR>
 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
@@ -124,3 +137,37 @@ augroup flogmenu
 augroup END
 
 nnoremap <Leader>m :call flogmenu#open_main_menu()<CR>
+
+" Signify older commits:
+let g:target_commit = 0
+command! SignifyOlder call ChangeTargetGitCommit('older')
+command! SignifyNewer call ChangeTargetGitCommit('younger')
+
+function ChangeTargetGitCommit(older_or_younger)
+  if a:older_or_younger ==# 'older'
+    let g:target_commit += 1
+  elseif g:target_commit==#0
+    echom 'No timetravel! Cannot diff against HEAD~-1'
+    return
+  else
+    let g:target_commit -= 1
+  endif
+  let l:git_command = printf('%s%d%s', 'git diff --no-color --no-ext-diff -U0 HEAD~', g:target_commit, ' -- %f')
+  let g:signify_vcs_cmds = {
+  \ 'git':      l:git_command,
+  \ 'hg':       'hg diff --config extensions.color=! --config defaults.diff= --nodates -U0 -- %f',
+  \ 'svn':      'svn diff --diff-cmd %d -x -U0 -- %f',
+  \ 'bzr':      'bzr diff --using %d --diff-options=-U0 -- %f',
+  \ 'darcs':    'darcs diff --no-pause-for-gui --diff-command="%d -U0 %1 %2" -- %f',
+  \ 'fossil':   'fossil diff --unified -c 0 -- %f',
+  \ 'cvs':      'cvs diff -U0 -- %f',
+  \ 'rcs':      'rcsdiff -U0 %f 2>%n',
+  \ 'accurev':  'accurev diff %f -- -U0',
+  \ 'perforce': 'p4 info '. sy#util#shell_redirect('%n') . (has('win32') ? ' &&' : ' && env P4DIFF= P4COLORS=') .' p4 diff -du0 %f',
+  \ 'tfs':      'tf diff -version:W -noprompt %f',
+  \ }
+
+  let l:output_msg = printf('%s%d', 'Now diffing against HEAD~', g:target_commit)
+  echom l:output_msg
+
+endfunction
