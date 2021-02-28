@@ -61,7 +61,7 @@ let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
 
 fu! FixupCommit(commit_hash) abort
-  execute "Git commit --fixup=" . a:commit_hash
+  execute 'Git commit --fixup=' . a:commit_hash
 endfunction
 
 fu! AmendCommit(commit_hash) abort
