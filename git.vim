@@ -6,44 +6,9 @@ let g:signify_sign_change            = '~'
 let g:signify_sign_show_count = 1
 let g:signify_sign_show_text = 1
 
-nnoremap <Leader>nr :Gedit<CR>
-
-nnoremap <Leader>ns :Gstatus<CR>
-
-nnoremap <Leader>np :Git push<CR>
-nnoremap <Leader>nP :Git push --force-with-lease<CR>
-nnoremap <Leader>nj :Git fetch --all<CR>
-nnoremap <Leader>nJ :Git pull<CR>
-
-nnoremap <Leader>nz :Git blame<CR>
-
-nnoremap <Leader>no :GCheckout<CR>
-
-nnoremap <Leader>nc :Git commit<CR>
-nnoremap <Leader>ncb :call flog#run_command("Git bundle create " . input ("bundle> ") . " --branches --tags")<CR>
-
-nnoremap <Leader>n. :Git add .<CR>
-nnoremap <Leader>n, :Git add %<CR>
-
-nnoremap <Leader>nb :GBranches<CR>
-
-nnoremap <Leader>nl :Flog -all<CR>:Flogjump HEAD<CR>zz
-nnoremap <Leader>nls :Flogsplit -all<CR>:Flogjump HEAD<CR>
-nnoremap <Leader>nlv :vertical Flogsplit -all<CR>:Flogjump HEAD<CR>
-
-" History of (t)his file
-nnoremap <Leader>nt :Flog -format=%ad\ [%h]\ {%an}%d\ (%S)\ %s -all -path=%<CR>
-nnoremap <Leader>nvt :vertical Flogsplit -format=%ad\ [%h]\ {%an}%d\ (%S)\ %s -all -path=%<CR>
-
-" History of some number of dirs up from current file
-nnoremap <Leader>ntk :Flog -format=%ad\ [%h]\ {%an}%d\ (%S)\ %s -all -path=%:h<CR>
-nnoremap <Leader>ntkk :Flog -format=%ad\ [%h]\ {%an}%d\ (%S)\ %s -all -path=%:h:h<CR>
-nnoremap <Leader>ntkkk :Flog -format=%ad\ [%h]\ {%an}%d\ (%S)\ %s -all -path=%:h:h:h<CR>
-nnoremap <Leader>ntkkkk :Flog -format=%ad\ [%h]\ {%an}%d\ (%S)\ %s -all -path=%:h:h:h:h<CR>
-nnoremap <Leader>ntkkkkk :Flog -format=%ad\ [%h]\ {%an}%d\ (%S)\ %s -all -path=%:h:h:h:h:h<CR>
-nnoremap <Leader>ntkkkkkk :Flog -format=%ad\ [%h]\ {%an}%d\ (%S)\ %s -all -path=%:h:h:h:h:h:h<CR>
-nnoremap <Leader>ntkkkkkkk :Flog -format=%ad\ [%h]\ {%an}%d\ (%S)\ %s -all -path=%:h:h:h:h:h:h:h<CR>
-nnoremap <Leader>ntkkkkkkkk :Flog -format=%ad\ [%h]\ {%an}%d\ (%S)\ %s -all -path=%:h:h:h:h:h:h:h:h<CR>
+fu! OpenUnmerged()
+  execute 'args ' . system("git ls-files --unmerged | cut -f2 | sort -u | sed -r 's/ /\\\\ /g' | paste -sd ' ' -")
+endfunction
 
 fu! FixupCommit(commit_hash) abort
   execute 'Git commit --fixup=' . a:commit_hash
@@ -129,7 +94,7 @@ function ChangeTargetGitCommit(older_or_younger)
   \ 'perforce': 'p4 info '. sy#util#shell_redirect('%n') . (has('win32') ? ' &&' : ' && env P4DIFF= P4COLORS=') .' p4 diff -du0 %f',
   \ 'tfs':      'tf diff -version:W -noprompt %f',
   \ }
-
   let l:output_msg = printf('%s%d', 'Now diffing against HEAD~', g:target_commit)
   echom l:output_msg
 endfunction
+

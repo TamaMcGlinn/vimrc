@@ -26,11 +26,6 @@ nnoremap <silent> <Leader>d :noh<CR>
 
 source ~/vimrc/sessions.vim
 
-fu! OpenUnmerged()
-  execute 'args ' . system("git ls-files --unmerged | cut -f2 | sort -u | sed -r 's/ /\\\\ /g' | paste -sd ' ' -")
-endfunction
-noremap <silent> <F7> :call OpenUnmerged()<CR>
-
 fu! Make_In_File_Dir()
   execute 'sp'
   " switch to new buffer
