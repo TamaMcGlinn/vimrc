@@ -31,38 +31,21 @@ let g:deoplete#enable_at_startup = 1
 let makeprg = 'if [ -f Makefile ]; then make; else make -C ..; fi'
 set errorformat=%f:%l:%c:\ %m
 
-" Airline settings
-" let g:airline#extensions#tabline#enabled = 1
-" Show the name of each buffer at the top
-" let g:airline#extensions#tabline#fnamemod = ':t'
-
 " Startify; remove the cow that says daft things
 let g:startify_custom_header = ''
-
-set nofoldenable        " disable folding
-au WinEnter * set nofen " really disable folding
-au WinLeave * set nofen
 
 " Keep undo history across sessions
 set undofile
 set undodir=~/.vim/undo
 
-let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../../src,sfr:../../include,sfr:../include,sfr:../inc,sfr:../tests'
+set nofoldenable        " disable folding
+au WinEnter * set nofen " really disable folding
+au WinLeave * set nofen
 
-" Code autoformatting
-" augroup autoformat_settings
-"   autocmd FileType bzl AutoFormatBuffer buildifier
-"   autocmd FileType c,cpp,proto,javascript,arduino AutoFormatBuffer clang-format
-"   autocmd FileType dart AutoFormatBuffer dartfmt
-"   autocmd FileType go AutoFormatBuffer gofmt
-"   autocmd FileType gn AutoFormatBuffer gn
-"   autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
-"   autocmd FileType java AutoFormatBuffer google-java-format
-"   autocmd FileType python AutoFormatBuffer yapf
-"   " Alternative: autocmd FileType python AutoFormatBuffer autopep8
-"   autocmd FileType rust AutoFormatBuffer rustfmt
-"   autocmd FileType vue AutoFormatBuffer prettier
-" augroup END
+" See help alternate-config
+let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc'
+let g:alternateSearchPath = g:alternateSearchPath . ',sfr:../include/*'
+" let g:alternateSearchPath = g:alternateSearchPath . ',reg:|src/\([^/]*\)|include/\1||,reg:|include/\([^/]*\)|src/\1||'
 
 " Show search index
 set shortmess-=S
@@ -71,3 +54,10 @@ let g:quickui_border_style = 2
 
 " Search inside selection with Alt-/
 vnoremap <M-/> <Esc>/\%V
+
+let g:mundo_width = 40
+let g:mundo_preview_bottom = 1
+
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+let $FZF_DEFAULT_OPTS='--reverse'
+
