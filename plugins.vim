@@ -85,6 +85,9 @@ Plug 'tpope/vim-rhubarb'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'stsewd/fzf-checkout.vim'
 
+" SpaceVim menu
+Plug 'dpretet/vim-leader-mapper'
+
 " history browsing
 Plug 'junegunn/gv.vim'
 
