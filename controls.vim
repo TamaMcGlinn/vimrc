@@ -37,13 +37,6 @@ fu! Make_In_File_Dir()
   silent execute 'wincmd k'
 endfunction
 
-" Makefile
-nnoremap <Leader>ii :!make<CR>
-nnoremap <Leader>is :call Make_In_File_Dir()<CR>
-nnoremap <Leader>it :!make test<CR>
-nnoremap <Leader>ir :!make regenerate_tests<CR>
-nnoremap <Leader>ia :make<CR>:copen<CR>
-
 " Build current file
 fu! GetCompileCommand(file)
   let s:cc_db = json_decode(readfile('compile_commands.json'))
@@ -56,9 +49,6 @@ fu! Compile(file)
   silent execute 'make'
   silent execute 'copen'
 endfunction
-
-silent nnoremap <Leader>ic :call Compile(expand('%'))<CR>
-silent nnoremap <Leader>ch :!chmod +x %<CR>
 
 source ~/vimrc/terminal.vim
 source ~/vimrc/dir_to_current_line.vim

@@ -14,6 +14,3 @@ function! BazelTestHere()
     let l:current_bazel_target = BazelGetCurrentBufTarget()
     execute '!./bazel.py test ' . l:current_bazel_target
 endfunction
-
-nnoremap <leader>bb :call BazelBuildHere()<CR>
-nnoremap <leader>bt :call BazelTestHere()<CR>
