@@ -1,5 +1,5 @@
 " Custom commands start with space
-let mapleader = " "
+let mapleader = ' '
 set timeoutlen=430
 
 " Move thrice as fast
