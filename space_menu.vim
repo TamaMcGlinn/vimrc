@@ -91,5 +91,5 @@ let g:leaderMenu = {'name':  'Main menu',
 nnoremap <Space> <Nop>
 let mapleader = "\<Space>"
 
-nnoremap <silent> <leader> :LeaderMapper "<Space>"<CR>
+nnoremap <silent> <leader> :LeaderMapper<CR>
 
