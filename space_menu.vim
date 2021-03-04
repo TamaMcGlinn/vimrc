@@ -1,11 +1,16 @@
-let fzfMenu = {'name':           'FZF Menu',
-             \'f': [':Files',    'FZF file search'],
-             \'b': [':Buffers',  'FZF buffer search'],
-             \'s': [':BLines',   'FZF text search into current buffer'],
-             \'S': [':Lines',    'FZF text search across loaded buffers'],
-             \'g': [':BCommits', 'FZF git commits of the current buffer'],
-             \'G': [':Commits',  'FZF git commits of the repository'],
-             \'t': [':Tags',     'FZF tag search'],
+let fzfMenu = {'name':           'Nav Menu',
+             \'f': [':GFiles',    'git file search'],
+             \'F': [':Files',    'all file search'],
+             \'p': [':MRU',       'recent files'],
+             \'P': [':Buffers',  'open files search'],
+             \'m': [':<C-u>marks<CR>:normal! `', 'marks'],
+             \'/': [':BLines',   'text search into current buffer'],
+             \'s': [':Rg',       'text search'],
+             \'h': [':MundoToggle','file history'],
+             \'n': [':Lines',    'text search across loaded buffers'],
+             \'g': [':BCommits', 'git commits of the current buffer'],
+             \'G': [':Commits',  'git commits of the repository'],
+             \'t': [':Tags',     'tag search'],
              \}
 
 " Todo map this:
@@ -52,14 +57,34 @@ let buildMenu = {'name':         'Build/test',
 
 let fileMenu = {'name':          'File',
              \'x': [':!chmod +x %', 'Chmod +x'],
+             \'r': [':e! %', 'Reload'],
+             \'D': ["call delete(expand('%')) | bp | bdelete! #", 'Delete'],
+             \}
+
+let dirMenu = {'name':          'Directory',
+             \'q': ['call DirToCurrentLine()', 'current file'],
+             \'g': [':Gcd', 'git root'],
+             \'-': [':e %:h', 'explore file directory'],
+             \}
+
+let tabMenu = {'name':         'Tabs & Buffers',
+             \'o': [':tabnew', 'New tab'],
+             \'q': [':tabc', 'Close tab'],
+             \'w': [':bp <BAR> bd #', 'Close and go back'],
+             \',': ['call MoveToPrevTab()', 'Move buffer to previous tab'],
+             \'.': ['call MoveToNextTab()', 'Move buffer to next tab'],
+             \'h': ['', 'Shift tab left'],
+             \'l': ['', 'Shift tab right'],
              \}
 
 " Define the menu content with a Vim dictionary
-let g:leaderMenu = {'name':  '',
-             \'o': [fzfMenu,  'FZF'],
+let g:leaderMenu = {'name':  'Main menu',
+             \'o': [fzfMenu,  'Navigate'],
              \'n': [gitMenu,  'Git'],
              \'b': [buildMenu,'Build'],
              \'f': [fileMenu, 'File'],
+             \'q': [dirMenu, 'Directory'],
+             \'t': [tabMenu, 'Tabs & Buffers'],
              \}
 
 nnoremap <Space> <Nop>

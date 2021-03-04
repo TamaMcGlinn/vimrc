@@ -27,4 +27,3 @@ fu! DirToCurrentLine()
   exe 'cd '.dir
   echom 'cd '.dir
 endfunction
-nnoremap <Leader>q :call DirToCurrentLine()<CR>
