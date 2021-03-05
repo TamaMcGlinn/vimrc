@@ -63,7 +63,7 @@ let g:flog_default_arguments = { 'date' : 'short' }
 
 " Flog menu bindings
 augroup flogmenu
-  autocmd FileType floggraph nno <buffer> <Leader>n :<C-U>call flogmenu#open_main_contextmenu()<CR>
+  autocmd FileType floggraph nno <buffer> <Leader>m :<C-U>call flogmenu#open_main_contextmenu()<CR>
 augroup END
 
 " Signify older commits:
