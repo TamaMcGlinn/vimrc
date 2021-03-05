@@ -87,6 +87,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'stsewd/fzf-checkout.vim'
+Plug 'sodapopcan/vim-twiggy'
+
+" SpaceVim menu
+Plug 'dpretet/vim-leader-mapper'
 
 " history browsing
 Plug 'junegunn/gv.vim'

@@ -5,7 +5,6 @@ source ~/vimrc/first.vim
 source ~/vimrc/python.vim
 source ~/vimrc/ada.vim
 " source ~/vimrc/langserver.vim
-source ~/vimrc/menu.vim
 source ~/vimrc/coc_settings.vim
 source ~/vimrc/ale_settings.vim
 source ~/vimrc/settings.vim
@@ -13,3 +12,4 @@ source ~/vimrc/controls.vim
 source ~/vimrc/visuals.vim
 source ~/vimrc/bible.vim
 source ~/vimrc/git.vim
+source ~/vimrc/space_menu.vim
