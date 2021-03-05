@@ -72,11 +72,14 @@ Plug 'dbeniamine/cheat.sh-vim'
 "Plug 'fntlnz/atags.vim'
 "Plug 'steffanc/cscopemaps.vim'
 "Plug 'tpope/vim-abolish'
-"Plug 'godlygeek/tabular'
 "Plug 'neomake/neomake'
 "Plug 'chrisbra/Recover.vim'
 "Plug 'nelstrom/vim-markdown-folding'
 "Plug 'tpope/vim-ragtag'
+
+" Excel
+"Plug 'godlygeek/tabular'
+Plug 'sk1418/HowMuch'
 
 " git
 Plug 'mhinz/vim-signify'
