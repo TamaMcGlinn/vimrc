@@ -92,6 +92,7 @@ Plug 'sodapopcan/vim-twiggy'
 " Space menu
 Plug 'dpretet/vim-leader-mapper'
 
+Plug 'skywind3000/vim-quickui'
 " Plug 'rbong/vim-flog'
 Plug '~/code/vimplugins/vim-flog'
 " Plug 'TamaMcGlinn/vim-flogmenu'
