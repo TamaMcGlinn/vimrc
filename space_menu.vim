@@ -55,8 +55,3 @@ let g:leaderMenu = {'name':  'Main menu',
              \'t': [tabMenu, 'Tabs & Buffers'],
              \}
 
-nnoremap <Space> <Nop>
-let mapleader = "\<Space>"
-
-nnoremap <silent> <leader> :LeaderMapper<CR>
-
