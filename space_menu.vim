@@ -26,6 +26,7 @@ let buildMenu = {'name':         'Build/test',
 
 let fileMenu = {'name':          'File',
              \'x': [':!chmod +x %', 'Chmod +x'],
+             \'s': [':source %', 'Source'],
              \'r': [':e! %', 'Reload'],
              \'D': ["call delete(expand('%')) | bp | bdelete! #", 'Delete'],
              \}
