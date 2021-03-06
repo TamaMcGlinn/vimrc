@@ -89,7 +89,7 @@ Plug 'rhysd/conflict-marker.vim'
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'sodapopcan/vim-twiggy'
 
-" SpaceVim menu
+" Space menu
 Plug 'dpretet/vim-leader-mapper'
 
 " history browsing
