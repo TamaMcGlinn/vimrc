@@ -51,7 +51,6 @@ let g:leaderMenu = {'name':  'Main menu',
              \'n': [g:flogmenu_gitmenu,  'Git'],
              \'b': [buildMenu,'Build'],
              \'f': [fileMenu, 'File'],
-             \'c': [terminalMenu, 'CMD'],
              \'q': [dirMenu, 'Directory'],
              \'t': [tabMenu, 'Tabs & Buffers'],
              \}
