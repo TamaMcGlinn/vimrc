@@ -49,10 +49,6 @@ augroup flog
   autocmd FileType floggraph nno <buffer> <silent> l :<C-U>call flog#jump_to_child()<CR>
 
   autocmd FileType floggraph nno <buffer> <silent> <Leader>nc :Flogjump HEAD<CR>
-
-  " Overload the same keybinding as in normal mode on any buffer; 
-  " it does the same but also updates the vim-flog graph afterwards
-  autocmd FileType floggraph nno <buffer> <Leader>nj :<C-U>call flog#run_command('Git fetch --all', 0, 1)<CR>
 augroup END
 
 let g:flog_default_arguments = { 'date' : 'short' }
