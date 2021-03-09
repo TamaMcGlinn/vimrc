@@ -6,6 +6,12 @@ let g:signify_sign_change            = '~'
 let g:signify_sign_show_count = 1
 let g:signify_sign_show_text = 1
 
+augroup GitBuffers
+  " Ensure that when we leave a git buffer by usual (:wq) which leave the buffer there
+  " the buffer is still closed since editing it later wouldn't make sense
+  autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
+augroup END
+
 fu! FixupCommit(commit_hash) abort
   execute 'Git commit --fixup=' . a:commit_hash
 endfunction

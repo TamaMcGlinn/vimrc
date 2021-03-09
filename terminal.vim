@@ -17,7 +17,7 @@ endif
 
 augroup TerminalMappings
   autocmd!
-  if has("win32")
+  if has('win32')
     autocmd TermOpen * nnoremap <buffer> <C-E> aexit<CR>exit<CR>
     autocmd TermOpen * tnoremap <buffer> <C-E> exit<CR>exit<CR>
   else
@@ -25,7 +25,3 @@ augroup TerminalMappings
     autocmd TermOpen * tnoremap <buffer> <C-E> exit<CR>
   endif
 augroup END
-
-" Ensure that when we leave a git buffer by usual (:wq) which leave the buffer there
-" the buffer is still closed since editing it later wouldn't make sense
-autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
