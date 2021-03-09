@@ -13,9 +13,6 @@ let fzfMenu = {'name':           'Nav Menu',
              \'t': [':Tags',     'tag search'],
              \}
 
-" Todo map this:
-" noremap <silent> <F7> :call OpenUnmerged()<CR>
-
 let buildMenu = {'name':         'Build/test',
              \'m': [':!make', 'Make'],
              \'k': ['call Make_In_File_Dir()', 'Make file dir'],
@@ -30,6 +27,23 @@ let fileMenu = {'name':          'File',
              \'r': [':e! %', 'Reload'],
              \'D': ["call delete(expand('%')) | bp | bdelete! #", 'Delete'],
              \}
+
+let refactorMenu = {'name':          'Refactor',
+      \'n': ['call CocActionAsync("rename")', 'Symbol rename'],
+      \'f': ['call CocActionAsync("formatSelected")', 'Format selected'],
+      \'a': ['set operatorfunc=<SID>CodeActionFromSelected<CR>g@', 'codeAction to selected region'],
+      \'c': ['call CocActionAsync("codeAction", "")', 'codeAction to buffer'],
+      \'e': ['call CocActionAsync("doQuickfix")', 'Autofix current line'],
+      \'d': [':CocList diagnostics', 'Show all diagnostics'],
+      \'E': [':CocList extensions', 'Manage extensions'],
+      \'C': [':CocList commands', 'Show commands'],
+      \'b': [':CocList outline', 'Find symbol in buffer'],
+      \'s': [':CocList -I symbols', 'Find symbol everywhere'],
+      \'j': [':CocNext<CR>', 'Default action for next item'],
+      \'k': [':CocPrev<CR>', 'Default action for previous item'],
+      \'p': [':CocListResume<CR>', 'Resume latest coc list'],
+      \'m': [':CocFix<CR>', 'Coc fix menu'],
+      \}
 
 let dirMenu = {'name':          'Directory',
              \'q': ['call DirToCurrentLine()', 'current file'],
@@ -51,6 +65,7 @@ let g:leaderMenu = {'name':  'Main menu',
              \'o': [fzfMenu,  'Navigate'],
              \'n': [g:flogmenu_gitmenu,  'Git'],
              \'b': [buildMenu,'Build'],
+             \'r': [refactorMenu,'Refactor'],
              \'f': [fileMenu, 'File'],
              \'q': [dirMenu, 'Directory'],
              \'t': [tabMenu, 'Tabs & Buffers'],
