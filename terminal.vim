@@ -1,6 +1,7 @@
 " Terminal settings
 " cc for commandline, cs for split first, ce to exit
 :tnoremap <ESC> <C-\><C-n>
+
 if has("win32")
   " Note, you need to empty the file Git\etc\motd
   " to get rid of the 'Welcome to Git' message
@@ -25,15 +26,6 @@ augroup TerminalMappings
   endif
 augroup END
 
-" Make the split bigger
-nnoremap <Leader>b 8<C-W>+<CR>
-nnoremap <Leader>B 50<C-W>+<CR>
-" Make the split wider
-nnoremap <Leader>w 8<C-W>><CR>
-nnoremap <Leader>W 56<C-W>><CR>
-
-" Quit and return the current window to the previous buffer we were on
-nnoremap <Leader>qp :w <bar> bp <bar> bd#<CR>
 " Ensure that when we leave a git buffer by usual (:wq) which leave the buffer there
 " the buffer is still closed since editing it later wouldn't make sense
 autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
