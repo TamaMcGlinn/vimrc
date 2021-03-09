@@ -28,7 +28,6 @@ source ~/vimrc/file_hotkeys.vim
 source ~/vimrc/vimspector_mappings.vim
 source ~/vimrc/open_file_in_top_buffer.vim
 source ~/vimrc/currentfilename.vim
-source ~/vimrc/sudowrite.vim
 
 " Tab movement
 nnoremap <Leader>h :tabp<CR> " Previous tab
