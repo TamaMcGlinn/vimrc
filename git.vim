@@ -6,10 +6,6 @@ let g:signify_sign_change            = '~'
 let g:signify_sign_show_count = 1
 let g:signify_sign_show_text = 1
 
-fu! OpenUnmerged()
-  execute 'args ' . system("git ls-files --unmerged | cut -f2 | sort -u | sed -r 's/ /\\\\ /g' | paste -sd ' ' -")
-endfunction
-
 fu! FixupCommit(commit_hash) abort
   execute 'Git commit --fixup=' . a:commit_hash
 endfunction
