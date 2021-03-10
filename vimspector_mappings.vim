@@ -1,28 +1,24 @@
-nnoremap <Leader>gs :call vimspector#Launch()<CR>
-nmap <Leader>gq <Plug>VimspectorStop
-nnoremap <Leader>gQ :call vimspector#Reset()<CR>
+let debugMenu = {'name':           'Debug Menu',
+             \'s': ['call vimspector#Launch()', 'Start'],
+             \'q': ['execute \<Plug>VimspectorStop', 'Quit'],
+             \'Q': ['call vimspector#Reset()', 'Reset'],
+             \'l': ['call vimspector#StepInto()', 'Step Into'],
+             \'j': ['call vimspector#StepOver()', 'Step Over'],
+             \'k': ['call vimspector#StepOut()', 'Step Out'],
+             \' ': ['call vimspector#Continue()', 'Continue'],
+             \'h': ['call vimspector#RunToCursor()', 'Run To Cursor'],
+             \'g': ['call vimspector#ToggleBreakpoint()', 'Toggle Breakpoint'],
+             \'c': ['call vimspector#ToggleConditionalBreakpoint()', 'Toggle Conditional Breakpoint'],
+             \'f': ['call vimspector#AddFunctionBreakpoint()', 'Function Breakpoint'],
+             \'p': ['call vimspector#Pause()', 'Pause'],
+             \'r': ['call vimspector#Restart()', 'Restart'],
+             \'d': ['call vimspector#ClearBreakpoints()', 'ClearBreakpoints'],
+             \'8': ['call vimspector#Evaluate(expand("<cWORD>")', 'Evaluate word'],
+             \'e': ['call vimspector#Evaluate(input("Eval> ")', 'Evaluate'],
+             \'o': ['VimspectorShowOutput', 'Show output'],
+             \}
 
-nmap <Leader>gl <Plug>VimspectorStepInto
-nmap <Leader>gj <Plug>VimspectorStepOver
-nmap <Leader>gk <Plug>VimspectorStepOut
-
-nmap <Leader>g<space> <Plug>VimspectorContinue
-nmap <Leader>gh <Plug>VimspectorRunToCursor
-
-nmap <Leader>gg <Plug>VimspectorToggleBreakpoint
-nmap <Leader>gc <Plug>VimspectorToggleConditionalBreakpoint
-nmap <Leader>gf <Plug>VimspectorAddFunctionBreakpoint
-
-nnoremap <Leader>gd :call vimspector#ClearBreakpoints()<CR>
-
-nnoremap <Leader>gp <Plug>VimspectorPause
-nnoremap <Leader>gr <Plug>VimspectorRestart
-
-nnoremap <Leader>g8 :call vimspector#Evaluate(expand('<cWORD>'))<CR>
-nnoremap <Leader>ge :call vimspector#Evaluate(input("Eval> "))<CR>
 vnoremap <Leader>ge :call vimspector#Evaluate(GetVisualSelection())<CR>
-
-nnoremap <Leader>go :VimspectorShowOutput 
 
 " Show breakpoints in the UI
 augroup ZVimspectorCustomMappings
