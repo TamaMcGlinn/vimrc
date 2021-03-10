@@ -11,7 +11,7 @@ source ~/vimrc/move_to_tab.vim
 source ~/vimrc/google_test.vim
 
 " open directory of current file
-nnoremap - :e %:h<CR>
+nnoremap - :Dirvish %:h<CR>
 
 " maximize 
 nnoremap \ :MaximizerToggle<CR>
@@ -32,3 +32,10 @@ source ~/vimrc/currentfilename.vim
 " Tab movement
 nnoremap <Leader>h :tabp<CR> " Previous tab
 nnoremap <Leader>l :tabn<CR> " Next tab
+
+" open space menu
+nnoremap <Space> <Nop>
+let mapleader = "\<Space>"
+
+nnoremap <silent> <leader> :LeaderMapper<CR>
+

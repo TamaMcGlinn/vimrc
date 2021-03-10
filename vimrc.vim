@@ -14,8 +14,3 @@ source ~/vimrc/bible.vim
 source ~/vimrc/git.vim
 " moved to after/
 " source ~/vimrc/space_menu.vim
-nnoremap <Space> <Nop>
-let mapleader = "\<Space>"
-
-nnoremap <silent> <leader> :LeaderMapper<CR>
-

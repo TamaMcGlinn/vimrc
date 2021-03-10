@@ -5,7 +5,10 @@ Plug 'TamaMcGlinn/Ada-Bundle'
 "Plug 'vim-scripts/taglist.vim'
 Plug 'vim-scripts/mru.vim'
 Plug 'vim-scripts/YankRing.vim'
-Plug 'nacitar/a.vim'
+
+" Plug 'nacitar/a.vim'
+Plug 'tpope/vim-projectionist'
+
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
@@ -105,4 +108,8 @@ Plug 'chrisbra/SudoEdit.vim'
 Plug 'roggan87/vim-bible'
 
 Plug 'TamaMcGlinn/quickfixdd'
+
+Plug 'justinmk/vim-dirvish'
+Plug 'kristijanhusak/vim-dirvish-git'
+Plug 'bounceme/remote-viewer'
 
