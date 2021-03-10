@@ -59,3 +59,24 @@ let g:flog_default_arguments = { 'date' : 'short' }
 augroup flogmenu
   autocmd FileType floggraph nno <buffer> <Leader>m :<C-U>call flogmenu#open_main_contextmenu()<CR>
 augroup END
+
+function FlogBuildLog() abort
+    let l:state = flog#get_state()
+
+    if l:state.no_graph
+        return flog#build_log_command()
+    endif
+
+    let l:command = 'export GIT_DIR='
+    let l:command .= shellescape(flog#get_fugitive_git_dir())
+    let l:command .= '; '
+
+    let l:command .= 'forest --style=10'
+    let l:command .= substitute(flog#build_log_args(), ' --graph', '', '')
+    let l:command .= ' -- '
+    let l:command .= flog#build_log_paths()
+
+    return l:command
+endfunction
+
+let g:flog_build_log_command_fn = 'FlogBuildLog'
