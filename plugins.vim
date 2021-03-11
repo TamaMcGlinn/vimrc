@@ -83,6 +83,7 @@ Plug 'dbeniamine/cheat.sh-vim'
 " Excel
 "Plug 'godlygeek/tabular'
 Plug 'sk1418/HowMuch'
+Plug 'junegunn/vim-easy-align' " vip :EasyAlign ,
 
 " git
 Plug 'mhinz/vim-signify'
