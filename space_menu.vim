@@ -45,9 +45,11 @@ let refactorMenu = {'name':          'Refactor',
       \'m': [':CocFix<CR>',                                        'Coc fix menu'],
       \}
 
-let dirMenu = {'name':          'Directory',
-             \'q': ['call DirToCurrentLine()', 'current file'],
-             \'g': [':Gcd',                    'git root'],
+let dirMenu = {'name':          'Dir / Quickfix',
+             \'q': ['call DirToCurrentLine()',    'current file'],
+             \'g': [':Gcd',                       'git root'],
+             \'o': [':copen',                     'Quickfix open'],
+             \'c': [':cclose',                    'Quickfix close'],
              \}
 
 let tabMenu = {'name':         'Tabs & Buffers',
@@ -67,7 +69,7 @@ let g:leaderMenu = {'name':  'Main menu',
              \'b': [buildMenu,            'Build'],
              \'r': [refactorMenu,         'Refactor'],
              \'f': [fileMenu,             'File'],
-             \'q': [dirMenu,              'Directory'],
+             \'q': [dirMenu,              'Dir / Quickfix'],
              \'t': [tabMenu,              'Tabs & Buffers'],
              \'g': [debugMenu,            'Debug'],
              \}
