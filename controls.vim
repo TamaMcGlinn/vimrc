@@ -16,8 +16,8 @@ nnoremap - :Dirvish %:h<CR>
 " maximize 
 nnoremap \ :MaximizerToggle<CR>
 
-" Remove search highlight until next search
-nnoremap <silent> <Leader>d :noh<CR>
+" escape clears search
+nno <esc><esc> :nohlsearch<cr>
 
 source ~/vimrc/sessions.vim
 source ~/vimrc/build.vim
