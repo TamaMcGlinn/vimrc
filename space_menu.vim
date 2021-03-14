@@ -65,12 +65,12 @@ let tabMenu = {'name':         'Tabs & Buffers',
 " Define the menu content with a Vim dictionary
 let g:leaderMenu = {'name':  'Main menu',
              \'o': [fzfMenu,              'Navigate'],
-             \'n': [g:flogmenu_gitmenu,   'Git'],
+             \'g': [g:flogmenu_gitmenu,   'Git'],
              \'b': [buildMenu,            'Build'],
              \'r': [refactorMenu,         'Refactor'],
              \'f': [fileMenu,             'File'],
              \'q': [dirMenu,              'Dir / Quickfix'],
              \'t': [tabMenu,              'Tabs & Buffers'],
-             \'g': [debugMenu,            'Debug'],
+             \'d': [debugMenu,            'Debug'],
              \}
 
