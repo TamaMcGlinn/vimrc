@@ -37,9 +37,11 @@ Plug 'junegunn/fzf.vim'
 " Code completion
 Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
 Plug 'kevinoid/vim-jsonc'
+Plug 'chazy/cscope_maps'
+Plug 'ktchen14/cscope-auto'
 
 " Linting
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 " Plug 'vim-scripts/cpp_cppcheck.vim' " Not necessary; ale includes cppcheck
 
 " Snippets http://vimcasts.org/episodes/meet-ultisnips/

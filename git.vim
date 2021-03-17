@@ -80,3 +80,6 @@ function FlogBuildLog() abort
 endfunction
 
 let g:flog_build_log_command_fn = 'FlogBuildLog'
+
+let g:fugitive_conflict_x = 1
+

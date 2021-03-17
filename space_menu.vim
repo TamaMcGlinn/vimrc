@@ -29,6 +29,7 @@ let fileMenu = {'name':          'File',
              \}
 
 let refactorMenu = {'name':          'Refactor',
+      \'R': ['CocRestart',                                         'Coc Restart'],
       \'n': ['call CocActionAsync("rename")',                      'Symbol rename'],
       \'f': ['call CocActionAsync("formatSelected")',              'Format selected'],
       \'a': ['set operatorfunc=<SID>CodeActionFromSelected<CR>g@', 'codeAction to selected region'],

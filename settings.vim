@@ -7,6 +7,9 @@ source ~/vimrc/automkdir.vim
 " Auto read file from disk if it was changed somewhere outside editor 
 set autoread
 
+" New splits on the right
+set splitright
+
 " Set default dictionary for spellchecker as English 
 set spelllang=en 
 
