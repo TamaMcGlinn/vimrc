@@ -19,7 +19,6 @@ nnoremap \ :MaximizerToggle<CR>
 " escape clears search
 nno <esc><esc> :nohlsearch<cr>
 
-source ~/vimrc/sessions.vim
 source ~/vimrc/build.vim
 source ~/vimrc/terminal.vim
 source ~/vimrc/dir_to_current_line.vim
