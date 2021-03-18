@@ -38,7 +38,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
 Plug 'kevinoid/vim-jsonc'
 Plug 'ktchen14/cscope-auto'
-Plug 'joe-skb7/cscope-maps'
 
 " Linting
 " Plug 'dense-analysis/ale'
@@ -50,6 +49,7 @@ Plug 'honza/vim-snippets'
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+Plug 'AndrewRadev/switch.vim'
 
 Plug 'morhetz/gruvbox'
 Plug 'vim-scripts/visSum.vim'
