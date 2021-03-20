@@ -4,6 +4,6 @@ let g:ale_fixers = {
 \   'cpp': ['clangtidy']
 \}
 
-augroup cpp_autoformat
-  autocmd FileType c,cpp AutoFormatBuffer
+augroup autoformat
+  autocmd FileType c,cpp,bzl AutoFormatBuffer
 augroup END
