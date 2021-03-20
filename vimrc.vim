@@ -12,7 +12,9 @@ source ~/vimrc/controls.vim
 source ~/vimrc/visuals.vim
 source ~/vimrc/bible.vim
 source ~/vimrc/git.vim
-" moved to after/
-" source ~/vimrc/space_menu.vim
 source ~/vimrc/switch_maps.vim
 source ~/vimrc/cscope_maps.vim
+source ~/vimrc/minimap.vim
+
+" moved to after/
+" source ~/vimrc/space_menu.vim

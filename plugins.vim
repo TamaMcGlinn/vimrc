@@ -24,6 +24,9 @@ Plug 'alepez/vim-gtest'
 " Undo tree navigation
 Plug 'simnalamburt/vim-mundo'
 
+" Sublime / VS Code minimap
+Plug 'wfxr/minimap.vim'
+
 " Fuzzy file search
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -38,6 +41,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
 Plug 'kevinoid/vim-jsonc'
 Plug 'ktchen14/cscope-auto'
+" Plug 'Chiel92/vim-autoformat'
+Plug '~/code/vimplugins/vim-autoformat'
 
 " Linting
 " Plug 'dense-analysis/ale'

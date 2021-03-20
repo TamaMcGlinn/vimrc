@@ -73,5 +73,6 @@ let g:leaderMenu = {'name':  'Main menu',
              \'q': [dirMenu,              'Dir / Quickfix'],
              \'t': [tabMenu,              'Tabs & Buffers'],
              \'d': [debugMenu,            'Debug'],
+             \'m': [miniMenu,             'Minimap'],
              \}
 
