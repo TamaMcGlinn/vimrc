@@ -6,7 +6,7 @@ Plug 'TamaMcGlinn/Ada-Bundle'
 Plug 'vim-scripts/mru.vim'
 Plug 'vim-scripts/YankRing.vim'
 
-" Plug 'nacitar/a.vim'
+Plug 'nacitar/a.vim'
 Plug 'tpope/vim-projectionist'
 
 Plug 'easymotion/vim-easymotion'
