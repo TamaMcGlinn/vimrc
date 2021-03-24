@@ -24,3 +24,13 @@ fu! Compile(file) abort
 endfunction
 
 source ~/vimrc/bazel.vim
+
+let buildMenu = {'name':         'Build/test',
+             \'m': [':!make',                    'Make'],
+             \'a': [':!gprbuild -p',             'Gprbuild'],
+             \'k': ['call Make_In_File_Dir()',   'Make file dir'],
+             \'b': ['call BazelBuildHere()',     'Bazel build file'],
+             \'t': ['call BazelTestHere()',      'Bazel test here'],
+             \'i': ["call Compile(expand('%'))", 'Compile file']
+             \}
+

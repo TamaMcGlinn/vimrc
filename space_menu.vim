@@ -13,14 +13,6 @@ let fzfMenu = {'name':           'Nav Menu',
              \'t': [':Tags',                 'tag search'],
              \}
 
-let buildMenu = {'name':         'Build/test',
-             \'m': [':!make',                    'Make'],
-             \'k': ['call Make_In_File_Dir()',   'Make file dir'],
-             \'b': ['call BazelBuildHere()',     'Bazel build file'],
-             \'t': ['call BazelTestHere()',      'Bazel test here'],
-             \'i': ["call Compile(expand('%'))", 'Compile file']
-             \}
-
 let fileMenu = {'name':          'File',
              \'x': [':!chmod +x %',                               'Chmod +x'],
              \'s': [':source %',                                  'Source'],
