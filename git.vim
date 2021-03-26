@@ -83,3 +83,89 @@ endfunction
 let g:flog_build_log_command_fn = 'FlogBuildLog'
 
 let g:fugitive_conflict_x = 1
+
+
+" Git log
+nnoremap <leader>gll :call flogmenu#open_git_log()<CR>
+nnoremap <leader>glc :Flog<CR>
+nnoremap <leader>gls :Flogsplit -all<CR>
+nnoremap <leader>glv :vertical Flogsplit -all<CR>
+nnoremap <leader>glt :Flog -format=%ad\ [%h]\ {%an}%d\ (%S)\ %s -all -path=%<CR>
+nnoremap <leader>glk :vertical Flogsplit -format=%ad\ [%h]\ {%an}%d\ (%S)\ %s -all -path=%<CR>
+nnoremap <leader>gl1 :Flog -format=%ad\ [%h]\ {%an}%d\ (%S)\ %s -all -path=%:h<CR>
+nnoremap <leader>gl2 :Flog -format=%ad\ [%h]\ {%an}%d\ (%S)\ %s -all -path=%:h:h<CR>
+nnoremap <leader>gl3 :Flog -format=%ad\ [%h]\ {%an}%d\ (%S)\ %s -all -path=%:h:h:h<CR>
+nnoremap <leader>gl4 :Flog -format=%ad\ [%h]\ {%an}%d\ (%S)\ %s -all -path=%:h:h:h:h<CR>
+nnoremap <leader>gl5 :Flog -format=%ad\ [%h]\ {%an}%d\ (%S)\ %s -all -path=%:h:h:h:h:h<CR>
+nnoremap <leader>gl6 :Flog -format=%ad\ [%h]\ {%an}%d\ (%S)\ %s -all -path=%:h:h:h:h:h:h<CR>
+
+let g:git_log_menu = {'name': '+Log',
+ \'l': 'Show git log',
+ \'c': 'Current branch',
+ \'s': 'Split',
+ \'v': 'Vertical split',
+ \'t': 'File history',
+ \'k': 'Vsplit file history',
+ \'1-6': 'File ..* history',
+ \'1': 'which_key_ignore',
+ \'2': 'which_key_ignore',
+ \'3': 'which_key_ignore',
+ \'4': 'which_key_ignore',
+ \'5': 'which_key_ignore',
+ \'6': 'which_key_ignore',
+ \}
+
+" TODO make these really work
+" let g:flogmenu_stashmenu = {'name': 'Git stash menu',
+"               \'h': [':Git -p stash show -p stash', 'Show'],
+"               \'l': [':Git -p stash list',          'List'],
+"               \'a': [':Git stash apply stash@{',    'Apply'],
+"               \'p': [':Git stash pop',              'Pop'],
+"               \'s': [':Git stash push<space>',      'Stash'],
+"               \}
+
+" Git
+nnoremap <leader>ga :call flogmenu#open_all_windows()<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gr :Gedit<CR>
+nnoremap <leader>gR :Gread<CR>
+nnoremap <leader>gj :Git fetch --all<CR>
+nnoremap <leader>gJ :Git pull<CR>
+nnoremap <leader>gk :Git push<CR>
+nnoremap <leader>gK :Git push --force-with-lease<CR>
+nnoremap <leader>gn :Gvdiffsplit!<CR>
+nnoremap <leader>gz :Git blame<CR>
+nnoremap <leader>gb :Twiggy<CR>
+nnoremap <leader>gB :GBranches<CR>
+nnoremap <leader>gt :GTags<CR>
+nnoremap <leader>gc :Git commit<CR>
+nnoremap <leader>g. :Git add .<CR>
+nnoremap <leader>gg :Git add %<CR>
+nnoremap <leader>gu :call flogmenu#open_unmerged()<CR>
+nnoremap <leader>gd :Git add %:h<CR>
+nnoremap <leader>g/ :GitGrep<CR>
+
+let g:which_key_map['g'] = {'name': 'Git Menu',
+             \'a': 'All windows',
+             \'s': 'Status',
+             \'h': 'Stash',
+             \'r': 'Toggle index / working file version',
+             \'R': 'Reset to index',
+             \'j': 'Fetch',
+             \'J': 'Pull',
+             \'k': 'Push',
+             \'K': 'Push force (lease)',
+             \'n': 'Diff file',
+             \'z': 'Blame file',
+             \'b': 'Branches',
+             \'B': 'Branch search',
+             \'t': 'Tags',
+             \'c': 'Commit',
+             \'.': 'Add CWD',
+             \'g': 'Add file',
+             \'u': 'Open unmerged files',
+             \'d': 'Add file dir',
+             \'l': g:git_log_menu,
+             \'/': 'Search',
+             \}
+

@@ -9,6 +9,7 @@ nnoremap <silent> <C-E> 3<C-E>
 source ~/vimrc/cntrl_move.vim
 source ~/vimrc/move_to_tab.vim
 source ~/vimrc/google_test.vim
+source ~/vimrc/tab_bindings.vim
 
 " open directory of current file
 nnoremap - :Dirvish %:h<CR>
