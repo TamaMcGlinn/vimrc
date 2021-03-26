@@ -28,8 +28,11 @@ source ~/vimrc/open_file_in_top_buffer.vim
 source ~/vimrc/currentfilename.vim
 
 " Tab movement
-nnoremap <Leader>h :tabp<CR> " Previous tab
-nnoremap <Leader>l :tabn<CR> " Next tab
+nnoremap <Leader>h :tabp<CR>
+nnoremap <Leader>l :tabn<CR>
+
+let g:which_key_map['h'] = 'Previous tab'
+let g:which_key_map['l'] = 'Next tab'
 
 " sneak
 let g:sneak#label = 1

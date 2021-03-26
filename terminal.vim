@@ -1,6 +1,6 @@
 " Terminal settings
 " cc for commandline, cs for split first, ce to exit
-:tnoremap <ESC><ESC> <C-\><C-n>
+:tnoremap <ESC> <C-\><C-n>
 
 if has("win32")
   " Note, you need to empty the file Git\etc\motd
