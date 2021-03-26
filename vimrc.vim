@@ -3,7 +3,14 @@ source ~/vimrc/plug_framework.vim " includes plugins.vim
 
 source ~/vimrc/first.vim
 source ~/vimrc/python.vim
-source ~/vimrc/ada.vim
+
+source ~/vimrc/space_menu.vim
+source ~/vimrc/navmenu.vim
+source ~/vimrc/filemenu.vim
+source ~/vimrc/cocmenu.vim
+source ~/vimrc/dirmenu.vim
+
+" source ~/vimrc/ada.vim
 " source ~/vimrc/langserver.vim
 source ~/vimrc/coc_settings.vim
 source ~/vimrc/ale_settings.vim
@@ -15,6 +22,3 @@ source ~/vimrc/git.vim
 source ~/vimrc/switch_maps.vim
 source ~/vimrc/cscope_maps.vim
 source ~/vimrc/minimap.vim
-
-" moved to after/
-" source ~/vimrc/space_menu.vim

@@ -6,6 +6,9 @@
 " 2) this does not include the column, 
 " 3) you cannot reuse the top window.
 
+" TODO strip common parts of current path so that when I am somewhere deeper
+" in my project, I can still gf to a file path specified from the root of that
+" project
 fu! OpenfileInTopBuffer(s)
   let selection=a:s
   if selection[0]=='"'
