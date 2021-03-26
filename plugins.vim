@@ -101,7 +101,7 @@ Plug 'stsewd/fzf-checkout.vim'
 Plug 'sodapopcan/vim-twiggy'
 
 " Space menu
-Plug 'dpretet/vim-leader-mapper'
+Plug 'liuchengxu/vim-which-key'
 
 Plug 'skywind3000/vim-quickui'
 " Plug 'rbong/vim-flog'

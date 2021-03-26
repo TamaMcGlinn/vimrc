@@ -32,9 +32,3 @@ source ~/vimrc/currentfilename.vim
 nnoremap <Leader>h :tabp<CR> " Previous tab
 nnoremap <Leader>l :tabn<CR> " Next tab
 
-" open space menu
-nnoremap <Space> <Nop>
-let mapleader = "\<Space>"
-
-nnoremap <silent> <leader> :LeaderMapper<CR>
-
