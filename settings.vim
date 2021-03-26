@@ -1,9 +1,4 @@
 
-source ~/vimrc/tabsettings.vim
-source ~/vimrc/remotesettings.vim
-source ~/vimrc/search_settings.vim
-source ~/vimrc/automkdir.vim
-
 " Auto read file from disk if it was changed somewhere outside editor 
 set autoread
 

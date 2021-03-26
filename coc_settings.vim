@@ -132,4 +132,4 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 let g:airline#extensions#ale#enabled = 1
 
-let g:node_client_debug = 1
+let g:node_client_debug = 0

@@ -9,7 +9,8 @@ Plug 'vim-scripts/YankRing.vim'
 Plug 'nacitar/a.vim'
 Plug 'tpope/vim-projectionist'
 
-Plug 'easymotion/vim-easymotion'
+Plug 'justinmk/vim-sneak'
+
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'

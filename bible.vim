@@ -14,3 +14,5 @@ nnoremap <leader>ks y :call Bible('', 'DutSVV')<CR>
 vnoremap <leader>kk y :call Bible(@*, 'KJV')<CR>
 vnoremap <leader>ks y :call Bible(@*, 'DutSVV')<CR>
 
+let g:which_key_map['k'] = {'name': '+Bible'}
+

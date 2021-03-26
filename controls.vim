@@ -7,9 +7,7 @@ nnoremap <silent> <C-Y> 3<C-Y>
 nnoremap <silent> <C-E> 3<C-E>
 
 source ~/vimrc/cntrl_move.vim
-source ~/vimrc/move_to_tab.vim
 source ~/vimrc/google_test.vim
-source ~/vimrc/tab_bindings.vim
 
 " open directory of current file
 nnoremap - :Dirvish %:h<CR>
@@ -32,4 +30,7 @@ source ~/vimrc/currentfilename.vim
 " Tab movement
 nnoremap <Leader>h :tabp<CR> " Previous tab
 nnoremap <Leader>l :tabn<CR> " Next tab
+
+" sneak
+let g:sneak#label = 1
 
