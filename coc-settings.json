@@ -1,7 +1,59 @@
-"languageserver": {
-  "Ada": {
-    "command": "C:\ada_language_server\ada_language_server.exe",
-    "rootPatterns": ["*.gpr"],
-    "filetypes": ["ada"]
+
+  {
+  "diagnostic.displayByAle": true,
+  "languageserver": {
+    "ada_language_server": {
+      "command": "/usr/local/ada_language_server/ada_language_server",
+      "rootPatterns": ["*.gpr"],
+      "args": [],
+      "filetypes": ["ada"],
+      "initializationOptions": {
+        "ada.projectFile": "alire_env.gpr"
+      }
+    },
+    "dls": {
+      "command": "yarn run diagnostic-languageserver",
+      "args": ["--stdio"],
+      "filetypes": [ "sh" ],
+      "initializationOptions": {
+        "linters": {
+          "shellcheck": {
+            "command": "shellcheck",
+            "debounce": 100,
+            "args": [ "--format=gcc", "-"],
+            "offsetLine": 0,
+            "offsetColumn": 0,
+            "sourceName": "shellcheck",
+            "formatLines": 1,
+            "formatPattern": [
+              "^[^:]+:(\\d+):(\\d+):\\s+([^:]+):\\s+(.*)$",
+              {
+                "line": 1,
+                "column": 2,
+                "message": 4,
+                "security": 3
+              }
+            ],
+            "securities": {
+              "error": "error",
+              "warning": "warning",
+              "note": "info"
+            }
+          }
+        },
+        "formatters": {
+          //"dartfmt": {
+            //"command": "dartfmt",
+            //"args": [ "--fix" ]
+          //}
+        },
+        "filetypes": {
+          "sh": "shellcheck"
+        },
+        "formatFiletypes": {
+          // "dart": "dartfmt"
+        }
+      }
+    }
   }
 }
