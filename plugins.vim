@@ -6,7 +6,7 @@ Plug 'TamaMcGlinn/Ada-Bundle'
 Plug 'vim-scripts/mru.vim'
 Plug 'vim-scripts/YankRing.vim'
 
-" Plug 'nacitar/a.vim'
+Plug 'nacitar/a.vim'
 Plug 'tpope/vim-projectionist'
 
 Plug 'easymotion/vim-easymotion'
@@ -102,7 +102,7 @@ Plug 'stsewd/fzf-checkout.vim'
 Plug 'sodapopcan/vim-twiggy'
 
 " Space menu
-Plug 'dpretet/vim-leader-mapper'
+Plug 'liuchengxu/vim-which-key'
 
 Plug 'skywind3000/vim-quickui'
 " Plug 'rbong/vim-flog'
