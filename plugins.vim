@@ -10,6 +10,7 @@ Plug 'nacitar/a.vim'
 Plug 'tpope/vim-projectionist'
 
 Plug 'justinmk/vim-sneak'
+Plug 'easymotion/vim-easymotion'
 
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
