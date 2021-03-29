@@ -73,7 +73,8 @@ Plug 'google/vim-maktaba'
 Plug 'bazelbuild/vim-bazel'
 
 " Code formatting
-Plug 'google/vim-codefmt'
+" Plug 'google/vim-codefmt'
+Plug '~/code/vimplugins/vim-codefmt'
 " Plug 'google/vim-glaive'
 
 Plug 'farmergreg/vim-lastplace'
