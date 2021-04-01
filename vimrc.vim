@@ -4,6 +4,7 @@ source ~/vimrc/plug_framework.vim " includes plugins.vim
 " general settings
 source ~/vimrc/first.vim
 source ~/vimrc/python.vim
+source ~/vimrc/ada.vim
 source ~/vimrc/tabsettings.vim
 source ~/vimrc/remotesettings.vim
 source ~/vimrc/search_settings.vim
