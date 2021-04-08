@@ -127,6 +127,7 @@ let g:git_log_menu = {'name': '+Log',
 " Git
 nnoremap <leader>ga :call flogmenu#open_all_windows()<CR>
 nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gS :SignifyReset<CR>
 nnoremap <leader>gr :Gedit<CR>
 nnoremap <leader>gR :Gread<CR>
 nnoremap <leader>gj :Git fetch --all<CR>
@@ -148,6 +149,7 @@ nnoremap <leader>g/ :GitGrep<CR>
 let g:which_key_map['g'] = {'name': 'Git Menu',
              \'a': 'All windows',
              \'s': 'Status',
+             \'S': 'Signify reset',
              \'h': 'Stash',
              \'r': 'Toggle index / working file version',
              \'R': 'Reset to index',
