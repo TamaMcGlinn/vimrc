@@ -24,7 +24,9 @@ function! codefmt#headerguard#GetFormatter() abort
 
   function l:formatter.AppliesToBuffer() abort
     if &filetype is# 'c' || &filetype is# 'cpp'
-      return 1
+      if expand('%:e') == 'h'
+        return 1
+      endif
     endif
     return 0
   endfunction
