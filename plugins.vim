@@ -124,3 +124,5 @@ Plug 'justinmk/vim-dirvish'
 Plug 'kristijanhusak/vim-dirvish-git'
 Plug 'bounceme/remote-viewer'
 
+Plug 'voldikss/vim-floaterm'
+
