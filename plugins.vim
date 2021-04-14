@@ -38,6 +38,8 @@ Plug 'junegunn/fzf', {
     \ 'do': './install --all' 
     \ }
 Plug 'junegunn/fzf.vim'
+Plug 'jesseleite/vim-agriculture'
+Plug 'markonm/traces.vim'
 
 " Code completion
 Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
