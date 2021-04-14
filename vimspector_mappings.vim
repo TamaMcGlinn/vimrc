@@ -29,7 +29,7 @@ function! ZVimspectorSetupUi()
     call win_gotoid(g:vimspector_session_windows.output)
     set ft=asm
     vert rightb copen
-    exec ":vert resize " . winwidth(g:vimspector_session_windows.output)/3
+    exec ':vert resize ' . winwidth(g:vimspector_session_windows.output)/3
     nnoremenu <silent> WinBar.ListBreakpoints :call vimspector#ListBreakpoints()<CR>
     call vimspector#ListBreakpoints()
     call win_gotoid(g:vimspector_session_windows.code)

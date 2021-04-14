@@ -33,3 +33,6 @@ let g:which_key_map['l'] = 'Next tab'
 " sneak
 let g:sneak#label = 1
 
+nmap <Leader>/ <Plug>AgRawSearch<CR>
+vmap <Leader>/ <Plug>AgRawVisualSelection<CR>
+nmap <Leader>* <Plug>AgRawWordUnderCursor<CR>

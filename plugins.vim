@@ -40,6 +40,7 @@ Plug 'junegunn/fzf', {
 Plug 'junegunn/fzf.vim'
 Plug 'jesseleite/vim-agriculture'
 Plug 'markonm/traces.vim'
+Plug 'valloric/listtoggle'
 
 " Code completion
 Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }

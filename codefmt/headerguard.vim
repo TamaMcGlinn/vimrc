@@ -24,7 +24,7 @@ function! codefmt#headerguard#GetFormatter() abort
 
   function l:formatter.AppliesToBuffer() abort
     if &filetype is# 'c' || &filetype is# 'cpp'
-      if expand('%:e') == 'h'
+      if expand('%:e') ==# 'h'
         return 1
       endif
     endif
@@ -34,5 +34,6 @@ function! codefmt#headerguard#GetFormatter() abort
   return l:formatter
 endfunction
 
+augroup header_guard_formatter
 let g:codefmt_registry = maktaba#extension#GetRegistry('codefmt')
 call g:codefmt_registry.AddExtension(codefmt#headerguard#GetFormatter())

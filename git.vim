@@ -128,6 +128,8 @@ let g:git_log_menu = {'name': '+Log',
 nnoremap <leader>ga :call flogmenu#open_all_windows()<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gS :SignifyReset<CR>
+nnoremap <leader>g[ :SignifyOlder<CR>
+nnoremap <leader>g] :SignifyNewer<CR>
 nnoremap <leader>gr :Gedit<CR>
 nnoremap <leader>gR :Gread<CR>
 nnoremap <leader>gj :Git fetch --all<CR>

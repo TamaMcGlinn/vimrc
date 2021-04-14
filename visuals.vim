@@ -1,5 +1,7 @@
 " install gruvbox colors
-autocmd vimenter * ++nested colorscheme gruvbox
+augroup gruvbox_enable
+  autocmd vimenter * ++nested colorscheme gruvbox
+augroup END
 
 " Use visual bell (no beeping)
 set visualbell
@@ -15,7 +17,7 @@ set relativenumber
 set numberwidth=1
 
 " NetRW settings
-if has("win32")
+if has('win32')
   " Fix NetRW D key on windows
   let g:netrw_localrmdir='rm -rf'
 endif
