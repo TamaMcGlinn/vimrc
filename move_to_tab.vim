@@ -17,10 +17,10 @@ function MoveToPrevTab()
     vert split
   else
     close!
-    exe "0tabnew"
+    exe '0tabnew'
   endif
   "opening current buffer in new window
-  exe "b".l:cur_buf
+  exe 'b'.l:cur_buf
 endfunc
 
 function MoveToNextTab()
@@ -42,5 +42,5 @@ function MoveToNextTab()
     tabnew
   endif
   "opening current buffer in new window
-  exe "b".l:cur_buf
+  exe 'b'.l:cur_buf
 endfunc

@@ -3,7 +3,7 @@
 " let g:BibleFormat = ""
 " let g:BibleLocale = "nl"
 
-let g:BibleDelimiter = " "
+let g:BibleDelimiter = ' '
 
 " nnoremap <leader>lpe y :call Bible()<CR>
 " vnoremap <leader>lpe y :call Bible(@*)<CR>

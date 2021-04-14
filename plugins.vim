@@ -38,6 +38,9 @@ Plug 'junegunn/fzf', {
     \ 'do': './install --all' 
     \ }
 Plug 'junegunn/fzf.vim'
+Plug 'jesseleite/vim-agriculture'
+Plug 'markonm/traces.vim'
+Plug 'valloric/listtoggle'
 
 " Code completion
 Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
@@ -123,4 +126,6 @@ Plug 'TamaMcGlinn/quickfixdd'
 Plug 'justinmk/vim-dirvish'
 Plug 'kristijanhusak/vim-dirvish-git'
 Plug 'bounceme/remote-viewer'
+
+Plug 'voldikss/vim-floaterm'
 

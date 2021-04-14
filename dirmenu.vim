@@ -2,12 +2,12 @@
 " Dir
 nnoremap <leader>qq :call DirToCurrentLine()<CR>
 nnoremap <leader>qg :Gcd<CR>
-nnoremap <leader>qo :copen<CR>
-nnoremap <leader>qc :cclose<CR>
+let g:lt_location_list_toggle_map = '<leader>qo'
+let g:lt_quickfix_list_toggle_map = '<leader>ql'
 
 let g:which_key_map['q'] = {'name': '+Dir/Quickfix',
-             \'q': 'current file',
-             \'g': 'git root',
-             \'o': 'Quickfix open',
-             \'c': 'Quickfix close',
+             \'q': 'Current file',
+             \'g': 'Git root',
+             \'o': 'Location list',
+             \'l': 'Quickfix list',
              \}

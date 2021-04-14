@@ -2,7 +2,7 @@
 " cc for commandline, cs for split first, ce to exit
 :tnoremap <ESC> <C-\><C-n>
 
-if has("win32")
+if has('win32')
   " Note, you need to empty the file Git\etc\motd
   " to get rid of the 'Welcome to Git' message
   set shell=cmd.exe

@@ -39,8 +39,10 @@ set undofile
 set undodir=~/.vim/undo
 
 set nofoldenable        " disable folding
-au WinEnter * set nofen " really disable folding
-au WinLeave * set nofen
+augroup no_folding
+  au WinEnter * set nofen " really disable folding
+  au WinLeave * set nofen
+augroup END
 
 " See help alternate-config
 let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc'

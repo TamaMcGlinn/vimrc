@@ -1,7 +1,3 @@
-" Custom commands start with space
-let mapleader = ' '
-set timeoutlen=380
-
 " Move thrice as fast
 nnoremap <silent> <C-Y> 3<C-Y>
 nnoremap <silent> <C-E> 3<C-E>
@@ -37,3 +33,6 @@ let g:which_key_map['l'] = 'Next tab'
 " sneak
 let g:sneak#label = 1
 
+nmap <Leader>/ <Plug>AgRawSearch<CR>
+vmap <Leader>/ <Plug>AgRawVisualSelection<CR>
+nmap <Leader>* <Plug>AgRawWordUnderCursor<CR>
