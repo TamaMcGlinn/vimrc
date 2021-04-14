@@ -15,7 +15,7 @@ endif
 " Run PlugInstall if there are missing plugins
 augroup plugins_check
   autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-    \| PlugInstall --sync | source $MYVIMRC
+    \| PlugInstall --sync | source $MYVIMRC | execute 'close' | execute 'Startify'
   \| endif
 augroup END
 
