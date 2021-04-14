@@ -1,7 +1,7 @@
 " ack.vim
 " https://www.freecodecamp.org/news/how-to-search-project-wide-vim-ripgrep-ack/
 
-" Use ripgrep for searching ⚡️
+" Use ripgrep for searching
 " Options include:
 " --vimgrep -> Needed to parse the rg response properly for ack.vim
 " --type-not sql -> Avoid huge sql file dumps as it slows down the search
