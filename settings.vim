@@ -60,6 +60,6 @@ vnoremap <M-/> <Esc>/\%V
 let g:mundo_width = 40
 let g:mundo_preview_bottom = 1
 
-let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+let g:fzf_layout = { 'window': { 'width': 1.0, 'height': 1.0 } }
 let $FZF_DEFAULT_OPTS='--reverse'
 

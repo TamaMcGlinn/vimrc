@@ -50,7 +50,7 @@ Plug 'ktchen14/cscope-auto'
 Plug '~/code/vimplugins/vim-autoformat'
 
 " Linting
-" Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 " Plug 'vim-scripts/cpp_cppcheck.vim' " Not necessary; ale includes cppcheck
 
 " Snippets http://vimcasts.org/episodes/meet-ultisnips/
@@ -76,6 +76,7 @@ Plug 'google/vim-maktaba'
 Plug 'bazelbuild/vim-bazel'
 
 " Code formatting
+Plug 'google/vim-glaive'
 " Plug 'google/vim-codefmt'
 Plug '~/code/vimplugins/vim-codefmt'
 " Plug 'google/vim-glaive'

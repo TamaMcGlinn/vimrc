@@ -36,3 +36,17 @@ let g:sneak#label = 1
 nmap <Leader>/ <Plug>AgRawSearch<CR>
 vmap <Leader>/ <Plug>AgRawVisualSelection<CR>
 nmap <Leader>* <Plug>AgRawWordUnderCursor<CR>
+
+" Make the split taller
+nnoremap <Leader>bb 8<C-W>+<CR>
+nnoremap <Leader>bB 24<C-W>+<CR>
+" Make the split wider
+nnoremap <Leader>bw 24<C-W>><CR>
+nnoremap <Leader>bW 50<C-W>><CR>
+
+let g:which_key_map['b'] = {'name': '+BiggerSplit',
+             \'b': 'taller',
+             \'B': 'much taller',
+             \'w': 'wider',
+             \'W': 'much wider',
+             \}
