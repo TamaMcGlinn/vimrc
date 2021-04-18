@@ -1,5 +1,5 @@
 " Change directory to current line
-fu! DirToCurrentLine()
+fu! DirToCurrentLine() abort
   if &buftype ==# 'terminal'
     let line=getline('.')
     if line =~ '^[^> ]*@[^> ]* MINGW.. '

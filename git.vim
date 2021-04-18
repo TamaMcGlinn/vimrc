@@ -131,7 +131,7 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gS :SignifyReset<CR>
 nnoremap <leader>g[ :SignifyOlder<CR>
 nnoremap <leader>g] :SignifyNewer<CR>
-nnoremap <leader>gr :Gedit<CR>
+nnoremap <leader>ge :Gedit<CR>
 nnoremap <leader>gR :Gread<CR>
 nnoremap <leader>gj :Git fetch --all<CR>
 nnoremap <leader>gJ :Git pull<CR>
@@ -154,7 +154,7 @@ let g:which_key_map['g'] = {'name': 'Git Menu',
              \'s': 'Status',
              \'S': 'Signify reset',
              \'h': 'Stash',
-             \'r': 'Toggle index / working file version',
+             \'e': 'Toggle index / working file version',
              \'R': 'Reset to index',
              \'j': 'Fetch',
              \'J': 'Pull',
