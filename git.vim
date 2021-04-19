@@ -63,25 +63,11 @@ augroup flogmenu
 augroup END
 
 function FlogBuildLog() abort
-    let l:state = flog#get_state()
-
-    if l:state.no_graph
-        return flog#build_log_command()
-    endif
-
-    let l:command = 'export GIT_DIR='
-    let l:command .= shellescape(flog#get_fugitive_git_dir())
-    let l:command .= '; '
-
-    let l:command .= 'forest --style=10'
-    let l:command .= substitute(flog#build_log_args(), ' --graph', '', '')
-    let l:command .= ' -- '
-    let l:command .= flog#build_log_paths()
-
+    let l:command = 'forest --style=10'
     return l:command
 endfunction
 
-let g:flog_build_log_command_fn = 'FlogBuildLog'
+" let g:flog_build_log_command_fn = 'FlogBuildLog'
 
 let g:fugitive_conflict_x = 1
 
@@ -127,7 +113,7 @@ let g:git_log_menu = {'name': '+Log',
 
 " Git
 nnoremap <leader>ga :call flogmenu#open_all_windows()<CR>
-nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gS :SignifyReset<CR>
 nnoremap <leader>g[ :SignifyOlder<CR>
 nnoremap <leader>g] :SignifyNewer<CR>
@@ -148,6 +134,20 @@ nnoremap <leader>gg :Git add %<CR>
 nnoremap <leader>gu :call flogmenu#open_unmerged()<CR>
 nnoremap <leader>gd :Git add %:h<CR>
 nnoremap <leader>g/ :GitGrep<CR>
+
+function Create_Worktree() abort
+  let l:worktree_name = input('> ')
+  " Doesn't work yet
+  call nvim_execute_lua('require("git-worktree").create_worktree(l:worktree_name, l:worktree_name)', {})
+endfunction
+
+nnoremap <leader>gwa :call Create_Worktree()<CR>
+
+let g:git_worktree_menu = {'name': '+Worktree',
+ \'a': 'Add',
+ \'s': 'Switch',
+ \'d': 'Delete',
+ \}
 
 let g:which_key_map['g'] = {'name': 'Git Menu',
              \'a': 'All windows',
@@ -172,5 +172,6 @@ let g:which_key_map['g'] = {'name': 'Git Menu',
              \'d': 'Add file dir',
              \'l': g:git_log_menu,
              \'/': 'Search',
+             \'w': g:git_worktree_menu,
              \}
 
