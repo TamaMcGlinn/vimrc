@@ -32,7 +32,8 @@ Plug 'wfxr/minimap.vim'
 " Fuzzy file search
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-lua/telescope.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'junegunn/fzf', {
     \ 'dir': '~/.fzf', 
     \ 'do': './install --all' 
@@ -106,6 +107,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'sodapopcan/vim-twiggy'
+Plug 'ThePrimeagen/git-worktree.nvim'
 
 " Space menu
 Plug 'liuchengxu/vim-which-key'
