@@ -1,5 +1,5 @@
 
-nnoremap <leader>of :GFiles<CR>
+nnoremap <leader>of :lua require('telescope.builtin').git_files()<CR>
 nnoremap <leader>ot :Tags<CR>
 nnoremap <leader>oG :Commits<CR>
 nnoremap <leader>og :BCommits<CR>
