@@ -149,7 +149,7 @@ let g:git_worktree_menu = {'name': '+Worktree',
  \'d': 'Delete',
  \}
 
-let g:which_key_map['g'] = {'name': 'Git Menu',
+let g:which_key_map['g'] = {'name': '+Git',
              \'a': 'All windows',
              \'s': 'Status',
              \'S': 'Signify reset',
