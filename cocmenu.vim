@@ -1,6 +1,6 @@
 
 nnoremap <leader>rR :CocRestart<CR>
-nnoremap <leader>rR :CocRestart<CR>
+nnoremap <leader>rq :CocDisable<CR>
 nnoremap <leader>rn :call CocActionAsync("rename")<CR>
 nnoremap <leader>rf :call CocActionAsync("formatSelected")<CR>
 nnoremap <leader>ra :set operatorfunc=<SID>CodeActionFromSelected<CR>g@<CR>
@@ -18,6 +18,7 @@ nnoremap <leader>rm :CocFix<CR>
 
 let g:which_key_map['r'] = {'name': '+Refactor',
       \'R': 'Coc Restart',
+      \'q': 'Coc Disable',
       \'n': 'Symbol rename',
       \'f': 'Format selected',
       \'a': 'codeAction to selected region',
