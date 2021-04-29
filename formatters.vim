@@ -9,7 +9,7 @@ endfunction
 augroup autoformat
   autocmd!
   autocmd BufWritePost *.ad[sb] Autoformat | noautocmd write
-  autocmd BufWritePre *.cpp,*.h call ApplyCppFormatters()
+  autocmd BufWritePre *.cpp,*.h,*.cu call ApplyCppFormatters()
 
   " defaults from https://github.com/google/vim-codefmt
   autocmd FileType bzl AutoFormatBuffer buildifier

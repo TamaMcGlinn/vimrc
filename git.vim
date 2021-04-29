@@ -144,6 +144,7 @@ nnoremap <leader>gb :Twiggy<CR>
 nnoremap <leader>gB :GBranches<CR>
 nnoremap <leader>gt :GTags<CR>
 nnoremap <leader>gc :Git commit<CR>
+nnoremap <leader>gh :Git diff HEAD^<CR>
 nnoremap <leader>g. :Git add .<CR>
 nnoremap <leader>gg :Git add %<CR>
 nnoremap <leader>gu :call flogmenu#open_unmerged()<CR>
@@ -168,7 +169,6 @@ let g:which_key_map['g'] = {'name': '+Git',
              \'a': 'All windows',
              \'s': 'Status',
              \'S': 'Signify reset',
-             \'h': 'Stash',
              \'e': 'Toggle index / working file version',
              \'R': 'Reset to index',
              \'j': 'Fetch',
@@ -181,6 +181,7 @@ let g:which_key_map['g'] = {'name': '+Git',
              \'B': 'Branch search',
              \'t': 'Tags',
              \'c': 'Commit',
+             \'h': 'Show head',
              \'.': 'Add CWD',
              \'g': 'Add file',
              \'u': 'Open unmerged files',
