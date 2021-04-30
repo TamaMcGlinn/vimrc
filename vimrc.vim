@@ -25,6 +25,7 @@ source ~/vimrc/tab_bindings.vim
 source ~/vimrc/bible.vim
 
 source ~/vimrc/controls.vim
+source ~/vimrc/cheatsheet.vim
 source ~/vimrc/visuals.vim
 source ~/vimrc/git.vim
 source ~/vimrc/switch_maps.vim
