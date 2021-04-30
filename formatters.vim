@@ -1,9 +1,9 @@
 function! ApplyCppFormatters() abort
-  execute 'FormatCode copyright'
+  call call('codefmt#FormatBuffer', ['copyright'])
   if expand('%:e') ==# 'h'
-    execute 'FormatCode header_guards'
+    call call('codefmt#FormatBuffer', ['header_guards'])
   endif
-  execute 'FormatCode clang-format'
+  call call('codefmt#FormatBuffer', ['clang-format'])
 endfunction
 
 augroup autoformat
