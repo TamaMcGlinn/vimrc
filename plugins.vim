@@ -3,6 +3,11 @@
 Plug 'TamaMcGlinn/Ada-Bundle'
 
 "Plug 'vim-scripts/taglist.vim'
+
+Plug 'dyng/ctrlsf.vim'
+Plug 'preservim/nerdtree' |
+  \ Plug 'Xuyuanp/nerdtree-git-plugin'
+
 Plug 'vim-scripts/mru.vim'
 Plug 'vim-scripts/YankRing.vim'
 
@@ -51,7 +56,7 @@ Plug 'ktchen14/cscope-auto'
 Plug '~/code/vimplugins/vim-autoformat'
 
 " Linting
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 " Plug 'vim-scripts/cpp_cppcheck.vim' " Not necessary; ale includes cppcheck
 
 " Snippets http://vimcasts.org/episodes/meet-ultisnips/
@@ -63,7 +68,8 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 Plug 'AndrewRadev/switch.vim'
 
 Plug 'morhetz/gruvbox'
-Plug 'vim-scripts/visSum.vim'
+" Plug 'vim-scripts/visSum.vim'
+Plug 'glexey/visSum.vim'
 Plug 'vim-airline/vim-airline'
 
 Plug 'tomtom/tcomment_vim'
@@ -132,3 +138,5 @@ Plug 'bounceme/remote-viewer'
 
 Plug 'voldikss/vim-floaterm'
 
+Plug 'ryanoasis/vim-devicons'
+" vim-devicons must be the last plugin
