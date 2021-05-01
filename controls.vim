@@ -33,9 +33,21 @@ let g:which_key_map['l'] = 'Next tab'
 " sneak
 let g:sneak#label = 1
 
-nmap <Leader>/ <Plug>AgRawSearch<CR>
-vmap <Leader>/ <Plug>AgRawVisualSelection<CR>
-nmap <Leader>* <Plug>AgRawWordUnderCursor<CR>
+" With Ag
+" nmap <Leader>/ <Plug>AgRawSearch
+" vmap <Leader>/ <Plug>AgRawVisualSelection<CR>
+" nmap <Leader>* <Plug>AgRawWordUnderCursor<CR>
+
+" With CtrlSF
+nmap <Leader>/ <Plug>CtrlSFPrompt
+vmap <Leader>/ <Plug>CtrlSFVwordPath
+nmap <Leader>8 <Plug>CtrlSFCCwordExec
+nmap <Leader>* <Plug>CtrlSFCwordExec
+let g:ctrlsf_confirm_save = 0
+
+let g:which_key_map['/'] = 'Search'
+let g:which_key_map['*'] = 'Search word'
+let g:which_key_map['8'] = 'Search word'
 
 " Make the split taller
 nnoremap <Leader>bb 8<C-W>+<CR>

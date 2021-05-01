@@ -1,15 +1,15 @@
 function! ApplyCppFormatters() abort
-  execute 'FormatCode copyright'
+  call call('codefmt#FormatBuffer', ['copyright'])
   if expand('%:e') ==# 'h'
-    execute 'FormatCode header_guards'
+    call call('codefmt#FormatBuffer', ['header_guards'])
   endif
-  execute 'FormatCode clang-format'
+  call call('codefmt#FormatBuffer', ['clang-format'])
 endfunction
 
 augroup autoformat
   autocmd!
   autocmd BufWritePost *.ad[sb] Autoformat | noautocmd write
-  autocmd BufWritePre *.cpp,*.h call ApplyCppFormatters()
+  autocmd BufWritePre *.cpp,*.h,*.cu call ApplyCppFormatters()
 
   " defaults from https://github.com/google/vim-codefmt
   autocmd FileType bzl AutoFormatBuffer buildifier

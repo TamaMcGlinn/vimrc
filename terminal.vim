@@ -25,3 +25,9 @@ augroup TerminalMappings
     autocmd TermOpen * tnoremap <buffer> <C-E> exit<CR>
   endif
 augroup END
+
+let g:which_key_map['c'] = {'name': '+Terminal',
+             \'c': 'Full window',
+             \'s': 'Split below',
+             \'d': 'DOS CMD',
+             \}

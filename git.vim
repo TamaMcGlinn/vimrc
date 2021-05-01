@@ -63,11 +63,26 @@ augroup flogmenu
 augroup END
 
 function FlogBuildLog() abort
-    let l:command = 'forest --style=10'
+    let l:state = flog#get_state()
+
+    if l:state.no_graph
+        return flog#build_log_command()
+    endif
+
+    let l:command = 'export GIT_DIR='
+    let l:command .= shellescape(flog#get_fugitive_git_dir())
+    let l:command .= '; '
+
+    let l:command .= 'forest --style=10'
+    let l:command .= substitute(flog#build_log_args(), ' --graph', '', '')
+    let l:command .= ' -- '
+    let l:command .= flog#build_log_paths()
+
     return l:command
 endfunction
 
-" let g:flog_build_log_command_fn = 'FlogBuildLog'
+let g:flog_build_log_command_fn = 'FlogBuildLog'
+" unlet g:flog_build_log_command_fn
 
 let g:fugitive_conflict_x = 1
 
@@ -132,6 +147,7 @@ nnoremap <leader>gb :Twiggy<CR>
 nnoremap <leader>gB :GBranches<CR>
 nnoremap <leader>gt :GTags<CR>
 nnoremap <leader>gc :Git commit<CR>
+nnoremap <leader>gh :Git diff HEAD^<CR>
 nnoremap <leader>g. :Git add .<CR>
 nnoremap <leader>gg :Git add %<CR>
 nnoremap <leader>gu :call flogmenu#open_unmerged()<CR>
@@ -156,7 +172,6 @@ let g:which_key_map['g'] = {'name': '+Git',
              \'a': 'All windows',
              \'s': 'Status',
              \'S': 'Signify reset',
-             \'h': 'Stash',
              \'e': 'Toggle index / working file version',
              \'R': 'Reset to index',
              \'j': 'Fetch',
@@ -169,6 +184,7 @@ let g:which_key_map['g'] = {'name': '+Git',
              \'B': 'Branch search',
              \'t': 'Tags',
              \'c': 'Commit',
+             \'h': 'Show head',
              \'.': 'Add CWD',
              \'g': 'Add file',
              \'u': 'Open unmerged files',
