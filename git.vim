@@ -151,19 +151,7 @@ nnoremap <leader>gu :call flogmenu#open_unmerged()<CR>
 nnoremap <leader>gd :Git add %:h<CR>
 nnoremap <leader>g/ :GitGrep<CR>
 
-function Create_Worktree() abort
-  let l:worktree_name = input('> ')
-  " Doesn't work yet
-  call nvim_execute_lua('require("git-worktree").create_worktree(l:worktree_name, l:worktree_name)', {})
-endfunction
-
-nnoremap <leader>gwa :call Create_Worktree()<CR>
-
-let g:git_worktree_menu = {'name': '+Worktree',
- \'a': 'Add',
- \'s': 'Switch',
- \'d': 'Delete',
- \}
+source ~/vimrc/worktree.vim
 
 let g:which_key_map['g'] = {'name': '+Git',
              \'a': 'All windows',
