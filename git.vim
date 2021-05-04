@@ -184,3 +184,8 @@ let g:which_key_map['g'] = {'name': '+Git',
              \'w': g:git_worktree_menu,
              \}
 
+augroup DirvishSignifyOverride
+  autocmd FileType dirvish nmap <silent><buffer>]c <Plug>(dirvish_git_next_file)
+  autocmd FileType dirvish nmap <silent><buffer>[c <Plug>(dirvish_git_prev_file)
+augroup END
+
