@@ -6,7 +6,7 @@ source ~/vimrc/cntrl_move.vim
 source ~/vimrc/google_test.vim
 
 " open directory of current file
-nnoremap - :Dirvish %:h<CR>
+nnoremap - :e %:h<CR>
 
 " maximize 
 nnoremap \ :MaximizerToggle<CR>
