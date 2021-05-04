@@ -23,6 +23,8 @@ fu! AmendCommit(commit_hash) abort
 endfunction
 
 augroup flog
+  autocmd FileType floggraph nno <buffer> gb :<C-U>call flog#run_command("GBrowse %(h)")<CR>
+
   autocmd FileType floggraph nno <buffer> D :<C-U>call flog#run_tmp_command('below Git diff HEAD %h')<CR>
   " diff arbitrary commits in the graph using visual selection
   " regular D assumes you want to diff upwards, with the newer commit at the top
