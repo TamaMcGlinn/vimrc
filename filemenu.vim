@@ -1,6 +1,14 @@
 
+fu! SourceCurrentFile() abort
+  if expand('%:e') ==# 'vim'
+    source %
+  elseif expand('%:e') ==# 'lua'
+    luafile %
+  endif
+endfu
+
 nnoremap <leader>fx :!chmod +x %<CR>
-nnoremap <leader>fs :source %<CR>
+nnoremap <leader>fs :call SourceCurrentFile()<CR>
 nnoremap <leader>ff :CocCommand clangd.switchSourceHeader<CR>
 nnoremap <leader>fS :SudoWrite<CR>
 nnoremap <leader>fa :Startify<CR>
