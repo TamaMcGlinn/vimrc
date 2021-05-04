@@ -14,7 +14,7 @@ function MoveToPrevTab()
     if l:tab_nr == tabpagenr('$')
       tabprev
     endif
-    vert split
+    split
   else
     close!
     exe '0tabnew'
@@ -36,7 +36,7 @@ function MoveToNextTab()
     if l:tab_nr == tabpagenr('$')
       tabnext
     endif
-    vert topleft split
+    split
   else
     close!
     tabnew

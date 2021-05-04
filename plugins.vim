@@ -124,6 +124,7 @@ Plug '~/code/vimplugins/vim-flog'
 " Plug 'TamaMcGlinn/vim-flogmenu'
 Plug '~/code/vimplugins/vim-flogmenu'
 
+Plug 'dsummersl/vimunit'
 Plug 'int3/vim-extradite'
 
 Plug 'chrisbra/SudoEdit.vim'
