@@ -31,3 +31,5 @@ source ~/vimrc/git.vim
 source ~/vimrc/switch_maps.vim
 source ~/vimrc/cscope_maps.vim
 source ~/vimrc/minimap.vim
+
+source ~/vimrc/worktree.vim
