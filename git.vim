@@ -133,6 +133,8 @@ let g:git_log_menu = {'name': '+Log',
 
 " Git
 nnoremap <leader>ga :call flogmenu#open_all_windows()<CR>
+nnoremap <leader>gx :GBrowse<CR>
+vnoremap <leader>gx :GBrowse<CR>
 nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gS :SignifyReset<CR>
 nnoremap <leader>g[ :SignifyOlder<CR>
@@ -173,6 +175,7 @@ let g:which_key_map['g'] = {'name': '+Git',
              \'b': 'Branches',
              \'B': 'Branch search',
              \'t': 'Tags',
+             \'x': 'GBrowse',
              \'c': 'Commit',
              \'h': 'Show head',
              \'.': 'Add CWD',
