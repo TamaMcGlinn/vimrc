@@ -114,6 +114,7 @@ Plug 'rhysd/conflict-marker.vim'
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'sodapopcan/vim-twiggy'
 Plug 'ThePrimeagen/git-worktree.nvim'
+Plug 'TamaMcGlinn/vim-gerritbrowse'
 
 " Space menu
 Plug 'liuchengxu/vim-which-key'

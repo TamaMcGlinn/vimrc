@@ -23,6 +23,8 @@ fu! AmendCommit(commit_hash) abort
 endfunction
 
 augroup flog
+  autocmd FileType floggraph nno <buffer> gb :<C-U>call flog#run_command("GBrowse %(h)")<CR>
+
   autocmd FileType floggraph nno <buffer> D :<C-U>call flog#run_tmp_command('below Git diff HEAD %h')<CR>
   " diff arbitrary commits in the graph using visual selection
   " regular D assumes you want to diff upwards, with the newer commit at the top
@@ -131,6 +133,8 @@ let g:git_log_menu = {'name': '+Log',
 
 " Git
 nnoremap <leader>ga :call flogmenu#open_all_windows()<CR>
+nnoremap <leader>gx :GBrowse<CR>
+vnoremap <leader>gx :GBrowse<CR>
 nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gS :SignifyReset<CR>
 nnoremap <leader>g[ :SignifyOlder<CR>
@@ -154,19 +158,7 @@ nnoremap <leader>gu :call flogmenu#open_unmerged()<CR>
 nnoremap <leader>gd :Git add %:h<CR>
 nnoremap <leader>g/ :GitGrep<CR>
 
-function Create_Worktree() abort
-  let l:worktree_name = input('> ')
-  " Doesn't work yet
-  call nvim_execute_lua('require("git-worktree").create_worktree(l:worktree_name, l:worktree_name)', {})
-endfunction
-
-nnoremap <leader>gwa :call Create_Worktree()<CR>
-
-let g:git_worktree_menu = {'name': '+Worktree',
- \'a': 'Add',
- \'s': 'Switch',
- \'d': 'Delete',
- \}
+source ~/vimrc/worktree.vim
 
 let g:which_key_map['g'] = {'name': '+Git',
              \'a': 'All windows',
@@ -183,6 +175,7 @@ let g:which_key_map['g'] = {'name': '+Git',
              \'b': 'Branches',
              \'B': 'Branch search',
              \'t': 'Tags',
+             \'x': 'GBrowse',
              \'c': 'Commit',
              \'h': 'Show head',
              \'.': 'Add CWD',
@@ -193,4 +186,9 @@ let g:which_key_map['g'] = {'name': '+Git',
              \'/': 'Search',
              \'w': g:git_worktree_menu,
              \}
+
+augroup DirvishSignifyOverride
+  autocmd FileType dirvish nmap <silent><buffer>]c <Plug>(dirvish_git_next_file)
+  autocmd FileType dirvish nmap <silent><buffer>[c <Plug>(dirvish_git_prev_file)
+augroup END
 
