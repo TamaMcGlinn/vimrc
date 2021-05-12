@@ -1,5 +1,5 @@
 " Terminal settings
-" cc for commandline, cs for split first, ce to exit
+" cc for commandline, cs for split first, cntrl-e to exit
 :tnoremap <ESC> <C-\><C-n>
 
 if has('win32')
