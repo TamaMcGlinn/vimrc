@@ -11,22 +11,18 @@ endfunction
 
 function! BazelBuildHere() abort
     let l:current_bazel_target = BazelGetCurrentBufTarget()
-    execute '!./bazel.py build ' . l:current_bazel_target
+    execute '!bazel build ' . l:current_bazel_target
 endfunction
 
 function! BazelTestHere() abort
     let l:current_bazel_target = BazelGetCurrentBufTarget()
-    execute '!./bazel.py test ' . l:current_bazel_target
+    execute '!bazel test ' . l:current_bazel_target
 endfunction
 
-function! PutTargetInTermBelow(...) abort
-    let l:prefix = get(a:, 1, '')
-    if l:prefix ==# ''
-      l:prefix = l:prefix . ' '
-    endif
+function! PutTargetInTermBelow(prefix) abort
     let l:current_bazel_target = BazelGetCurrentBufTarget()
     " switch to bottom buffer
     silent execute 'wincmd j'
-    call feedkeys("a" . l:prefix . l:current_bazel_target)
+    call feedkeys("a" . a:prefix . l:current_bazel_target . "\<CR>")
 endfunction
 
