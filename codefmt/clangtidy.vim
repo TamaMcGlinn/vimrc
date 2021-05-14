@@ -10,7 +10,7 @@ function! codefmt#clangtidy#GetFormatter() abort
       \ 'setup_instructions': 'You will need the clangtidy.py file from Tama'}
 
   function l:formatter.IsAvailable() abort
-    if executable('clangtidy.py')
+    if executable('clang-tidy')
       return 1
     else
       return 0
