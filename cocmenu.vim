@@ -1,5 +1,6 @@
 
 nnoremap <leader>rR :CocRestart<CR>
+nnoremap <leader>rr :execute 'ij '.expand('<cword>')<CR>
 nnoremap <leader>rq :CocDisable<CR>
 nnoremap <leader>rn :call CocActionAsync("rename")<CR>
 nnoremap <leader>rf :call CocActionAsync("formatSelected")<CR>
@@ -17,6 +18,7 @@ nnoremap <leader>rp :CocListResume<CR>
 nnoremap <leader>rm :CocFix<CR>
 
 let g:which_key_map['r'] = {'name': '+Refactor',
+      \'r': 'Vim includesearch',
       \'R': 'Coc Restart',
       \'q': 'Coc Disable',
       \'n': 'Symbol rename',
