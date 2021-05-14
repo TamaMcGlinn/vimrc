@@ -5,8 +5,19 @@ nnoremap <silent> <C-E> 3<C-E>
 source ~/vimrc/cntrl_move.vim
 source ~/vimrc/google_test.vim
 
+function! BrowseDir() abort
+  if &buftype ==# 'terminal'
+    let l:dir = GetDirFromPrompt()
+    " switch to buffer above
+    silent execute 'wincmd k'
+    execute ':e '.l:dir
+  else
+    e %:h
+  endif
+endfunction
+
 " open directory of current file
-nnoremap - :e %:h<CR>
+nnoremap - :call BrowseDir()<CR>
 
 " maximize 
 nnoremap \ :MaximizerToggle<CR>
