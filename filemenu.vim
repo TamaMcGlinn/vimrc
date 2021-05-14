@@ -1,11 +1,17 @@
 
-fu! SourceCurrentFile() abort
-  if expand('%:e') ==# 'vim'
-    source %
-  elseif expand('%:e') ==# 'lua'
-    luafile %
-  endif
-endfu
+if !exists("g:source_current_file_defined")
+  fu SourceCurrentFile() abort
+    if expand('%:e') ==# 'lua'
+      luafile %
+    else
+      source %
+    endif
+  endfu
+  let g:source_current_file_defined = v:true
+  " this workaround is so that when reloading vimrc, this function's
+  " redefinition doesn't throw errors. When you need to modify this function,
+  " you need to restart vim
+endif
 
 nnoremap <leader>fx :!chmod +x %<CR>
 nnoremap <leader>fs :call SourceCurrentFile()<CR>
