@@ -9,8 +9,17 @@ nnoremap <Leader>vi :e ~/.gitignore<CR>
 nnoremap <Leader>vb :e ~/.bashrc<CR>
 nnoremap <Leader>va :e ~/.bash_aliases<CR>
 nnoremap <Leader>vd :e ~/vimrc/bash/doskey.cmd<CR>
-nnoremap <Leader>vp :e ~/vimrc/plugins.vim<CR>
-nnoremap <Leader>vP :PlugInstall<CR>
+
+" Plugin menu
+nnoremap <Leader>vpp :e ~/vimrc/plugins.vim<CR>
+nnoremap <Leader>vpi :PlugInstall<CR>
+nnoremap <Leader>vpu :PlugUpdate<CR>
+
+let g:plugins_menu = {'name': '+Plugins',
+      \'p': 'View',
+      \'i': 'Install',
+      \'u': 'Update'
+      \}
 
 let g:which_key_map['v'] = {'name': '+Config',
              \'v': 'vim config',
@@ -18,8 +27,7 @@ let g:which_key_map['v'] = {'name': '+Config',
              \'V': 'vimrc.vim',
              \'c': 'CoC config',
              \'C': 'CoC local config',
-             \'p': 'vim plugins',
-             \'P': 'install plugins',
+             \'p': g:plugins_menu,
              \'g': 'git config',
              \'i': 'git ignore',
              \'b': 'bashrc',
