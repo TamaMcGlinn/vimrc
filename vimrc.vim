@@ -33,3 +33,7 @@ source ~/vimrc/cscope_maps.vim
 source ~/vimrc/minimap.vim
 
 source ~/vimrc/worktree.vim
+
+if filereadable("~/private_vimrc/private.vim")
+  source ~/private_vimrc/private.vim
+endif

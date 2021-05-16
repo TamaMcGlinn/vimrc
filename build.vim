@@ -25,12 +25,19 @@ endfunction
 
 source ~/vimrc/bazel.vim
 
-let buildMenu = {'name':         'Build/test',
-             \'m': [':!make',                    'Make'],
-             \'a': [':!gprbuild -p',             'Gprbuild'],
-             \'k': ['call Make_In_File_Dir()',   'Make file dir'],
-             \'b': ['call BazelBuildHere()',     'Bazel build file'],
-             \'t': ['call BazelTestHere()',      'Bazel test here'],
-             \'i': ["call Compile(expand('%'))", 'Compile file']
+nnoremap <Leader>ii :make<CR>
+nnoremap <Leader>ig :!gprbuild -p<CR>
+nnoremap <Leader>ik :call Make_In_File_Dir()<CR>
+nnoremap <Leader>ib :call BazelBuildHere()<CR>
+nnoremap <Leader>it :call BazelTestHere()<CR>
+nnoremap <Leader>if :call Compile(expand('%'))<CR>
+
+let g:which_key_map['i'] = {'name': '+Build',
+             \'i': 'Make',
+             \'g': 'Gprbuild',
+             \'k': 'Make file dir',
+             \'b': 'Bazel build file',
+             \'t': 'Bazel test here',
+             \'f': 'Compile file'
              \}
 
