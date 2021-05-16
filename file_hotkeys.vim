@@ -1,6 +1,7 @@
 " Edit configuration
 nnoremap <Leader>vV :e ~/vimrc/vimrc.vim<CR>
 nnoremap <Leader>vv :e ~/vimrc/**/*
+nnoremap <Leader>vm :e ~/dotfiles/muttrc/muttrc.muttrc<CR>
 nnoremap <Leader>vs :e ~/private_vimrc/**/*
 nnoremap <Leader>vc :CocConfig<CR>
 nnoremap <Leader>vC :CocLocalConfig<CR>
@@ -24,6 +25,7 @@ let g:plugins_menu = {'name': '+Plugins',
 let g:which_key_map['v'] = {'name': '+Config',
              \'v': 'vim config',
              \'s': 'secret vim config',
+             \'m': 'Muttrc',
              \'V': 'vimrc.vim',
              \'c': 'CoC config',
              \'C': 'CoC local config',
