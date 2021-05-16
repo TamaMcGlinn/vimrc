@@ -115,6 +115,7 @@ Plug 'stsewd/fzf-checkout.vim'
 Plug 'sodapopcan/vim-twiggy'
 Plug 'ThePrimeagen/git-worktree.nvim'
 Plug 'TamaMcGlinn/vim-gerritbrowse'
+Plug '~/code/vimplugins/vim-instaflog'
 
 " Space menu
 Plug 'liuchengxu/vim-which-key'
