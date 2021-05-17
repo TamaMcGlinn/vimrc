@@ -7,8 +7,16 @@ fu! Create_Worktree() abort
 endfunction
 
 fu! Switch_Worktree() abort
-  lua require('git-worktree')._find_git_root_job()
-  lua require('telescope').extensions.git_worktree.git_worktrees()
+  silent execute 'Gcd'
+  lua << EOF
+  --local linenr = vim.api.nvim_win_get_cursor(0)[1]
+  local Worktree = require("git-worktree")
+  Worktree._find_git_root_job()
+  require('telescope').extensions.git_worktree.git_worktrees()
+  --Worktree.on_tree_update(function(op, metadata)
+  --  vim.cmd('execute "normal! ' .. linenr .. 'G"')
+  --end)
+EOF
 endfunction
 
 nnoremap <leader>gww :call Switch_Worktree()<CR>
