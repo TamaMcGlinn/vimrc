@@ -24,6 +24,8 @@ nnoremap <leader>fw :write<CR>
 nnoremap <leader>fW :noautocmd write<CR>
 nnoremap <leader>fr :e! %<CR>
 nnoremap <leader>fD :call delete(expand('%')) \| bp \| bdelete! #<CR>
+nnoremap <leader>fp :let @+=expand('%')<CR>
+nnoremap <leader>fP :let @+=expand('%:p')<CR>
 
 let g:which_key_map['f'] = {'name': '+File',
              \'q': 'Save & quit',
@@ -37,4 +39,6 @@ let g:which_key_map['f'] = {'name': '+File',
              \'S': 'SudoWrite',
              \'r': 'Reload',
              \'D': 'Delete',
+             \'p': 'Copy relative filename',
+             \'P': 'Copy absolute filename',
              \}
