@@ -148,6 +148,7 @@ nnoremap <leader>gK :Git push --force-with-lease<CR>
 nnoremap <leader>gn :Gvdiffsplit!<CR>
 nnoremap <leader>gz :Git blame<CR>
 nnoremap <leader>gb :Twiggy<CR>
+nmap <Leader>gm <Plug>(git-messenger)
 nnoremap <leader>gB :GBranches<CR>
 nnoremap <leader>gt :GTags<CR>
 nnoremap <leader>gc :Git commit<CR>
@@ -167,6 +168,7 @@ let g:which_key_map['g'] = {'name': '+Git',
              \'e': 'Toggle index / working file version',
              \'R': 'Reset to index',
              \'j': 'Fetch',
+             \'m': 'Blame line',
              \'J': 'Pull',
              \'k': 'Push',
              \'K': 'Push force (lease)',
@@ -192,3 +194,4 @@ augroup DirvishSignifyOverride
   autocmd FileType dirvish nmap <silent><buffer>[c <Plug>(dirvish_git_prev_file)
 augroup END
 
+let g:git_messenger_include_diff = "current"
