@@ -2,6 +2,7 @@
 nnoremap <Leader>vV :e ~/vimrc/vimrc.vim<CR>
 nnoremap <Leader>vv :e ~/vimrc/**/*
 nnoremap <Leader>vm :e ~/dotfiles/muttrc/muttrc.muttrc<CR>
+nnoremap <Leader>vn :e ~/dotfiles/newcomputer<CR>
 nnoremap <Leader>vs :e ~/private_vimrc/**/*
 nnoremap <Leader>vc :CocConfig<CR>
 nnoremap <Leader>vC :CocLocalConfig<CR>
@@ -32,6 +33,7 @@ let g:which_key_map['v'] = {'name': '+Config',
              \'p': g:plugins_menu,
              \'g': 'git config',
              \'i': 'git ignore',
+             \'n': 'newcomputer',
              \'b': 'bashrc',
              \'a': 'aliases',
              \'d': 'DOSkey',
