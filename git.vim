@@ -1,4 +1,9 @@
 scriptencoding utf-8
+
+source ~/vimrc/git_diffhistory.vim
+source ~/vimrc/git_worktree.vim
+source ~/vimrc/git_cycle_diffs.vim
+
 let g:signify_sign_add               = '+'
 let g:signify_sign_delete            = '_'
 let g:signify_sign_delete_first_line = '‾'
@@ -159,8 +164,6 @@ nnoremap <leader>gu :call flogmenu#open_unmerged()<CR>
 nnoremap <leader>gd :Git add %:h<CR>
 nnoremap <leader>g/ :GitGrep<CR>
 
-source ~/vimrc/worktree.vim
-
 let g:which_key_map['g'] = {'name': '+Git',
              \'a': 'All windows',
              \'s': 'Status',
@@ -195,3 +198,4 @@ augroup DirvishSignifyOverride
 augroup END
 
 let g:git_messenger_include_diff = "current"
+
