@@ -117,6 +117,7 @@ Plug 'sodapopcan/vim-twiggy'
 Plug 'ThePrimeagen/git-worktree.nvim'
 " Plug '~/code/vimplugins/git-worktree.nvim'
 Plug 'TamaMcGlinn/vim-gerritbrowse'
+Plug 'TamaMcGlinn/flog-teamjump.vim'
 Plug '~/code/vimplugins/vim-instaflog'
 
 Plug 'farmergreg/vim-lastplace'

@@ -197,5 +197,12 @@ augroup DirvishSignifyOverride
   autocmd FileType dirvish nmap <silent><buffer>[c <Plug>(dirvish_git_prev_file)
 augroup END
 
+" Flog teamjump bindings https://github.com/TamaMcGlinn/flog-teamjump.vim
+augroup flogteamjump
+  autocmd FileType floggraph nno <silent> <buffer> ]] :<C-U>call flogteamjump#Choose_From_Teams()<CR>
+  autocmd FileType floggraph nno <silent> <buffer> ]p :<C-U>call flogteamjump#Jump_To_Selected_Team(v:true)<CR>
+  autocmd FileType floggraph nno <silent> <buffer> [p :<C-U>call flogteamjump#Jump_To_Selected_Team(v:false)<CR>
+augroup END
+
 let g:git_messenger_include_diff = "current"
 
