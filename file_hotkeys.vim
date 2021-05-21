@@ -15,12 +15,14 @@ nnoremap <Leader>vd :e ~/vimrc/bash/doskey.cmd<CR>
 " Plugin menu
 nnoremap <Leader>vpp :e ~/vimrc/plugins.vim<CR>
 nnoremap <Leader>vpi :PlugInstall<CR>
+nnoremap <Leader>vpc :PlugClean<CR>
 nnoremap <Leader>vpu :PlugUpdate<CR>
 
 let g:plugins_menu = {'name': '+Plugins',
       \'p': 'View',
       \'i': 'Install',
-      \'u': 'Update'
+      \'u': 'Update',
+      \'c': 'Clean',
       \}
 
 let g:which_key_map['v'] = {'name': '+Config',
