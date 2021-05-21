@@ -28,7 +28,8 @@ fu! AmendCommit(commit_hash) abort
 endfunction
 
 augroup flog
-  autocmd FileType floggraph nno <buffer> gb :<C-U>call flog#run_command("GBrowse %(h)")<CR>
+  autocmd FileType floggraph nno <silent> <buffer> gb :<C-U>call flog#run_command("GBrowse %(h)")<CR>
+  autocmd FileType floggraph nno <silent> <buffer> gd :<C-U>call flog#run_command('call CommitQF("%h")')<CR>
 
   autocmd FileType floggraph nno <buffer> D :<C-U>call flog#run_tmp_command('below Git diff HEAD %h')<CR>
   " diff arbitrary commits in the graph using visual selection
@@ -161,7 +162,8 @@ nnoremap <leader>gh :Git diff HEAD^<CR>
 nnoremap <leader>g. :Git add .<CR>
 nnoremap <leader>gg :Git add %<CR>
 nnoremap <leader>gu :call flogmenu#open_unmerged()<CR>
-nnoremap <leader>gd :Git add %:h<CR>
+nnoremap <leader>gd :call CommitQF()<CR>
+nnoremap <leader>gD :Git add %:h<CR>
 nnoremap <leader>g/ :GitGrep<CR>
 
 let g:which_key_map['g'] = {'name': '+Git',
@@ -186,7 +188,8 @@ let g:which_key_map['g'] = {'name': '+Git',
              \'.': 'Add CWD',
              \'g': 'Add file',
              \'u': 'Open unmerged files',
-             \'d': 'Add file dir',
+             \'d': 'quickfix diff',
+             \'D': 'Add file dir',
              \'l': g:git_log_menu,
              \'/': 'Search',
              \'w': g:git_worktree_menu,
@@ -205,4 +208,23 @@ augroup flogteamjump
 augroup END
 
 let g:git_messenger_include_diff = "current"
+
+function! CommitQF(...)
+    " Get the commit hash if it was specified
+    let commit = a:0 == 0 ? 'HEAD^' : a:1
+
+    " Get the result of git show in a list
+    let flist = system('git diff --name-only ' . commit)
+    let flist = split(flist, '\n')
+
+    " Create the dictionnaries used to populate the quickfix list
+    let list = []
+    for f in flist
+        let dic = {'filename': f, "lnum": 1}
+        call add(list, dic)
+    endfor
+
+    " Populate the qf list
+    call setqflist(list)
+endfunction
 
