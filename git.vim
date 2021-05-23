@@ -66,8 +66,8 @@ let g:flog_default_arguments = { 'date' : 'short' }
 
 " Flog menu bindings
 augroup flogmenu
-  autocmd FileType floggraph nno <buffer> <Leader>m :<C-U>call flogmenu#open_main_contextmenu()<CR>
-  autocmd FileType floggraph vno <buffer> <Leader>m :<C-U>call flogmenu#open_visual_contextmenu()<CR>
+  autocmd FileType floggraph nno <silent> <buffer> <Leader>m :<C-U>call flogmenu#open_main_contextmenu()<CR>
+  autocmd FileType floggraph vno <silent> <buffer> <Leader>m :<C-U>call flogmenu#open_visual_contextmenu()<CR>
 augroup END
 
 function FlogBuildLog() abort
@@ -96,7 +96,7 @@ let g:fugitive_conflict_x = 1
 
 
 " Git log
-nnoremap <leader>gll :call flogmenu#open_git_log()<CR>
+nnoremap <silent> <leader>gll :call flogmenu#open_git_log()<CR>
 nnoremap <leader>glc :Flog<CR>
 nnoremap <leader>gls :Flogsplit -all<CR>
 nnoremap <leader>glv :vertical Flogsplit -all<CR>
