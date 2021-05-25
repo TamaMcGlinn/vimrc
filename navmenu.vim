@@ -9,6 +9,7 @@ nnoremap <leader>oh :MundoToggle<CR>
 nnoremap <leader>os :Rg<CR>
 nnoremap <leader>o/ :BLines<CR>
 nnoremap <leader>om :marks<CR>:normal! `<CR>
+nnoremap <leader>o; :TagbarToggle<CR>
 nnoremap <leader>oo :Buffers<CR>
 nnoremap <leader>op :MRU<CR>
 nnoremap <leader>oF :Files<CR>
@@ -27,5 +28,6 @@ let g:which_key_map['o'] = {'name' : '+Navigate',
       \ 'g'    : 'git commits of the current buffer',
       \ 'G'    : 'git commits of the repository',
       \ 't'    : 'tag search',
+      \ ';'    : 'toggle tagbar'
       \ }
 

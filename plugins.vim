@@ -34,6 +34,9 @@ Plug 'simnalamburt/vim-mundo'
 " Sublime / VS Code minimap
 Plug 'wfxr/minimap.vim'
 
+" File Outline Tags
+Plug 'preservim/tagbar'
+
 " Fuzzy file search
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -92,13 +95,14 @@ Plug 'farmergreg/vim-lastplace'
 
 Plug 'dbeniamine/cheat.sh-vim'
 
+Plug 'nelstrom/vim-markdown-folding'
+
 " To learn:
 "Plug 'fntlnz/atags.vim'
 "Plug 'steffanc/cscopemaps.vim'
 "Plug 'tpope/vim-abolish'
 "Plug 'neomake/neomake'
 "Plug 'chrisbra/Recover.vim'
-"Plug 'nelstrom/vim-markdown-folding'
 "Plug 'tpope/vim-ragtag'
 
 " Excel
