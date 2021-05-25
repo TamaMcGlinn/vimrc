@@ -6,10 +6,10 @@ nnoremap <Leader>vn :e ~/dotfiles/newcomputer<CR>
 nnoremap <Leader>vs :e ~/private_vimrc/**/*
 nnoremap <Leader>vc :CocConfig<CR>
 nnoremap <Leader>vC :CocLocalConfig<CR>
-nnoremap <Leader>vg :e ~/.gitconfig<CR>
+nnoremap <Leader>vg :e ~/dotfiles/gitconfig<CR>
 nnoremap <Leader>vi :e ~/.gitignore<CR>
-nnoremap <Leader>vb :e ~/.bashrc<CR>
-nnoremap <Leader>va :e ~/.bash_aliases<CR>
+nnoremap <Leader>vb :e ~/dotfiles/bashrc<CR>
+nnoremap <Leader>va :e ~/dotfiles/bash_aliases<CR>
 nnoremap <Leader>vd :e ~/vimrc/bash/doskey.cmd<CR>
 
 " Plugin menu
