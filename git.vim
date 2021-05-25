@@ -3,6 +3,7 @@ scriptencoding utf-8
 source ~/vimrc/git_diffhistory.vim
 source ~/vimrc/git_worktree.vim
 source ~/vimrc/git_cycle_diffs.vim
+source ~/vimrc/flog_airline.vim
 
 let g:signify_sign_add               = '+'
 let g:signify_sign_delete            = '_'
