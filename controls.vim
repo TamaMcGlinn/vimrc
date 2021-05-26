@@ -27,6 +27,7 @@ nno <esc><esc> :nohlsearch<cr>
 
 source ~/vimrc/build.vim
 source ~/vimrc/terminal.vim
+source ~/vimrc/compare.vim
 source ~/vimrc/dir_to_current_line.vim
 source ~/vimrc/file_hotkeys.vim
 " source ~/vimrc/vebugger_mappings.vim

@@ -13,13 +13,13 @@ if !exists("g:source_current_file_defined")
   " you need to restart vim
 endif
 
-function! CompareWithRightSide() abort
+function! CompareFiles(dir, reversedir) abort
   diffthis
   execute 'normal! zi'
-  wincmd l
+  execute 'wincmd ' . a:dir
   diffthis
   execute 'normal! zi'
-  wincmd h
+  execute 'wincmd ' . a:reversedir
 endfunction
 
 nnoremap <leader>fx :!chmod +x %<CR>
@@ -32,7 +32,6 @@ nnoremap <silent> <leader>fa :Startify<CR>
 nnoremap <leader>fw :write<CR>
 nnoremap <leader>fW :noautocmd write<CR>
 nnoremap <leader>fo :pwd<CR>
-nnoremap <leader>fl :call CompareWithRightSide()<CR>
 nnoremap <leader>fr :e! %<CR>
 nnoremap <silent> <leader>fD :call delete(expand('%')) \| bp \| bdelete! #<CR>
 nnoremap <silent> <leader>fp :let @+=expand('%')<CR>
@@ -47,7 +46,6 @@ let g:which_key_map['f'] = {'name': '+File',
              \'o': 'show pwd',
              \'f': 'switch source / header',
              \'s': 'Source',
-             \'l': 'Compare to right',
              \'t': 'Set filetype',
              \'S': 'SudoWrite',
              \'r': 'Reload',
