@@ -8,7 +8,6 @@
       "args": [],
       "filetypes": ["ada"],
       "initializationOptions": {
-        "ada.projectFile": "alire_env.gpr"
       }
     },
     "dls": {
