@@ -33,6 +33,4 @@ source ~/vimrc/switch_maps.vim
 source ~/vimrc/cscope_maps.vim
 source ~/vimrc/minimap.vim
 
-if filereadable("~/private_vimrc/private.vim")
-  source ~/private_vimrc/private.vim
-endif
+source ~/private_vimrc/private.vim
