@@ -1,12 +1,18 @@
 
-  {
-  "diagnostic.displayByAle": true,
+{
   "languageserver": {
-    "ada_language_server": {
-      "command": "/usr/local/ada_language_server/ada_language_server",
+    "Ada": {
+      "command": "ada_language_server",
       "rootPatterns": ["*.gpr"],
       "args": [],
       "filetypes": ["ada"],
+      "initializationOptions": {
+      }
+    },
+    "ccls": {
+      "command": "ccls",
+      "args": [],
+      "filetypes": ["cpp"],
       "initializationOptions": {
       }
     },
@@ -54,5 +60,30 @@
         }
       }
     }
-  }
+  },
+
+  "diagnostic.enable": true,
+  "diagnostic.displayByAle": true,
+
+  "python.linting.enabled": true,
+  "python.formatting.provider": "black",
+
+  "python.linting.pylintArgs": ["--rcfile", "~/.pylintrc"],
+  "python.linting.pylintUseMinimalCheckers": false,
+  "python.linting.pylintPath": "pylint",
+
+  "coc.preferences.formatOnSaveFiletypes": ["*.py"],
+
+  "clangd.enabled": true,
+  "clangd.arguments": ["--clang-tidy", "--all-scopes-completion", "--header-insertion=iwyu", "--recovery-ast"],
+  "clangd.checkUpdates": false,
+  "clangd.disableDiagnostics": false,
+  "clangd.disableSnippetCompletion": false,
+  "clangd.compilationDatabasePath": "",
+  "clangd.fallbackFlags": [],
+  "clangd.path": "clangd",
+  "clangd.semanticHighlighting": false,
+  "clangd.serverCompletionRanking": true
+
 }
+
