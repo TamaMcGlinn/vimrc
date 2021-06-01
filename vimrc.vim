@@ -10,8 +10,8 @@ source ~/vimrc/remotesettings.vim
 source ~/vimrc/search_settings.vim
 source ~/vimrc/automkdir.vim
 source ~/vimrc/settings.vim
+
 source ~/vimrc/intellisense.vim
-source ~/vimrc/langserver.vim
 
 " custom definitions
 source ~/vimrc/move_to_tab.vim

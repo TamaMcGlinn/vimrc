@@ -18,3 +18,5 @@ let g:LanguageClient_rootMarkers = {
         \ 'ada': ['*.gpr']
         \ }
 
+let g:ccls_log_file = expand('~/ccls_log.txt')
+

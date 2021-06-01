@@ -64,6 +64,7 @@ Plug 'autozimu/LanguageClient-neovim', {
 
 " Linting
 " Plug 'dense-analysis/ale'
+" Plug 'vim-syntastic/syntastic'
 " Plug 'vim-scripts/cpp_cppcheck.vim' " Not necessary; ale includes cppcheck
 
 " Snippets http://vimcasts.org/episodes/meet-ultisnips/
