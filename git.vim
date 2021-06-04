@@ -144,8 +144,8 @@ nnoremap <leader>gx :GBrowse<CR>
 vnoremap <leader>gx :GBrowse<CR>
 nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gS :SignifyReset<CR>
-nnoremap <leader>g[ :SignifyOlder<CR>
-nnoremap <leader>g] :SignifyNewer<CR>
+nnoremap <leader>g[ :CompareOlder<CR>
+nnoremap <leader>g] :CompareNewer<CR>
 nnoremap <leader>ge :Gedit<CR>
 nnoremap <leader>gR :Gread<CR>
 nnoremap <leader>gj :Git fetch --all<CR>
