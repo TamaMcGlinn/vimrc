@@ -24,7 +24,9 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'dbakker/vim-paragraph-motion'
 
 " Debugging
-Plug 'puremourning/vimspector'
+Plug 'puremourning/vimspector', {
+      \ 'do': 'python3 install_gadget.py --enable-vscode-cpptools'
+      \ }
 Plug 'szw/vim-maximizer'
 Plug 'alepez/vim-gtest'
 
@@ -57,10 +59,10 @@ Plug 'kevinoid/vim-jsonc'
 Plug 'ktchen14/cscope-auto'
 " Plug 'Chiel92/vim-autoformat'
 Plug '~/code/vimplugins/vim-autoformat'
-" Plug 'autozimu/LanguageClient-neovim', {
-"     \ 'branch': 'next',
-"     \ 'do': 'bash install.sh',
-"     \ }
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 " Linting
 " Plug 'dense-analysis/ale'
