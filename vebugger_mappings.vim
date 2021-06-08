@@ -20,9 +20,9 @@ nnoremap <silent> <buffer> <Leader>dt :VBGtoggleTerminalBuffer<CR>
 nnoremap <buffer> <Leader>ds :VBGstartGDB 
 nnoremap <silent> <buffer> <Leader>dq :VBGkill<CR>
 
-nnoremap <silent> <buffer> <Leader>dl :VBGstepIn
-nnoremap <silent> <buffer> <Leader>dj :VBGstepOver
-nnoremap <silent> <buffer> <Leader>dk :VBGstepOut
+nnoremap <silent> <buffer> <Leader>dl :VBGstepIn<CR>
+nnoremap <silent> <buffer> <Leader>dj :VBGstepOver<CR>
+nnoremap <silent> <buffer> <Leader>dk :VBGstepOut<CR>
 nnoremap <silent> <buffer> <Leader>d<space> :VBGcontinue<CR>
 
 nnoremap <silent> <buffer> <Leader>dr :VBGrawWrite run<CR>
