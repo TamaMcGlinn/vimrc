@@ -11,3 +11,4 @@ nnoremap <silent> g. :call LanguageClient#textDocument_codeAction()<CR>
 " Settings
 set formatexpr=LanguageClient#textDocument_rangeFormatting_sync()
 
+source ~/vimrc/vebugger_mappings.vim

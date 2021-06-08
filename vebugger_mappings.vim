@@ -1,5 +1,6 @@
 " VeBugger mappings
-let g:vebugger_leader='<Leader>g'
+let g:vebugger_leader='<Leader>d'
+
 " defaults are from vim-vebugger/plugin/vebugger.vim:
 "	\'i':'VBGstepIn',
 "	\'o':'VBGstepOver',
@@ -14,17 +15,22 @@ let g:vebugger_leader='<Leader>g'
 "	\'X':'exe "VBGexecute ".input("VBG-Exec> ")',
 "	\'R':'exe "VBGrawWrite ".input("VBG> ")'})
 
-nnoremap <Leader>gs :VBGstartGDB 
-nnoremap <Leader>gt :VBGtoggleTerminalBuffer<CR> 
-nnoremap <silent> <Leader>gq :VBGkill<CR>
-nnoremap <Leader>gr :VBGrawWrite run<CR>
-nnoremap <Leader>gg :VBGtoggleBreakpointThisLine<CR>
-nnoremap <Leader>g8 :VBGevalWordUnderCursor<CR>
-nnoremap <Leader>ge :VBGeval 
-nnoremap <Leader>gw :VBGrawWrite 
-nnoremap <Leader>ga :VBGclearBreakpoints<CR>
-nnoremap <Leader>gg :VBGtoggleBreakpointThisLine<CR>
+nnoremap <silent> <buffer> <Leader>dt :VBGtoggleTerminalBuffer<CR> 
 
-" nnoremap <Leader>gl :VBGrawWrite %h:
+nnoremap <buffer> <Leader>ds :VBGstartGDB 
+nnoremap <silent> <buffer> <Leader>dq :VBGkill<CR>
+
+nnoremap <silent> <buffer> <Leader>dl :VBGstepIn
+nnoremap <silent> <buffer> <Leader>dj :VBGstepOver
+nnoremap <silent> <buffer> <Leader>dk :VBGstepOut
+nnoremap <silent> <buffer> <Leader>d<space> :VBGcontinue<CR>
+
+nnoremap <silent> <buffer> <Leader>dr :VBGrawWrite run<CR>
+nnoremap <silent> <buffer> <Leader>dg :VBGtoggleBreakpointThisLine<CR>
+nnoremap <silent> <buffer> <Leader>d8 :VBGevalWordUnderCursor<CR>
+nnoremap <silent> <buffer> <Leader>de :VBGeval 
+nnoremap <silent> <buffer> <Leader>dw :VBGrawWrite 
+nnoremap <silent> <buffer> <Leader>dd :VBGclearBreakpoints<CR>
+
 let g:vebugger_view_source_cmd='edit'
 

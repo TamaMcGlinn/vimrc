@@ -24,6 +24,7 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'dbakker/vim-paragraph-motion'
 
 " Debugging
+Plug 'idanarye/vim-vebugger'
 Plug 'puremourning/vimspector', {
       \ 'do': 'python3 install_gadget.py --enable-vscode-cpptools'
       \ }
