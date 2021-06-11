@@ -133,3 +133,6 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 let g:airline#extensions#ale#enabled = 1
 
 let g:node_client_debug = 0
+
+" Install these by default
+let g:coc_global_extensions = ['coc-json', 'coc-pyls',  'coc-pyright']

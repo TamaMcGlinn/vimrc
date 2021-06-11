@@ -75,6 +75,11 @@
 
   "coc.preferences.formatOnSaveFiletypes": ["*.py"],
 
+  "pyright.enable": true,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.autoSearchPaths": true,
+  "python.linting.pylintEnabled": true,
+
   "clangd.enabled": true,
   "clangd.arguments": ["--clang-tidy", "--all-scopes-completion", "--header-insertion=iwyu", "--recovery-ast"],
   "clangd.checkUpdates": false,
