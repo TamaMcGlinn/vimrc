@@ -1,6 +1,5 @@
 nnoremap <leader>ds :call vimspector#Launch()<CR>
-nnoremap <leader>dq :execute \<Plug>VimspectorStop<CR>
-nnoremap <leader>dQ :call vimspector#Reset()<CR>
+nnoremap <leader>dq :call vimspector#Reset()<CR>
 nnoremap <leader>dl :call vimspector#StepInto()<CR>
 nnoremap <leader>dj :call vimspector#StepOver()<CR>
 nnoremap <leader>dk :call vimspector#StepOut()<CR>
@@ -19,7 +18,6 @@ nnoremap <leader>do :VimspectorShowOutput<CR>
 let g:which_key_map['d'] = {'name': '+Debug',
              \'s': 'Start',
              \'q': 'Quit',
-             \'Q': 'Reset',
              \'l': 'Step Into',
              \'j': 'Step Over',
              \'k': 'Step Out',
