@@ -64,6 +64,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
+" Plug 'davidhalter/jedi-vim'
 
 " Linting
 " Plug 'dense-analysis/ale'
