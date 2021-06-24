@@ -5,13 +5,13 @@ nnoremap <leader>dj :call vimspector#StepOver()<CR>
 nnoremap <leader>dk :call vimspector#StepOut()<CR>
 nnoremap <leader>d<space> :call vimspector#Continue()<CR>
 nnoremap <leader>dh :call vimspector#RunToCursor()<CR>
-nnoremap <leader>dg :call vimspector#ToggleBreakpoint()<CR>
+nnoremap <leader>db :call vimspector#ToggleBreakpoint()<CR>
 nnoremap <leader>dc :call vimspector#ToggleConditionalBreakpoint()<CR>
 nnoremap <leader>df :call vimspector#AddFunctionBreakpoint()<CR>
 nnoremap <leader>dp :call vimspector#Pause()<CR>
 nnoremap <leader>dr :call vimspector#Restart()<CR>
 nnoremap <leader>dd :call vimspector#ClearBreakpoints()<CR>
-nnoremap <leader>d8 :call vimspector#Evaluate(expand("<cWORD>")<CR>
+nnoremap <expr> <leader>d8 ":VimspectorEval " . expand("<cWORD>")
 nnoremap <leader>de :call vimspector#Evaluate(input("Eval> ")<CR>
 nnoremap <leader>do :VimspectorShowOutput<CR>
 
@@ -23,7 +23,7 @@ let g:which_key_map['d'] = {'name': '+Debug',
              \'k': 'Step Out',
              \' ': 'Continue',
              \'h': 'Run To Cursor',
-             \'g': 'Toggle Breakpoint',
+             \'b': 'Toggle Breakpoint',
              \'c': 'Toggle Conditional Breakpoint',
              \'f': 'Function Breakpoint',
              \'p': 'Pause',
