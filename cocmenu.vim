@@ -15,7 +15,7 @@ nnoremap <leader>rs :CocList -I symbols<CR>
 nnoremap <leader>rj :CocNext<CR><CR>
 nnoremap <leader>rk :CocPrev<CR><CR>
 nnoremap <leader>rp :CocListResume<CR>
-nnoremap <leader>rm :CocFix<CR>
+nnoremap <leader>rm :CocAction<CR>
 
 let g:which_key_map['r'] = {'name': '+Refactor',
       \'r': 'Vim includesearch',
@@ -34,6 +34,6 @@ let g:which_key_map['r'] = {'name': '+Refactor',
       \'j': 'Default action for next item',
       \'k': 'Default action for previous item',
       \'p': 'Resume latest coc list',
-      \'m': 'Coc fix menu',
+      \'m': 'Coc action menu',
       \}
 
