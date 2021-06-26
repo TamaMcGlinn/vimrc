@@ -17,7 +17,7 @@ function! BrowseDir() abort
 endfunction
 
 " open directory of current file
-nnoremap - :call BrowseDir()<CR>
+nnoremap <silent> - :call BrowseDir()<CR>
 
 " maximize 
 nnoremap \ :MaximizerToggle<CR>
