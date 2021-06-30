@@ -51,5 +51,5 @@ function! ZVimspectorSetupUi()
     call win_gotoid(g:vimspector_session_windows.code)
 endfunction
 
-let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-go', 'CodeLLDB' ]
+let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-go', 'CodeLLDB', 'vscode-cpp', 'vscode-bash', 'vim-debug-adapter' ]
 
