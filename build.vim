@@ -17,10 +17,7 @@ fu! GetCompileCommand(file) abort
 endfunction
 
 fu! Compile(file) abort
-  let &makeprg = GetCompileCommand(a:file)
-  silent execute 'make'
-  call system('rm ' . expand('%:t:r') . '.o')
-  silent execute 'copen'
+  silent execute '!' . GetCompileCommand(a:file)
 endfunction
 
 source ~/vimrc/bazel.vim
