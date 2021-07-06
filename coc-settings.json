@@ -60,6 +60,12 @@
           // "dart": "dartfmt"
         }
       }
+    },
+    "go": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod"],
+      "trace.server": "verbose",
+      "filetypes": ["go"]
     }
   },
 
@@ -81,7 +87,7 @@
   "python.linting.pylintEnabled": true,
 
   "clangd.enabled": true,
-  "clangd.arguments": ["--clang-tidy", "--all-scopes-completion", "--header-insertion=iwyu", "--recovery-ast"],
+  "clangd.arguments": ["-Xclang", "-std=c++20", "--clang-tidy", "--all-scopes-completion", "--header-insertion=iwyu", "--recovery-ast"],
   "clangd.checkUpdates": false,
   "clangd.disableDiagnostics": false,
   "clangd.disableSnippetCompletion": false,
