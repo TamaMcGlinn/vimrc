@@ -11,7 +11,9 @@ Plug 'preservim/nerdtree' |
 Plug 'vim-scripts/mru.vim'
 Plug 'vim-scripts/YankRing.vim'
 
-Plug 'nacitar/a.vim'
+" Alternating related files
+" Plug 'nacitar/a.vim'
+Plug 'ericcurtin/CurtineIncSw.vim'
 Plug 'tpope/vim-projectionist'
 
 Plug 'justinmk/vim-sneak'
