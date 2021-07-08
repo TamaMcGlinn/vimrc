@@ -161,6 +161,7 @@ Plug 'TamaMcGlinn/quickfixdd'
 
 Plug 'justinmk/vim-dirvish'
 Plug 'kristijanhusak/vim-dirvish-git'
+Plug 'roginfarrer/vim-dirvish-dovish'
 Plug 'bounceme/remote-viewer'
 
 Plug 'voldikss/vim-floaterm'
