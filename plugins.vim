@@ -121,17 +121,21 @@ Plug 'nelstrom/vim-markdown-folding'
 Plug 'sk1418/HowMuch'
 Plug 'junegunn/vim-easy-align' " vip :EasyAlign ,
 
-" git
+" --------------  git -----------------
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
+
+" GBrowse handlers:
 Plug 'tpope/vim-rhubarb'
+Plug 'shumphrey/fugitive-gitlab.vim'
+Plug 'TamaMcGlinn/vim-gerritbrowse'
+
 Plug 'rhysd/conflict-marker.vim'
 Plug 'rhysd/git-messenger.vim'
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'sodapopcan/vim-twiggy'
 Plug 'ThePrimeagen/git-worktree.nvim'
 " Plug '~/code/vimplugins/git-worktree.nvim'
-Plug 'TamaMcGlinn/vim-gerritbrowse'
 Plug 'TamaMcGlinn/flog-teamjump.vim'
 Plug '~/code/vimplugins/vim-instaflog'
 
