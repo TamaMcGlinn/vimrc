@@ -13,3 +13,7 @@ nmap <silent><buffer> yy <Plug>(dovish_yank)
 xmap <silent><buffer> yy <Plug>(dovish_yank)
 nmap <silent><buffer> p <Plug>(dovish_copy)
 nmap <silent><buffer> P <Plug>(dovish_move)
+
+" git Cntrl-N next Cntrl-P previous file
+nmap <silent><buffer><C-n> <Plug>(dirvish_git_next_file)
+nmap <silent><buffer><C-p> <Plug>(dirvish_git_prev_file)
