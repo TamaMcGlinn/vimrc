@@ -1,3 +1,6 @@
+" sourced from ~/vimrc/intellisense.vim
+source ~/private_vimrc/formatters.vim
+
 function! ApplyCppFormatters() abort
   call call('codefmt#FormatBuffer', ['copyright'])
   if expand('%:e') ==# 'h'
