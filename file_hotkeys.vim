@@ -11,6 +11,7 @@ nnoremap <Leader>vi :e ~/.gitignore<CR>
 nnoremap <Leader>vb :e ~/dotfiles/bashrc<CR>
 nnoremap <Leader>va :e ~/dotfiles/bash_aliases<CR>
 nnoremap <Leader>vd :e ~/vimrc/bash/doskey.cmd<CR>
+nnoremap <leader>vu :UltiSnipsEdit<CR>
 
 " Plugin menu
 nnoremap <Leader>vpp :e ~/vimrc/plugins.vim<CR>
@@ -29,6 +30,7 @@ let g:which_key_map['v'] = {'name': '+Config',
              \'v': 'vim config',
              \'s': 'secret vim config',
              \'m': 'Muttrc',
+             \'u': 'UltisnipsEdit',
              \'V': 'vimrc.vim',
              \'c': 'CoC config',
              \'C': 'CoC local config',
