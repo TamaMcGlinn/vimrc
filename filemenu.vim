@@ -25,7 +25,7 @@ endfunction
 nnoremap <leader>fx :!chmod +x %<CR>
 nnoremap <leader>fq :wq<CR>
 nnoremap <leader>fs :w<BAR>call SourceCurrentFile()<CR>
-nnoremap <silent> <leader>ff :CocCommand clangd.switchSourceHeader<CR>
+nnoremap <silent> <leader>ff :call CurtineIncSw()<CR>
 nnoremap <leader>ft :set ft=
 nnoremap <leader>fS :SudoWrite<CR>
 nnoremap <silent> <leader>fa :Startify<CR>
