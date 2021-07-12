@@ -81,6 +81,9 @@ let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 Plug 'AndrewRadev/switch.vim'
 
+" Fix gx see https://github.com/vim/vim/issues/4738
+Plug 'felipec/vim-sanegx'
+
 Plug 'morhetz/gruvbox'
 " Plug 'vim-scripts/visSum.vim'
 Plug 'glexey/visSum.vim'
