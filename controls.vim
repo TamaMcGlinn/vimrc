@@ -22,7 +22,7 @@ nnoremap <silent> - :call BrowseDir()<CR>
 " maximize 
 nnoremap \ :MaximizerToggle<CR>
 
-" escape clears search
+" double escape clears search
 nno <esc><esc> :nohlsearch<cr>
 
 source ~/vimrc/build.vim
