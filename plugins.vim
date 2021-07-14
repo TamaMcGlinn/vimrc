@@ -62,10 +62,10 @@ Plug 'kevinoid/vim-jsonc'
 Plug 'ktchen14/cscope-auto'
 " Plug 'Chiel92/vim-autoformat'
 Plug '~/code/vimplugins/vim-autoformat'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ }
 " Plug 'davidhalter/jedi-vim'
 
 " Linting
