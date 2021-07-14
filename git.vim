@@ -138,6 +138,28 @@ let g:git_log_menu = {'name': '+Log',
 "               \'s': [':Git stash push<space>',      'Stash'],
 "               \}
 
+fu! SystemGit(command) abort
+  return substitute(execute('Git ' . a:command), '^.', '', '')
+endfunction
+
+fu! Get_tracking_branch(localbranch) abort
+  let l:remote_tracking_branch = SystemGit('config branch.'.a:localbranch.'.merge')
+  return l:remote_tracking_branch
+endfunction
+
+fu! Set_tracking_branch_if_missing() abort
+  let l:branch = SystemGit('name-rev --name-only HEAD')
+  let l:remote_tracking_branch = Get_tracking_branch(l:branch)
+  if l:remote_tracking_branch == ''
+    call SystemGit('branch --set-upstream-to origin/' . l:branch . ' ' . l:branch)
+  endif
+endfunction
+
+fu! Track_and_pull() abort
+  call Set_tracking_branch_if_missing()
+  execute 'Git pull'
+endfunction
+
 " Git
 nnoremap <leader>ga :call flogmenu#open_all_windows()<CR>
 nnoremap <leader>gx :GBrowse<CR>
@@ -149,7 +171,7 @@ nnoremap <leader>g] :CompareNewer<CR>
 nnoremap <leader>ge :Gedit<CR>
 nnoremap <leader>gR :Gread<CR>
 nnoremap <leader>gj :Git fetch --all<CR>
-nnoremap <leader>gJ :Git pull<CR>
+nnoremap <leader>gJ :call Track_and_pull()<CR>
 nnoremap <leader>gk :Git push<CR>
 nnoremap <leader>gK :Git push --force-with-lease<CR>
 nnoremap <leader>gn :Gvdiffsplit!<CR>
