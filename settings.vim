@@ -17,6 +17,9 @@ set complete=.,w,b,u,t,i,kspell
 " Disable spelling checking
 set nospell
 
+" Disable swap files
+set noswapfile
+
 " when looking for a file, include subdirectories recursively
 set path+=**
 
