@@ -35,6 +35,7 @@ let g:which_key_map['i'] = {'name': '+Build',
              \'b': 'Bazel build file',
              \'t': 'Bazel test here',
              \'f': 'Compile file',
-             \'g': 'Get bazel target'
+             \'g': 'Get bazel target',
+             \'c': 'CompilerExplorer'
              \}
 
