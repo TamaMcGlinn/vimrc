@@ -17,3 +17,7 @@ nmap <silent><buffer> P <Plug>(dovish_move)
 " git Cntrl-N next Cntrl-P previous file
 nmap <silent><buffer><C-n> <Plug>(dirvish_git_next_file)
 nmap <silent><buffer><C-p> <Plug>(dirvish_git_prev_file)
+
+" nnn compatibility
+nmap <silent><buffer> l <CR>
+nmap <silent><buffer> h -
