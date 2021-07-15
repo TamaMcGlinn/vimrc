@@ -15,19 +15,17 @@ if has('win32')
 else
   nnoremap <Leader>cc :term<CR>A
   nnoremap <Leader>cs :split<CR>:wincmd j<CR>:term<CR>A
+  nnoremap ,t :split<CR>:term<CR>A
   nnoremap <Leader>ct :tabnew<CR>:term<CR>A
 endif
 
-augroup TerminalMappings
-  autocmd!
-  if has('win32')
-    autocmd TermOpen * nnoremap <buffer> <C-E> aexit<CR>exit<CR>
-    autocmd TermOpen * tnoremap <buffer> <C-E> exit<CR>exit<CR>
-  else
-    autocmd TermOpen * nnoremap <buffer> <C-E> aexit<CR>
-    autocmd TermOpen * tnoremap <buffer> <C-E> exit<CR>
-  endif
-augroup END
+if has('win32')
+  augroup TerminalMappings
+    autocmd!
+      autocmd TermOpen * nnoremap <buffer> <C-D> aexit<CR>exit<CR>
+      autocmd TermOpen * tnoremap <buffer> <C-D> exit<CR>exit<CR>
+  augroup END
+endif
 
 let g:which_key_map['c'] = {'name': '+Terminal',
              \'c': 'Full window',
