@@ -9,6 +9,7 @@ nnoremap <Leader>vC :CocLocalConfig<CR>
 nnoremap <Leader>vg :e ~/dotfiles/gitconfig<CR>
 nnoremap <Leader>vi :e ~/.gitignore<CR>
 nnoremap <Leader>vb :e ~/dotfiles/bashrc<CR>
+nnoremap <Leader>vh :e ~/private_vimrc/ssh_config<CR>
 nnoremap <Leader>va :e ~/dotfiles/bash_aliases<CR>
 nnoremap <Leader>vd :e ~/vimrc/bash/doskey.cmd<CR>
 nnoremap <leader>vu :UltiSnipsEdit<CR>
@@ -37,6 +38,7 @@ let g:which_key_map['v'] = {'name': '+Config',
              \'p': g:plugins_menu,
              \'g': 'git config',
              \'i': 'git ignore',
+             \'h': 'SSH hosts',
              \'n': 'newcomputer',
              \'b': 'bashrc',
              \'a': 'aliases',
