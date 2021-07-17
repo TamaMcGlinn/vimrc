@@ -30,6 +30,7 @@ nnoremap <leader>ft :set ft=
 nnoremap <leader>fS :SudoWrite<CR>
 nnoremap <silent> <leader>fa :Startify<CR>
 nnoremap <leader>fw :write<CR>
+nnoremap <leader>fR :sav 
 nnoremap <leader>fW :noautocmd write<CR>
 nnoremap <leader>fo :pwd<CR>
 nnoremap <leader>fr :e! %<CR>
@@ -49,6 +50,7 @@ let g:which_key_map['f'] = {'name': '+File',
              \'t': 'Set filetype',
              \'S': 'SudoWrite',
              \'r': 'Reload',
+             \'R': 'Rename',
              \'D': 'Delete',
              \'p': 'Copy relative filename',
              \'P': 'Copy absolute filename',
