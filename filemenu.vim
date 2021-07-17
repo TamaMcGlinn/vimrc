@@ -30,7 +30,7 @@ nnoremap <leader>ft :set ft=
 nnoremap <leader>fS :SudoWrite<CR>
 nnoremap <silent> <leader>fa :Startify<CR>
 nnoremap <leader>fw :write<CR>
-nnoremap <leader>fR :sav 
+nnoremap <leader>fR :Move %
 nnoremap <leader>fW :noautocmd write<CR>
 nnoremap <leader>fo :pwd<CR>
 nnoremap <leader>fr :e! %<CR>

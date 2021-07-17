@@ -162,6 +162,8 @@ Plug 'roggan87/vim-bible'
 
 Plug 'TamaMcGlinn/quickfixdd'
 
+Plug 'tpope/vim-eunuch'
+
 Plug 'justinmk/vim-dirvish'
 Plug 'kristijanhusak/vim-dirvish-git'
 Plug 'roginfarrer/vim-dirvish-dovish'
