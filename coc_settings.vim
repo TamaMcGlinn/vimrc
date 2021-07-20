@@ -135,4 +135,4 @@ let g:airline#extensions#ale#enabled = 1
 let g:node_client_debug = 0
 
 " Install these by default
-let g:coc_global_extensions = ['coc-json', 'coc-pyls',  'coc-pyright']
+let g:coc_global_extensions = ['coc-json', 'coc-pyls',  'coc-pyright', 'coc-clangd']

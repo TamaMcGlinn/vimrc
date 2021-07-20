@@ -12,7 +12,7 @@
     "clangd": {
       "command": "clangd",
       "args": [],
-      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp", "cuda"],
       "rootPatterns": ["WORKSPACE", ".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
       "initializationOptions": {
       }
