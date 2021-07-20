@@ -16,7 +16,7 @@ Plug 'vim-scripts/YankRing.vim'
 Plug 'ericcurtin/CurtineIncSw.vim'
 Plug 'tpope/vim-projectionist'
 
-Plug 'justinmk/vim-sneak'
+" Plug 'justinmk/vim-sneak'
 Plug 'easymotion/vim-easymotion'
 
 Plug 'tpope/vim-repeat'

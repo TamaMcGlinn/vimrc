@@ -9,14 +9,14 @@
       "initializationOptions": {
       }
     },
-    "clangd": {
-      "command": "clangd",
-      "args": [],
-      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp", "cuda"],
-      "rootPatterns": ["WORKSPACE", ".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
-      "initializationOptions": {
-      }
-    },
+    /* "clangd": { */
+    /*   "command": "clangd", */
+    /*   "args": [], */
+    /*   "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp", "cuda"], */
+    /*   "rootPatterns": ["WORKSPACE", ".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"], */
+    /*   "initializationOptions": { */
+    /*   } */
+    /* }, */
     "dls": {
       "command": "diagnostic-languageserver",
       "args": ["--stdio"],
