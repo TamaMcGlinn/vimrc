@@ -11,7 +11,7 @@ nnoremap <Leader>vi :e ~/.gitignore<CR>
 nnoremap <Leader>vb :e ~/dotfiles/bashrc<CR>
 nnoremap <Leader>vh :e ~/private_vimrc/ssh_config<CR>
 nnoremap <Leader>va :e ~/dotfiles/bash_aliases<CR>
-nnoremap <Leader>vd :e ~/vimrc/bash/doskey.cmd<CR>
+nnoremap <Leader>vd :e ~/dotfiles/**/*
 nnoremap <leader>vu :UltiSnipsEdit<CR>
 
 " Plugin menu
@@ -42,5 +42,5 @@ let g:which_key_map['v'] = {'name': '+Config',
              \'n': 'new computer',
              \'b': 'bashrc',
              \'a': 'aliases',
-             \'d': 'DOSkey',
+             \'d': 'dotfiles',
              \}
