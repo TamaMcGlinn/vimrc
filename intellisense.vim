@@ -1,4 +1,5 @@
-source ~/vimrc/coc_settings.vim
+" source ~/vimrc/coc_settings.vim
+source ~/vimrc/ycm_settings.vim
 source ~/vimrc/ale_settings.vim
 source ~/vimrc/langserver.vim
 source ~/vimrc/syntastic.vim

@@ -57,7 +57,8 @@ Plug 'markonm/traces.vim'
 Plug 'valloric/listtoggle'
 
 " Code completion
-Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
+" Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'ycm-core/YouCompleteMe'
 Plug 'kevinoid/vim-jsonc'
 Plug 'ktchen14/cscope-auto'
 " Plug 'Chiel92/vim-autoformat'
