@@ -172,6 +172,7 @@ Plug 'bounceme/remote-viewer'
 Plug 'mcchrish/nnn.vim'
 
 Plug 'voldikss/vim-floaterm'
+Plug 'TamaMcGlinn/vim-bettergf'
 
 Plug 'ryanoasis/vim-devicons'
 " vim-devicons must be the last plugin
