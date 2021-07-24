@@ -3,7 +3,7 @@ if !exists("g:source_current_file_defined")
   fu SourceCurrentFile() abort
     if expand('%:e') ==# 'lua'
       luafile %
-    else
+    elseif expand('%:e') ==# 'vim'
       source %
     endif
   endfu
