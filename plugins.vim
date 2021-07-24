@@ -60,6 +60,7 @@ Plug 'valloric/listtoggle'
 " Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
 " Plug 'ycm-core/YouCompleteMe'
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
 Plug 'kevinoid/vim-jsonc'
 Plug 'ktchen14/cscope-auto'
 " Plug 'Chiel92/vim-autoformat'
