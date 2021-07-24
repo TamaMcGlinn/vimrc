@@ -5,7 +5,7 @@ source ~/vimrc/nvim_lspconfig.vim
 source ~/vimrc/autocomplete.vim
 
 source ~/vimrc/ale_settings.vim
-source ~/vimrc/langserver.vim
+" source ~/vimrc/langserver.vim " This was for LanguageClient
 source ~/vimrc/syntastic.vim
 source ~/vimrc/compiler_explorer.vim
 
