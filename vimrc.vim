@@ -22,7 +22,8 @@ source ~/vimrc/move_to_tab.vim
 source ~/vimrc/space_menu.vim
 source ~/vimrc/navmenu.vim
 source ~/vimrc/filemenu.vim
-source ~/vimrc/cocmenu.vim
+" source ~/vimrc/cocmenu.vim
+source ~/vimrc/lspmenu.vim
 source ~/vimrc/dirmenu.vim
 source ~/vimrc/tab_bindings.vim
 source ~/vimrc/bible.vim
