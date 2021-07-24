@@ -25,6 +25,9 @@ nnoremap \ :MaximizerToggle<CR>
 " double escape clears search
 nno <esc><esc> :nohlsearch<cr>
 
+" // to search for visually selected text
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
 source ~/vimrc/build.vim
 source ~/vimrc/terminal.vim
 source ~/vimrc/compare.vim
