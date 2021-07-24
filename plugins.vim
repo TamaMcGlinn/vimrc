@@ -13,7 +13,8 @@ Plug 'vim-scripts/YankRing.vim'
 
 " Alternating related files
 " Plug 'nacitar/a.vim'
-Plug 'ericcurtin/CurtineIncSw.vim'
+" Plug 'ericcurtin/CurtineIncSw.vim'
+Plug 'TamaMcGlinn/CurtineIncSw.vim'
 Plug 'tpope/vim-projectionist'
 
 " Plug 'justinmk/vim-sneak'
