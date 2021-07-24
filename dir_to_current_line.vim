@@ -21,13 +21,27 @@ fu! GetDirFromPrompt() abort
   return l:dir
 endfunction
 
+fu! GetDir() abort
+  if &buftype ==# 'terminal'
+    return GetDirFromPrompt()
+  else
+    return expand('%:p:h')
+  endif
+endfunction
+
 " Change directory to current line
 fu! DirToCurrentLine() abort
-  if &buftype ==# 'terminal'
-    let l:dir=GetDirFromPrompt()
-  else
-    let l:dir=expand('%:p:h')
-  endif
+  let l:dir = GetDir()
   exe 'cd '.l:dir
   echom 'cd '.l:dir
 endfunction
+
+" Change directory of terminal to current line
+fu! TermDirToCurrentLine() abort
+  let l:dir = GetDir()
+  if &buftype !=# 'terminal'
+    wincmd j
+  endif
+  call feedkeys('acd ' . l:dir . '')
+endfunction
+
