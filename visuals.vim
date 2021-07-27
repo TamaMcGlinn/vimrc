@@ -1,8 +1,3 @@
-" install gruvbox colors
-augroup gruvbox_enable
-  autocmd vimenter * ++nested colorscheme gruvbox
-augroup END
-
 " Use visual bell (no beeping)
 set visualbell
 
