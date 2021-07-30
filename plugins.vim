@@ -72,6 +72,10 @@ Plug '~/code/vimplugins/vim-autoformat'
 "     \ }
 " Plug 'davidhalter/jedi-vim'
 
+" Refactoring
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
+
 " Linting
 " Plug 'dense-analysis/ale'
 " Plug 'vim-syntastic/syntastic'
