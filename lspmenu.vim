@@ -1,9 +1,11 @@
 
-nnoremap <leader>rR :LspRestart<CR>
 nnoremap <leader>rr :execute 'ij '.expand('<cword>')<CR>
+nnoremap <leader>ri :LspInfo<CR>
+nnoremap <leader>rR :LspRestart<CR>
 
 let g:which_key_map['r'] = {'name': '+Refactor',
       \'r': 'Vim includesearch',
-      \'R': 'Coc Restart',
+      \'i': 'LspInfo',
+      \'R': 'LspRestart',
       \}
 
