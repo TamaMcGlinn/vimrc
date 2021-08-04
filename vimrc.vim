@@ -37,4 +37,6 @@ source ~/vimrc/cscope_maps.vim
 source ~/vimrc/minimap.vim
 source ~/vimrc/startup.vim
 
+source ~/vimrc/abbreviations.vim
+
 source ~/private_vimrc/private.vim
