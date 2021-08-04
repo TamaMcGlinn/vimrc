@@ -2,6 +2,21 @@
 nnoremap <silent> <C-Y> 3<C-Y>
 nnoremap <silent> <C-E> 3<C-E>
 
+" Make Y behave like other capitals
+nnoremap Y y$
+
+" Keep centered when searching
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" C-I C-O also works whenever we moved more than 5 lines
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+
+" Move visual selection around, indenting properly
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
 source ~/vimrc/cntrl_move.vim
 source ~/vimrc/google_test.vim
 
