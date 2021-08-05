@@ -1,3 +1,10 @@
+
+function! EditUltiSnips(plugin_dir) abort
+  let l:ft = &filetype
+  let l:base = a:plugin_dir . '/UltiSnips/'
+  execute 'e ' . l:base . l:ft . '.snippets'
+endfunction
+
 " Edit configuration
 nnoremap <Leader>vV :e ~/vimrc/vimrc.vim<CR>
 nnoremap <Leader>vv :e ~/vimrc/**/*
@@ -12,7 +19,8 @@ nnoremap <Leader>vb :e ~/dotfiles/bashrc<CR>
 nnoremap <Leader>vh :e ~/private_vimrc/ssh_config<CR>
 nnoremap <Leader>va :e ~/dotfiles/bash_aliases<CR>
 nnoremap <Leader>vd :e ~/dotfiles/**/*
-nnoremap <leader>vu :UltiSnipsEdit<CR>
+nnoremap <leader>vu :call EditUltiSnips('~/vimrc')<CR>
+nnoremap <leader>vU :call EditUltiSnips('~/private_vimrc')<CR>
 
 " Plugin menu
 nnoremap <Leader>vpp :e ~/vimrc/plugins.vim<CR>
