@@ -1,0 +1,11 @@
+snippet bang
+#!/bin/bash
+endsnippet
+
+snippet paramcheck
+if ! [[ "$#" -eq 1 || "$#" -eq 2 ]]; then
+  echo "Incorrect parameters"
+  echo "Usage: ${0##*/} $0"
+  exit 1
+fi
+endsnippet

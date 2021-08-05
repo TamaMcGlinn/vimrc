@@ -1,0 +1,32 @@
+snippet clangoff
+// clang-format off
+${VISUAL}
+// clang-format on
+endsnippet
+
+snippet unused
+static_cast<void>($1);
+endsnippet
+
+snippet doc
+/// \brief $1
+///
+/// \param foo For fooing.
+/// \return Foo.
+endsnippet
+
+snippet up "Unique Pointer" i
+std::unique_ptr<${1:`!p
+snip.rv = snip.v.text.strip("*")
+`}>
+endsnippet
+
+snippet sp "Shared Pointer" i
+std::shared_ptr<${1:`!p
+snip.rv = snip.v.text.strip("*")
+`}>
+endsnippet
+
+snippet cout
+std::cout << $0 << std::endl;
+endsnippet
