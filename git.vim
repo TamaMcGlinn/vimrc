@@ -55,11 +55,6 @@ augroup flog
   autocmd FileType floggraph nno <buffer> <silent> ]h :<C-U>call flog#jump_to_next_head()<CR>
   autocmd FileType floggraph nno <buffer> <silent> [h :<C-U>call flog#jump_to_previous_head()<CR>
 
-  autocmd FileType floggraph nno <buffer> <silent> h :<C-U>call flog#jump_to_parent()<CR>
-  autocmd FileType floggraph nno <buffer> <silent> j :<C-U>call flog#down()<CR>
-  autocmd FileType floggraph nno <buffer> <silent> k :<C-U>call flog#up()<CR>
-  autocmd FileType floggraph nno <buffer> <silent> l :<C-U>call flog#jump_to_child()<CR>
-
   autocmd FileType floggraph nno <buffer> <silent> <Leader>nc :Flogjump HEAD<CR>
 augroup END
 
@@ -70,28 +65,6 @@ augroup flogmenu
   autocmd FileType floggraph nno <silent> <buffer> <Leader>m :<C-U>call flogmenu#open_main_contextmenu()<CR>
   autocmd FileType floggraph vno <silent> <buffer> <Leader>m :<C-U>call flogmenu#open_visual_contextmenu()<CR>
 augroup END
-
-function FlogBuildLog() abort
-    let l:state = flog#get_state()
-
-    if l:state.no_graph
-        return flog#build_log_command()
-    endif
-
-    let l:command = 'export GIT_DIR='
-    let l:command .= shellescape(flog#get_fugitive_git_dir())
-    let l:command .= '; '
-
-    let l:command .= 'forest --style=10'
-    let l:command .= substitute(flog#build_log_args(), ' --graph', '', '')
-    let l:command .= ' -- '
-    let l:command .= flog#build_log_paths()
-
-    return l:command
-endfunction
-
-let g:flog_build_log_command_fn = 'FlogBuildLog'
-" unlet g:flog_build_log_command_fn
 
 let g:fugitive_conflict_x = 1
 

@@ -159,7 +159,8 @@ Plug 'liuchengxu/vim-which-key'
 
 Plug 'skywind3000/vim-quickui'
 " Plug 'rbong/vim-flog'
-Plug '~/code/vimplugins/vim-flog'
+Plug 'TamaMcGlinn/vim-flog'
+" Plug '~/code/vimplugins/vim-flog'
 " Plug 'TamaMcGlinn/vim-flogmenu'
 Plug '~/code/vimplugins/vim-flogmenu'
 
