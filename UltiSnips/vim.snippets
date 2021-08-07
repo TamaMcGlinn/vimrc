@@ -2,3 +2,11 @@ snippet fu "function"
 function! $1() abort
 endfunction
 endsnippet
+
+snippet aucmd "autocmd in group"
+augroup $1
+	autocmd!
+	$0
+augroup END
+endsnippet
+
