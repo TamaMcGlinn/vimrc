@@ -26,6 +26,6 @@ function! PutTargetInTermBelow(prefix, ...) abort
     let l:current_bazel_target = BazelGetCurrentBufTarget()
     " switch to bottom terminal buffer
     silent execute 'wincmd j'
-    call feedkeys("a" . a:prefix . l:current_bazel_target . l:postfix . "\<CR>")
+    call feedkeys('a' . a:prefix . l:current_bazel_target . l:postfix . '\<CR>')
 endfunction
 

@@ -4,7 +4,7 @@ fu! Create_Worktree() abort
   silent execute 'Gcd'
   " lua require('git-worktree')._find_git_root_job()
   let l:worktree_name = input('> ')
-  call v:lua.require("git-worktree").create_worktree(l:worktree_name, l:worktree_name)
+  call v:lua.require('git-worktree').create_worktree(l:worktree_name, l:worktree_name)
 endfunction
 
 fu! Switch_Worktree() abort

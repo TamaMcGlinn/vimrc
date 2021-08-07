@@ -41,7 +41,7 @@ function! UseAbsoluteFilenameInTermBelow(prefix, ...) abort
  let l:filename = expand('%:p')
  " switch to bottom terminal buffer
  silent execute 'wincmd j'
- call feedkeys("a" . a:prefix . l:filename . l:postfix . "\<CR>")
+ call feedkeys('a' . a:prefix . l:filename . l:postfix . '\<CR>')
 endfunction
 
 function! UseRelativeFilenameInTermBelow(prefix, ...) abort
@@ -49,7 +49,7 @@ function! UseRelativeFilenameInTermBelow(prefix, ...) abort
    let l:filename = bufname('%')
    " switch to bottom terminal buffer
    silent execute 'wincmd j'
-   call feedkeys("a" . a:prefix . l:filename . l:postfix . "\<CR>")
+   call feedkeys('a' . a:prefix . l:filename . l:postfix . '\<CR>')
 endfunction
 
 nnoremap <Leader>cf :call UseRelativeFilenameInTermBelow('ls ')<CR>

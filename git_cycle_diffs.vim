@@ -25,11 +25,11 @@ endfunction
 
 function! ClampIndex(index, list_size) abort
   if a:index < 0
-    echom "First unstaged file"
+    echom 'First unstaged file'
     return 0
   endif
   if a:index >= a:list_size
-    echom "Last unstaged file"
+    echom 'Last unstaged file'
     return a:list_size - 1
   endif
   return a:index
@@ -40,7 +40,7 @@ function! OtherUnstagedFile(offset) abort
   let l:current_index = FindCurrentFile(l:unstaged_list)
   if l:current_index == -1
     let l:next_index = 0
-    echom "First unstaged file"
+    echom 'First unstaged file'
   else
     let l:next_index = ClampIndex(l:current_index + a:offset, len(l:unstaged_list))
   endif

@@ -1,5 +1,5 @@
 
-if !exists("g:source_current_file_defined")
+if !exists('g:source_current_file_defined')
   fu SourceCurrentFile() abort
     if expand('%:e') ==# 'lua'
       luafile %

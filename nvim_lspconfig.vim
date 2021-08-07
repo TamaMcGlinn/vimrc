@@ -48,8 +48,10 @@ for _, lsp in ipairs(servers) do
 end
 EOF
 
-" use omni completion provided by lsp
-autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
+augroup lsp_provided_omni_completion
+  autocmd!
+  autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
+augroup END
 
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>

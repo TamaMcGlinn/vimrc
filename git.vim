@@ -123,7 +123,7 @@ endfunction
 fu! Set_tracking_branch_if_missing() abort
   let l:branch = SystemGit('name-rev --name-only HEAD')
   let l:remote_tracking_branch = Get_tracking_branch(l:branch)
-  if l:remote_tracking_branch == ''
+  if l:remote_tracking_branch ==# ''
     call SystemGit('branch --set-upstream-to origin/' . l:branch . ' ' . l:branch)
   endif
 endfunction
@@ -203,7 +203,7 @@ augroup flogteamjump
   autocmd FileType floggraph nno <silent> <buffer> [p :<C-U>call flogteamjump#Jump_To_Selected_Team(v:false)<CR>
 augroup END
 
-let g:git_messenger_include_diff = "current"
+let g:git_messenger_include_diff = 'current'
 
 function! CommitQF(...)
     " Get the commit hash if it was specified
@@ -216,7 +216,7 @@ function! CommitQF(...)
     " Create the dictionnaries used to populate the quickfix list
     let list = []
     for f in flist
-        let dic = {'filename': f, "lnum": 1}
+        let dic = {'filename': f, 'lnum': 1}
         call add(list, dic)
     endfor
 

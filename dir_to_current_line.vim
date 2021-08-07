@@ -3,7 +3,7 @@ fu! GetDirFromPrompt() abort
   let l:line=getline('.')
   if l:line =~? '^[^> ]*@[^> ]* MINGW.. '
     " USER@DOMAIN MINGW64 ~/vimscripts/dein/repos/github.com/autozimu/LanguageClient-neovim_next (next)
-    let home='/' .. $HOME[0] .. substitute($HOME[2:], '\', '/', 'g')
+    let home='/' . $HOME[0] . substitute($HOME[2:], '\', '/', 'g')
     let l:line=substitute(l:line, '\~', home, '')
     " USER@DOMAIN MINGW64 /c/code/with spaces
     " USER@DOMAIN MINGW64 /c/code/in_git (master)

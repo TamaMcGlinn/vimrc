@@ -134,5 +134,9 @@ let g:node_client_debug = 0
 " Install these by default
 let g:coc_global_extensions = ['coc-json', 'coc-pyls',  'coc-pyright', 'coc-clangd']
 
-autocmd FileType python let b:coc_root_patterns = ['.venv', '.git']
+
+augroup python_coc_root_patterns
+  autocmd!
+  autocmd FileType python let b:coc_root_patterns = ['.venv', '.git']
+augroup END
 

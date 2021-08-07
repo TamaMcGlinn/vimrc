@@ -1,9 +1,5 @@
 " dein Scripts-----------------------------
 
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-
 " Required:
 set runtimepath+=~/vimscripts/dein/repos/github.com/Shougo/dein.vim
 call dein#begin('~/vimscripts/dein', ['~/vimrc/plugins.vim'])
