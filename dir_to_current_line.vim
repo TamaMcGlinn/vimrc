@@ -36,12 +36,32 @@ fu! DirToCurrentLine() abort
   echom 'cd '.l:dir
 endfunction
 
+fu! JumpToTerminalBuffer() abort
+  if &buftype ==# 'terminal'
+    return
+  endif
+  let l:first_window_number = winnr()
+  while v:true
+    execute "wincmd W"
+    if &buftype ==# 'terminal'
+      return
+    endif
+    if winnr() == l:first_window_number
+      break
+    endif
+  endwhile
+  throw "Unable to find terminal window in current tab"
+endfunction
+
+function! TermDirToCwd() abort
+  call JumpToTerminalBuffer()
+  call feedkeys('acd ' . getcwd() . '')
+endfunction
+
 " Change directory of terminal to current line
 fu! TermDirToCurrentLine() abort
   let l:dir = GetDir()
-  if &buftype !=# 'terminal'
-    wincmd j
-  endif
+  call JumpToTerminalBuffer()
   call feedkeys('acd ' . l:dir . '')
 endfunction
 
