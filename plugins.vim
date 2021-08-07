@@ -154,6 +154,9 @@ Plug '~/code/vimplugins/vim-instaflog'
 
 Plug 'farmergreg/vim-lastplace'
 
+" Smooth scrolling
+Plug 'psliwka/vim-smoothie'
+
 " Space menu
 Plug 'liuchengxu/vim-which-key'
 
