@@ -35,9 +35,28 @@ local on_attach = function(client, bufnr)
 
 end
 
+-- -- add experimental bazel (starlark) language server
+-- -- this should be moved into nvim-lspconfig/lua/lspconfig/bazel_ls.lua
+-- -- and mentioned in https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
+-- local configs = require 'lspconfig/configs'
+-- local util = require 'lspconfig/util'
+--
+-- local server_name = 'bazel_ls'
+-- local bin_name = 'bazel_ls'
+--
+-- configs[server_name] = {
+--   default_config = {
+--     cmd = { bin_name },
+--     filetypes = { 'bzl' },
+--     root_dir = util.root_pattern('WORKSPACE', '.git'),
+--   },
+-- }
+-- -- end bazel_ls config
+
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = { "pylsp", "rust_analyzer", "als", "clangd", "bashls", "vimls" }
+
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -46,6 +65,9 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
+
+-- print(nvim_lsp["bazel_ls"].docs.package_json)
+
 EOF
 
 augroup lsp_provided_omni_completion
