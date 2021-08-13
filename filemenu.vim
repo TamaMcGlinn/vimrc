@@ -29,7 +29,7 @@ nnoremap <silent> <leader>ff :call CurtineIncSw()<CR>
 nnoremap <leader>ft :set ft=
 nnoremap <leader>fS :SudoWrite<CR>
 nnoremap <silent> <leader>fa :Startify<CR>
-nnoremap <leader>fw :write<CR>
+nnoremap <leader>fw :set buftype=""<CR>:write!<CR>
 nnoremap <leader>fR :Move %
 nnoremap <leader>fW :noautocmd write<CR>
 nnoremap <leader>fo :pwd<CR>
