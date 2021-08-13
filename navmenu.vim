@@ -12,6 +12,7 @@ nnoremap <leader>om :marks<CR>:normal! `<CR>
 nnoremap <leader>o; :TagbarToggle<CR>
 nnoremap <leader>oo :Buffers<CR>
 nnoremap <leader>op :MRU<CR>
+nnoremap <leader>oP :FZFMru<CR>
 nnoremap <leader>oF :Files<CR>
 
 let g:which_key_map['o'] = {'name' : '+Navigate',

@@ -8,7 +8,7 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'preservim/nerdtree' |
   \ Plug 'Xuyuanp/nerdtree-git-plugin'
 
-Plug 'vim-scripts/mru.vim'
+Plug 'yegappan/mru'
 Plug 'vim-scripts/YankRing.vim'
 
 " Alternating related files
