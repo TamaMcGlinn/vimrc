@@ -56,6 +56,8 @@ augroup flog
   autocmd FileType floggraph nno <buffer> <silent> [h :<C-U>call flog#jump_to_previous_head()<CR>
 
   autocmd FileType floggraph nno <buffer> <silent> <Leader>nc :Flogjump HEAD<CR>
+
+  autocmd FileType floggraph nnoremap <buffer> <silent> <CR> :<C-U>call flog#run_tmp_command('vertical belowright Git show %h')<CR> <C-W>lG{j
 augroup END
 
 let g:flog_default_arguments = { 'date' : 'short' }
