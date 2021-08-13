@@ -40,3 +40,6 @@ source ~/vimrc/startup.vim
 source ~/vimrc/abbreviations.vim
 
 source ~/private_vimrc/private.vim
+
+source ~/vimrc/refactoring.vim
+
