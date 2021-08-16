@@ -69,7 +69,7 @@ let g:sneak#label = 1
 
 " With CtrlSF
 nmap <Leader>/ <Plug>CtrlSFPrompt
-vmap <Leader>/ <Plug>CtrlSFVwordPath
+vmap <Leader>8 <Plug>CtrlSFVwordPath
 nmap <Leader>8 <Plug>CtrlSFCCwordExec
 nmap <Leader>* <Plug>CtrlSFCwordExec
 let g:ctrlsf_confirm_save = 0

@@ -14,3 +14,13 @@ let g:ack_autoclose = 1
 " Any empty ack search will search for the work the cursor is on
 let g:ack_use_cword_for_empty_search = 1
 
+let g:ctrlsf_auto_close = {
+    \ "normal" : 0,
+    \ "compact": 0
+    \}
+
+let g:ctrlsf_default_root = 'cwd'
+
+" let g:ctrlsf_extra_backend_args = {
+"     \ 'ag': ''
+"     \ }
