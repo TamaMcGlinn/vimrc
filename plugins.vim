@@ -5,7 +5,7 @@ Plug 'TamaMcGlinn/Ada-Bundle'
 "Plug 'vim-scripts/taglist.vim'
 
 " Automatic tags management
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 
 " Autocompletion plugin
 Plug 'hrsh7th/nvim-compe'
