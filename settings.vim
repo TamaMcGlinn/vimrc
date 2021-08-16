@@ -66,3 +66,8 @@ let g:mundo_preview_bottom = 1
 let g:fzf_layout = { 'window': { 'width': 1.0, 'height': 1.0 } }
 let $FZF_DEFAULT_OPTS='--reverse'
 
+" Highlight on yank
+augroup YankHighlight
+  autocmd!
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+augroup end
