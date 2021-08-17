@@ -11,7 +11,7 @@ nnoremap <leader>o/ :BLines<CR>
 nnoremap <leader>om :marks<CR>:normal! `<CR>
 nnoremap <leader>o; :TagbarToggle<CR>
 nnoremap <leader>oo :Buffers<CR>
-nnoremap <leader>op :MRU<CR>
+nnoremap <leader>op :MRUToggle<CR>
 nnoremap <leader>oP :FZFMru<CR>
 nnoremap <leader>oF :Files<CR>
 
