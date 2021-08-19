@@ -1,18 +1,20 @@
 " sourced from ~/vimrc/intellisense.vim
 source ~/private_vimrc/formatters.vim
 
-function! ApplyCppFormatters() abort
+function! ApplyCustomFormatters() abort
   call call('codefmt#FormatBuffer', ['copyright'])
   if expand('%:e') ==# 'h'
     call call('codefmt#FormatBuffer', ['header_guards'])
   endif
-  call call('codefmt#FormatBuffer', ['clang-format'])
+  if expand('%:e') ==# '.cpp' || expand('%:e') ==# '.h' || expand('%:e') ==# '.cu'
+    call call('codefmt#FormatBuffer', ['clang-format'])
+  endif
 endfunction
 
 augroup autoformat
   autocmd!
   autocmd BufWritePost *.ad[sb] Autoformat | noautocmd write
-  autocmd BufWritePre *.cpp,*.h,*.cu call ApplyCppFormatters()
+  autocmd BufWritePre * call ApplyCustomFormatters()
 
   " defaults from https://github.com/google/vim-codefmt
   autocmd FileType bzl AutoFormatBuffer buildifier
@@ -21,7 +23,7 @@ augroup autoformat
   autocmd FileType gn AutoFormatBuffer gn
   autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
   autocmd FileType java AutoFormatBuffer google-java-format
-  " autocmd FileType python AutoFormatBuffer yapf
+  autocmd FileType python AutoFormatBuffer black
   " Alternative: autocmd FileType python AutoFormatBuffer autopep8
   autocmd FileType rust AutoFormatBuffer rustfmt
   autocmd FileType vue AutoFormatBuffer prettier
