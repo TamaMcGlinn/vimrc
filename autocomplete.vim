@@ -9,3 +9,6 @@ set shortmess+=c
 
 " possible value: 'UltiSnips', 'Neosnippet', 'vim-vsnip', 'snippets.nvim'
 let g:completion_enable_snippet = 'UltiSnips'
+
+" Use completion-nvim in every buffer
+autocmd BufEnter * lua require'completion'.on_attach()

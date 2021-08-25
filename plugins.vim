@@ -7,8 +7,9 @@ Plug 'TamaMcGlinn/Ada-Bundle'
 " Automatic tags management
 " Plug 'ludovicchabant/vim-gutentags'
 
-" Autocompletion plugin
-Plug 'hrsh7th/nvim-compe'
+" Autocompletion plugins
+Plug 'nvim-lua/completion-nvim'
+Plug 'onsails/lspkind-nvim'
 
 Plug 'dyng/ctrlsf.vim'
 Plug 'preservim/nerdtree' |
