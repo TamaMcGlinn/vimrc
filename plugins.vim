@@ -162,8 +162,6 @@ Plug 'ThePrimeagen/git-worktree.nvim'
 Plug 'TamaMcGlinn/flog-teamjump.vim'
 Plug '~/code/vimplugins/vim-instaflog'
 
-Plug 'farmergreg/vim-lastplace'
-
 " Smooth scrolling
 Plug 'psliwka/vim-smoothie'
 
