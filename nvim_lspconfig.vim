@@ -64,11 +64,24 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = { "pylsp", "rust_analyzer", "als", "clangd", "bashls", "vimls" }
+local settings = {
+  pylsp = {
+    plugins = {
+      pydocstyle = {
+        enabled = true
+      },
+      flake8 = {
+        maxLineLength = 100
+      }
+    }
+  }
+}
 
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
     capabilities = capabilities,
+    settings = settings
   }
 end
 
@@ -91,5 +104,17 @@ require('nvim-treesitter.configs').setup {
     enable = true,
   },
 }
+
+-- require('lspconfig').setup{
+--   settings = {
+--     pylsp = {
+--       plugins = {
+--         pydocstyle = {
+--           enabled = true
+--         }
+--       }
+--     }
+--   }
+-- }
 
 EOF
