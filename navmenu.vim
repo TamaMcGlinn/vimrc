@@ -6,7 +6,8 @@ nnoremap <leader>oG :Commits<CR>
 nnoremap <leader>og :BCommits<CR>
 nnoremap <leader>on :Lines<CR>
 nnoremap <leader>oh :MundoToggle<CR>
-nnoremap <leader>os :Rg<CR>
+nnoremap <leader>oS :Rg<CR>
+nnoremap <leader>os :RgContents<CR>
 nnoremap <leader>o/ :BLines<CR>
 nnoremap <leader>om :marks<CR>:normal! `<CR>
 nnoremap <leader>o; :TagbarToggle<CR>

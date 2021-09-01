@@ -8,6 +8,11 @@
 " --smart-case -> Search case insensitive if all lowercase pattern, Search case sensitively otherwise
 let g:ackprg = 'rg --vimgrep --type-not sql --smart-case'
 
+" search contents only, not filename and number
+command! -bang -nargs=* RgContents
+  \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
+
 " Auto close the Quickfix list after pressing '<enter>' on a list item
 let g:ack_autoclose = 1
 
