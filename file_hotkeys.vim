@@ -15,6 +15,7 @@ nnoremap <Leader>vc :CocConfig<CR>
 nnoremap <Leader>vC :CocLocalConfig<CR>
 nnoremap <Leader>vg :e ~/dotfiles/gitconfig<CR>
 nnoremap <Leader>vi :e ~/.gitignore<CR>
+nnoremap <Leader>vl :e ~/.config/pycodestyle<CR>
 nnoremap <Leader>vb :e ~/dotfiles/bashrc<CR>
 nnoremap <Leader>vB :e ~/.private_bashrc<CR>
 nnoremap <Leader>vh :e ~/private_vimrc/ssh_config<CR>
@@ -47,6 +48,7 @@ let g:which_key_map['v'] = {'name': '+Config',
              \'p': g:plugins_menu,
              \'g': 'git config',
              \'i': 'git ignore',
+             \'l': 'pycodestyle',
              \'h': 'SSH hosts',
              \'n': 'new computer',
              \'b': 'bashrc',
