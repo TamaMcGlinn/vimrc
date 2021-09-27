@@ -36,12 +36,13 @@ let g:which_key_map['c'] = {'name': '+Terminal',
              \'d': 'DOS CMD',
              \}
 
+" TODO somehow use the smarter better_gf#JumpToNormalBuffer()
 function! UseAbsoluteFilenameInTermBelow(prefix, ...) abort
  let l:postfix = get(a:, 1, '')
  let l:filename = expand('%:p')
  " switch to bottom terminal buffer
  silent execute 'wincmd j'
- call feedkeys('a' . a:prefix . l:filename . l:postfix . '\<CR>')
+ call feedkeys('a' . a:prefix . l:filename . l:postfix)
 endfunction
 
 function! UseRelativeFilenameInTermBelow(prefix, ...) abort
@@ -49,7 +50,7 @@ function! UseRelativeFilenameInTermBelow(prefix, ...) abort
    let l:filename = bufname('%')
    " switch to bottom terminal buffer
    silent execute 'wincmd j'
-   call feedkeys('a' . a:prefix . l:filename . l:postfix . '\<CR>')
+   call feedkeys('a' . a:prefix . l:filename . l:postfix)
 endfunction
 
 nnoremap <Leader>cf :call UseRelativeFilenameInTermBelow('ls ')<CR>
