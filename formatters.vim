@@ -3,9 +3,9 @@ source ~/private_vimrc/formatters.vim
 
 function! ApplyCustomFormatters() abort
   call codefmt#FormatBuffer('copyright')
-  " if expand('%:e') ==# 'h'
-  "   call call('codefmt#FormatBuffer', ['header_guards'])
-  " endif
+  if expand('%:e') ==# 'h'
+    call call('codefmt#FormatBuffer', ['header_guards'])
+  endif
   if expand('%:e') ==# 'cpp' || expand('%:e') ==# 'h' || expand('%:e') ==# 'cu'
     call codefmt#FormatBuffer('clang-format')
   endif
