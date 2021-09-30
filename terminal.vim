@@ -53,6 +53,6 @@ function! UseRelativeFilenameInTermBelow(prefix, ...) abort
    call feedkeys('a' . a:prefix . l:filename . l:postfix)
 endfunction
 
-nnoremap <Leader>cf :call UseRelativeFilenameInTermBelow('ls ')<CR>
-nnoremap <Leader>cF :call UseAbsoluteFilenameInTermBelow('ls ')<CR>
+nnoremap <Leader>cf :call UseRelativeFilenameInTermBelow('')<CR>
+nnoremap <Leader>cF :call UseAbsoluteFilenameInTermBelow('')<CR>
 
