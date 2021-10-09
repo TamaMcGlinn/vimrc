@@ -13,7 +13,7 @@ endfunction
 
 augroup autoformat
   autocmd!
-  autocmd BufWritePost *.ad[sb] Autoformat | noautocmd write
+  autocmd BufWrite *.ad[sb] :Autoformat
   autocmd BufWritePre * call ApplyCustomFormatters()
 
   " defaults from https://github.com/google/vim-codefmt
