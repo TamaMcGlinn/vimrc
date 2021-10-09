@@ -227,3 +227,13 @@ function! CommitQF(...)
     call setqflist(list)
 endfunction
 
+" function! Flog_Git_Log() abort
+"   let l:command = flog#get_fugitive_git_command()
+"   let l:command .= ' log'
+"   let l:command .= flog#build_log_args()
+"   let l:command .= ' -- '
+"   let l:command .= flog#build_log_paths()
+"   return l:command
+" endfunction
+"
+" let g:flog_build_log_command_fn = 'Flog_Git_Log'
