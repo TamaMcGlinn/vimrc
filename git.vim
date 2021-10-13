@@ -142,6 +142,7 @@ nnoremap <leader>gx :GBrowse<CR>
 vnoremap <leader>gx :GBrowse<CR>
 nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gS :SignifyReset<CR>
+nnoremap <leader>gp :SignifyReset<CR>:SignifyOlder<CR>
 nnoremap <leader>g[ :CompareOlder<CR>
 nnoremap <leader>g] :CompareNewer<CR>
 nnoremap <leader>ge :Gedit<CR>
@@ -169,6 +170,7 @@ let g:which_key_map['g'] = {'name': '+Git',
              \'a': 'All windows',
              \'s': 'Status',
              \'S': 'Signify reset',
+             \'p': 'Signify parent',
              \'e': 'Toggle index / working file version',
              \'R': 'Reset to index',
              \'j': 'Fetch',
