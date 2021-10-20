@@ -2,6 +2,7 @@
 nnoremap <leader>of :lua require('telescope.builtin').git_files()<CR>
 nnoremap <leader>oa :NERDTreeToggle<CR>
 nnoremap <leader>ot :Tags<CR>
+nnoremap <leader>oq :CtrlSFClose<CR>
 nnoremap <leader>oG :Commits<CR>
 nnoremap <leader>og :BCommits<CR>
 nnoremap <leader>on :Lines<CR>
@@ -22,6 +23,7 @@ let g:which_key_map['o'] = {'name' : '+Navigate',
       \ 'F'    : 'all file search',
       \ 'p'    : 'recent files',
       \ 'o'    : 'open files',
+      \ 'q'    : 'close search window',
       \ 'm'    : 'marks',
       \ '/'    : 'text search buffer',
       \ 's'    : 'text search',
