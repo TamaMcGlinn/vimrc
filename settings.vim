@@ -26,8 +26,6 @@ set path+=**
 " Display all matching files when we tab complete
 set wildmenu
 
-let g:deoplete#enable_at_startup = 1
-
 " Make program for gprbuild - there is a problem if the sources are in a directory,
 " gprbuild should output something to indicate where the file is found
 " set makeprg=gprbuild\ -d\ -p\ -g
