@@ -1,6 +1,6 @@
 
 source ~/vimrc/nvim_lspconfig.vim
-source ~/vimrc/autocomplete.vim
+" source ~/vimrc/autocomplete.vim
 
 source ~/vimrc/ale_settings.vim
 source ~/vimrc/syntastic.vim

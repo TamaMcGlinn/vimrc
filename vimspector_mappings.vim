@@ -37,6 +37,7 @@ let g:which_key_map['d'] = {'name': '+Debug',
 vnoremap <Leader>ge :call vimspector#Evaluate(GetVisualSelection())<CR>
 
 " Show breakpoints in the UI
+" pending https://github.com/puremourning/vimspector/issues/10
 augroup ZVimspectorCustomMappings
     autocmd!
     autocmd User VimspectorUICreated call ZVimspectorSetupUi()
