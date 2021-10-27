@@ -50,6 +50,9 @@ Plug 'wfxr/minimap.vim'
 " File Outline Tags
 Plug 'preservim/tagbar'
 
+" Marks see also ~/vimrc/marks.vim
+" Plug 'chentau/marks.nvim'
+
 " Fuzzy file search
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
