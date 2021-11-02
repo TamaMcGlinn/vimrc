@@ -1,8 +1,10 @@
 nnoremap <leader>ds :call vimspector#Launch()<CR>
 nnoremap <leader>dq :call vimspector#Reset()<CR>
+
 nnoremap <leader>dl :call vimspector#StepInto()<CR>
 nnoremap <leader>dj :call vimspector#StepOver()<CR>
 nnoremap <leader>dk :call vimspector#StepOut()<CR>
+
 nnoremap <leader>d<space> :call vimspector#Continue()<CR>
 nnoremap <leader>dh :call vimspector#RunToCursor()<CR>
 nnoremap <leader>db :call vimspector#ToggleBreakpoint()<CR>

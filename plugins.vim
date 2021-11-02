@@ -67,6 +67,9 @@ Plug 'jesseleite/vim-agriculture'
 Plug 'markonm/traces.vim'
 Plug 'valloric/listtoggle'
 
+" Harpoon
+Plug 'ThePrimeagen/harpoon'
+
 " Code completion
 " Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
 " Plug 'ycm-core/YouCompleteMe'
