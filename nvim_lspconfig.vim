@@ -105,16 +105,4 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
--- require('lspconfig').setup{
---   settings = {
---     pylsp = {
---       plugins = {
---         pydocstyle = {
---           enabled = true
---         }
---       }
---     }
---   }
--- }
-
 EOF
