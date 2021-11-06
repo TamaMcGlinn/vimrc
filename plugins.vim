@@ -54,7 +54,7 @@ Plug 'preservim/tagbar'
 " Plug 'chentau/marks.nvim'
 
 " Fuzzy file search
-Plug 'nvim-lua/popup.nvim'
+" Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
@@ -95,7 +95,7 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'tree-sitter/tree-sitter-typescript'
 Plug 'nvim-treesitter/playground'
-Plug 'nvim-lua/popup.nvim'
+" Plug 'nvim-lua/popup.nvim'
 Plug 'ThePrimeagen/refactoring.nvim'
 
 " Linting
