@@ -158,7 +158,6 @@ Plug 'junegunn/vim-easy-align' " vip :EasyAlign ,
 
 " --------------  git -----------------
 Plug 'mhinz/vim-signify'
-Plug 'tpope/vim-fugitive'
 
 " GBrowse handlers:
 Plug 'tpope/vim-rhubarb'
@@ -168,11 +167,8 @@ Plug 'TamaMcGlinn/vim-gerritbrowse'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'rhysd/git-messenger.vim'
 Plug 'stsewd/fzf-checkout.vim'
-Plug 'sodapopcan/vim-twiggy'
 Plug 'ThePrimeagen/git-worktree.nvim'
 " Plug '~/code/vimplugins/git-worktree.nvim'
-Plug 'TamaMcGlinn/flog-teamjump.vim'
-Plug '~/code/vimplugins/vim-instaflog'
 
 " Smooth scrolling
 Plug 'psliwka/vim-smoothie'
@@ -180,12 +176,21 @@ Plug 'psliwka/vim-smoothie'
 " Space menu
 Plug 'liuchengxu/vim-which-key'
 
-Plug 'skywind3000/vim-quickui'
-" Plug 'rbong/vim-flog'
-Plug 'TamaMcGlinn/vim-flog'
-" Plug '~/code/vimplugins/vim-flog'
-" Plug 'TamaMcGlinn/vim-flogmenu'
-Plug '~/code/vimplugins/vim-flogmenu'
+" Flog
+Plug 'tpope/vim-fugitive'
+Plug 'rbong/vim-flog'
+Plug 'sodapopcan/vim-twiggy'
+Plug 'stsewd/fzf-checkout.vim'
+Plug 'dpretet/vim-leader-mapper'
+
+" flog extensions
+Plug 'TamaMcGlinn/flog-menu'
+Plug 'TamaMcGlinn/flog-teamjump'
+Plug 'TamaMcGlinn/flog-forest'
+Plug 'TamaMcGlinn/flog-navigate'
+
+
+Plug '~/code/vimplugins/vim-instaflog'
 
 Plug 'dsummersl/vimunit'
 Plug 'int3/vim-extradite'
