@@ -175,15 +175,18 @@ Plug 'psliwka/vim-smoothie'
 
 " Space menu
 Plug 'liuchengxu/vim-which-key'
+Plug 'dpretet/vim-leader-mapper'
+
+" other git plugins
+Plug 'sodapopcan/vim-twiggy'
+Plug 'stsewd/fzf-checkout.vim'
 
 " Flog
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog'
-Plug 'sodapopcan/vim-twiggy'
-Plug 'stsewd/fzf-checkout.vim'
-Plug 'dpretet/vim-leader-mapper'
 
 " flog extensions
+Plug 'skywind3000/vim-quickui'
 Plug 'TamaMcGlinn/flog-menu'
 Plug 'TamaMcGlinn/flog-teamjump'
 Plug 'TamaMcGlinn/flog-forest'
