@@ -175,6 +175,7 @@ Plug 'sodapopcan/vim-twiggy'
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'rhysd/git-messenger.vim'
+Plug 'aacunningham/vim-fuzzy-stash'
 
 Plug 'ThePrimeagen/git-worktree.nvim'
 " Plug '~/code/vimplugins/git-worktree.nvim'

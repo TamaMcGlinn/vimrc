@@ -144,6 +144,16 @@ nnoremap <leader>gJ :call Track_and_pull()<CR>
 nnoremap <leader>gk :Git push<CR>
 nnoremap <leader>gK :Git push --force-with-lease<CR>
 
+" stashing
+nnoremap <leader>gi :GStash<space>
+nnoremap <leader>go :GStashList<CR>
+
+" A more sane configuration
+let g:fuzzy_stash_actions = {
+  \ 'ctrl-d': 'drop',
+  \ 'ctrl-p': 'pop',
+  \ 'ctrl-a': 'apply' }
+
 nnoremap <leader>gn :Gvdiffsplit!<CR>
 nnoremap <leader>gz :Git blame<CR>
 nnoremap <leader>gb :Twiggy<CR>
@@ -176,6 +186,8 @@ let g:which_key_map['g'] = {'name': '+Git',
              \'b': 'Branches',
              \'B': 'Branch search',
              \'t': 'Tags',
+             \'i': 'Stash',
+             \'o': 'View stashes',
              \'x': 'GBrowse',
              \'c': 'Commit',
              \'h': 'Show head',
