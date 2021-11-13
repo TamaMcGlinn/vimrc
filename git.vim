@@ -44,11 +44,6 @@ augroup flog
   autocmd FileType floggraph vno <buffer> cb :<C-U>call flog#run_command("Git bundle create " . input ("bundle> ") . " %(l'>)..%(l'<)")<CR>
   autocmd FileType floggraph nno <buffer> cb :<C-U>call flog#run_command("Git bundle create " . input ("bundle> ") . " %(h).. --branches --tags")<CR>
 
-  " 'amend' a selected commit with whatever is staged
-  " Convention: second letter as a capital means 'and also commit the result'
-  autocmd FileType floggraph nno <buffer> ca :<C-U>call flog#run_command('call FixupCommit("%h")', 0, 1)<CR>
-  autocmd FileType floggraph nno <buffer> cA :<C-U>call flog#run_command('call AmendCommit("%h")', 0, 1)<CR>
-
   autocmd FileType floggraph nno <buffer> <silent> <Leader>nc :Flogjump HEAD<CR>
 
   autocmd FileType floggraph nnoremap <buffer> <silent> <CR> :<C-U>call flog#run_tmp_command('vertical belowright Git show %h')<CR> <C-W>lG{j
@@ -135,16 +130,20 @@ nnoremap <leader>ga :call flogmenu#open_all_windows()<CR>
 nnoremap <leader>gx :GBrowse<CR>
 vnoremap <leader>gx :GBrowse<CR>
 nnoremap <leader>gs :Git<CR>
+
 nnoremap <leader>gS :SignifyReset<CR>
 nnoremap <leader>gp :SignifyReset<CR>:SignifyOlder<CR>
 nnoremap <leader>g[ :CompareOlder<CR>
 nnoremap <leader>g] :CompareNewer<CR>
+
 nnoremap <leader>ge :Gedit<CR>
 nnoremap <leader>gR :Gread<CR>
+
 nnoremap <leader>gj :Git fetch --all<CR>
 nnoremap <leader>gJ :call Track_and_pull()<CR>
 nnoremap <leader>gk :Git push<CR>
 nnoremap <leader>gK :Git push --force-with-lease<CR>
+
 nnoremap <leader>gn :Gvdiffsplit!<CR>
 nnoremap <leader>gz :Git blame<CR>
 nnoremap <leader>gb :Twiggy<CR>

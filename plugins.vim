@@ -175,7 +175,6 @@ Plug 'psliwka/vim-smoothie'
 
 " Space menu
 Plug 'liuchengxu/vim-which-key'
-Plug 'dpretet/vim-leader-mapper'
 
 " other git plugins
 Plug 'sodapopcan/vim-twiggy'
