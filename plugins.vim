@@ -164,12 +164,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'TamaMcGlinn/vim-gerritbrowse'
 
-Plug 'rhysd/conflict-marker.vim'
-Plug 'rhysd/git-messenger.vim'
-Plug 'stsewd/fzf-checkout.vim'
-Plug 'ThePrimeagen/git-worktree.nvim'
-" Plug '~/code/vimplugins/git-worktree.nvim'
-
 " Smooth scrolling
 Plug 'psliwka/vim-smoothie'
 
@@ -179,6 +173,12 @@ Plug 'liuchengxu/vim-which-key'
 " other git plugins
 Plug 'sodapopcan/vim-twiggy'
 Plug 'stsewd/fzf-checkout.vim'
+Plug 'rhysd/conflict-marker.vim'
+Plug 'rhysd/git-messenger.vim'
+
+Plug 'ThePrimeagen/git-worktree.nvim'
+" Plug '~/code/vimplugins/git-worktree.nvim'
+
 
 " Flog
 Plug 'tpope/vim-fugitive'
