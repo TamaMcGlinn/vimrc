@@ -223,7 +223,7 @@ function! CommitQF(...)
     let flist = system('git diff --name-only ' . commit)
     let flist = split(flist, '\n')
 
-    " Create the dictionnaries used to populate the quickfix list
+    " Create the dictionaries used to populate the quickfix list
     let list = []
     for f in flist
         let dic = {'filename': f, 'lnum': 1}
