@@ -5,6 +5,46 @@ source ~/vimrc/git_worktree.vim
 source ~/vimrc/git_cycle_diffs.vim
 source ~/vimrc/flog_airline.vim
 
+function! TabIsEmpty() abort
+    " Remember which window we're in at the moment
+    let initial_win_num = winnr()
+
+    let win_count = 0
+    " Add the length of the file name on to count:
+    " this will be 0 if there is no file name
+    windo let win_count += len(expand('%'))
+
+    " Go back to the initial window
+    exe initial_win_num . "wincmd w"
+
+    " Check count
+    if win_count == 0
+        " Tab page is empty
+        return 1
+    else
+        return 0
+    endif
+endfunction
+
+function! WindowIsEmpty() abort
+  if bufname("%") == ""
+    if line('$') > 1
+      return 0
+    endif
+    return len(getline('.')) == 0
+  else
+    return 0
+  endif
+endfunction
+
+function! OpenFlog() abort
+  let l:opencmd=''
+  if WindowIsEmpty()
+    let l:opencmd='-open-cmd=edit'
+  endif
+  call flogmenu#open_git_log(l:opencmd)
+endfunction
+
 let g:signify_sign_add               = '+'
 let g:signify_sign_delete            = '_'
 let g:signify_sign_delete_first_line = '‾'
@@ -61,7 +101,7 @@ let g:fugitive_conflict_x = 1
 
 
 " Git log
-nnoremap <silent> <leader>gll :call flogmenu#open_git_log()<CR>
+nnoremap <silent> <leader>gll :call OpenFlog()<CR>
 nnoremap <leader>glc :Flog<CR>
 nnoremap <leader>gls :Flogsplit -all<CR>
 nnoremap <leader>glv :vertical Flogsplit -all<CR>
