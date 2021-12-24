@@ -1,6 +1,6 @@
 
 " Auto read file from disk if it was changed somewhere outside editor 
-set autoread
+set autoread  
 
 " New splits on the right
 set splitright
@@ -16,6 +16,10 @@ set complete=.,w,b,u,t,i,kspell
 
 " Disable spelling checking
 set nospell
+
+" Show tabs and trailing spaces
+set list 
+set listchars=tab:↹\ ,trail:·
 
 " Disable swap files
 set noswapfile
