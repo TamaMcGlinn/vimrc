@@ -11,6 +11,12 @@ function! ApplyCustomFormatters() abort
   endif
 endfunction
 
+function! ApplyPythonFormatters() abort
+  call codefmt#FormatBuffer('black')
+  call codefmt#FormatBuffer('isort')
+endfunction
+
+
 augroup autoformat
   autocmd!
   autocmd BufWrite *.ad[sb] :Autoformat
@@ -23,8 +29,9 @@ augroup autoformat
   autocmd FileType gn AutoFormatBuffer gn
   autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
   autocmd FileType java AutoFormatBuffer google-java-format
-  autocmd FileType python AutoFormatBuffer black
-  autocmd FileType python AutoFormatBuffer isort
+  " autocmd FileType python AutoFormatBuffer isort
+  " autocmd FileType python AutoFormatBuffer black
+  autocmd BufWritePre *.py call ApplyPythonFormatters()
   " Alternative: autocmd FileType python AutoFormatBuffer autopep8
   autocmd FileType rust AutoFormatBuffer rustfmt
   autocmd FileType vue AutoFormatBuffer prettier
