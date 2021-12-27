@@ -1,5 +1,5 @@
 
-fu! GetDirFromPrompt() abort
+function! GetDirFromPrompt() abort
   let l:line=getline('.')
   if l:line =~? '^[^> ]*@[^> ]* MINGW.. '
     " USER@DOMAIN MINGW64 ~/vimscripts/dein/repos/github.com/autozimu/LanguageClient-neovim_next (next)
@@ -21,7 +21,7 @@ fu! GetDirFromPrompt() abort
   return l:dir
 endfunction
 
-fu! GetDir() abort
+function! GetDir() abort
   if &buftype ==# 'terminal'
     return GetDirFromPrompt()
   else
@@ -30,13 +30,13 @@ fu! GetDir() abort
 endfunction
 
 " Change directory to current line
-fu! DirToCurrentLine() abort
+function! DirToCurrentLine() abort
   let l:dir = GetDir()
   execute 'cd '.l:dir
   echom 'cd '.l:dir
 endfunction
 
-fu! JumpToTerminalBuffer() abort
+function! JumpToTerminalBuffer() abort
   if &buftype ==# 'terminal'
     return
   endif
@@ -59,7 +59,7 @@ function! TermDirToCwd() abort
 endfunction
 
 " Change directory of terminal to current line
-fu! TermDirToCurrentLine() abort
+function! TermDirToCurrentLine() abort
   let l:dir = GetDir()
   call JumpToTerminalBuffer()
   call feedkeys('acd ' . l:dir . '')
