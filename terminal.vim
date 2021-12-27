@@ -40,20 +40,34 @@ if has('win32')
   augroup END
 endif
 
-" TODO somehow use the smarter better_gf#JumpToNormalBuffer()
+fu! JumpToTerminalBuffer() abort
+  if &buftype ==# 'terminal'
+    return
+  endif
+  let l:first_window_number = winnr()
+  while v:true
+    execute "wincmd W"
+    if &buftype ==# 'terminal'
+      return
+    endif
+    if winnr() == l:first_window_number
+      break
+    endif
+  endwhile
+  throw "Unable to find terminal window in current tab"
+endfunction
+
 function! UseAbsoluteFilenameInTermBelow(prefix, ...) abort
  let l:postfix = get(a:, 1, '')
  let l:filename = expand('%:p')
- " switch to bottom terminal buffer
- silent execute 'wincmd j'
+ call JumpToTerminalBuffer()
  call feedkeys('a' . a:prefix . l:filename . l:postfix)
 endfunction
 
 function! UseRelativeFilenameInTermBelow(prefix, ...) abort
    let l:postfix = get(a:, 1, '')
    let l:filename = bufname('%')
-   " switch to bottom terminal buffer
-   silent execute 'wincmd j'
+   call JumpToTerminalBuffer()
    call feedkeys('a' . a:prefix . l:filename . l:postfix)
 endfunction
 
