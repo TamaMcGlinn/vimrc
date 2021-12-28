@@ -169,6 +169,7 @@ Plug 'psliwka/vim-smoothie'
 
 Plug 'TamaMcGlinn/vim-termhere'
 Plug 'TamaMcGlinn/vim-dirhere'
+Plug 'TamaMcGlinn/vim-browsedir'
 
 " Space menu
 Plug 'liuchengxu/vim-which-key'
@@ -216,7 +217,7 @@ Plug 'bounceme/remote-viewer'
 Plug 'mcchrish/nnn.vim'
 
 Plug 'voldikss/vim-floaterm'
-Plug '~/code/vimplugins/vim-bettergf'
+Plug 'TamaMcGlinn/vim-bettergf'
 
 Plug 'ryanoasis/vim-devicons'
 " vim-devicons must be the last plugin

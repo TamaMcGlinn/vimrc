@@ -20,19 +20,8 @@ vnoremap K :m '<-2<CR>gv=gv
 source ~/vimrc/cntrl_move.vim
 source ~/vimrc/google_test.vim
 
-function! BrowseDir() abort
-  if &buftype ==# 'terminal'
-    let l:dir = GetDirFromPrompt()
-    " switch to buffer above
-    silent execute 'wincmd k'
-    execute ':e '.l:dir
-  else
-    e %:h
-  endif
-endfunction
-
-" open directory of current file
-nnoremap <silent> - :call BrowseDir()<CR>
+" open directory of current file / terminal line
+nnoremap <silent> - :call browsedir#BrowseDir()<CR>
 
 " maximize 
 nnoremap \ :MaximizerToggle<CR>
