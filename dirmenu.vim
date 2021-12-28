@@ -1,8 +1,8 @@
 
 " Dir
-nnoremap <leader>qq :call DirToCurrentLine()<CR>
-nnoremap <leader>qw :call TermDirToCwd()<CR>
-nnoremap <leader>qc :call TermDirToCurrentLine()<CR>
+nnoremap <leader>qq :call dirhere#DirToCurrentLine()<CR>
+nnoremap <leader>qw :call dirhere#TermDirToCwd()<CR>
+nnoremap <leader>qc :call dirhere#TermDirToCurrentLine()<CR>
 nnoremap <leader>qg :Gcd<CR>
 nnoremap <leader>qp :pwd<CR>
 

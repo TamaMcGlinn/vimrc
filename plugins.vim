@@ -168,6 +168,7 @@ Plug 'TamaMcGlinn/vim-gerritbrowse'
 Plug 'psliwka/vim-smoothie'
 
 Plug 'TamaMcGlinn/vim-termhere'
+Plug 'TamaMcGlinn/vim-dirhere'
 
 " Space menu
 Plug 'liuchengxu/vim-which-key'

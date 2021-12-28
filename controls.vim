@@ -46,7 +46,6 @@ vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 source ~/vimrc/build.vim
 source ~/vimrc/terminal.vim
 source ~/vimrc/compare.vim
-source ~/vimrc/dir_to_current_line.vim
 source ~/vimrc/file_hotkeys.vim
 source ~/vimrc/harpoon.vim
 source ~/vimrc/putmenu.vim
