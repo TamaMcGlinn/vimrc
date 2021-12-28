@@ -167,6 +167,8 @@ Plug 'TamaMcGlinn/vim-gerritbrowse'
 " Smooth scrolling
 Plug 'psliwka/vim-smoothie'
 
+Plug 'TamaMcGlinn/vim-termhere'
+
 " Space menu
 Plug 'liuchengxu/vim-which-key'
 
