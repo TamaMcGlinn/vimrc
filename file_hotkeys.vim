@@ -8,6 +8,7 @@ endfunction
 " Edit configuration
 nnoremap <Leader>vV :e ~/vimrc/vimrc.vim<CR>
 nnoremap <Leader>vv :e ~/vimrc/**/*
+nnoremap <Leader>vr :e ~/vimrc/nvim_lspconfig.vim<CR>
 nnoremap <Leader>vm :e ~/dotfiles/muttrc/muttrc.muttrc<CR>
 nnoremap <Leader>vn :e ~/dotfiles/install<CR>
 nnoremap <Leader>vs :e ~/private_vimrc/**/*
@@ -39,6 +40,7 @@ let g:plugins_menu = {'name': '+Plugins',
 
 let g:which_key_map['v'] = {'name': '+Config',
              \'v': 'vim config',
+             \'r': 'LSP config',
              \'s': 'secret vim config',
              \'m': 'Muttrc',
              \'u': 'UltisnipsEdit',
