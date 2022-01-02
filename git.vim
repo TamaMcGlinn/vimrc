@@ -4,6 +4,7 @@ source ~/vimrc/git_diffhistory.vim
 source ~/vimrc/git_worktree.vim
 source ~/vimrc/git_cycle_diffs.vim
 source ~/vimrc/flog_airline.vim
+source ~/vimrc/gitremotes.vim
 
 function! TabIsEmpty() abort
     " Remember which window we're in at the moment
@@ -215,6 +216,7 @@ let g:which_key_map['g'] = {'name': '+Git',
              \'S': 'Signify reset',
              \'p': 'Signify parent',
              \'e': 'Toggle index / working file version',
+             \'r': g:git_remotes_menu,
              \'R': 'Reset to index',
              \'j': 'Fetch',
              \'m': 'Blame line',
