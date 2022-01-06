@@ -7,10 +7,6 @@ Plug 'TamaMcGlinn/Ada-Bundle'
 " Automatic tags management
 " Plug 'ludovicchabant/vim-gutentags'
 
-" Autocompletion plugins
-Plug 'nvim-lua/completion-nvim'
-Plug 'onsails/lspkind-nvim'
-
 Plug 'dyng/ctrlsf.vim'
 Plug 'preservim/nerdtree' |
   \ Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -70,10 +66,15 @@ Plug 'valloric/listtoggle'
 " Harpoon
 Plug 'ThePrimeagen/harpoon'
 
-" Code completion
+" Code completion / LSP
+Plug 'neovim/nvim-lspconfig'
+Plug 'onsails/lspkind-nvim'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+" no longer used:
 " Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
 " Plug 'ycm-core/YouCompleteMe'
-Plug 'neovim/nvim-lspconfig'
 " Plug 'nvim-lua/completion-nvim'
 
 " main one
