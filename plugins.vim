@@ -77,11 +77,6 @@ Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 " Plug 'ycm-core/YouCompleteMe'
 " Plug 'nvim-lua/completion-nvim'
 
-" main one
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-" 9000+ Snippets
-Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-
 Plug 'kevinoid/vim-jsonc'
 Plug 'ktchen14/cscope-auto'
 Plug 'Chiel92/vim-autoformat'
