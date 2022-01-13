@@ -5,6 +5,7 @@ source ~/vimrc/git_worktree.vim
 source ~/vimrc/git_cycle_diffs.vim
 source ~/vimrc/flog_airline.vim
 source ~/vimrc/gitremotes.vim
+source ~/vimrc/diffview.vim
 
 function! TabIsEmpty() abort
     " Remember which window we're in at the moment
