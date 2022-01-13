@@ -128,7 +128,8 @@ local settings = {
         enabled = true
       },
       flake8 = {
-        maxLineLength = 100
+        maxLineLength = 100,
+        ignore = "E203,E501,W503,C901"
       }
     }
   }
