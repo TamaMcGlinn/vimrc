@@ -1,5 +1,6 @@
 
 source ~/vimrc/nvim_lspconfig.vim
+source ~/vimrc/lsp_most_severe_gutter.vim
 " source ~/vimrc/autocomplete.vim
 
 source ~/vimrc/ale_settings.vim
