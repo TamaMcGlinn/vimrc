@@ -129,9 +129,7 @@ Plug 'bazelbuild/vim-bazel'
 
 " Code formatting
 Plug 'google/vim-glaive'
-" Plug 'google/vim-codefmt'
-Plug '~/code/vimplugins/vim-codefmt'
-" Plug 'google/vim-glaive'
+Plug 'google/vim-codefmt'
 
 Plug 'farmergreg/vim-lastplace'
 
