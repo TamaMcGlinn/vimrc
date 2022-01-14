@@ -21,10 +21,20 @@ require('telescope').setup {
     fzy_native = {
       override_generic_sorter = false,
       override_file_sorter = true,
+    },
+    termfinder = {
+        mappings = {
+            rename_term = '<C-r>',
+            delete_term = '<C-x>',
+            vertical_term = '<C-v>',
+            horizontal_term = '<C-h>',
+            float_term = '<C-f>'
+        }
     }
   }
 }
 require('telescope').load_extension('fzy_native')
+require('telescope').load_extension("termfinder")
 
 EOF
 

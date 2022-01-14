@@ -17,6 +17,9 @@ source ~/vimrc/airline_settings.vim
 
 source ~/vimrc/intellisense.vim
 
+source ~/vimrc/telescope.vim
+source ~/vimrc/toggleterm.vim
+
 " custom definitions
 source ~/vimrc/move_to_tab.vim
 

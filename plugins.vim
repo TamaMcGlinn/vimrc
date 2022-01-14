@@ -54,6 +54,7 @@ Plug 'preservim/tagbar'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'tknightz/telescope-termfinder.nvim'
 Plug 'junegunn/fzf', {
     \ 'dir': '~/.fzf', 
     \ 'do': './install --all' 
@@ -161,6 +162,8 @@ Plug 'TamaMcGlinn/vim-gerritbrowse'
 " Smooth scrolling
 Plug 'psliwka/vim-smoothie'
 
+" Terminal stuff
+Plug 'akinsho/toggleterm.nvim'
 Plug 'TamaMcGlinn/vim-termhere'
 Plug 'TamaMcGlinn/vim-dirhere'
 Plug 'TamaMcGlinn/vim-browsedir'

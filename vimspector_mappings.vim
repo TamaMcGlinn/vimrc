@@ -1,21 +1,28 @@
+" starting
 nnoremap <leader>ds :call vimspector#Launch()<CR>
+nnoremap <leader>dp :call vimspector#Pause()<CR>
 nnoremap <leader>dq :call vimspector#Reset()<CR>
+nnoremap <leader>dr :call vimspector#Restart()<CR>
 
+" stepping
 nnoremap <leader>dl :call vimspector#StepInto()<CR>
 nnoremap <leader>dj :call vimspector#StepOver()<CR>
 nnoremap <leader>dk :call vimspector#StepOut()<CR>
-
 nnoremap <leader>d<space> :call vimspector#Continue()<CR>
 nnoremap <leader>dh :call vimspector#RunToCursor()<CR>
+
+" breaking
 nnoremap <leader>db :call vimspector#ToggleBreakpoint()<CR>
-nnoremap <leader>dc :call vimspector#ToggleConditionalBreakpoint()<CR>
+nnoremap <leader>dc :call vimspector#ToggleAdvancedBreakpoint()<CR>
 nnoremap <leader>df :call vimspector#AddFunctionBreakpoint()<CR>
-nnoremap <leader>dp :call vimspector#Pause()<CR>
-nnoremap <leader>dr :call vimspector#Restart()<CR>
 nnoremap <leader>dd :call vimspector#ClearBreakpoints()<CR>
+
+" evaluating
 nnoremap <expr> <leader>d8 ":VimspectorEval " . expand("<cWORD>")
 nnoremap <leader>de :call vimspector#Evaluate(input("Eval> ")<CR>
-nnoremap <leader>do :VimspectorShowOutput<CR>
+
+" jumping
+nnoremap <leader>dt :call win_gotoid(g:vimspector_session_windows.stack_trace)<CR>
 
 let g:which_key_map['d'] = {'name': '+Debug',
              \'s': 'Start',
@@ -33,7 +40,7 @@ let g:which_key_map['d'] = {'name': '+Debug',
              \'d': 'ClearBreakpoints',
              \'8': 'Evaluate word',
              \'e': 'Evaluate',
-             \'o': 'Show output',
+             \'t': 'stacktrace',
              \}
 
 vnoremap <Leader>ge :call vimspector#Evaluate(GetVisualSelection())<CR>
