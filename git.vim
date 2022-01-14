@@ -135,15 +135,6 @@ let g:git_log_menu = {'name': '+Log',
  \'6': 'which_key_ignore',
  \}
 
-" TODO make these really work
-" let g:flogmenu_stashmenu = {'name': 'Git stash menu',
-"               \'h': [':Git -p stash show -p stash', 'Show'],
-"               \'l': [':Git -p stash list',          'List'],
-"               \'a': [':Git stash apply stash@{',    'Apply'],
-"               \'p': [':Git stash pop',              'Pop'],
-"               \'s': [':Git stash push<space>',      'Stash'],
-"               \}
-
 fu! SystemGit(command) abort
   return substitute(execute('Git ' . a:command), '^.', '', '')
 endfunction
@@ -192,7 +183,7 @@ nnoremap <leader>go :GStashList<CR>
 " A more sane configuration
 let g:fuzzy_stash_actions = {
   \ 'ctrl-d': 'drop',
-  \ 'ctrl-p': 'pop',
+  \ 'ctrl-o': 'pop',
   \ 'ctrl-a': 'apply' }
 
 nnoremap <leader>gn :Gvdiffsplit!<CR>
@@ -216,7 +207,7 @@ let g:which_key_map['g'] = {'name': '+Git',
              \'S': 'Signify reset',
              \'p': 'Signify parent',
              \'e': 'Toggle index / working file version',
-             \'r': g:git_remotes_menu,
+             \'r': 'Remotes',
              \'R': 'Reset to index',
              \'j': 'Fetch',
              \'m': 'Blame line',
