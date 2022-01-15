@@ -81,12 +81,6 @@ Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'kevinoid/vim-jsonc'
 Plug 'ktchen14/cscope-auto'
 Plug 'Chiel92/vim-autoformat'
-" Plug '~/code/vimplugins/vim-autoformat'
-" Plug 'autozimu/LanguageClient-neovim', {
-"     \ 'branch': 'next',
-"     \ 'do': 'bash install.sh',
-"     \ }
-" Plug 'davidhalter/jedi-vim'
 
 " Refactoring
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -111,7 +105,7 @@ Plug 'AndrewRadev/switch.vim'
 " Fix gx
 " Fix gx see https://github.com/vim/vim/issues/4738
 " Plug 'felipec/vim-sanegx'
-Plug '~/code/vimplugins/vim-sanergx'
+Plug 'TamaMcGlinn/vim-sanergx'
 
 Plug 'morhetz/gruvbox'
 " Plug 'vim-scripts/visSum.vim'
@@ -180,7 +174,6 @@ Plug 'aacunningham/vim-fuzzy-stash'
 Plug 'sindrets/diffview.nvim'
 
 Plug 'ThePrimeagen/git-worktree.nvim'
-" Plug '~/code/vimplugins/git-worktree.nvim'
 
 
 " Flog
@@ -195,7 +188,7 @@ Plug 'TamaMcGlinn/flog-forest'
 Plug 'TamaMcGlinn/flog-navigate'
 
 
-Plug '~/code/vimplugins/vim-instaflog'
+Plug 'TamaMcGlinn/vim-instaflog'
 
 Plug 'dsummersl/vimunit'
 Plug 'int3/vim-extradite'
