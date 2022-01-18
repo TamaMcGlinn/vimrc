@@ -18,7 +18,6 @@ source ~/vimrc/airline_settings.vim
 source ~/vimrc/intellisense.vim
 
 source ~/vimrc/telescope.vim
-source ~/vimrc/toggleterm.vim
 
 " custom definitions
 source ~/vimrc/move_to_tab.vim
@@ -41,6 +40,7 @@ source ~/vimrc/switch_maps.vim
 source ~/vimrc/cscope_maps.vim
 source ~/vimrc/minimap.vim
 source ~/vimrc/startup.vim
+source ~/vimrc/toggleterm.vim
 
 source ~/vimrc/abbreviations.vim
 

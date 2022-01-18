@@ -1,3 +1,9 @@
+nnoremap <silent><c-\> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+tnoremap <silent><c-\> <Cmd>exe "ToggleTermToggleAll"<CR>
+nnoremap <silent><leader>oc :Telescope termfinder find<CR>
+
+nnoremap <silent><leader>cv :ToggleTerm<CR>
+
 lua << EOF
 
 require("toggleterm").setup{
@@ -35,7 +41,3 @@ require("toggleterm").setup{
 }
 
 EOF
-
-nnoremap <silent><c-\> <Cmd>exe v:count1 . "ToggleTerm"<CR>
-tnoremap <silent><c-\> <Cmd>exe "ToggleTermToggleAll"<CR>
-nnoremap <silent><leader>oc :Telescope termfinder find<CR>

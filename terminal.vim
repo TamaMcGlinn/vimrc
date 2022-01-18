@@ -14,6 +14,7 @@ endif
 
 let g:which_key_map['c'] = {'name': '+Terminal',
              \'c': 'Full window',
+             \'v': 'Toggleterm',
              \'s': 'Split below',
              \'f': 'relative filename',
              \'F': 'absolute filename',
