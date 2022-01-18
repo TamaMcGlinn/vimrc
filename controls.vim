@@ -25,6 +25,7 @@ nnoremap <silent> - :call browsedir#BrowseDir()<CR>
 
 " maximize 
 nnoremap \ :MaximizerToggle<CR>
+nnoremap <leader>rs :GPRSelect<CR>
 
 " double escape clears search
 nno <esc><esc> :nohlsearch<cr>

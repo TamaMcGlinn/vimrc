@@ -1,5 +1,3 @@
-lua << EOF
-
 -- see https://github.com/mjlbach/lsp-containers/blob/master/clangd/init.lua
 
 --Incremental live completion
@@ -120,7 +118,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "pylsp", "rust_analyzer", "als", "clangd", "bashls", "vimls" }
+local servers = { "pylsp", "rust_analyzer", "clangd", "bashls", "vimls", "sumneko_lua" }
 local settings = {
   pylsp = {
     plugins = {
@@ -132,7 +130,34 @@ local settings = {
         ignore = "E203,E501,W503,C901"
       }
     }
-  }
+  },
+  Lua = {
+    runtime = {
+      -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+      version = 'LuaJIT',
+      -- Setup your lua path
+      path = runtime_path,
+    },
+    diagnostics = {
+      -- Get the language server to recognize the `vim` global
+      globals = {'vim'},
+    },
+    workspace = {
+      checkThirdParty = false,
+      -- Make the server aware of Neovim runtime files
+      library = vim.api.nvim_get_runtime_file("", true),
+    },
+    -- Do not send telemetry data containing a randomized but unique identifier
+    telemetry = {
+      enable = false,
+    },
+  },
+}
+
+require("lspconfig").als.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+  on_init = require("gpr_selector").als_on_init
 }
 
 for _, lsp in ipairs(servers) do
@@ -162,5 +187,3 @@ require('nvim-treesitter.configs').setup {
     enable = true,
   },
 }
-
-EOF
