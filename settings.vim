@@ -8,6 +8,9 @@ set splitright
 " Set default dictionary for spellchecker as English 
 set spelllang=en 
 
+" Let backspace only go back to beginning of line or current insert
+set backspace=
+
 " Allow hidden buffers to have changes
 set hidden
 
