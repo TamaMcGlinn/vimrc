@@ -19,6 +19,7 @@ nnoremap <Leader>vi :e ~/.gitignore<CR>
 nnoremap <Leader>vl :e ~/.config/pycodestyle<CR>
 nnoremap <Leader>vb :e ~/dotfiles/bashrc<CR>
 nnoremap <Leader>vB :e ~/.private_bashrc<CR>
+nnoremap <Leader>ve :e ~/code/tensoreye/scripts/**/*
 nnoremap <Leader>vh :e ~/private_vimrc/ssh_config<CR>
 nnoremap <Leader>va :e ~/dotfiles/bash_aliases<CR>
 nnoremap <Leader>vd :e ~/dotfiles/**/*
