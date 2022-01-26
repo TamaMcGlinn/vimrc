@@ -197,7 +197,7 @@ nnoremap <leader>gh :Git diff HEAD^<CR>
 nnoremap <leader>g. :Git add .<CR>
 nnoremap <leader>gg :Git add %<CR>
 nnoremap <leader>gu :call flogmenu#open_unmerged()<CR>
-nnoremap <leader>gd :call CommitQF()<CR>
+nnoremap <silent><leader>gd :call CommitQF()<CR>:copen<CR>
 nnoremap <leader>gD :Git add %:h<CR>
 nnoremap <leader>g/ :GitGrep<CR>
 
@@ -253,13 +253,14 @@ function! CommitQF(...)
     let commit = a:0 == 0 ? 'HEAD^' : a:1
 
     " Get the result of git show in a list
-    let flist = system('git diff --name-only ' . commit)
+    let flist = system(FugitiveShellCommand('diff') . ' --name-only ' . commit)
     let flist = split(flist, '\n')
 
     " Create the dictionaries used to populate the quickfix list
     let list = []
     for f in flist
-        let dic = {'filename': f, 'lnum': 1}
+        let l:real_filename = FugitiveWorkTree() . '/' . f
+        let dic = {'filename': l:real_filename, 'lnum': 1}
         call add(list, dic)
     endfor
 
