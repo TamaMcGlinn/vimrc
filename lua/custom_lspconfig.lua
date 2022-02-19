@@ -160,7 +160,9 @@ local settings = {
 require("lspconfig").als.setup{
   on_attach = on_attach,
   capabilities = capabilities,
-  on_init = require("gpr_selector").als_on_init
+  on_init = require("gpr_selector").als_on_init,
+  single_file_support = true,
+  root_dir = function() return '/' end,
 }
 
 for _, lsp in ipairs(servers) do
