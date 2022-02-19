@@ -23,6 +23,8 @@ endfunction
 source ~/vimrc/bazel.vim
 
 nnoremap <Leader>ii :make<CR>
+nnoremap <Leader>im :execute '!make ' . substitute(expand('%:t'), '\.adb$', '', '')<CR>
+nnoremap <Leader>id :execute '!' . substitute(substitute(expand('%:t'), '\.adb$', '', ''), '^', 'bin/', '')<CR>
 nnoremap <Leader>ik :call Make_In_File_Dir()<CR>
 nnoremap <Leader>ib :call BazelBuildHere()<CR>
 nnoremap <Leader>it :call BazelTestHere()<CR>
