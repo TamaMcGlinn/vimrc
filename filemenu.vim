@@ -24,6 +24,7 @@ endfunction
 
 nnoremap <leader>fx :!chmod +x %<CR>
 nnoremap <leader>fq :wq<CR>
+nnoremap <leader>fh :%!xxd<CR>
 nnoremap <leader>fs :w<BAR>call SourceCurrentFile()<CR>
 nnoremap <silent> <leader>ff :call CurtineIncSw()<CR>
 nnoremap <leader>ft :set ft=
@@ -42,6 +43,7 @@ let g:which_key_map['f'] = {'name': '+File',
              \'q': 'Save & quit',
              \'x': 'Set executable',
              \'a': 'Startify',
+             \'h': 'read HEX',
              \'w': 'write',
              \'W': 'Noformat write',
              \'o': 'show pwd',

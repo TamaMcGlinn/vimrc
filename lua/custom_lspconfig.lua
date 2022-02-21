@@ -115,6 +115,9 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
+local runtime_path = vim.split(package.path, ';')
+table.insert(runtime_path, "lua/?.lua")
+table.insert(runtime_path, "lua/?/init.lua")
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
@@ -157,7 +160,9 @@ local settings = {
 require("lspconfig").als.setup{
   on_attach = on_attach,
   capabilities = capabilities,
-  on_init = require("gpr_selector").als_on_init
+  on_init = require("gpr_selector").als_on_init,
+  single_file_support = true,
+  root_dir = function() return '/' end,
 }
 
 for _, lsp in ipairs(servers) do
