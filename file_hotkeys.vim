@@ -5,26 +5,29 @@ function! EditUltiSnips(plugin_dir) abort
   execute 'e ' . l:base . l:ft . '.snippets'
 endfunction
 
-" Edit configuration
+" Edit vim configuration
 nnoremap <Leader>vV :e ~/vimrc/vimrc.vim<CR>
 nnoremap <Leader>vv :e ~/vimrc/**/*
-nnoremap <Leader>vr :e ~/vimrc/nvim_lspconfig.vim<CR>
+
 nnoremap <Leader>vm :e ~/dotfiles/muttrc/muttrc.muttrc<CR>
+
+" Edit dotfiles
 nnoremap <Leader>vn :e ~/dotfiles/install<CR>
-nnoremap <Leader>vs :e ~/private_vimrc/**/*
-nnoremap <Leader>vc :CocConfig<CR>
-nnoremap <Leader>vC :CocLocalConfig<CR>
-nnoremap <Leader>vg :e ~/dotfiles/gitconfig<CR>
-nnoremap <Leader>vi :e ~/.gitignore<CR>
-nnoremap <Leader>vl :e ~/.config/pycodestyle<CR>
-nnoremap <Leader>vb :e ~/dotfiles/bashrc<CR>
-nnoremap <Leader>vB :e ~/.private_bashrc<CR>
-nnoremap <Leader>ve :e ~/code/tensoreye/scripts/**/*
-nnoremap <Leader>vh :e ~/private_vimrc/ssh_config<CR>
 nnoremap <Leader>va :e ~/dotfiles/bash_aliases<CR>
 nnoremap <Leader>vd :e ~/dotfiles/**/*
+nnoremap <Leader>vg :e ~/dotfiles/gitconfig<CR>
+nnoremap <Leader>vi :e ~/.gitignore<CR>
+nnoremap <Leader>vb :e ~/dotfiles/bashrc<CR>
+nnoremap <Leader>vB :e ~/.private_bashrc<CR>
+nnoremap <Leader>vh :e ~/private_vimrc/ssh_config<CR>
+nnoremap <Leader>vs :e ~/private_vimrc/**/*
+nnoremap <Leader>ve :e ~/code/tensoreye/scripts/**/*
+
+" Edit code config
 nnoremap <leader>vu :call EditUltiSnips('~/vimrc')<CR>
 nnoremap <leader>vU :call EditUltiSnips('~/private_vimrc')<CR>
+nnoremap <Leader>vy :e ~/.config/pycodestyle<CR>
+nnoremap <leader>vl :e ~/.config/alire/indexes/community/repo/index/<CR>:Gcd<CR>
 
 " Plugin menu
 nnoremap <Leader>vpp :e ~/vimrc/plugins.vim<CR>
