@@ -23,7 +23,6 @@ source ~/vimrc/telescope.vim
 source ~/vimrc/move_to_tab.vim
 
 " mappings
-source ~/vimrc/space_menu.vim
 source ~/vimrc/navmenu.vim
 source ~/vimrc/filemenu.vim
 " source ~/vimrc/cocmenu.vim

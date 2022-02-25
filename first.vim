@@ -12,3 +12,6 @@ augroup reload_vimrc " {
 	autocmd!
 	autocmd bufwritepost *.vim source $MYVIMRC
 augroup END " }
+
+" this one has to happen early so that mappings are registered
+source ~/vimrc/space_menu.vim
