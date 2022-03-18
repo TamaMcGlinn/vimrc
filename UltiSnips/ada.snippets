@@ -1,7 +1,7 @@
 snippet prj "Project" b
 project `!v vim_snippets#Filename()` is
    for Source_Dirs use ("src");
-   for Main use ("mkproj.adb");
+   for Main use ("`!v vim_snippets#Filename()`.adb");
    for Exec_Dir use "bin";
 
    for Create_Missing_Dirs use "True";
