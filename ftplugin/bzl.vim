@@ -30,6 +30,20 @@ fu! JumpToTargetWithinFile(target) abort
   call search('name = "' .. a:target .. '"')
 endfunction
 
+fu! GetJumpForTarget(target) abort
+  let l:line = search('^load("[^"]*".*"' .. a:target .. '".*)', 'n')
+  if l:line == 0
+    let l:jump = {'file': v:null} 
+  else
+    let l:jump = GetBazelLoadTarget(getline(l:line))
+    if l:jump is v:null
+      throw "Unable to find target"
+    endif
+  endif
+  let l:jump['target'] = a:target
+  return l:jump
+endfunction
+
 fu! JumpToBazelDefinition() abort
   let l:line = getline('.')
   let l:jump = GetBazelLoadTarget(l:line)
@@ -51,18 +65,13 @@ fu! JumpToBazelDefinition() abort
       endif
     elseif l:line =~# '^[a-zA-Z_]*('
       let l:target = substitute(l:line, '(.*', '', '')
-      let l:line = search('^load("[^"]*".*"' .. l:target .. '".*)', 'n')
-      if l:line == 0
-        let l:jump = {'file': v:null} 
-      else
-        let l:jump = GetBazelLoadTarget(getline(l:line))
-      endif
-      if l:jump is v:null
-        throw "Unable to find target"
-      endif
-      let l:jump['target'] = l:target
+      let l:jump = GetJumpForTarget(l:target)
+    elseif l:line =~# '^ *[a-zA-Z_]* = [a-zA-Z_]*'
+      let l:target = substitute(l:line, '^ *[a-zA-Z_]* = ', '', '')
+      let l:target = substitute(l:target, '\(^[a-zA-Z_]*\).*$', '\1', '')
+      let l:jump = GetJumpForTarget(l:target)
     else
-      throw "Unable to find target"
+      throw "Unrecognized line"
     endif
   endif
   if !(l:jump['file'] is v:null)
