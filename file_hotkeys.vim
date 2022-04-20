@@ -17,6 +17,7 @@ nnoremap <Leader>va :e ~/dotfiles/bash_aliases<CR>
 nnoremap <Leader>vd :e ~/dotfiles/**/*
 nnoremap <Leader>vg :e ~/dotfiles/gitconfig<CR>
 nnoremap <Leader>vi :e ~/.gitignore<CR>
+nnoremap <Leader>vI :e ~/.ipython/profile_default/startup/00-imports.py<CR>
 nnoremap <Leader>vb :e ~/dotfiles/bashrc<CR>
 nnoremap <Leader>vB :e ~/.private_bashrc<CR>
 nnoremap <Leader>vh :e ~/private_vimrc/ssh_config<CR>
