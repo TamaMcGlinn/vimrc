@@ -119,6 +119,8 @@ local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
+local lsp = require("lspconfig")
+
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = { "pylsp", "rust_analyzer", "clangd", "bashls", "vimls", "sumneko_lua" }
@@ -157,7 +159,7 @@ local settings = {
   },
 }
 
-require("lspconfig").als.setup{
+lsp.als.setup{
   on_attach = on_attach,
   capabilities = capabilities,
   on_init = require("gpr_selector").als_on_init,
