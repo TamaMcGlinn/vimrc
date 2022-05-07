@@ -53,9 +53,10 @@ endfunction
 function! Parse_bible_line(full_line) abort
   let l:elements = split(a:full_line)
   let l:content = substitute(a:full_line, '^[^:]*:[^:]*: ', '', '')
+  let l:verse_id = substitute(a:full_line, '^[^ ]* [^ ]* \([^:]*:[^:]*\).*', '\1', '')
   return {'line_nr':   l:elements[0],
          \'file_name': l:elements[1],
-         \'verse_id':  substitute(join([l:elements[2], l:elements[3]]), ':$', '', ''),
+         \'verse_id':  l:verse_id,
          \'content':   l:content}
 endfunction
 
