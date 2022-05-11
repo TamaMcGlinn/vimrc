@@ -122,18 +122,28 @@ table.insert(runtime_path, "lua/?/init.lua")
 
 local lsp = require("lspconfig")
 
+local flake_ignores = {"E203", -- whitespace before :
+                       "W503", -- line break before binary operator
+                       "E501", -- line too long
+                       "C901"} -- mccabe complexity
+
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = { "pylsp", "rust_analyzer", "clangd", "bashls", "vimls", "sumneko_lua" }
 local settings = {
   pylsp = {
     plugins = {
-      pydocstyle = {
-        enabled = true
-      },
+      mccabe = { enabled = false },
+      pycodestyle = {enabled = false},
+      pydocstyle = { enabled = false},
+      pyflakes = {enabled=false},
+      mypy = {enabled = false},
+      pylint = {enabled = true},
+      yapf = {enabled = false},
+      rope = {enabled = false},
       flake8 = {
-        maxLineLength = 100,
-        ignore = "E203,W503,C901"
+        enabled = true,
+        ignore = table.concat(flake_ignores, ",")
       }
     }
   },
@@ -168,13 +178,14 @@ lsp.als.setup{
   root_dir = function() return '/' end,
 }
 
-for _, lsp in ipairs(servers) do
+for _, lsp in pairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
     capabilities = capabilities,
     settings = settings
   }
 end
+
 
 -- Treesitter configuration
 -- Parsers must be installed manually via :TSInstall
