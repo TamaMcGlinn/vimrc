@@ -70,6 +70,7 @@ Plug 'ThePrimeagen/harpoon'
 " Code completion / LSP
 Plug 'TamaMcGlinn/nvim-lsp-gpr-selector'
 Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
 Plug 'onsails/lspkind-nvim'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'

@@ -1,4 +1,5 @@
 -- see https://github.com/mjlbach/lsp-containers/blob/master/clangd/init.lua
+require("nvim-lsp-installer").setup {}
 
 --Incremental live completion
 vim.o.inccommand = 'nosplit'
