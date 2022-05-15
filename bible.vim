@@ -19,7 +19,16 @@ let g:which_key_map['k'] = {'name': '+Bible',
       \'s': 'SVV',
       \}
 
-let g:bible_root=substitute(systemlist('which versefinder')[0], '/versefinder', '', '')
+function! Get_Bible_Root() abort
+  let l:versefinder_dirs=systemlist('which versefinder')
+  if len(l:versefinder_dirs) == 0
+    return ""
+  else
+    return substitute(l:versefinder_dirs[0], '/versefinder', '', '')
+  endif
+endfunction
+
+let g:bible_root=Get_Bible_Root()
 let g:preview_command='echo {} | cut -d\" \" -f1,2 | xargs -I{} versefinder --previewer {} {q}'
 
 function! Openfile_sink(full_line) abort
