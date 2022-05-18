@@ -6,6 +6,11 @@ source ~/vimrc/git_cycle_diffs.vim
 source ~/vimrc/gitremotes.vim
 source ~/vimrc/diffview.vim
 
+" Fix GBrowse when over SSH; fix courtesy of Tim Pope: https://github.com/tpope/vim-rhubarb/issues/69#event-6633323753
+if exists('$SSH_CONNECTION')
+  command! -bar -nargs=* Browse echo "Link: " . <q-args>
+endif
+
 function! TabIsEmpty() abort
     " Remember which window we're in at the moment
     let initial_win_num = winnr()
