@@ -125,7 +125,8 @@ local lsp = require("lspconfig")
 local flake_ignores = {"E203", -- whitespace before :
                        "W503", -- line break before binary operator
                        "E501", -- line too long
-                       "C901"} -- mccabe complexity
+                       "C901", -- mccabe complexity
+                       "W293"} -- blank line contains whitespace
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
