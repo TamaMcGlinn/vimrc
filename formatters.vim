@@ -14,6 +14,9 @@ function! ApplyCustomFormatters() abort
   endif
 endfunction
 
+call glaive#Install()
+Glaive codefmt buildifier_lint_mode='fix'
+
 function! ApplyPythonFormatters() abort
   call codefmt#FormatBuffer('black')
   call codefmt#FormatBuffer('isort')
