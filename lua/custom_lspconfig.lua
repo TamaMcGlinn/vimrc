@@ -63,28 +63,28 @@ cmp.setup({
     end,
   },
   sources = cmp.config.sources({
-      { name = 'nvim_lsp' },
-      { name = 'ultisnips' },
-    }, {
-      { name = 'buffer' },
-    })
+    { name = 'nvim_lsp' },
+    { name = 'ultisnips' },
+  }, {
+    { name = 'buffer' },
+  })
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline('/', {
-    sources = {
-      { name = 'buffer' }
-    }
-  })
+cmp.setup.cmdline('/', {
+  sources = {
+    { name = 'buffer' }
+  }
+})
 
-  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline(':', {
-    sources = cmp.config.sources({
-      { name = 'path' }
-    }, {
-      { name = 'cmdline' }
-    })
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
   })
+})
 
 -- LSP settings
 
@@ -122,26 +122,27 @@ table.insert(runtime_path, "lua/?/init.lua")
 
 local lsp = require("lspconfig")
 
-local flake_ignores = {"E203", -- whitespace before :
-                       "W503", -- line break before binary operator
-                       "E501", -- line too long
-                       "C901", -- mccabe complexity
-                       "W293"} -- blank line contains whitespace
+local flake_ignores = { "E203", -- whitespace before :
+  "W503", -- line break before binary operator
+  "E501", -- line too long
+  "C901", -- mccabe complexity
+  "W293" } -- blank line contains whitespace
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = { "pylsp", "rust_analyzer", "clangd", "bashls", "vimls", "sumneko_lua" }
 local settings = {
+  init_options = { documentFormatting = false },
   pylsp = {
     plugins = {
       mccabe = { enabled = false },
-      pycodestyle = {enabled = false},
-      pydocstyle = { enabled = false},
-      pyflakes = {enabled=false},
-      mypy = {enabled = false},
-      pylint = {enabled = true},
-      yapf = {enabled = false},
-      rope = {enabled = false},
+      pycodestyle = { enabled = false },
+      pydocstyle = { enabled = false },
+      pyflakes = { enabled = false },
+      mypy = { enabled = false },
+      pylint = { enabled = true },
+      yapf = { enabled = false },
+      rope = { enabled = false },
       flake8 = {
         enabled = true,
         ignore = table.concat(flake_ignores, ",")
@@ -157,7 +158,7 @@ local settings = {
     },
     diagnostics = {
       -- Get the language server to recognize the `vim` global
-      globals = {'vim'},
+      globals = { 'vim' },
     },
     workspace = {
       checkThirdParty = false,
@@ -171,7 +172,7 @@ local settings = {
   },
 }
 
-lsp.als.setup{
+lsp.als.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   on_init = require("gpr_selector").als_on_init,
@@ -180,10 +181,7 @@ lsp.als.setup{
 }
 
 for _, lsp in pairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    settings = settings
+  nvim_lsp[lsp].setup { on_attach = on_attach, capabilities = capabilities, settings = settings
   }
 end
 
@@ -204,6 +202,23 @@ require('nvim-treesitter.configs').setup {
     },
   },
   indent = {
-    enable = true,
-  },
+    enable = true, },
+}
+
+
+-- EFM setup
+require "lspconfig".efm.setup {
+  init_options = { documentFormatting = true },
+  settings = {
+    rootMarkers = { ".git/" },
+    languages = {
+      lua = {
+        { formatCommand = "lua-format -i", formatStdin = true },
+        { formatCommand = "lua-pretty -i" }
+      },
+      sh = {
+        { lintCommand = 'shellcheck -f gcc -x', lintSource = 'shellcheck', lintFormats = { '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m', '%f:%l:%c: %tote: %m' } }
+      }
+    }
+  }
 }

@@ -9,6 +9,9 @@ function! ApplyCustomFormatters() abort
   if expand('%:e') ==# 'cpp' || expand('%:e') ==# 'h' || expand('%:e') ==# 'cu'
     call codefmt#FormatBuffer('clang-format')
   endif
+  if expand('%:e') ==# 'lua'
+    call ApplyLuaFormatters()
+  endif
 endfunction
 
 function! ApplyPythonFormatters() abort
@@ -16,6 +19,27 @@ function! ApplyPythonFormatters() abort
   call codefmt#FormatBuffer('isort')
 endfunction
 
+function! ApplyLuaFormatters() abort
+  lua << EOF
+  local lua_format_client = nil
+  local clients = vim.tbl_values(vim.lsp.buf_get_clients())
+  for i = 1, #clients do
+     client = clients[i]
+     if clients[i].name == "efm" then
+       lua_format_client = clients[i]
+     end
+  end
+  -- lua_format_client.request("textDocument/formatting", {} , nil, vim.api.nvim_get_current_buf())
+  local util = require("vim.lsp.util")
+  local params = util.make_formatting_params({})
+  local result, err = lua_format_client.request_sync("textDocument/formatting", params, timeout_ms, vim.api.nvim_get_current_buf())
+  if result and result.result then
+    util.apply_text_edits(result.result, 0, "")
+  elseif err then
+    vim.notify("vim.lsp.buf.formatting_sync: " .. err, vim.log.levels.WARN)
+  end
+EOF
+endfunction
 
 augroup autoformat
   autocmd!
