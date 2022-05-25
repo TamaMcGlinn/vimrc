@@ -109,11 +109,9 @@ local on_attach = function(_, bufnr)
                                 '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
                                 opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d',
-                                '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>',
-                                opts)
+                                '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', ']d',
-                                '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>',
-                                opts)
+                                '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>qo',
                                 '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>',
                                 opts)
