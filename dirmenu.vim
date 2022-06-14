@@ -3,7 +3,7 @@
 nnoremap <leader>qq :call dirhere#DirToCurrentLine()<CR>
 nnoremap <leader>qw :call dirhere#TermDirToCwd()<CR>
 nnoremap <leader>qc :call dirhere#TermDirToCurrentLine()<CR>
-nnoremap <leader>qg :Gcd<CR>
+nnoremap <silent> <leader>qg :call dirhere#CdToProjectRoot()<CR>
 nnoremap <leader>qp :pwd<CR>
 
 let g:lt_location_list_toggle_map = '<leader>qo'
