@@ -1,7 +1,12 @@
 function! JumpToTSGrammarDefinition() abort
   let l:identifier = expand("<cword>")
   " echom "Searching for " . l:identifier
-  call search("\\<" . l:identifier . ": *\\$", "s")
+  let l:result = search("\\<" . l:identifier . ": *\\$", "s")
+  if l:result != 0
+    " Found it
+    return
+  endif
+  call search("function *" . l:identifier, "s")
 endfunction
 
 if expand('%:t') ==# 'grammar.js'
