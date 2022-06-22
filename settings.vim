@@ -21,7 +21,7 @@ set nospell
 set list 
 set listchars=tab:↹\ ,trail:·
 
-set scrolloff=8
+set scrolloff=2
 set sidescrolloff=8
 
 " Disable swap files
