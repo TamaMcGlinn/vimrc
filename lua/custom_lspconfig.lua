@@ -136,7 +136,8 @@ local flake_ignores = {
     "W503", -- line break before binary operator
     "E501", -- line too long
     "C901", -- mccabe complexity
-    "W293" -- blank line contains whitespace
+    "W293", -- blank line contains whitespace
+    "E402" -- module import not at top (covered by pylint instead)
 }
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
