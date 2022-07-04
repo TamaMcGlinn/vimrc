@@ -53,21 +53,7 @@ let g:which_key_map['l'] = 'Next tab'
 " sneak
 let g:sneak#label = 1
 
-" With Ag
-" nmap <Leader>/ <Plug>AgRawSearch
-" vmap <Leader>/ <Plug>AgRawVisualSelection<CR>
-" nmap <Leader>* <Plug>AgRawWordUnderCursor<CR>
-
-" With CtrlSF
-nmap <Leader>/ <Plug>CtrlSFPrompt
-vmap <Leader>8 <Plug>CtrlSFVwordPath
-nmap <Leader>8 <Plug>CtrlSFCCwordExec
-nmap <Leader>* <Plug>CtrlSFCwordExec
-let g:ctrlsf_confirm_save = 0
-
-let g:which_key_map['/'] = 'Search'
-let g:which_key_map['*'] = 'Search word'
-let g:which_key_map['8'] = 'Search word'
+source ~/vimrc/search.vim
 
 " Make the split taller
 nnoremap <Leader>bb 8<C-W>+<CR>
