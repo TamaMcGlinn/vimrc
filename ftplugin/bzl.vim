@@ -25,9 +25,9 @@ fu! GetBazelLoadTarget(line) abort
 endfunction
 
 fu! JumpToTargetWithinFile(target) abort
-  call search("[() ]" .. a:target .. "[() ]")
-  call search("^" .. a:target .. "[() ]")
-  call search('name = "' .. a:target .. '"')
+  call search("[() ]" .. a:target .. "[() ]", "s")
+  call search("^" .. a:target .. "[() ]", "s")
+  call search('name = "' .. a:target .. '"', "s")
 endfunction
 
 fu! GetJumpForTarget(target) abort
