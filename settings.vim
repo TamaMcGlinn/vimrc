@@ -1,3 +1,5 @@
+" Mark exrc files trusted (see https://github.com/ii14/exrc.vim) on save
+autocmd BufWritePost .exrc nested silent ExrcTrust
 
 " Auto read file from disk if it was changed somewhere outside editor 
 set autoread  

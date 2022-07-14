@@ -20,6 +20,8 @@ Plug 'vim-scripts/YankRing.vim'
 Plug 'TamaMcGlinn/CurtineIncSw.vim'
 Plug 'tpope/vim-projectionist'
 
+Plug 'ii14/exrc.vim'
+
 " Plug 'justinmk/vim-sneak'
 Plug 'easymotion/vim-easymotion'
 
