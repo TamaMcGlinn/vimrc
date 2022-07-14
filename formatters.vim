@@ -12,6 +12,9 @@ function! ApplyCustomFormatters() abort
   if expand('%:e') ==# 'lua'
     call ApplyLuaFormatters()
   endif
+  if expand('%:e') ==# 'json'
+    call codefmt#FormatBuffer('jsonformat')
+  endif
 endfunction
 
 call glaive#Install()
@@ -54,7 +57,7 @@ augroup autoformat
   autocmd FileType dart AutoFormatBuffer dartfmt
   autocmd FileType go AutoFormatBuffer gofmt
   autocmd FileType gn AutoFormatBuffer gn
-  autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+  autocmd FileType html,css,sass,scss,less AutoFormatBuffer js-beautify
   autocmd FileType java AutoFormatBuffer google-java-format
   " autocmd FileType python AutoFormatBuffer isort
   " autocmd FileType python AutoFormatBuffer black
