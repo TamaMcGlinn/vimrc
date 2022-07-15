@@ -1,5 +1,7 @@
 " sourced from ~/vimrc/intellisense.vim
-source ~/private_vimrc/formatters.vim
+if filereadable("~/private_vimrc/private.vim")
+  source ~/private_vimrc/formatters.vim
+endif
 
 function! ApplyCustomFormatters() abort
   call codefmt#FormatBuffer('copyright')
