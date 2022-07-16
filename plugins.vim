@@ -130,7 +130,7 @@ Plug 'bazelbuild/vim-bazel'
 
 " Code formatting
 Plug 'google/vim-glaive'
-Plug 'google/vim-codefmt'
+Plug 'TamaMcGlinn/vim-codefmt'
 Plug 'AndrewRadev/splitjoin.vim'
 
 Plug 'farmergreg/vim-lastplace'

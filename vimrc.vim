@@ -43,7 +43,9 @@ source ~/vimrc/toggleterm.vim
 
 source ~/vimrc/abbreviations.vim
 
-source ~/private_vimrc/private.vim
+if filereadable("~/private_vimrc/private.vim")
+  source ~/private_vimrc/private.vim
+endif
 
 source ~/vimrc/refactoring.vim
 
