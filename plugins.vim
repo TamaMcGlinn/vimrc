@@ -40,7 +40,7 @@ Plug 'szw/vim-maximizer'
 Plug 'alepez/vim-gtest'
 
 " Undo tree navigation
-Plug 'simnalamburt/vim-mundo'
+Plug 'TamaMcGlinn/vim-mundo'
 
 " Sublime / VS Code minimap
 Plug 'wfxr/minimap.vim'
