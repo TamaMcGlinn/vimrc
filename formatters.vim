@@ -1,5 +1,5 @@
 " sourced from ~/vimrc/intellisense.vim
-if filereadable("~/private_vimrc/private.vim")
+if filereadable(expand("~/private_vimrc/private.vim"))
   source ~/private_vimrc/formatters.vim
 endif
 
