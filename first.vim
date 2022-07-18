@@ -2,7 +2,7 @@
 let g:yankring_clipboard_monitor=0
 
 set termguicolors
-colorscheme gruvbox
+silent! colorscheme gruvbox
 set background=dark
 
 set runtimepath^=~/vimrc

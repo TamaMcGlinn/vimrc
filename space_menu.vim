@@ -6,4 +6,6 @@ set timeoutlen=300
 
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 
-call which_key#register('<Space>', 'g:which_key_map')
+if exists('*which_key#register')
+  call which_key#register('<Space>', 'g:which_key_map')
+endif
