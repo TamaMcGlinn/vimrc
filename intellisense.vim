@@ -1,5 +1,6 @@
 
 lua require('custom_lspconfig')
+lua require('clangd_config')
 
 source ~/vimrc/lsp_most_severe_gutter.vim
 " source ~/vimrc/autocomplete.vim

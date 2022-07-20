@@ -143,7 +143,7 @@ local flake_ignores = {
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = {
-    "pylsp", "rust_analyzer", "clangd", "bashls", "vimls", "sumneko_lua"
+    "pylsp", "rust_analyzer", "bashls", "vimls", "sumneko_lua"
 }
 local settings = {
     init_options = {documentFormatting = false},
