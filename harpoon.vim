@@ -6,6 +6,8 @@ let g:which_key_map['m'] = {'name': '+Marking',
              \';': 'goto 3',
              \}
 
+lua require("harpoon").setup({ menu = { width = vim.api.nvim_win_get_width(0) - 4, } })
+
 nnoremap <silent> <leader>mj :lua require("harpoon.mark").add_file()<CR>
 nnoremap <silent> <leader>mm :lua require("harpoon.ui").toggle_quick_menu()<CR>
 nnoremap <silent> <leader>mk :lua require("harpoon.ui").nav_file(1)<CR>
