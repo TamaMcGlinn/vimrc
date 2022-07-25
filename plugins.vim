@@ -73,7 +73,6 @@ Plug 'ThePrimeagen/harpoon'
 " Code completion / LSP
 Plug 'TamaMcGlinn/nvim-lsp-gpr-selector'
 Plug 'TamaMcGlinn/nvim-lspconfig'
-Plug 'p00f/clangd_extensions.nvim'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'onsails/lspkind-nvim'
 Plug 'hrsh7th/nvim-cmp'
@@ -224,6 +223,3 @@ Plug 'ryanoasis/vim-devicons'
 " vim-devicons must be the last plugin
 "
 Plug 'TamaMcGlinn/vim-gitremotes'
-
-" UI framework
-Plug 'skywind3000/vim-quickui'
