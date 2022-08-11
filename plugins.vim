@@ -86,6 +86,7 @@ Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'kevinoid/vim-jsonc'
 Plug 'ktchen14/cscope-auto'
 Plug 'Chiel92/vim-autoformat'
+Plug 'TamaMcGlinn/abe-ada-options'
 
 " Refactoring
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}

@@ -42,6 +42,7 @@ source ~/vimrc/putmenu.vim
 " source ~/vimrc/vebugger_mappings.vim
 source ~/vimrc/vimspector_mappings.vim
 source ~/vimrc/currentfilename.vim
+source ~/vimrc/ada_options.vim
 
 " Tab movement
 nnoremap <Leader>h :tabp<CR>
