@@ -23,9 +23,6 @@ source ~/vimrc/google_test.vim
 " open directory of current file / terminal line
 nnoremap <silent> - :call browsedir#BrowseDir()<CR>
 
-" save & quit
-nnoremap <silent> <leader>wq :wq<CR>
-
 " maximize 
 nnoremap \ :MaximizerToggle<CR>
 nnoremap <leader>rs :GPRSelect<CR>
