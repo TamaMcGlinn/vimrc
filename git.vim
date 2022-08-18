@@ -169,7 +169,7 @@ vnoremap <leader>gx :GBrowse<CR>
 nnoremap <leader>gs :Git<CR>
 
 nnoremap <leader>gS :SignifyReset<CR>
-nnoremap <silent><leader>gp :SignifyReset<CR>:SignifyOlder<CR>:sleep 200m<CR>:SignifyRefresh<CR>
+nnoremap <silent><leader>gp :SignifyOlder<CR>:sleep 200m<CR>:SignifyRefresh<CR>
 nnoremap <leader>g[ :CompareOlder<CR>
 nnoremap <leader>g] :CompareNewer<CR>
 
