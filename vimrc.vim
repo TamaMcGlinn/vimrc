@@ -25,6 +25,7 @@ source ~/vimrc/move_to_tab.vim
 " mappings
 source ~/vimrc/navmenu.vim
 source ~/vimrc/filemenu.vim
+source ~/vimrc/date.vim
 " source ~/vimrc/cocmenu.vim
 source ~/vimrc/lspmenu.vim
 source ~/vimrc/dirmenu.vim
