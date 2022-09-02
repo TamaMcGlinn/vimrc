@@ -50,6 +50,7 @@ Plug 'preservim/tagbar'
 
 " Marks see also ~/vimrc/marks.vim
 " Plug 'chentau/marks.nvim'
+Plug 'kshenoy/vim-signature'
 
 " Fuzzy file search
 " Plug 'nvim-lua/popup.nvim'
@@ -97,6 +98,9 @@ Plug 'tree-sitter/tree-sitter-typescript'
 Plug 'nvim-treesitter/playground'
 " Plug 'nvim-lua/popup.nvim'
 Plug 'ThePrimeagen/refactoring.nvim'
+Plug 'kana/vim-textobj-user'
+Plug 'Julian/vim-textobj-variable-segment'
+Plug 'AndrewRadev/sideways.vim'
 
 " Linting
 " Plug 'dense-analysis/ale'

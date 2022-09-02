@@ -2,6 +2,10 @@
 nnoremap <silent> <C-Y> 3<C-Y>
 nnoremap <silent> <C-E> 3<C-E>
 
+" Map sideways for moving function arguments
+nnoremap <silent> <a-h> :SidewaysLeft<CR>
+nnoremap <silent> <a-l> :SidewaysRight<CR>
+
 " Make Y behave like other capitals
 nnoremap Y y$
 
