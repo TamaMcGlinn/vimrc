@@ -83,6 +83,9 @@ Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 " Plug 'ycm-core/YouCompleteMe'
 " Plug 'nvim-lua/completion-nvim'
 
+" command mode completion
+Plug 'j5shi/CommandlineComplete.vim'
+
 Plug 'kevinoid/vim-jsonc'
 Plug 'ktchen14/cscope-auto'
 Plug 'Chiel92/vim-autoformat'
