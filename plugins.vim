@@ -136,6 +136,12 @@ Plug 'google/vim-glaive'
 Plug 'TamaMcGlinn/vim-codefmt'
 Plug 'AndrewRadev/splitjoin.vim'
 
+Plug 'auwsmit/vim-active-numbers'
+
+" See context
+Plug 'nvim-treesitter/nvim-treesitter-context'
+" Plug 'wellle/context.vm'
+
 Plug 'farmergreg/vim-lastplace'
 
 Plug 'dbeniamine/cheat.sh-vim'
