@@ -142,6 +142,7 @@ local servers = {"pylsp", "rust_analyzer", "bashls", "vimls", "sumneko_lua"}
 local settings = {
     init_options = {documentFormatting = false},
     pylsp = {
+        root_dir = nvim_lsp.util.root_pattern('.git'),
         plugins = {
             mccabe = {enabled = false},
             pycodestyle = {enabled = false},
@@ -187,7 +188,8 @@ for _, lsp in pairs(servers) do
     nvim_lsp[lsp].setup {
         on_attach = on_attach,
         capabilities = capabilities,
-        settings = settings
+        settings = settings,
+        root_dir = nvim_lsp.util.root_pattern('.git')
     }
 end
 
