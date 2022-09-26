@@ -1,3 +1,6 @@
+let g:markdownfmt_command = 'markdownfmt'
+let g:markdownfmt_autosave=1
+
 " sourced from ~/vimrc/intellisense.vim
 if filereadable(expand("~/private_vimrc/private.vim"))
   source ~/private_vimrc/formatters.vim
@@ -49,7 +52,7 @@ function! ApplyLuaFormatters() abort
 EOF
 endfunction
 
-augroup autoformat
+augroup buffer_save_autoformatters
   autocmd!
   " autocmd BufWrite *.ad[sb] :Autoformat
   autocmd BufWritePre * call ApplyCustomFormatters()
