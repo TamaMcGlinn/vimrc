@@ -197,7 +197,7 @@ Plug 'rhysd/git-messenger.vim'
 Plug 'aacunningham/vim-fuzzy-stash'
 Plug 'sindrets/diffview.nvim'
 
-Plug 'ThePrimeagen/git-worktree.nvim'
+Plug 'TamaMcGlinn/git-worktree.nvim'
 
 
 " Flog
