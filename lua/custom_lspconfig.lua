@@ -129,7 +129,7 @@ lsp.pylsp.setup {
       plugins = {
         mccabe = {enabled = false},
         pycodestyle = {enabled = false},
-        pydocstyle = {enabled = false},
+        pydocstyle = {enabled = true},
         pyflakes = {enabled = false},
         mypy = {enabled = false},
         pylint = {enabled = true},
