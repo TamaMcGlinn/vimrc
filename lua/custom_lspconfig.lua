@@ -1,4 +1,3 @@
--- see https://github.com/mjlbach/lsp-containers/blob/master/clangd/init.lua
 require("nvim-lsp-installer").setup {}
 
 -- Incremental live completion
@@ -143,7 +142,7 @@ lsp.pylsp.setup {
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local default_servers = {"rust_analyzer", "bashls", "vimls", "sumneko_lua"}
+local default_servers = {"clangd", "rust_analyzer", "bashls", "vimls", "sumneko_lua"}
 local settings = {
     init_options = {documentFormatting = false},
     Lua = {
