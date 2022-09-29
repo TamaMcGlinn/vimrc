@@ -200,6 +200,9 @@ Plug 'sindrets/diffview.nvim'
 Plug 'TamaMcGlinn/git-worktree.nvim'
 
 
+" chat
+Plug 'colmbus72/slim'
+
 " Flog
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog'

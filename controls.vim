@@ -1,3 +1,4 @@
+command! Slack :call slim#StartSlack()
 " Move thrice as fast
 nnoremap <silent> <C-Y> 3<C-Y>
 nnoremap <silent> <C-E> 3<C-E>
