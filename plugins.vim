@@ -1,6 +1,6 @@
 
 " Programming languages
-Plug 'TamaMcGlinn/Ada-Bundle'
+Plug 'krischik/Ada-Bundle'
 
 "Plug 'vim-scripts/taglist.vim'
 
@@ -72,17 +72,22 @@ Plug 'valloric/listtoggle'
 Plug 'ThePrimeagen/harpoon'
 
 " Code completion / LSP
-Plug 'TamaMcGlinn/nvim-lsp-gpr-selector'
 Plug 'TamaMcGlinn/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'onsails/lspkind-nvim'
-Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 " no longer used:
 " Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
 " Plug 'ycm-core/YouCompleteMe'
-" Plug 'nvim-lua/completion-nvim'
+" Plug 'nvim-lua/completion-nvim' " deprecated
+
+" Ada
+Plug 'TamaMcGlinn/nvim-lsp-gpr-selector'
 
 " command mode completion
 Plug 'j5shi/CommandlineComplete.vim'
