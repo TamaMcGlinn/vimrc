@@ -6,6 +6,8 @@ if filereadable(expand("~/private_vimrc/private.vim"))
   source ~/private_vimrc/formatters.vim
 endif
 
+source ~/vimrc/gnatpp_adaformat.vim
+
 function! ApplyCustomFormatters() abort
   call codefmt#FormatBuffer('copyright')
   if expand('%:e') ==# 'h'
