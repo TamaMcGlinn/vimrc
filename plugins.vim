@@ -143,6 +143,7 @@ Plug 'mhinz/vim-startify'
 " Build systems
 Plug 'google/vim-maktaba'
 Plug 'bazelbuild/vim-bazel'
+Plug 'TamaMcGlinn/vim-bazeljump'
 
 " Code formatting
 Plug 'google/vim-glaive'
