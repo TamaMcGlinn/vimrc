@@ -243,6 +243,17 @@ require"lspconfig".efm.setup {
                     }
                 }
             }
+            -- ada = {
+            --     {
+            --         lintCommand = 'gprbuild',
+            --         lintSource = 'gprbuild',
+            --         lintIgnoreExitCode = true,
+            --         lintFormats = {
+            --             '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
+            --             '%f:%l:%c: %tote: %m'
+            --         }
+            --     }
+            -- }
         }
     }
 }
