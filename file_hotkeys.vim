@@ -22,7 +22,7 @@ nnoremap <Leader>vb :e ~/dotfiles/bashrc<CR>
 nnoremap <Leader>vB :e ~/.private_bashrc<CR>
 nnoremap <Leader>vh :e ~/private_vimrc/ssh_config<CR>
 nnoremap <Leader>vs :e ~/private_vimrc/**/*
-nnoremap <Leader>ve :e ~/code/tensoreye/scripts/**/*
+nnoremap <Leader>ve :e ~/code/zenseact/scripts/**/*
 
 " Edit code config
 nnoremap <leader>vu :call EditUltiSnips('~/vimrc')<CR>
