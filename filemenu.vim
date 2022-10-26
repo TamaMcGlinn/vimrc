@@ -24,6 +24,7 @@ endfunction
 
 nnoremap <leader>fx :!chmod +x %<CR>
 nnoremap <leader>fq :wq<CR>
+nnoremap <leader>fQ :qall!<CR>
 nnoremap <leader>fh :%!xxd<CR>
 nnoremap <leader>fs :w<BAR>call SourceCurrentFile()<CR>
 nnoremap <silent> <leader>ff :call CurtineIncSw()<CR>

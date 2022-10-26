@@ -19,6 +19,8 @@ source ~/vimrc/intellisense.vim
 
 source ~/vimrc/telescope.vim
 
+source ~/vimrc/better_readonly.vim
+
 " custom definitions
 source ~/vimrc/move_to_tab.vim
 
