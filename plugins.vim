@@ -1,6 +1,6 @@
 
 " Programming languages
-Plug 'krischik/Ada-Bundle'
+Plug 'TamaMcGlinn/vim-ada'
 
 "Plug 'vim-scripts/taglist.vim'
 
