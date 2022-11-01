@@ -147,7 +147,7 @@ Plug 'TamaMcGlinn/vim-bazeljump'
 
 " Code formatting
 Plug 'google/vim-glaive'
-Plug 'TamaMcGlinn/vim-codefmt'
+Plug 'google/vim-codefmt'
 Plug 'AndrewRadev/splitjoin.vim'
 
 Plug 'auwsmit/vim-active-numbers'

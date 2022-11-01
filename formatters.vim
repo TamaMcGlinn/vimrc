@@ -56,7 +56,6 @@ endfunction
 
 augroup buffer_save_autoformatters
   autocmd!
-  " autocmd BufWrite *.ad[sb] :Autoformat
   autocmd BufWritePre * call ApplyCustomFormatters()
 
   " defaults from https://github.com/google/vim-codefmt
