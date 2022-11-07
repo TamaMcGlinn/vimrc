@@ -104,10 +104,10 @@ local on_attach = function(_, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>e',
                                 '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
                                 opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d',
-                                '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', ']d',
-                                '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d',
+    --                             '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', ']d',
+    --                             '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>qo',
                                 '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>',
                                 opts)
@@ -229,6 +229,9 @@ require"lspconfig".efm.setup {
     settings = {
         rootMarkers = {".git/"},
         languages = {
+            bzl = {
+                {lintCommand = 'buildifier --lint=warn \'--warnings=-module-docstring,-function-docstring,-function-docstring-args,-function-docstring-header,-function-docstring-return,+unsorted-dict-items\''}
+            },
             lua = {
                 {formatCommand = "lua-format -i", formatStdin = true},
                 {formatCommand = "lua-pretty -i"}

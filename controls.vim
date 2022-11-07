@@ -49,6 +49,10 @@ source ~/vimrc/vimspector_mappings.vim
 source ~/vimrc/currentfilename.vim
 source ~/vimrc/ada_options.vim
 
+" bindings moved from lspconfig because I want them even without langserver attached
+nnoremap [d :lua vim.diagnostic.goto_prev()<CR>
+nnoremap ]d :lua vim.diagnostic.goto_next()<CR>
+
 " Tab movement
 nnoremap <Leader>h :tabp<CR>
 nnoremap <Leader>l :tabn<CR>
