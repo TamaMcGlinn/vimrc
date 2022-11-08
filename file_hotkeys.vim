@@ -36,6 +36,9 @@ nnoremap <Leader>vpi :PlugInstall<CR>
 nnoremap <Leader>vpc :PlugClean<CR>
 nnoremap <Leader>vpu :PlugUpdate<CR>
 
+" Logs
+nnoremap <Leader>vq :LspLog<CR>
+
 let g:plugins_menu = {'name': '+Plugins',
       \'p': 'View',
       \'i': 'Install',
@@ -45,6 +48,7 @@ let g:plugins_menu = {'name': '+Plugins',
 
 let g:which_key_map['v'] = {'name': '+Config',
              \'v': 'vim config',
+             \'q': 'lsp log',
              \'r': 'LSP config',
              \'s': 'secret vim config',
              \'m': 'Muttrc',
