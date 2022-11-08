@@ -210,7 +210,7 @@ Plug 'TamaMcGlinn/git-worktree.nvim'
 Plug 'colmbus72/slim'
 
 " Flog
-Plug 'tpope/vim-fugitive'
+Plug 'TamaMcGlinn/vim-fugitive'
 Plug 'rbong/vim-flog'
 
 " flog extensions
