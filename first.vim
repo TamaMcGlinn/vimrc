@@ -7,10 +7,12 @@ set background=dark
 
 set runtimepath^=~/vimrc
 
-" reload vimrc file on write
 augroup reload_vimrc " {
 	autocmd!
-	autocmd bufwritepost *.vim source $MYVIMRC
+  " reload vim file on write
+	autocmd bufwritepost *.vim source %
+	" require lua file on write
+	" autocmd bufwritepost *.lua luafile %
 augroup END " }
 
 " this one has to happen early so that mappings are registered
