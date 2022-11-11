@@ -229,12 +229,33 @@ require"lspconfig".efm.setup {
     settings = {
         rootMarkers = {".git/"},
         languages = {
-            bzl = {
-                {lintCommand = 'buildifier --lint=warn \'--warnings=-module-docstring,-function-docstring,-function-docstring-args,-function-docstring-header,-function-docstring-return,+unsorted-dict-items\''}
+            lua = {{formatCommand = "lua-format -i", formatStdin = true}},
+            cpp = {
+                {
+                    lintCommand = 'gccdiag --add-args=\'-S\' --',
+                    lintIgnoreExitCode = true,
+                    lintFormats = {
+                        '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
+                        '%f:%l:%c: %tote: %m'
+                    }
+                }
             },
-            lua = {
-                {formatCommand = "lua-format -i", formatStdin = true},
-                {formatCommand = "lua-pretty -i"}
+            ada = {
+                {
+                    lintCommand = 'gprbuild_lint',
+                    lintIgnoreExitCode = true,
+                    lintFormats = {
+                        '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
+                        '%f:%l:%c: %tote: %m'
+                    }
+                }, {
+                    lintCommand = 'gnatprove_lint',
+                    lintIgnoreExitCode = true,
+                    lintFormats = {
+                        '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
+                        '%f:%l:%c: %tote: %m'
+                    }
+                }
             },
             sh = {
                 {
@@ -243,20 +264,15 @@ require"lspconfig".efm.setup {
                     lintFormats = {
                         '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
                         '%f:%l:%c: %tote: %m'
-                    }
+                    },
+                    lintIgnoreExitCode = true
+                }
+            },
+            bzl = {
+                {
+                    lintCommand = 'buildifier --lint=warn \'--warnings=-module-docstring,-function-docstring,-function-docstring-args,-function-docstring-header,-function-docstring-return,+unsorted-dict-items\''
                 }
             }
-            -- ada = {
-            --     {
-            --         lintCommand = 'gprbuild',
-            --         lintSource = 'gprbuild',
-            --         lintIgnoreExitCode = true,
-            --         lintFormats = {
-            --             '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
-            --             '%f:%l:%c: %tote: %m'
-            --         }
-            --     }
-            -- }
         }
     }
 }
