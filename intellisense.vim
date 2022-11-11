@@ -1,5 +1,6 @@
 
 lua require('custom_lspconfig')
+lua require('no_duplicate_diagnostics')
 
 source ~/vimrc/lsp_most_severe_gutter.vim
 
