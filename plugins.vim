@@ -95,8 +95,11 @@ Plug 'j5shi/CommandlineComplete.vim'
 Plug 'kevinoid/vim-jsonc'
 Plug 'ktchen14/cscope-auto'
 Plug 'Chiel92/vim-autoformat'
-Plug 'moorereason/vim-markdownfmt'
 Plug 'TamaMcGlinn/abe-ada-options'
+
+" markdown
+Plug 'tpope/vim-markdown'
+Plug 'moorereason/vim-markdownfmt'
 
 " Refactoring
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
