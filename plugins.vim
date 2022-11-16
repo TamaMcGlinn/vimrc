@@ -206,6 +206,7 @@ Plug 'rhysd/git-messenger.vim'
 Plug 'aacunningham/vim-fuzzy-stash'
 Plug 'sindrets/diffview.nvim'
 
+Plug 'TamaMcGlinn/vim-git-essentials'
 Plug 'TamaMcGlinn/git-worktree.nvim'
 
 
