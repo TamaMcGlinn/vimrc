@@ -204,6 +204,7 @@ Plug 'stsewd/fzf-checkout.vim'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'rhysd/git-messenger.vim'
 Plug 'aacunningham/vim-fuzzy-stash'
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'sindrets/diffview.nvim'
 
 Plug 'TamaMcGlinn/vim-git-essentials'
