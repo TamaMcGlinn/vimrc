@@ -73,7 +73,8 @@ Plug 'ThePrimeagen/harpoon'
 
 " Code completion / LSP
 Plug 'TamaMcGlinn/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'onsails/lspkind-nvim'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/nvim-cmp'

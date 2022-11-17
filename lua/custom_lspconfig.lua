@@ -1,4 +1,7 @@
-require("nvim-lsp-installer").setup {}
+require("mason").setup {}
+require("mason-lspconfig").setup {
+  ensure_installed = { "clangd" }
+}
 
 -- Incremental live completion
 vim.o.inccommand = 'nosplit'
@@ -230,16 +233,16 @@ require"lspconfig".efm.setup {
         rootMarkers = {".git/"},
         languages = {
             lua = {{formatCommand = "lua-format -i", formatStdin = true}},
-            cpp = {
-                {
-                    lintCommand = 'gccdiag --add-args=\'-S\' --',
-                    lintIgnoreExitCode = true,
-                    lintFormats = {
-                        '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
-                        '%f:%l:%c: %tote: %m'
-                    }
-                }
-            },
+            -- cpp = {
+            --     {
+            --         lintCommand = 'gccdiag --add-args=\'-S\' --',
+            --         lintIgnoreExitCode = true,
+            --         lintFormats = {
+            --             '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
+            --             '%f:%l:%c: %tote: %m'
+            --         }
+            --     }
+            -- },
             ada = {
                 {
                     lintCommand = 'gprbuild_lint',
