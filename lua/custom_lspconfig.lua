@@ -256,7 +256,7 @@ require"lspconfig".efm.setup {
                     lintIgnoreExitCode = true,
                     lintFormats = {
                         '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
-                        '%f:%l:%c: %tote: %m'
+                        '%f:%l:%c: %tote: %m', '%f:%l:%c: %tedium: %m'
                     }
                 }
             },
