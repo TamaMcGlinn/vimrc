@@ -11,11 +11,6 @@ set relativenumber
 " just one character wide
 set numberwidth=1
 
-" NetRW settings
-if has('win32')
-  " Fix NetRW D key on windows
-  let g:netrw_localrmdir='rm -rf'
-endif
 " Display line numbers in NetRW just as in other files
 let g:netrw_bufsettings = 'nomodifiable nomodified readonly nobuflisted nowrap number'
 " Banner toggle:
