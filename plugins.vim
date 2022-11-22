@@ -209,6 +209,7 @@ Plug 'nvim-tree/nvim-web-devicons'
 Plug 'sindrets/diffview.nvim'
 
 Plug 'TamaMcGlinn/vim-git-essentials'
+Plug 'TamaMcGlinn/vim-floggit-keybindings'
 Plug 'TamaMcGlinn/git-worktree.nvim'
 
 
