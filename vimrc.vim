@@ -21,9 +21,6 @@ source ~/vimrc/telescope.vim
 
 source ~/vimrc/better_readonly.vim
 
-" custom definitions
-source ~/vimrc/move_to_tab.vim
-
 " mappings
 source ~/vimrc/navmenu.vim
 source ~/vimrc/filemenu.vim
@@ -31,7 +28,6 @@ source ~/vimrc/date.vim
 " source ~/vimrc/cocmenu.vim
 source ~/vimrc/lspmenu.vim
 source ~/vimrc/dirmenu.vim
-source ~/vimrc/tab_bindings.vim
 source ~/vimrc/bible.vim
 
 source ~/vimrc/controls.vim
