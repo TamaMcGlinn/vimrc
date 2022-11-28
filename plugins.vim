@@ -197,7 +197,7 @@ Plug 'TamaMcGlinn/vim-dirhere'
 Plug 'TamaMcGlinn/vim-browsedir'
 
 " Space menu
-Plug 'liuchengxu/vim-which-key'
+Plug 'TamaMcGlinn/vim-which-key'
 
 " other git plugins
 Plug 'sodapopcan/vim-twiggy'
