@@ -226,6 +226,7 @@ Plug 'TamaMcGlinn/flog-menu'
 Plug 'TamaMcGlinn/flog-teamjump'
 Plug 'TamaMcGlinn/flog-forest'
 Plug 'TamaMcGlinn/flog-navigate'
+Plug 'TamaMcGlinn/vim-autoflog'
 
 
 Plug 'TamaMcGlinn/vim-instaflog'
