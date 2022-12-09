@@ -1,3 +1,4 @@
+command! -bang FindPlugin call fzf#vim#files('~/.vim/plugged', <bang>0)
 
 function! EditUltiSnips(plugin_dir) abort
   let l:ft = &filetype
@@ -35,6 +36,8 @@ nnoremap <Leader>vpp :e ~/vimrc/plugins.vim<CR>
 nnoremap <Leader>vpi :PlugInstall<CR>
 nnoremap <Leader>vpc :PlugClean<CR>
 nnoremap <Leader>vpu :PlugUpdate<CR>
+nnoremap <Leader>vpf :FindPlugin<CR>
+
 
 " Logs
 nnoremap <Leader>vq :LspLog<CR>
