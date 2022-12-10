@@ -34,7 +34,6 @@ nnoremap <silent> <leader>fa :Startify<CR>
 nnoremap <leader>fw :set buftype=""<CR>:write!<CR>
 nnoremap <leader>fR :Move %
 nnoremap <leader>fW :noautocmd write<CR>
-nnoremap <leader>fo :pwd<CR>
 nnoremap <leader>fr :e! %<CR>
 nnoremap <silent> <leader>fD :call delete(expand('%')) \| bp \| bdelete! #<CR>
 nnoremap <silent> <leader>fp :let @+=expand('%')<CR>
@@ -47,7 +46,6 @@ let g:which_key_map['f'] = {'name': '+File',
              \'h': 'read HEX',
              \'w': 'write',
              \'W': 'Noformat write',
-             \'o': 'show pwd',
              \'f': 'switch source / header',
              \'s': 'Source',
              \'t': 'Set filetype',
