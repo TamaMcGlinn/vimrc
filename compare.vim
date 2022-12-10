@@ -1,3 +1,11 @@
+function! CompareFiles(dir, reversedir) abort
+  diffthis
+  execute 'normal! zi'
+  execute 'wincmd ' . a:dir
+  diffthis
+  execute 'normal! zi'
+  execute 'wincmd ' . a:reversedir
+endfunction
 
 nnoremap <leader>cl :call CompareFiles('l', 'h')<CR>
 nnoremap <leader>ch :call CompareFiles('h', 'l')<CR>

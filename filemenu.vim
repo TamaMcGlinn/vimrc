@@ -13,15 +13,6 @@ if !exists('g:source_current_file_defined')
   " you need to restart vim
 endif
 
-function! CompareFiles(dir, reversedir) abort
-  diffthis
-  execute 'normal! zi'
-  execute 'wincmd ' . a:dir
-  diffthis
-  execute 'normal! zi'
-  execute 'wincmd ' . a:reversedir
-endfunction
-
 nnoremap <leader>fx :!chmod +x %<CR>
 nnoremap <leader>fq :wq<CR>
 nnoremap <leader>fQ :qall!<CR>
