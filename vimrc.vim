@@ -23,6 +23,7 @@ source ~/vimrc/better_readonly.vim
 
 " mappings
 source ~/vimrc/navmenu.vim
+source ~/vimrc/map_translate.vim
 source ~/vimrc/filemenu.vim
 source ~/vimrc/date.vim
 " source ~/vimrc/cocmenu.vim

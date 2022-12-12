@@ -255,3 +255,4 @@ Plug 'ryanoasis/vim-devicons'
 " vim-devicons must be the last plugin
 "
 Plug 'TamaMcGlinn/vim-gitremotes'
+Plug 'uga-rosa/translate.nvim'
