@@ -1,7 +1,5 @@
 require("mason").setup {}
-require("mason-lspconfig").setup {
-  ensure_installed = { "clangd" }
-}
+require("mason-lspconfig").setup {ensure_installed = {"clangd"}}
 
 -- Incremental live completion
 vim.o.inccommand = 'nosplit'
