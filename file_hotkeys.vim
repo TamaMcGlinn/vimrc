@@ -29,6 +29,7 @@ nnoremap <Leader>ve :e ~/code/zenseact/scripts/**/*
 nnoremap <leader>vu :call EditUltiSnips('~/vimrc')<CR>
 nnoremap <leader>vU :call EditUltiSnips('~/private_vimrc')<CR>
 nnoremap <Leader>vy :e ~/.config/pycodestyle<CR>
+nnoremap <Leader>vc :e ~/.config/clangd/config.yaml<CR>
 nnoremap <leader>vl :e ~/.config/alire/indexes/community/repo/index/<CR>:Gcd<CR>
 
 " Plugin menu
@@ -57,8 +58,6 @@ let g:which_key_map['v'] = {'name': '+Config',
              \'m': 'Muttrc',
              \'u': 'UltisnipsEdit',
              \'V': 'vimrc.vim',
-             \'c': 'CoC config',
-             \'C': 'CoC local config',
              \'p': g:plugins_menu,
              \'g': 'git config',
              \'i': 'git ignore',

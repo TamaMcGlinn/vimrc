@@ -36,6 +36,7 @@ Plug 'idanarye/vim-vebugger'
 Plug 'puremourning/vimspector', {
       \ 'do': 'python3 install_gadget.py --enable-vscode-cpptools'
       \ }
+Plug 'sagi-z/vimspectorpy', { 'do': { -> vimspectorpy#update() } }
 Plug 'szw/vim-maximizer'
 Plug 'alepez/vim-gtest'
 

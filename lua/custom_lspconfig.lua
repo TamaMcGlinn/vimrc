@@ -1,7 +1,5 @@
 require("mason").setup {}
-require("mason-lspconfig").setup {
-  ensure_installed = { "clangd" }
-}
+require("mason-lspconfig").setup {ensure_installed = {"clangd"}}
 
 -- Incremental live completion
 vim.o.inccommand = 'nosplit'
@@ -243,6 +241,16 @@ require"lspconfig".efm.setup {
             --         }
             --     }
             -- },
+            yaml = {
+                {
+                    lintCommand = 'yml_lint',
+                    lintIgnoreExitCode = true,
+                    lintFormats = {
+                        '%f:%l: %trror: %m', '%f:%l: %tarning: %m',
+                        '%f:%l: %tote: %m'
+                    }
+                }
+            },
             ada = {
                 {
                     lintCommand = 'gprbuild_lint',

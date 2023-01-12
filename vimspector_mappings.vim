@@ -23,6 +23,11 @@ nnoremap <leader>de :call vimspector#Evaluate(input("Eval> ")<CR>
 
 " jumping
 nnoremap <leader>dt :call win_gotoid(g:vimspector_session_windows.stack_trace)<CR>
+nnoremap ]s :call vimspector#JumpToNextBreakpoint()<CR>
+nnoremap [s :call vimspector#JumpToPreviousBreakpoint()<CR>
+
+" windows
+nnoremap <leader>dL :VimspectorToggleLog<CR>
 
 let g:which_key_map['d'] = {'name': '+Debug',
              \'s': 'Start',
@@ -36,6 +41,7 @@ let g:which_key_map['d'] = {'name': '+Debug',
              \'c': 'Toggle Conditional Breakpoint',
              \'f': 'Function Breakpoint',
              \'p': 'Pause',
+             \'L': 'Toggle log',
              \'r': 'Restart',
              \'d': 'ClearBreakpoints',
              \'8': 'Evaluate word',
