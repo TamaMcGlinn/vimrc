@@ -49,3 +49,4 @@ nnoremap ]d :lua vim.diagnostic.goto_next()<CR>
 let g:sneak#label = 1
 
 source ~/vimrc/search.vim
+source ~/vimrc/killneighbour.vim
