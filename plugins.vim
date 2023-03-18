@@ -163,7 +163,9 @@ Plug 'nvim-treesitter/nvim-treesitter-context'
 
 Plug 'farmergreg/vim-lastplace'
 
-Plug 'dbeniamine/cheat.sh-vim'
+" Plug 'dbeniamine/cheat.sh-vim'
+Plug 'RishabhRD/popfix'
+Plug 'RishabhRD/nvim-cheat.sh'
 
 Plug 'nelstrom/vim-markdown-folding'
 
