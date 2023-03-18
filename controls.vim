@@ -27,6 +27,7 @@ source ~/vimrc/google_test.vim
 " maximize 
 nnoremap \ :MaximizerToggle<CR>
 nnoremap <leader>rs :GPRSelect<CR>
+nnoremap <leader>rS :GPRSelectFuzzy<CR>
 
 " // to search for visually selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
