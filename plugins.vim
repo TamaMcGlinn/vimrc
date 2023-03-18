@@ -128,6 +128,9 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 " Swap true / false, && || etc with gs
 Plug 'AndrewRadev/switch.vim'
 
+Plug 'MunifTanjim/nui.nvim'
+Plug 'dpayne/CodeGPT.nvim'
+
 " Fix gx
 " Fix gx see https://github.com/vim/vim/issues/4738
 " Plug 'felipec/vim-sanegx'
