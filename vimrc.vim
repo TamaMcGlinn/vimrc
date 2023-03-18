@@ -1,4 +1,3 @@
-" source ~/vimrc/dein_framework.vim " includes plugins.vim
 source ~/vimrc/plug_framework.vim " includes plugins.vim
 
 source ~/vimrc/util.vim " generally useful functions for scripting
