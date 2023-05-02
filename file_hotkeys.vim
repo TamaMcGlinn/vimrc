@@ -42,6 +42,7 @@ nnoremap <Leader>vpf :FindPlugin<CR>
 
 " Logs
 nnoremap <Leader>vq :LspLog<CR>
+nnoremap <Leader>vw :e ~/efmlog.txt<CR>
 
 let g:plugins_menu = {'name': '+Plugins',
       \'p': 'View',
@@ -52,6 +53,7 @@ let g:plugins_menu = {'name': '+Plugins',
 
 let g:which_key_map['v'] = {'name': '+Config',
              \'v': 'vim config',
+             \'w': 'EFM log',
              \'q': 'lsp log',
              \'r': 'LSP config',
              \'s': 'secret vim config',
