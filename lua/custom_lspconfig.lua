@@ -266,6 +266,13 @@ require"lspconfig".efm.setup {
                         '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
                         '%f:%l:%c: %tote: %m', '%f:%l:%c: %tedium: %m'
                     }
+                }, {
+                    lintCommand = 'doorstop_reqs_lint',
+                    lintIgnoreExitCode = true,
+                    lintFormats = {
+                        '%f:%l: %trror: %m', '%f:%l: %tarning: %m',
+                        '%f:%l: %tote: %m'
+                    }
                 }
             },
             sh = {
