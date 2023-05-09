@@ -223,7 +223,7 @@ Plug 'TamaMcGlinn/git-worktree.nvim'
 Plug 'colmbus72/slim'
 
 " Flog
-Plug 'TamaMcGlinn/vim-fugitive'
+Plug 'TamaMcGlinn/vim-fugitive', { 'branch': 'footbazooka' }
 Plug 'rbong/vim-flog'
 
 " flog extensions
