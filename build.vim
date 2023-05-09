@@ -17,7 +17,20 @@ fu! GetCompileCommand(file) abort
 endfunction
 
 fu! Compile(file) abort
-  silent execute '!' . GetCompileCommand(a:file)
+  if exists ('*Project_Local_Config_Applies')
+    if Project_Local_Config_Applies()
+      if exists ('*Local_CompileFile')
+        call Local_CompileFile()
+        return
+      endif
+    endif
+  endif
+  " fallback, try using compile_commands.json
+  if filereadable("compile_commands.json")
+    silent execute '!' . GetCompileCommand(a:file)
+  else
+    echom "Add Local_CompileFile function to .exrc to tell me how to compile!"
+  endif
 endfunction
 
 source ~/vimrc/bazel.vim

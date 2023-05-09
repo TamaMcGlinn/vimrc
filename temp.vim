@@ -1,10 +1,14 @@
 source $HOME/code/abe/vimrc/compile_menu.vim
 
-nnoremap <silent> <c-b> :call AbeCompile()<cr>
+" nnoremap <silent> <leader>if :call AbeCompile()<cr>
 
 function! RunFile() abort
   let filename=expand('%:t')[:-5]
   execute '!./bin/' . l:filename
 endfunction
 
-nnoremap <silent> <c-r> :call RunFile()<cr>
+nnoremap <silent> <leader>fe :call RunFile()<cr>
+
+source $HOME/code/abe/vimrc/file_menu.vim
+
+nnoremap <silent> <leader>fn :call AbeNewFile()<cr>
