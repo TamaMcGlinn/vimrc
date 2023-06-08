@@ -32,11 +32,16 @@ nnoremap <Leader>vy :e ~/.config/pycodestyle<CR>
 nnoremap <Leader>vc :e ~/.config/clangd/config.yaml<CR>
 nnoremap <leader>vl :e ~/.config/alire/indexes/community/repo/index/<CR>:Gcd<CR>
 
+function! ResetPluginsToHttpAndUpdate() abort
+  call system("reset_vim_plugins_to_http")
+  execute "PlugUpdate"
+endfunction
+
 " Plugin menu
 nnoremap <Leader>vpp :e ~/vimrc/plugins.vim<CR>
 nnoremap <Leader>vpi :PlugInstall<CR>
 nnoremap <Leader>vpc :PlugClean<CR>
-nnoremap <Leader>vpu :PlugUpdate<CR>
+nnoremap <Leader>vpu :call ResetPluginsToHttpAndUpdate()<CR>
 nnoremap <Leader>vpf :FindPlugin<CR>
 
 
