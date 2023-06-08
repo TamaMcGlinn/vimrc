@@ -105,6 +105,7 @@ Plug 'moorereason/vim-markdownfmt'
 
 " Refactoring
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'briot/tree-sitter-ada'
 Plug 'tree-sitter/tree-sitter-typescript'
 Plug 'nvim-treesitter/playground'
 " Plug 'nvim-lua/popup.nvim'
