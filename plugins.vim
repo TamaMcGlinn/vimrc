@@ -225,7 +225,7 @@ Plug 'colmbus72/slim'
 
 " Flog
 Plug 'TamaMcGlinn/vim-fugitive', { 'branch': 'footbazooka' }
-Plug 'rbong/vim-flog'
+Plug 'rbong/vim-flog', { 'branch': 'v1' }
 
 " flog extensions
 Plug 'skywind3000/vim-quickui'
