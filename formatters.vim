@@ -70,5 +70,5 @@ augroup buffer_save_autoformatters
   autocmd BufWritePre *.py call ApplyPythonFormatters()
   " Alternative: autocmd FileType python AutoFormatBuffer autopep8
   autocmd FileType rust AutoFormatBuffer rustfmt
-  autocmd FileType vue AutoFormatBuffer prettier
+  autocmd FileType vue,svelte AutoFormatBuffer prettier
 augroup END
