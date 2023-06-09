@@ -216,7 +216,7 @@ Plug 'nvim-tree/nvim-web-devicons'
 Plug 'sindrets/diffview.nvim'
 
 Plug 'TamaMcGlinn/vim-git-essentials'
-Plug 'TamaMcGlinn/vim-floggit-keybindings'
+Plug 'TamaMcGlinn/vim-floggit-keybindings', { 'branch': 'v1' }
 Plug 'TamaMcGlinn/git-worktree.nvim'
 
 
@@ -229,11 +229,11 @@ Plug 'rbong/vim-flog', { 'branch': 'v1' }
 
 " flog extensions
 Plug 'skywind3000/vim-quickui'
-Plug 'TamaMcGlinn/flog-menu'
+Plug 'TamaMcGlinn/flog-menu', { 'branch': 'v1' }
 Plug 'TamaMcGlinn/flog-teamjump'
 Plug 'TamaMcGlinn/flog-forest'
-Plug 'TamaMcGlinn/flog-navigate'
-Plug 'TamaMcGlinn/vim-autoflog'
+Plug 'TamaMcGlinn/flog-navigate', { 'branch': 'v1' }
+Plug 'TamaMcGlinn/vim-autoflog', { 'branch': 'v1' }
 
 
 Plug 'TamaMcGlinn/vim-instaflog'
