@@ -225,15 +225,15 @@ Plug 'colmbus72/slim'
 
 " Flog
 Plug 'TamaMcGlinn/vim-fugitive', { 'branch': 'footbazooka' }
-Plug 'rbong/vim-flog', { 'branch': 'v1' }
+Plug 'TamaMcGlinn/vim-flog', { 'branch': 'master' }
 
 " flog extensions
 Plug 'skywind3000/vim-quickui'
-Plug 'TamaMcGlinn/flog-menu', { 'branch': 'v1' }
+Plug 'TamaMcGlinn/flog-menu', { 'branch': 'v2' }
 Plug 'TamaMcGlinn/flog-teamjump'
-Plug 'TamaMcGlinn/flog-forest'
-Plug 'TamaMcGlinn/flog-navigate', { 'branch': 'v1' }
-Plug 'TamaMcGlinn/vim-autoflog', { 'branch': 'v1' }
+" Plug 'TamaMcGlinn/flog-forest'
+Plug 'TamaMcGlinn/flog-navigate', { 'branch': 'v2' }
+Plug 'TamaMcGlinn/vim-autoflog', { 'branch': 'v2' }
 
 
 Plug 'TamaMcGlinn/vim-instaflog'
