@@ -216,7 +216,7 @@ Plug 'nvim-tree/nvim-web-devicons'
 Plug 'sindrets/diffview.nvim'
 
 Plug 'TamaMcGlinn/vim-git-essentials'
-Plug 'TamaMcGlinn/vim-floggit-keybindings', { 'branch': 'v1' }
+Plug 'TamaMcGlinn/vim-floggit-keybindings', { 'branch': 'v2' }
 Plug 'TamaMcGlinn/git-worktree.nvim'
 
 
