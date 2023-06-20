@@ -215,7 +215,7 @@ Plug 'aacunningham/vim-fuzzy-stash'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'sindrets/diffview.nvim'
 
-Plug 'TamaMcGlinn/vim-git-essentials'
+Plug 'TamaMcGlinn/vim-git-essentials', { 'branch': 'v2' }
 Plug 'TamaMcGlinn/vim-floggit-keybindings', { 'branch': 'v2' }
 Plug 'TamaMcGlinn/git-worktree.nvim'
 
