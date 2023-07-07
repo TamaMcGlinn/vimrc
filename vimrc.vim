@@ -25,6 +25,9 @@ source ~/vimrc/navmenu.vim
 source ~/vimrc/map_translate.vim
 source ~/vimrc/filemenu.vim
 source ~/vimrc/date.vim
+
+source ~/vimrc/fuzzy_recent.vim
+
 " source ~/vimrc/cocmenu.vim
 source ~/vimrc/lspmenu.vim
 source ~/vimrc/dirmenu.vim

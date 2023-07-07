@@ -263,3 +263,5 @@ Plug 'ryanoasis/vim-devicons'
 "
 Plug 'TamaMcGlinn/vim-gitremotes'
 Plug 'uga-rosa/translate.nvim'
+
+Plug 'TamaMcGlinn/vim-fuzzy-recent'
