@@ -247,6 +247,8 @@ Plug 'roggan87/vim-bible'
 
 Plug 'TamaMcGlinn/quickfixdd'
 
+Plug 'cormacrelf/trouble.nvim', { 'branch': 'cascading-sev-2' }
+
 Plug 'tpope/vim-eunuch'
 
 Plug 'justinmk/vim-dirvish'

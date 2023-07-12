@@ -26,6 +26,8 @@ source ~/vimrc/map_translate.vim
 source ~/vimrc/filemenu.vim
 source ~/vimrc/date.vim
 
+source ~/vimrc/trouble.vim
+
 source ~/vimrc/fuzzy_recent.vim
 
 " source ~/vimrc/cocmenu.vim
