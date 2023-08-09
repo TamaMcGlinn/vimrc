@@ -33,6 +33,7 @@ source ~/vimrc/fuzzy_recent.vim
 " source ~/vimrc/cocmenu.vim
 source ~/vimrc/lspmenu.vim
 source ~/vimrc/dirmenu.vim
+source ~/vimrc/diagnostic_info.vim
 source ~/vimrc/bible.vim
 
 source ~/vimrc/controls.vim
