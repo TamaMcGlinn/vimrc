@@ -2,6 +2,7 @@
 lua require('mytreesitter')
 
 lua require('custom_lspconfig')
+lua require('chatgpt_config')
 lua require('no_duplicate_diagnostics')
 
 source ~/vimrc/lsp_most_severe_gutter.vim

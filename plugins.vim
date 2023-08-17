@@ -130,7 +130,10 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 Plug 'AndrewRadev/switch.vim'
 
 Plug 'MunifTanjim/nui.nvim'
+
+" ChatGPT
 Plug 'dpayne/CodeGPT.nvim'
+Plug 'archibate/nvim-gpt'
 
 " Fix gx
 " Fix gx see https://github.com/vim/vim/issues/4738
