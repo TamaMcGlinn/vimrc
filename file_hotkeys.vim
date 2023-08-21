@@ -23,6 +23,7 @@ nnoremap <Leader>vb :e ~/dotfiles/bashrc<CR>
 nnoremap <Leader>vB :e ~/.private_bashrc<CR>
 nnoremap <Leader>vh :e ~/private_vimrc/ssh_config<CR>
 nnoremap <Leader>vs :e ~/private_vimrc/**/*
+nnoremap <Leader>vS :e ~/private_vimrc/private.vim<CR>
 nnoremap <Leader>ve :e ~/code/zenseact/scripts/**/*
 
 " Edit code config
