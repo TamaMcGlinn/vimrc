@@ -1,4 +1,3 @@
-" source ~/vimrc/dein_framework.vim " includes plugins.vim
 source ~/vimrc/plug_framework.vim " includes plugins.vim
 
 source ~/vimrc/util.vim " generally useful functions for scripting
@@ -26,9 +25,15 @@ source ~/vimrc/navmenu.vim
 source ~/vimrc/map_translate.vim
 source ~/vimrc/filemenu.vim
 source ~/vimrc/date.vim
+
+source ~/vimrc/trouble.vim
+
+source ~/vimrc/fuzzy_recent.vim
+
 " source ~/vimrc/cocmenu.vim
 source ~/vimrc/lspmenu.vim
 source ~/vimrc/dirmenu.vim
+source ~/vimrc/diagnostic_info.vim
 source ~/vimrc/bible.vim
 
 source ~/vimrc/controls.vim
@@ -43,9 +48,7 @@ source ~/vimrc/toggleterm.vim
 
 source ~/vimrc/abbreviations.vim
 
-if filereadable(expand("~/private_vimrc/private.vim"))
-  source ~/private_vimrc/private.vim
-endif
+call SourceIfReadable("~/private_vimrc/private.vim")
 
 source ~/vimrc/refactoring.vim
 

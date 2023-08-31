@@ -17,7 +17,20 @@ fu! GetCompileCommand(file) abort
 endfunction
 
 fu! Compile(file) abort
-  silent execute '!' . GetCompileCommand(a:file)
+  if exists ('*Project_Local_Config_Applies')
+    if Project_Local_Config_Applies()
+      if exists ('*Local_CompileFile')
+        call Local_CompileFile()
+        return
+      endif
+    endif
+  endif
+  " fallback, try using compile_commands.json
+  if filereadable("compile_commands.json")
+    silent execute '!' . GetCompileCommand(a:file)
+  else
+    echom "Add Local_CompileFile function to .exrc to tell me how to compile!"
+  endif
 endfunction
 
 source ~/vimrc/bazel.vim
@@ -26,6 +39,7 @@ nnoremap <Leader>ii :make<CR>
 nnoremap <Leader>im :execute '!make ' . substitute(expand('%:t'), '\.adb$', '', '')<CR>
 nnoremap <Leader>id :execute '!' . substitute(substitute(expand('%:t'), '\.adb$', '', ''), '^', 'bin/', '')<CR>
 nnoremap <Leader>ik :call Make_In_File_Dir()<CR>
+nnoremap <Leader>ip :execute '!gprbuild'<CR>
 nnoremap <Leader>ib :call BazelBuildHere()<CR>
 nnoremap <Leader>it :call BazelTestHere()<CR>
 nnoremap <Leader>if :call Compile(expand('%'))<CR>
@@ -34,6 +48,7 @@ nnoremap <Leader>ig :call PutTargetInTermBelow('')<CR>
 let g:which_key_map['i'] = {'name': '+Build',
              \'i': 'Make',
              \'k': 'Make file dir',
+             \'p': 'GPRBuild',
              \'b': 'Bazel build file',
              \'t': 'Bazel test here',
              \'f': 'Compile file',

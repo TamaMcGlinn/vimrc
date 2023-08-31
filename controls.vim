@@ -27,6 +27,7 @@ source ~/vimrc/google_test.vim
 " maximize 
 nnoremap \ :MaximizerToggle<CR>
 nnoremap <leader>rs :GPRSelect<CR>
+nnoremap <leader>rS :GPRSelectFuzzy<CR>
 
 " // to search for visually selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
@@ -41,9 +42,11 @@ source ~/vimrc/vimspector_mappings.vim
 source ~/vimrc/currentfilename.vim
 source ~/vimrc/ada_options.vim
 
-" bindings moved from lspconfig because I want them even without langserver attached
 nnoremap [d :lua vim.diagnostic.goto_prev()<CR>
 nnoremap ]d :lua vim.diagnostic.goto_next()<CR>
+
+nnoremap ]D :lua vim.diagnostic.goto_next({severity = vim.diagnostic.severity.ERROR})<CR>
+nnoremap [D :lua vim.diagnostic.goto_next({severity = vim.diagnostic.severity.ERROR})<CR>
 
 " sneak
 let g:sneak#label = 1

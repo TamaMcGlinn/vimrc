@@ -103,8 +103,7 @@ local on_attach = function(_, bufnr)
                                 '<cmd>lua vim.lsp.buf.range_code_action()<CR>',
                                 opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>e',
-                                '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
-                                opts)
+                                '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d',
     --                             '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', ']d',
@@ -265,6 +264,13 @@ require"lspconfig".efm.setup {
                     lintFormats = {
                         '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
                         '%f:%l:%c: %tote: %m', '%f:%l:%c: %tedium: %m'
+                    }
+                }, {
+                    lintCommand = 'doorstop_reqs_lint',
+                    lintIgnoreExitCode = true,
+                    lintFormats = {
+                        '%f:%l: %trror: %m', '%f:%l: %tarning: %m',
+                        '%f:%l: %tote: %m'
                     }
                 }
             },

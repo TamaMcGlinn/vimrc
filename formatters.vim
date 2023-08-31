@@ -9,18 +9,11 @@ endif
 source ~/vimrc/gnatpp_adaformat.vim
 
 function! ApplyCustomFormatters() abort
-  call codefmt#FormatBuffer('copyright')
-  if expand('%:e') ==# 'h'
-    call call('codefmt#FormatBuffer', ['header_guards'])
-  endif
-  if expand('%:e') ==# 'cpp' || expand('%:e') ==# 'h' || expand('%:e') ==# 'cu'
-    call codefmt#FormatBuffer('clang-format')
+  if exists('*PrivateFormatters')
+    call PrivateFormatters()
   endif
   if expand('%:e') ==# 'lua'
     call ApplyLuaFormatters()
-  endif
-  if expand('%:e') ==# 'json'
-    call codefmt#FormatBuffer('jsonformat')
   endif
 endfunction
 

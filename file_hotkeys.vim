@@ -23,6 +23,7 @@ nnoremap <Leader>vb :e ~/dotfiles/bashrc<CR>
 nnoremap <Leader>vB :e ~/.private_bashrc<CR>
 nnoremap <Leader>vh :e ~/private_vimrc/ssh_config<CR>
 nnoremap <Leader>vs :e ~/private_vimrc/**/*
+nnoremap <Leader>vS :e ~/private_vimrc/private.vim<CR>
 nnoremap <Leader>ve :e ~/code/zenseact/scripts/**/*
 
 " Edit code config
@@ -32,16 +33,22 @@ nnoremap <Leader>vy :e ~/.config/pycodestyle<CR>
 nnoremap <Leader>vc :e ~/.config/clangd/config.yaml<CR>
 nnoremap <leader>vl :e ~/.config/alire/indexes/community/repo/index/<CR>:Gcd<CR>
 
+function! ResetPluginsToHttpAndUpdate() abort
+  call system("reset_vim_plugins_to_http")
+  execute "PlugUpdate"
+endfunction
+
 " Plugin menu
 nnoremap <Leader>vpp :e ~/vimrc/plugins.vim<CR>
 nnoremap <Leader>vpi :PlugInstall<CR>
 nnoremap <Leader>vpc :PlugClean<CR>
-nnoremap <Leader>vpu :PlugUpdate<CR>
+nnoremap <Leader>vpu :call ResetPluginsToHttpAndUpdate()<CR>
 nnoremap <Leader>vpf :FindPlugin<CR>
 
 
 " Logs
 nnoremap <Leader>vq :LspLog<CR>
+nnoremap <Leader>vw :e ~/efmlog.txt<CR>
 
 let g:plugins_menu = {'name': '+Plugins',
       \'p': 'View',
@@ -52,6 +59,7 @@ let g:plugins_menu = {'name': '+Plugins',
 
 let g:which_key_map['v'] = {'name': '+Config',
              \'v': 'vim config',
+             \'w': 'EFM log',
              \'q': 'lsp log',
              \'r': 'LSP config',
              \'s': 'secret vim config',

@@ -18,3 +18,9 @@ function! FileDiffersFromGitHEAD() abort
   return v:shell_error
 endfunction
 
+function! SourceIfReadable(path) abort
+  let filename = expand(a:path)
+  if filereadable(filename)
+    execute 'source ' . fnameescape(filename)
+  endif
+endfunction

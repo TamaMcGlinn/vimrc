@@ -86,3 +86,12 @@ project `!v vim_snippets#Filename()` is
    end Binder;
 end `!v vim_snippets#Filename()`;
 endsnippet
+snippet Adabot
+with Adabots;
+
+procedure `!v vim_snippets#Filename()` is
+   Bot : constant Adabots.Turtle := Adabots.Create_Turtle;
+begin
+   $0
+end `!v vim_snippets#Filename()`;
+endsnippet

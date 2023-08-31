@@ -1,6 +1,6 @@
 
 " Programming languages
-Plug 'krischik/vim-ada'
+Plug 'TamaMcGlinn/vim-ada'
 
 "Plug 'vim-scripts/taglist.vim'
 
@@ -105,6 +105,7 @@ Plug 'moorereason/vim-markdownfmt'
 
 " Refactoring
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'briot/tree-sitter-ada'
 Plug 'tree-sitter/tree-sitter-typescript'
 Plug 'nvim-treesitter/playground'
 " Plug 'nvim-lua/popup.nvim'
@@ -127,6 +128,12 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 " Swap true / false, && || etc with gs
 Plug 'AndrewRadev/switch.vim'
+
+Plug 'MunifTanjim/nui.nvim'
+
+" ChatGPT
+Plug 'dpayne/CodeGPT.nvim'
+Plug 'archibate/nvim-gpt'
 
 " Fix gx
 " Fix gx see https://github.com/vim/vim/issues/4738
@@ -163,7 +170,9 @@ Plug 'nvim-treesitter/nvim-treesitter-context'
 
 Plug 'farmergreg/vim-lastplace'
 
-Plug 'dbeniamine/cheat.sh-vim'
+" Plug 'dbeniamine/cheat.sh-vim'
+Plug 'RishabhRD/popfix'
+Plug 'RishabhRD/nvim-cheat.sh'
 
 Plug 'nelstrom/vim-markdown-folding'
 
@@ -209,8 +218,8 @@ Plug 'aacunningham/vim-fuzzy-stash'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'sindrets/diffview.nvim'
 
-Plug 'TamaMcGlinn/vim-git-essentials'
-Plug 'TamaMcGlinn/vim-floggit-keybindings'
+Plug 'TamaMcGlinn/vim-git-essentials', { 'branch': 'v2' }
+Plug 'TamaMcGlinn/vim-floggit-keybindings', { 'branch': 'v2' }
 Plug 'TamaMcGlinn/git-worktree.nvim'
 
 
@@ -218,16 +227,16 @@ Plug 'TamaMcGlinn/git-worktree.nvim'
 Plug 'colmbus72/slim'
 
 " Flog
-Plug 'TamaMcGlinn/vim-fugitive'
-Plug 'rbong/vim-flog'
+Plug 'TamaMcGlinn/vim-fugitive', { 'branch': 'footbazooka' }
+Plug 'TamaMcGlinn/vim-flog', { 'branch': 'master' }
 
 " flog extensions
 Plug 'skywind3000/vim-quickui'
-Plug 'TamaMcGlinn/flog-menu'
+Plug 'TamaMcGlinn/flog-menu', { 'branch': 'v2' }
 Plug 'TamaMcGlinn/flog-teamjump'
-Plug 'TamaMcGlinn/flog-forest'
-Plug 'TamaMcGlinn/flog-navigate'
-Plug 'TamaMcGlinn/vim-autoflog'
+" Plug 'TamaMcGlinn/flog-forest'
+Plug 'TamaMcGlinn/flog-navigate', { 'branch': 'v2' }
+Plug 'TamaMcGlinn/vim-autoflog', { 'branch': 'v2' }
 
 
 Plug 'TamaMcGlinn/vim-instaflog'
@@ -240,6 +249,8 @@ Plug 'chrisbra/SudoEdit.vim'
 Plug 'roggan87/vim-bible'
 
 Plug 'TamaMcGlinn/quickfixdd'
+
+Plug 'cormacrelf/trouble.nvim', { 'branch': 'cascading-sev-2' }
 
 Plug 'tpope/vim-eunuch'
 
@@ -257,3 +268,5 @@ Plug 'ryanoasis/vim-devicons'
 "
 Plug 'TamaMcGlinn/vim-gitremotes'
 Plug 'uga-rosa/translate.nvim'
+
+Plug 'TamaMcGlinn/vim-fuzzy-recent'
