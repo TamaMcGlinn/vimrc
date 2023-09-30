@@ -12,4 +12,8 @@ augroup flogteamjump
   autocmd FileType floggraph nno <silent> <buffer> [p :<C-U>call flogteamjump#Jump_To_Selected_Team(v:false)<CR>
 augroup END
 
+augroup flogstatus
+  autocmd FileType floggraph let g:flog_enable_status = v:true
+augroup END
+
 lua require("worktree_config")
