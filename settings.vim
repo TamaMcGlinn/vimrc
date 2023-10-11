@@ -83,3 +83,4 @@ augroup YankHighlight
 augroup end
 
 source ~/vimrc/folding.vim
+source ~/vimrc/markdown_settings.vim

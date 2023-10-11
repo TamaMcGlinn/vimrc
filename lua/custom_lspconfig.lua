@@ -250,6 +250,16 @@ require"lspconfig".efm.setup {
                     }
                 }
             },
+            markdown = {
+                {
+                    lintCommand = 'md_lint',
+                    lintIgnoreExitCode = true,
+                    lintFormats = {
+                        '%f:%l: %trror: %m', '%f:%l: %tarning: %m',
+                        '%f:%l: %tote: %m'
+                    }
+                }
+            },
             ada = {
                 {
                     lintCommand = 'gprbuild_lint',
