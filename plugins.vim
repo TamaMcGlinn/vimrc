@@ -16,8 +16,7 @@ Plug 'vim-scripts/YankRing.vim'
 
 " Alternating related files
 " Plug 'nacitar/a.vim'
-" Plug 'ericcurtin/CurtineIncSw.vim'
-Plug 'TamaMcGlinn/CurtineIncSw.vim'
+Plug 'ericcurtin/CurtineIncSw.vim'
 Plug 'tpope/vim-projectionist'
 
 Plug 'farmergreg/vim-lastplace'
