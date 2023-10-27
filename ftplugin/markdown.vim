@@ -23,12 +23,33 @@ if !exists('g:docjump_defined')
     let l:line = v:null
     if l:result =~# '^[^:]*:[0-9]*:.*$'
       let l:line = substitute(copy(l:result), '^[^:]*:\([0-9]*\):.*$', '\1', '')
-    else
-      echom l:result . " doesn't have a lineno."
+      if l:line == ''
+        let l:line = v:null
+      endif
     endif
     let l:target = {"filename": l:file, "line": l:line, "column": v:null}
     call better_gf#JumpToTarget(l:target)
   endfunction
+
+  function! MdJump() abort
+    let l:line = getline('.')
+    if l:line =~# '<img src='
+      let l:img = substitute(l:line, '<img src="\(.*\)\.svg" .*>', '\1', '')
+      let l:file = l:img . '.plantuml'
+      let l:target = {"filename": l:file, "line": 1, "column": v:null}
+      call better_gf#JumpToTarget(l:target)
+      return
+    endif
+    if l:line =~# '!\[.*\](.*\.svg)'
+      let l:img = substitute(l:line, '!\[.*\](\(.*\)\.svg)', '\1', '')
+      let l:file = l:img . '.plantuml'
+      let l:target = {"filename": l:file, "line": 1, "column": v:null}
+      call better_gf#JumpToTarget(l:target)
+      return
+    endif
+    call DocJump(expand('<cword>'))
+  endfunction
+
 endif
 
-nnoremap <silent> <buffer> gd :call DocJump(expand('<cword>'))<CR>
+nnoremap <silent> <buffer> gd :call MdJump()<CR>
