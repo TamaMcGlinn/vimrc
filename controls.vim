@@ -53,3 +53,4 @@ let g:sneak#label = 1
 
 source ~/vimrc/search.vim
 source ~/vimrc/killneighbour.vim
+source ~/vimrc/close_others.vim
