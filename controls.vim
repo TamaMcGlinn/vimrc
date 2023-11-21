@@ -41,6 +41,7 @@ source ~/vimrc/putmenu.vim
 source ~/vimrc/vimspector_mappings.vim
 source ~/vimrc/currentfilename.vim
 source ~/vimrc/ada_options.vim
+lua require("yank_and_paste")
 
 nnoremap [d :lua vim.diagnostic.goto_prev()<CR>
 nnoremap ]d :lua vim.diagnostic.goto_next()<CR>

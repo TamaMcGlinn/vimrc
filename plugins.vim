@@ -12,7 +12,14 @@ Plug 'preservim/nerdtree' |
   \ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'yegappan/mru'
-Plug 'vim-scripts/YankRing.vim'
+
+" Yank history
+" YankRing periodically causes me to paste the entire git history into a CMD
+" buffer, which necessitates killing the nvim process
+" Plug 'vim-scripts/YankRing.vim'
+Plug 'gbprod/yanky.nvim'
+" see lua/yank_and_paste.lua
+
 
 " Alternating related files
 " Plug 'nacitar/a.vim'
