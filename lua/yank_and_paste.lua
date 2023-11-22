@@ -28,4 +28,19 @@ vim.keymap.set({"n", "x"}, "P", "<Plug>(YankyPutBefore)")
 vim.keymap.set({"n", "x"}, "gp", "<Plug>(YankyGPutAfter)")
 vim.keymap.set({"n", "x"}, "gP", "<Plug>(YankyGPutBefore)")
 
-vim.keymap.set({"n", "x"}, "p", "<Plug>(YankyPutAfter)")
+-- note 'forward' and 'backward' are the reverse of what I was used to from YankRing.vim
+vim.keymap.set("n", "<c-p>", "<Plug>(YankyCycleForward)")
+vim.keymap.set("n", "<c-n>", "<Plug>(YankyCycleBackward)")
+
+vim.keymap.set("n", "]p", "<Plug>(YankyPutIndentAfterLinewise)", {})
+vim.keymap.set("n", "[p", "<Plug>(YankyPutIndentBeforeLinewise)", {})
+vim.keymap.set("n", "]P", "<Plug>(YankyPutIndentAfterLinewise)", {})
+vim.keymap.set("n", "[P", "<Plug>(YankyPutIndentBeforeLinewise)", {})
+
+vim.keymap.set("n", ">p", "<Plug>(YankyPutIndentAfterShiftRight)", {})
+vim.keymap.set("n", "<p", "<Plug>(YankyPutIndentAfterShiftLeft)", {})
+vim.keymap.set("n", ">P", "<Plug>(YankyPutIndentBeforeShiftRight)", {})
+vim.keymap.set("n", "<P", "<Plug>(YankyPutIndentBeforeShiftLeft)", {})
+
+vim.keymap.set("n", "=p", "<Plug>(YankyPutAfterFilter)", {})
+vim.keymap.set("n", "=P", "<Plug>(YankyPutBeforeFilter)", {})
