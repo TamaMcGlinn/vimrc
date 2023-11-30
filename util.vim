@@ -7,6 +7,11 @@ function! FileIsInDirectory(directory) abort
   return StartsWith(l:fname, a:directory)
 endfunction
 
+function! FilePathContains(directory) abort
+  let l:fname = expand('%:p')
+  return stridx(l:fname, a:directory) != -1
+endfunction
+
 function! FileDiffersFromGitHEAD() abort
   let l:buffername = expand('%')
   " untracked new file?
