@@ -1,8 +1,14 @@
 function! CompareFiles(dir, reversedir) abort
-  diffthis
+  let l:cmd=""
+  if &diff
+    let l:cmd="diffoff"
+  else
+    let l:cmd="diffthis"
+  endif
+  execute l:cmd
   execute 'normal! zi'
   execute 'wincmd ' . a:dir
-  diffthis
+  execute l:cmd
   execute 'normal! zi'
   execute 'wincmd ' . a:reversedir
 endfunction
