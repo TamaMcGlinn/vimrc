@@ -252,7 +252,7 @@ require"lspconfig".efm.setup {
             },
             markdown = {
                 {
-                    lintCommand = 'md_lint',
+                    lintCommand = 'md_lint.py',
                     lintIgnoreExitCode = true,
                     lintFormats = {
                         '%f:%l: %trror: %m', '%f:%l: %tarning: %m',
