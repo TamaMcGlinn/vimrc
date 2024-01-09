@@ -8,8 +8,6 @@ Plug 'TamaMcGlinn/vim-ada'
 " Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'dyng/ctrlsf.vim'
-Plug 'preservim/nerdtree' |
-  \ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'yegappan/mru'
 
