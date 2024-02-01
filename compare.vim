@@ -1,3 +1,5 @@
+let s:Opposite_dirs = {'l': 'h', 'h': 'l', 'k': 'j', 'j': 'k'}
+
 function! CompareFiles(dir, reversedir) abort
   let l:cmd=""
   if &diff
@@ -10,13 +12,13 @@ function! CompareFiles(dir, reversedir) abort
   execute 'wincmd ' . a:dir
   execute l:cmd
   execute 'normal! zi'
-  execute 'wincmd ' . a:reversedir
+  execute 'wincmd ' . s:Opposite_dirs[a:dir]
 endfunction
 
-nnoremap <leader>cl :call CompareFiles('l', 'h')<CR>
-nnoremap <leader>ch :call CompareFiles('h', 'l')<CR>
-nnoremap <leader>ck :call CompareFiles('k', 'j')<CR>
-nnoremap <leader>cj :call CompareFiles('j', 'k')<CR>
+nnoremap <leader>cl :call CompareFiles('l')<CR>
+nnoremap <leader>ch :call CompareFiles('h')<CR>
+nnoremap <leader>ck :call CompareFiles('k')<CR>
+nnoremap <leader>cj :call CompareFiles('j')<CR>
 
 call floggit#update_whichkey('c', {'name': '+Compare',
       \'h': 'which_key_ignore',
