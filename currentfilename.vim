@@ -13,6 +13,16 @@ nnoremap <Leader>ard "=expand("%:h")<CR>p
 " show full filename
 nnoremap <Leader>as :echom expand("%:p")<CR>
 
+nnoremap <silent> <leader>fnh :call dirhere#PasteFilenameFromAdjacentWindow('h', v:false)<CR>
+nnoremap <silent> <leader>fnj :call dirhere#PasteFilenameFromAdjacentWindow('j', v:false)<CR>
+nnoremap <silent> <leader>fnk :call dirhere#PasteFilenameFromAdjacentWindow('k', v:false)<CR>
+nnoremap <silent> <leader>fnl :call dirhere#PasteFilenameFromAdjacentWindow('l', v:false)<CR>
+nnoremap <silent> <leader>fnH :call dirhere#PasteFilenameFromAdjacentWindow('h', v:true)<CR>
+nnoremap <silent> <leader>fnJ :call dirhere#PasteFilenameFromAdjacentWindow('j', v:true)<CR>
+nnoremap <silent> <leader>fnK :call dirhere#PasteFilenameFromAdjacentWindow('k', v:true)<CR>
+nnoremap <silent> <leader>fnL :call dirhere#PasteFilenameFromAdjacentWindow('l', v:true)<CR>
+
+
 let g:which_key_map['a'] = {'name': '+Filename',
              \'a': 'file',
              \'f': 'full path',
