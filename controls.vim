@@ -43,6 +43,10 @@ source ~/vimrc/currentfilename.vim
 source ~/vimrc/ada_options.vim
 lua require("yank_and_paste")
 
+lua require("alire_tools")
+nnoremap <leader>ap :AlirePublish<CR>
+nnoremap <leader>aP :AlirePublish!<CR>
+
 nnoremap [d :lua vim.diagnostic.goto_prev()<CR>
 nnoremap ]d :lua vim.diagnostic.goto_next()<CR>
 

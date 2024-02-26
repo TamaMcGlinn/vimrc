@@ -275,3 +275,5 @@ Plug 'TamaMcGlinn/vim-gitremotes'
 Plug 'uga-rosa/translate.nvim'
 
 Plug 'TamaMcGlinn/vim-fuzzy-recent'
+
+Plug '~/code/vimplugins/nvim-alire-tools/'
