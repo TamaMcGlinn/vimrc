@@ -17,3 +17,4 @@ if !g:custom_formatters_loaded
   source ~/vimrc/formatters.vim
 endif
 
+source ~/vimrc/termhelp_config.vim
