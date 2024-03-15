@@ -33,9 +33,13 @@ fu! Compile(file) abort
   endif
 endfunction
 
+lua require("overseer").setup()
+lua require("compiler").setup()
+lua require("makeit").setup()
+
 source ~/vimrc/bazel.vim
 
-nnoremap <Leader>ii :make<CR>
+nnoremap <Leader>ii :MakeitOpen<CR>
 nnoremap <Leader>im :execute '!make ' . substitute(expand('%:t'), '\.adb$', '', '')<CR>
 nnoremap <Leader>id :execute '!' . substitute(substitute(expand('%:t'), '\.adb$', '', ''), '^', 'bin/', '')<CR>
 nnoremap <Leader>ik :call Make_In_File_Dir()<CR>
@@ -44,6 +48,7 @@ nnoremap <Leader>ib :call BazelBuildHere()<CR>
 nnoremap <Leader>it :call BazelTestHere()<CR>
 nnoremap <Leader>if :call Compile(expand('%'))<CR>
 nnoremap <Leader>ig :call PutTargetInTermBelow('')<CR>
+nnoremap <Leader>ic :CompilerOpen<CR>
 
 let g:which_key_map['i'] = {'name': '+Build',
              \'i': 'Make',
@@ -53,6 +58,6 @@ let g:which_key_map['i'] = {'name': '+Build',
              \'t': 'Bazel test here',
              \'f': 'Compile file',
              \'g': 'Get bazel target',
-             \'c': 'CompilerExplorer'
+             \'c': 'Compile'
              \}
 

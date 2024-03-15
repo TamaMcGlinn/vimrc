@@ -164,6 +164,9 @@ Plug 'mhinz/vim-startify'
 Plug 'google/vim-maktaba'
 Plug 'bazelbuild/vim-bazel'
 Plug 'TamaMcGlinn/vim-bazeljump'
+Plug 'stevearc/overseer.nvim', {'commit': '68a2d344cea4a2e11acfb5690dc8ecd1a1ec0ce0'}
+Plug 'Zeioth/compiler.nvim'
+Plug 'Zeioth/makeit.nvim'
 
 " Code formatting
 Plug 'google/vim-glaive'
