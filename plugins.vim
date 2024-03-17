@@ -168,6 +168,9 @@ Plug 'stevearc/overseer.nvim', {'commit': '68a2d344cea4a2e11acfb5690dc8ecd1a1ec0
 Plug 'Zeioth/compiler.nvim'
 Plug 'Zeioth/makeit.nvim'
 
+" Voice control
+Plug '~/code/vimplugins/vim-voice-control', {'do': ':UpdateRemotePlugins'}
+
 " Code formatting
 Plug 'google/vim-glaive'
 Plug 'google/vim-codefmt'
