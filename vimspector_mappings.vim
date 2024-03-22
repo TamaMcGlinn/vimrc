@@ -20,6 +20,10 @@ nnoremap <leader>dd :call vimspector#ClearBreakpoints()<CR>
 " evaluating
 nnoremap <expr> <leader>d8 ":VimspectorEval " . expand("<cWORD>")
 nnoremap <leader>de :call vimspector#Evaluate(input("Eval> ")<CR>
+" for normal mode - the word under the cursor
+nmap <Leader>dv <Plug>VimspectorBalloonEval
+" for visual mode, the visually selected text
+xmap <Leader>dv <Plug>VimspectorBalloonEval
 
 " jumping
 nnoremap <leader>dt :call win_gotoid(g:vimspector_session_windows.stack_trace)<CR>
@@ -47,6 +51,7 @@ let g:which_key_map['d'] = {'name': '+Debug',
              \'8': 'Evaluate word',
              \'e': 'Evaluate',
              \'t': 'stacktrace',
+             \'v': 'value display',
              \}
 
 vnoremap <Leader>ge :call vimspector#Evaluate(GetVisualSelection())<CR>
