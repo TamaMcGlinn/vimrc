@@ -35,6 +35,9 @@ function! ApplyLuaFormatters() abort
        lua_format_client = clients[i]
      end
   end
+  if lua_format_client == nil then
+    return
+  end
   -- lua_format_client.request("textDocument/formatting", {} , nil, vim.api.nvim_get_current_buf())
   local util = require("vim.lsp.util")
   local params = util.make_formatting_params({})
