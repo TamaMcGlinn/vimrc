@@ -161,9 +161,7 @@ lsp.pylsp.setup {
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local default_servers = {
-    "clangd", "rust_analyzer", "bashls", "vimls", "sumneko_lua"
-}
+local default_servers = {"clangd", "rust_analyzer", "bashls", "vimls", "lua_ls"}
 local settings = {
     init_options = {documentFormatting = false},
     Lua = {
