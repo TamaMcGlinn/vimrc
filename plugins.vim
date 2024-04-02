@@ -81,6 +81,7 @@ Plug 'ThePrimeagen/harpoon'
 
 " Code completion / LSP
 Plug 'TamaMcGlinn/nvim-lspconfig'
+Plug 'p00f/clangd_extensions.nvim'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'onsails/lspkind-nvim'
