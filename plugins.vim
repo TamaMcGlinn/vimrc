@@ -10,7 +10,7 @@ Plug 'TamaMcGlinn/vim-ada'
 Plug 'dyng/ctrlsf.vim'
 
 Plug 'yegappan/mru'
-Plug '~/code/vimplugins/nvim-termhelp'
+Plug 'TamaMcGlinn/vim-termhelp'
 
 " Yank history
 " YankRing periodically causes me to paste the entire git history into a CMD
