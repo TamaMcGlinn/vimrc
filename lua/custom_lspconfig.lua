@@ -229,6 +229,14 @@ require"lspconfig".efm.setup {
             --         }
             --     }
             -- },
+            arduino = {
+              {
+                lintCommand = 'cpplint --extensions=ino --filter=-legal/copyright',
+                lintFormats = {
+                    '%f:%l: %m'
+                }
+              }
+            },
             yaml = {
                 {
                     lintCommand = 'yml_lint',
