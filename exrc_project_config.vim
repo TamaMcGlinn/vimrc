@@ -1,5 +1,8 @@
 autocmd BufWritePost .exrc nested silent ExrcTrust
 
+" add syntax highlighting:
+autocmd BufRead,BufNewFile .exrc setfiletype vim
+
 " projects can have an .exrc file defining hooks such as:
 
 " let s:projectroot = expand('<sfile>:p:h')
