@@ -1,6 +1,7 @@
 
 let g:switch_custom_definitions = [
       \ switch#NormalizedCase(['on', 'off']),
+      \ switch#NormalizedCase(['high', 'low']),
       \ {
       \   '\(\k\+\)\.': '\1->',
       \   '\(\k\+\)->': '\1.',
