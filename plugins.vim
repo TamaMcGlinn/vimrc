@@ -234,6 +234,7 @@ Plug 'sindrets/diffview.nvim'
 Plug 'TamaMcGlinn/vim-git-essentials', { 'branch': 'v2' }
 Plug 'TamaMcGlinn/vim-floggit-keybindings', { 'branch': 'v2' }
 Plug 'TamaMcGlinn/git-worktree.nvim'
+Plug 'Juksuu/worktrees.nvim'
 
 
 " chat
