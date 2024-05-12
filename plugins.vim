@@ -91,10 +91,6 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
-" no longer used:
-" Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
-" Plug 'ycm-core/YouCompleteMe'
-" Plug 'nvim-lua/completion-nvim' " deprecated
 
 " Ada
 Plug 'TamaMcGlinn/nvim-lsp-gpr-selector'
@@ -176,6 +172,7 @@ Plug '~/code/vimplugins/vim-voice-control', {'do': ':UpdateRemotePlugins'}
 Plug 'google/vim-glaive'
 Plug 'google/vim-codefmt'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'adelarsq/vim-matchit'
 
 Plug 'auwsmit/vim-active-numbers'
 
