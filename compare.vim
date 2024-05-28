@@ -1,6 +1,6 @@
 let s:Opposite_dirs = {'l': 'h', 'h': 'l', 'k': 'j', 'j': 'k'}
 
-function! CompareFiles(dir, reversedir) abort
+function! CompareFiles(dir) abort
   let l:cmd=""
   if &diff
     let l:cmd="diffoff"
