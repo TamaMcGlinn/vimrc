@@ -12,6 +12,7 @@ source ~/vimrc/search_settings.vim
 source ~/vimrc/automkdir.vim
 source ~/vimrc/settings.vim
 source ~/vimrc/airline_settings.vim
+source ~/vimrc/vimwiki_config.vim
 " source ~/vimrc/marks.vim
 
 source ~/vimrc/intellisense.vim

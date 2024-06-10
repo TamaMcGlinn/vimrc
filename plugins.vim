@@ -196,6 +196,9 @@ Plug 'RishabhRD/nvim-cheat.sh'
 "Plug 'chrisbra/Recover.vim'
 "Plug 'tpope/vim-ragtag'
 
+" ------------- General office stuff -------
+Plug 'mattn/calendar-vim'
+Plug 'vimwiki/vimwiki'
 " Excel
 "Plug 'godlygeek/tabular'
 Plug 'sk1418/HowMuch'
