@@ -82,6 +82,8 @@ Plug 'ThePrimeagen/harpoon'
 " Code completion / LSP
 Plug 'TamaMcGlinn/nvim-lspconfig'
 Plug 'p00f/clangd_extensions.nvim'
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'nickspoons/vim-sharpenup'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'onsails/lspkind-nvim'
@@ -232,7 +234,6 @@ Plug 'TamaMcGlinn/vim-git-essentials', { 'branch': 'v2' }
 Plug 'TamaMcGlinn/vim-floggit-keybindings', { 'branch': 'v2' }
 Plug 'TamaMcGlinn/git-worktree.nvim'
 Plug 'Juksuu/worktrees.nvim'
-
 
 " chat
 Plug 'colmbus72/slim'
