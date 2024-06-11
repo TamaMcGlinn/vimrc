@@ -131,7 +131,8 @@ lsp.als.setup {
     capabilities = capabilities,
     on_init = require("gpr_selector").als_on_init,
     single_file_support = true,
-    root_dir = function() return '/' end
+    -- root_dir = function() return '/' end
+    root_dir = util.root_pattern('Makefile', '.git', '*.gpr', '*.adc'),
 }
 lsp.pylsp.setup {
     cmd = {"pylsp"},

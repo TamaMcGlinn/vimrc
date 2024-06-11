@@ -223,6 +223,7 @@ Plug 'TamaMcGlinn/vim-browsedir'
 
 " Space menu
 Plug 'liuchengxu/vim-which-key'
+Plug 'liuchengxu/vim-clap'
 
 " other git plugins
 Plug 'sodapopcan/vim-twiggy'
