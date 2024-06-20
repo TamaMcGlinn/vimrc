@@ -17,7 +17,7 @@ require("yanky").setup({
             mappings = nil -- nil to use default mappings or no mappings (see `use_default_mappings`)
         }
     },
-    system_clipboard = {sync_with_ring = true},
+    system_clipboard = {sync_with_ring = false},
     highlight = {on_put = false, on_yank = true, timer = 100},
     preserve_cursor_position = {enabled = true},
     textobj = {enabled = true}
