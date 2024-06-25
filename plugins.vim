@@ -2,6 +2,8 @@
 " Programming languages
 Plug 'TamaMcGlinn/vim-ada'
 
+Plug 'github/copilot.vim'
+
 "Plug 'vim-scripts/taglist.vim'
 
 " Automatic tags management
