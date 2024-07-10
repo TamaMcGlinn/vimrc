@@ -15,8 +15,7 @@ return function()
   local end_mark = vim.api.nvim_buf_get_mark(active_buf, ">")
 
   pickers
-      .new({}, {
-        prompt_title = 'Translate',
+      .new({}, { prompt_title = 'Translate',
         finder = finders.new_table {
           results = languages,
           entry_maker = function(entry)

@@ -7,17 +7,26 @@ require("translate").setup({
 })
 EOF
 
-nnoremap <leader>tt :lua require("configs.translate")()<CR>
-vnoremap <leader>tt :<C-U>lua require("configs.translate")()<CR>
+nnoremap <leader>ttp :lua require("configs.translate")()<CR>
+vnoremap <leader>ttp :<C-U>lua require("configs.translate")()<CR>
 
-nnoremap <leader>tn :Translate NL<CR>
-vnoremap <leader>tn :<C-U>Translate NL<CR>
-nnoremap <leader>te :Translate EN<CR>
-vnoremap <leader>te :<C-U>Translate EN<CR>
-nnoremap <leader>td :Translate DA<CR>
-vnoremap <leader>td :<C-U>Translate DA<CR>
+nnoremap <leader>ttn :Translate NL<CR>
+vnoremap <leader>ttn :'<,'>Translate NL<CR>
+nnoremap <leader>tte :Translate EN<CR>
+vnoremap <leader>tte :'<,'>Translate EN<CR>
+nnoremap <leader>ttd :Translate DA<CR>
+vnoremap <leader>ttd :'<,'>Translate DA<CR>
 
-call floggit#update_whichkey('t', {'name': '+Translate',
-      \'t': 'Pick language',
-      \'n': 'Nederlands',
-   \})
+let g:translate_menu = {'name': '+Translate',
+  \'p': 'Language pick',
+  \'n': 'Nederlands',
+  \'d': 'Dansk',
+  \'e': 'English',
+\}
+
+call floggit#update_whichkey('t', {'name': '+Translate', 't': g:translate_menu})
+
+" This is some text here
+" Dette er noget tekst her
+"Dit is wat tekst hjir
+" But this is something different entirely
