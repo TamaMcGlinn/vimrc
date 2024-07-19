@@ -236,8 +236,8 @@ Plug 'aacunningham/vim-fuzzy-stash'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'sindrets/diffview.nvim'
 
-Plug 'TamaMcGlinn/vim-git-essentials', { 'branch': 'v2' }
-Plug 'TamaMcGlinn/vim-floggit-keybindings', { 'branch': 'v2' }
+Plug 'TamaMcGlinn/vim-git-essentials'
+Plug 'TamaMcGlinn/vim-floggit-keybindings'
 Plug 'TamaMcGlinn/git-worktree.nvim'
 Plug 'Juksuu/worktrees.nvim'
 
@@ -250,11 +250,11 @@ Plug 'TamaMcGlinn/vim-flog', { 'branch': 'master' }
 
 " flog extensions
 Plug 'skywind3000/vim-quickui'
-Plug 'TamaMcGlinn/flog-menu', { 'branch': 'v2' }
+Plug 'TamaMcGlinn/flog-menu'
 Plug 'TamaMcGlinn/flog-teamjump'
 " Plug 'TamaMcGlinn/flog-forest'
-Plug 'TamaMcGlinn/flog-navigate', { 'branch': 'v2' }
-Plug 'TamaMcGlinn/vim-autoflog', { 'branch': 'v2' }
+Plug 'TamaMcGlinn/flog-navigate'
+Plug 'TamaMcGlinn/vim-autoflog'
 
 
 Plug 'TamaMcGlinn/vim-instaflog'
