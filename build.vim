@@ -33,8 +33,8 @@ fu! Compile(file) abort
   endif
 endfunction
 
-lua require("overseer").setup()
-lua require("compiler").setup()
+" lua require("overseer").setup()
+" lua require("compiler").setup()
 lua require("makeit").setup()
 
 source ~/vimrc/bazel.vim
