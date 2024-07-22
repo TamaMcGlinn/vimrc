@@ -123,7 +123,8 @@ local flake_ignores = {
     "E501", -- line too long
     "C901", -- mccabe complexity
     "W293", -- blank line contains whitespace
-    "E402" -- module import not at top (covered by pylint instead)
+    "E402", -- module import not at top (covered by pylint instead)
+    "D100", -- Missing docstring in public module
 }
 
 lsp.als.setup {
