@@ -4,7 +4,7 @@ nnoremap <leader>ri :LspInfo<CR>
 nnoremap <leader>rI :Mason<CR>
 nnoremap <leader>rq :LspStop<CR>
 nnoremap <leader>rR :LspRestart<CR>
-nnoremap <leader>rl :e ~/.cache/nvim/lsp.log<CR>
+nnoremap <leader>rl :e ~/.local/state/nvim/lsp.log<CR>
 
 let g:which_key_map['r'] = {'name': '+Refactor',
       \'r': 'Vim includesearch',
