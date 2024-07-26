@@ -51,5 +51,6 @@ source ~/vimrc/abbreviations.vim
 call SourceIfReadable("~/private_vimrc/private.vim")
 
 source ~/vimrc/refactoring.vim
+source ~/vimrc/copilot_settings.vim
 
 source ~/vimrc/temp.vim
