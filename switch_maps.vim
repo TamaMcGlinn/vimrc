@@ -1,6 +1,7 @@
 
 let g:switch_custom_definitions = [
       \ switch#NormalizedCase(['on', 'off']),
+      \ switch#NormalizedCase(['enable', 'disable']),
       \ switch#NormalizedCase(['high', 'low']),
       \ switch#NormalizedCase(['static', 'dynamic']),
       \ switch#NormalizedCase(['TRUE', 'FALSE']),
