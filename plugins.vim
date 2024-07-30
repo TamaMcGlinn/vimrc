@@ -58,6 +58,11 @@ Plug 'wfxr/minimap.vim'
 " File Outline Tags
 Plug 'preservim/tagbar'
 
+" message UI
+Plug 'MunifTanjim/nui.nvim'
+Plug 'rcarriga/nvim-notify'
+Plug 'folke/noice.nvim'
+
 " Marks see also ~/vimrc/marks.vim
 " Plug 'chentau/marks.nvim'
 Plug 'kshenoy/vim-signature'
