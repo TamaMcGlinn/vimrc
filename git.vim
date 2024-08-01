@@ -16,4 +16,6 @@ augroup flogstatus
   autocmd FileType floggraph let g:flog_enable_status = v:true
 augroup END
 
+let g:flog_enable_extended_chars = 1
+
 lua require("worktree_config")
