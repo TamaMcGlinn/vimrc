@@ -1,6 +1,7 @@
 
 " Dir
 nnoremap <leader>qq :call dirhere#DirToCurrentLine()<CR>
+nnoremap <leader>qm :Noice<CR>
 nnoremap <leader>qw :call dirhere#TermDirToCwd()<CR>
 nnoremap <silent> <leader>q- :cd -<CR>:pwd<CR>
 nnoremap <leader>qc :call dirhere#TermDirToCurrentLine()<CR>
@@ -21,6 +22,8 @@ let g:which_key_map['q'] = {'name': '+Dir/Quickfix',
              \'w': 'Terminal to working dir',
              \'p': 'Print dir',
              \'k': 'Dir up',
+             \'j': 'Dir down',
+             \'m': 'Messages',
              \'g': 'Git root',
              \'o': 'Location list',
              \'l': 'Quickfix list',

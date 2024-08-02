@@ -15,6 +15,8 @@ source ~/vimrc/airline_settings.vim
 source ~/vimrc/vimwiki_config.vim
 " source ~/vimrc/marks.vim
 
+lua require("noice_config")
+
 source ~/vimrc/intellisense.vim
 
 source ~/vimrc/telescope.vim
