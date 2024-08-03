@@ -63,6 +63,10 @@ Plug 'MunifTanjim/nui.nvim'
 Plug 'rcarriga/nvim-notify'
 Plug 'folke/noice.nvim'
 
+" images
+Plug 'edluffy/hologram.nvim'
+Plug '3rd/image.nvim'
+
 " Marks see also ~/vimrc/marks.vim
 " Plug 'chentau/marks.nvim'
 Plug 'kshenoy/vim-signature'
