@@ -1,4 +1,6 @@
 
+Plug 'vhyrro/luarocks.nvim'
+
 " Programming languages
 Plug 'TamaMcGlinn/vim-ada'
 
@@ -20,7 +22,6 @@ Plug 'TamaMcGlinn/vim-termhelp'
 " Plug 'vim-scripts/YankRing.vim'
 Plug 'gbprod/yanky.nvim'
 " see lua/yank_and_paste.lua
-
 
 " Alternating related files
 " Plug 'nacitar/a.vim'
@@ -64,7 +65,7 @@ Plug 'rcarriga/nvim-notify'
 Plug 'folke/noice.nvim'
 
 " images
-Plug 'edluffy/hologram.nvim'
+Plug 'lucasdf/hologram.nvim'
 Plug '3rd/image.nvim'
 
 " Marks see also ~/vimrc/marks.vim
