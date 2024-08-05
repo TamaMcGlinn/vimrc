@@ -60,3 +60,8 @@ source ~/vimrc/search.vim
 source ~/vimrc/killneighbour.vim
 source ~/vimrc/close_others.vim
 source ~/vimrc/voice_control.vim
+
+augroup escesc
+  " double escape clears search highlight
+  au BufEnter * nnoremap <silent> <esc><esc> :nohlsearch<cr>:Noice dismiss<CR>
+augroup END
