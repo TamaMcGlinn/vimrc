@@ -19,3 +19,9 @@ augroup END
 let g:flog_enable_extended_chars = 1
 
 lua require("worktree_config")
+
+augroup fugitive_no_winfixbuf
+  " autocmd FileType fugitive set nowinfixbuf
+  autocmd BufEnter * if &filetype == 'fugitive' | set nowinfixbuf | endif
+  autocmd BufNew * if &filetype == 'fugitive' | set nowinfixbuf | endif
+augroup END
