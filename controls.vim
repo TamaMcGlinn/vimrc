@@ -53,8 +53,7 @@ nnoremap ]d :lua vim.diagnostic.goto_next()<CR>
 nnoremap ]D :lua vim.diagnostic.goto_next({severity = vim.diagnostic.severity.ERROR})<CR>
 nnoremap [D :lua vim.diagnostic.goto_next({severity = vim.diagnostic.severity.ERROR})<CR>
 
-" sneak
-let g:sneak#label = 1
+lua require('leap').create_default_mappings()
 
 source ~/vimrc/search.vim
 source ~/vimrc/killneighbour.vim
