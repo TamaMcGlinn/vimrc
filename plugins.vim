@@ -63,7 +63,7 @@ Plug 'preservim/tagbar'
 " message UI
 Plug 'MunifTanjim/nui.nvim'
 Plug 'rcarriga/nvim-notify'
-Plug 'folke/noice.nvim'
+" Plug 'folke/noice.nvim'
 
 " images
 Plug 'lucasdf/hologram.nvim'

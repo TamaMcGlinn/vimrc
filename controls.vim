@@ -53,14 +53,28 @@ nnoremap ]d :lua vim.diagnostic.goto_next()<CR>
 nnoremap ]D :lua vim.diagnostic.goto_next({severity = vim.diagnostic.severity.ERROR})<CR>
 nnoremap [D :lua vim.diagnostic.goto_next({severity = vim.diagnostic.severity.ERROR})<CR>
 
-lua require('leap').create_default_mappings()
+lua require('leap')
+lua <<EOF
+vim.keymap.set({'n', 'x', 'o'}, 's',  '<Plug>(leap-forward)')
+vim.keymap.set({'n', 'x', 'o'}, 'S',  '<Plug>(leap-backward)')
+-- vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)')
+EOF
 
 source ~/vimrc/search.vim
 source ~/vimrc/killneighbour.vim
 source ~/vimrc/close_others.vim
 source ~/vimrc/voice_control.vim
 
+" highlight from search
+" noice messages
+function! ClearStuff() abort
+  execute "nohlsearch"
+  if exists(':Noice')
+    execute "Noice dismiss"
+  endif
+endfunction
+
 augroup escesc
-  " double escape clears search highlight
-  au BufEnter * nnoremap <silent> <esc><esc> :nohlsearch<cr>:Noice dismiss<CR>
+  " double escape clears search stuff
+  au BufEnter * nnoremap <silent> <esc><esc> call ClearStuff()<CR>
 augroup END
