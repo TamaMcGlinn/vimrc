@@ -60,6 +60,8 @@ vim.keymap.set({'n', 'x', 'o'}, 'S',  '<Plug>(leap-backward)')
 -- vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)')
 EOF
 
+source ~/vimrc/clipboard_copy.vim
+
 source ~/vimrc/search.vim
 source ~/vimrc/killneighbour.vim
 source ~/vimrc/close_others.vim
