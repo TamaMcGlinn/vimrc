@@ -13,6 +13,8 @@ Plug 'github/copilot.vim'
 
 Plug 'dyng/ctrlsf.vim'
 
+Plug 'romainl/vim-cool'
+
 Plug 'yegappan/mru'
 Plug 'TamaMcGlinn/vim-termhelp'
 

@@ -65,10 +65,8 @@ source ~/vimrc/killneighbour.vim
 source ~/vimrc/close_others.vim
 source ~/vimrc/voice_control.vim
 
-" highlight from search
 " noice messages
 function! ClearStuff() abort
-  execute "nohlsearch"
   if exists(':Noice')
     execute "Noice dismiss"
   endif
@@ -76,5 +74,5 @@ endfunction
 
 augroup escesc
   " double escape clears search stuff
-  au BufEnter * nnoremap <silent> <esc><esc> call ClearStuff()<CR>
+  au BufEnter * nnoremap <esc><esc> :call ClearStuff()<CR>
 augroup END
