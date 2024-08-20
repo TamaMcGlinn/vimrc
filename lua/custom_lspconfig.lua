@@ -163,6 +163,7 @@ lsp.pylsp.setup {
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
+local minetest_lsp_api_dir = vim.fn.expand("$HOME") .. "/code/adabots/minetest-lsp-api"
 local default_servers = {"clangd", "rust_analyzer", "bashls", "vimls", "lua_ls", "omnisharp"}
 local settings = {
   init_options = {documentFormatting = false},
@@ -179,12 +180,12 @@ local settings = {
     },
     workspace = {
       checkThirdParty = false,
-      -- Make the server aware of Neovim runtime files
-      library = vim.api.nvim_get_runtime_file("", true)
-    },
-    -- Do not send telemetry data containing a randomized but unique identifier
-    telemetry = {enable = false}
-  }
+      -- Make the server aware of Neovim runtime files and minetest API
+      library = {vim.api.nvim_get_runtime_file("", true), minetest_lsp_api_dir}
+    }
+  },
+  -- Do not send telemetry data containing a randomized but unique identifier
+  telemetry = {enable = false}
 }
 
 for _, servername in pairs(default_servers) do
@@ -356,24 +357,24 @@ require("clangd_extensions").setup({
       TemplateParamObject = "🅃"
     },
     --[[ These require codicons (https://github.com/microsoft/vscode-codicons)
-            role_icons = {
-                type = "",
-                declaration = "",
-                expression = "",
-                specifier = "",
-                statement = "",
-                ["template argument"] = "",
-            },
+          role_icons = {
+            type = "",
+            declaration = "",
+            expression = "",
+            specifier = "",
+            statement = "",
+            ["template argument"] = "",
+          },
 
-            kind_icons = {
-                Compound = "",
-                Recovery = "",
-                TranslationUnit = "",
-                PackExpansion = "",
-                TemplateTypeParm = "",
-                TemplateTemplateParm = "",
-                TemplateParamObject = "",
-            }, ]]
+          kind_icons = {
+            Compound = "",
+            Recovery = "",
+            TranslationUnit = "",
+            PackExpansion = "",
+            TemplateTypeParm = "",
+            TemplateTemplateParm = "",
+            TemplateParamObject = "",
+          }, ]]
 
     highlights = {detail = "Comment"}
   },
