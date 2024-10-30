@@ -4,6 +4,12 @@ ${VISUAL}
 pragma Warnings (On, "$1");
 endsnippet
 
+snippet exportc
+      Export        => True,
+      Convention    => C,
+      External_Name => "$1";
+endsnippet
+
 snippet prj "Project" b
 project `!v vim_snippets#Filename()` is
    for Source_Dirs use ("src");

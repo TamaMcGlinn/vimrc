@@ -1,4 +1,6 @@
 
+Plug 'vhyrro/luarocks.nvim'
+
 " Programming languages
 Plug 'TamaMcGlinn/vim-ada'
 
@@ -11,6 +13,8 @@ Plug 'github/copilot.vim'
 
 Plug 'dyng/ctrlsf.vim'
 
+Plug 'romainl/vim-cool'
+
 Plug 'yegappan/mru'
 Plug 'TamaMcGlinn/vim-termhelp'
 
@@ -20,7 +24,6 @@ Plug 'TamaMcGlinn/vim-termhelp'
 " Plug 'vim-scripts/YankRing.vim'
 Plug 'gbprod/yanky.nvim'
 " see lua/yank_and_paste.lua
-
 
 " Alternating related files
 " Plug 'nacitar/a.vim'
@@ -33,6 +36,7 @@ Plug 'ii14/exrc.vim'
 
 " Plug 'justinmk/vim-sneak'
 Plug 'easymotion/vim-easymotion'
+Plug 'ggandor/leap.nvim'
 
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
@@ -61,7 +65,11 @@ Plug 'preservim/tagbar'
 " message UI
 Plug 'MunifTanjim/nui.nvim'
 Plug 'rcarriga/nvim-notify'
-Plug 'folke/noice.nvim'
+" Plug 'folke/noice.nvim'
+
+" images
+Plug 'lucasdf/hologram.nvim'
+Plug '3rd/image.nvim'
 
 " Marks see also ~/vimrc/marks.vim
 " Plug 'chentau/marks.nvim'
@@ -87,7 +95,8 @@ Plug 'valloric/listtoggle'
 Plug 'ThePrimeagen/harpoon'
 
 " Code completion / LSP
-Plug 'TamaMcGlinn/nvim-lspconfig'
+Plug 'neovim/nvim-lspconfig'
+Plug 'TamaMcGlinn/nvim-lspconfig-ada'
 Plug 'p00f/clangd_extensions.nvim'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'nickspoons/vim-sharpenup'
@@ -251,7 +260,7 @@ Plug 'colmbus72/slim'
 
 " Flog
 Plug 'TamaMcGlinn/vim-fugitive', { 'branch': 'footbazooka' }
-Plug 'rbong/vim-flog', { 'branch': 'master' }
+Plug 'rbong/vim-flog', { 'branch': 'v3' }
 
 " flog extensions
 Plug 'skywind3000/vim-quickui'

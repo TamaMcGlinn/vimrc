@@ -53,10 +53,26 @@ nnoremap ]d :lua vim.diagnostic.goto_next()<CR>
 nnoremap ]D :lua vim.diagnostic.goto_next({severity = vim.diagnostic.severity.ERROR})<CR>
 nnoremap [D :lua vim.diagnostic.goto_next({severity = vim.diagnostic.severity.ERROR})<CR>
 
-" sneak
-let g:sneak#label = 1
+lua require('leap')
+lua <<EOF
+vim.keymap.set({'n', 'x', 'o'}, 's',  '<Plug>(leap-forward)')
+vim.keymap.set({'n', 'x', 'o'}, 'S',  '<Plug>(leap-backward)')
+-- vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)')
+EOF
 
 source ~/vimrc/search.vim
 source ~/vimrc/killneighbour.vim
 source ~/vimrc/close_others.vim
 source ~/vimrc/voice_control.vim
+
+" noice messages
+function! ClearStuff() abort
+  if exists(':Noice')
+    execute "Noice dismiss"
+  endif
+endfunction
+
+augroup escesc
+  " double escape clears search stuff
+  au BufEnter * nnoremap <esc><esc> :call ClearStuff()<CR>
+augroup END

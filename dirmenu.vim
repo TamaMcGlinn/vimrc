@@ -1,7 +1,6 @@
 
 " Dir
 nnoremap <leader>qq :call dirhere#DirToCurrentLine()<CR>
-nnoremap <leader>qm :Noice<CR>
 nnoremap <leader>qw :call dirhere#TermDirToCwd()<CR>
 nnoremap <silent> <leader>q- :cd -<CR>:pwd<CR>
 nnoremap <leader>qc :call dirhere#TermDirToCurrentLine()<CR>

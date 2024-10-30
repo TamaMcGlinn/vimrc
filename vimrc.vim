@@ -16,6 +16,7 @@ source ~/vimrc/vimwiki_config.vim
 " source ~/vimrc/marks.vim
 
 lua require("noice_config")
+lua require("image_config")
 
 source ~/vimrc/intellisense.vim
 
