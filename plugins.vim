@@ -95,7 +95,8 @@ Plug 'valloric/listtoggle'
 Plug 'ThePrimeagen/harpoon'
 
 " Code completion / LSP
-Plug 'TamaMcGlinn/nvim-lspconfig'
+Plug 'neovim/nvim-lspconfig'
+Plug 'TamaMcGlinn/nvim-lspconfig-ada'
 Plug 'p00f/clangd_extensions.nvim'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'nickspoons/vim-sharpenup'
@@ -259,7 +260,7 @@ Plug 'colmbus72/slim'
 
 " Flog
 Plug 'TamaMcGlinn/vim-fugitive', { 'branch': 'footbazooka' }
-Plug 'rbong/vim-flog', { 'branch': 'master' }
+Plug 'rbong/vim-flog', { 'branch': 'v3' }
 
 " flog extensions
 Plug 'skywind3000/vim-quickui'
