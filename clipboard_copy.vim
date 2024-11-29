@@ -1,6 +1,6 @@
+lua <<EOF
 vim.keymap.set("v", "<leader>cp", '<cmd>lua require("osc52").copy_visual()<CR>', { desc = "Copy (to clipboard)" })
 
-lua <<EOF
 vim.g.clipboard = {
   name = 'OSC 52',
   copy = {
@@ -10,7 +10,7 @@ vim.g.clipboard = {
   paste = {
     ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
     ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
-  },
+  }
 }
 EOF
 
