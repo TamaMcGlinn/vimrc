@@ -22,6 +22,9 @@ nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+" open in file explorer
+nnoremap <leader>fo :call system("xdg-open " .. expand('%'))<CR>
+
 source ~/vimrc/google_test.vim
 
 " maximize 
