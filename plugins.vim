@@ -7,6 +7,7 @@ Plug 'TamaMcGlinn/vim-ada'
 Plug 'github/copilot.vim'
 
 "Plug 'vim-scripts/taglist.vim'
+Plug 'tpope/vim-scriptease'
 
 " Automatic tags management
 " Plug 'ludovicchabant/vim-gutentags'
