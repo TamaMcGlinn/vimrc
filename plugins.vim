@@ -105,7 +105,7 @@ Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'onsails/lspkind-nvim'
 Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/nvim-cmp', { 'tag': 'v0.0.2' }
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
@@ -156,7 +156,7 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'MunifTanjim/nui.nvim'
 
 " ChatGPT
-Plug 'dpayne/CodeGPT.nvim'
+Plug 'TamaMcGlinn/CodeGPT.nvim'
 Plug 'archibate/nvim-gpt'
 
 " Fix gx
@@ -261,7 +261,7 @@ Plug 'colmbus72/slim'
 
 " Flog
 Plug 'TamaMcGlinn/vim-fugitive', { 'branch': 'footbazooka' }
-Plug 'rbong/vim-flog', { 'branch': 'v3' }
+Plug 'rbong/vim-flog', { 'tag': 'v3.0.0' }
 
 " flog extensions
 Plug 'skywind3000/vim-quickui'
