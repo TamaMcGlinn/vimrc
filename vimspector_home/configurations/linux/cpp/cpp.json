@@ -1,0 +1,14 @@
+{
+    "configurations": {
+        "a.out": {
+            "adapter": "vscode-cpptools",
+            "configuration": {
+                "request": "launch",
+                "program": "${executable}",
+                "cwd": "${cwd}",
+                "stopOnEntry": true,
+                "initCommands": []
+            }
+        }
+    }
+}

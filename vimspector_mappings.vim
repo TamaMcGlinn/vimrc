@@ -74,3 +74,4 @@ endfunction
 
 let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-go', 'CodeLLDB', 'vscode-cpptools', 'vscode-bash', 'vim-debug-adapter', 'lldb-vscode' ]
 
+let g:vimspector_base_dir=expand('$HOME') .. '/vimrc/vimspector_home'

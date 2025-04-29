@@ -1,0 +1,14 @@
+{
+    "configurations": {
+        "generic ada lldb": {
+            "adapter": "CodeLLDB",
+            "configuration": {
+                "request": "launch",
+                "program": "${executable}",
+                "cwd": "${cwd}",
+                "stopOnEntry": true,
+                "initCommands": ["script import math"]
+            }
+        }
+    }
+}
