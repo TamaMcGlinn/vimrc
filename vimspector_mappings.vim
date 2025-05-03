@@ -7,9 +7,9 @@ nnoremap <leader>dr :call vimspector#Restart()<CR>
 " stepping
 nnoremap <leader>dl :call vimspector#StepInto()<CR>
 nnoremap <leader>dj :call vimspector#StepOver()<CR>
-nnoremap <leader>dk :call vimspector#StepOut()<CR>
+nnoremap <leader>dh :call vimspector#StepOut()<CR>
 nnoremap <leader>d<space> :call vimspector#Continue()<CR>
-nnoremap <leader>dh :call vimspector#RunToCursor()<CR>
+nnoremap <leader>dg :call vimspector#RunToCursor()<CR>
 
 " breaking
 nnoremap <leader>db :call vimspector#ToggleBreakpoint()<CR>
