@@ -1,25 +1,33 @@
+function! JumpToPreviousTermPrompt() abort
+  call JumpToMsg(-1, '^$ ')
+endfunction
+
+function! JumpToNextTermPrompt() abort
+  call JumpToMsg(1, '^$ ')
+endfunction
+
 function! JumpToPreviousMessage() abort
-  call JumpToMsg(-1, '\(warning\|error\)')
+  call JumpToMsg(-1, '.*\(warning\|error\).*')
 endfunction
 
 function! JumpToNextMessage() abort
-  call JumpToMsg(1, '\(warning\|error\)')
+  call JumpToMsg(1, '.*\(warning\|error\).*')
 endfunction
 
 function! JumpToPreviousWarning() abort
-  call JumpToMsg(-1, 'warning')
+  call JumpToMsg(-1, '.*warning.*')
 endfunction
 
 function! JumpToNextWarning() abort
-  call JumpToMsg(1, 'warning')
+  call JumpToMsg(1, '.*warning.*')
 endfunction
 
 function! JumpToPreviousError() abort
-  call JumpToMsg(-1, 'error')
+  call JumpToMsg(-1, '.*error.*')
 endfunction
 
 function! JumpToNextError() abort
-  call JumpToMsg(1, 'error')
+  call JumpToMsg(1, '.*error.*')
 endfunction
 
 function! JumpToMsg(step, searchstring) abort
@@ -28,7 +36,7 @@ function! JumpToMsg(step, searchstring) abort
   while currentLine < lastLine
     " match with, for example:
     " some_file.adb:178:42: error: "Some_Var" is undefined (more references follow)
-    if getline(currentLine) =~ '.*' . a:searchstring . '.*'
+    if getline(currentLine) =~ a:searchstring
       execute 'normal! ' . currentLine . 'G'
       return
     endif
@@ -45,4 +53,6 @@ augroup TerminalControlMappings
     autocmd TermOpen * nnoremap <buffer> [e :call JumpToPreviousMessage()<CR>
     autocmd TermOpen * nnoremap <buffer> ]w :call JumpToNextWarning()<CR>
     autocmd TermOpen * nnoremap <buffer> [w :call JumpToPreviousWarning()<CR>
+    autocmd TermOpen * nnoremap <buffer> ]p :call JumpToNextTermPrompt()<CR>
+    autocmd TermOpen * nnoremap <buffer> [p :call JumpToPreviousTermPrompt()<CR>
 augroup END
