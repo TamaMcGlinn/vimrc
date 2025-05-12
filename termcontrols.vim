@@ -33,7 +33,7 @@ endfunction
 function! JumpToMsg(step, searchstring) abort
   let currentLine = line('.') + a:step
   let lastLine = line('$')
-  while currentLine < lastLine
+  while currentLine >= 1 && currentLine <= lastLine
     " match with, for example:
     " some_file.adb:178:42: error: "Some_Var" is undefined (more references follow)
     if getline(currentLine) =~ a:searchstring
