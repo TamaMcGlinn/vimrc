@@ -39,6 +39,7 @@ source ~/vimrc/build.vim
 source ~/vimrc/compare.vim
 source ~/vimrc/file_hotkeys.vim
 source ~/vimrc/harpoon.vim
+source ~/vimrc/termcontrols.vim
 source ~/vimrc/putmenu.vim
 " source ~/vimrc/vebugger_mappings.vim
 source ~/vimrc/vimspector_mappings.vim
