@@ -295,12 +295,12 @@ Plug 'bounceme/remote-viewer'
 Plug 'voldikss/vim-floaterm'
 Plug 'TamaMcGlinn/vim-bettergf'
 
-Plug 'ryanoasis/vim-devicons'
-" vim-devicons must be the last plugin
-"
 Plug 'TamaMcGlinn/vim-gitremotes'
 Plug 'uga-rosa/translate.nvim'
 
 Plug 'TamaMcGlinn/vim-fuzzy-recent'
 
 Plug '~/code/vimplugins/nvim-alire-tools/'
+
+Plug 'ryanoasis/vim-devicons'
+" vim-devicons must be the last plugin
