@@ -21,8 +21,8 @@ call glaive#Install()
 Glaive codefmt buildifier_lint_mode='fix' buildifier_warnings='-module-docstring,-function-docstring,-function-docstring-args,-function-docstring-header,-function-docstring-return,+unsorted-dict-items'
 
 function! ApplyPythonFormatters() abort
-  call codefmt#FormatBuffer('black')
   call codefmt#FormatBuffer('isort')
+  call codefmt#FormatBuffer('black')
 endfunction
 
 function! ApplyLuaFormatters() abort
