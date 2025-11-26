@@ -35,6 +35,7 @@ source ~/vimrc/trouble.vim
 source ~/vimrc/fuzzy_recent.vim
 
 source ~/vimrc/lspmenu.vim
+source ~/vimrc/hover_settings.vim
 source ~/vimrc/dirmenu.vim
 source ~/vimrc/diagnostic_info.vim
 source ~/vimrc/bible.vim

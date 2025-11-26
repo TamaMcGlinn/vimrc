@@ -110,6 +110,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'lewis6991/hover.nvim'
 
 " Ada
 Plug 'TamaMcGlinn/nvim-lsp-gpr-selector'
@@ -291,6 +292,9 @@ Plug 'justinmk/vim-dirvish'
 Plug 'kristijanhusak/vim-dirvish-git'
 Plug 'roginfarrer/vim-dirvish-dovish'
 Plug 'bounceme/remote-viewer'
+
+" Just for fun; vim-golf
+Plug 'vuciv/golf'
 
 Plug 'voldikss/vim-floaterm'
 Plug 'TamaMcGlinn/vim-bettergf'
