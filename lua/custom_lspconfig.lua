@@ -270,7 +270,8 @@ require"lspconfig".efm.setup {
             '%f:%l:%c: %tote: %m'
           }
         }, {
-          lintCommand = 'gnatprove_lint',
+          -- lintCommand = 'gnatprove_lint',
+          formatCommand = string.format('gnatprove_lint --project %s', vim.g.als_gpr_projectfile),
           lintIgnoreExitCode = true,
           lintFormats = {
             '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
