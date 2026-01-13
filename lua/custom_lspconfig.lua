@@ -53,7 +53,7 @@ cmp.setup({
     end
   },
   sources = cmp.config.sources({{name = 'nvim_lsp'}, {name = 'ultisnips'}},
-    {{name = 'buffer'}})
+  {{name = 'buffer'}})
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
@@ -70,41 +70,41 @@ local nvim_lsp = require 'lspconfig'
 local on_attach = function(_, bufnr)
   local opts = {noremap = true, silent = true}
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD',
-    '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd',
-    '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K',
-    '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi',
-    '<cmd>lua vim.lsp.buf.implementation()<CR>',
-    opts)
+  '<cmd>lua vim.lsp.buf.implementation()<CR>',
+  opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<CS-k>',
-    '<cmd>lua vim.lsp.buf.signature_help()<CR>',
-    opts)
+  '<cmd>lua vim.lsp.buf.signature_help()<CR>',
+  opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>D',
-    '<cmd>lua vim.lsp.buf.type_definition()<CR>',
-    opts)
+  '<cmd>lua vim.lsp.buf.type_definition()<CR>',
+  opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn',
-    '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr',
-    '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca',
-    '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'v', '<leader>ca',
-    '<cmd>lua vim.lsp.buf.range_code_action()<CR>',
-    opts)
+  '<cmd>lua vim.lsp.buf.range_code_action()<CR>',
+  opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>e',
-    '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+  '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d',
   --                             '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, 'n', ']d',
   --                             '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>qo',
-    '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>',
-    opts)
+  '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>',
+  opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>so',
-    [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]],
-    opts)
+  [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]],
+  opts)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
@@ -197,24 +197,6 @@ for _, servername in pairs(default_servers) do
   }
 end
 
--- Treesitter configuration
--- Parsers must be installed manually via :TSInstall
-require('nvim-treesitter.configs').setup {
-  highlight = {
-    enable = true -- false will disable the whole extension
-  },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = 'gnn',
-      node_incremental = 'grn',
-      scope_incremental = 'grc',
-      node_decremental = 'grm'
-    }
-  },
-  indent = {enable = true}
-}
-
 -- EFM setup
 require"lspconfig".efm.setup {
   init_options = {documentFormatting = true},
@@ -224,140 +206,140 @@ require"lspconfig".efm.setup {
       cs = {{ lintCommand = 'omnisharp' }},
       lua = {{formatCommand = "lua-format -i", formatStdin = true}},
       -- cpp = {
-      --     {
-      --         lintCommand = 'gccdiag --add-args=\'-S\' --',
-      --         lintIgnoreExitCode = true,
-      --         lintFormats = {
-      --             '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
-      --             '%f:%l:%c: %tote: %m'
-      --         }
-      --     }
-      -- },
-      arduino = {
-        {
-          lintCommand = 'cpplint --extensions=ino --filter=-legal/copyright',
-          lintFormats = {
-            '%f:%l: %m'
+        --     {
+          --         lintCommand = 'gccdiag --add-args=\'-S\' --',
+          --         lintIgnoreExitCode = true,
+          --         lintFormats = {
+            --             '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
+            --             '%f:%l:%c: %tote: %m'
+            --         }
+            --     }
+            -- },
+            arduino = {
+              {
+                lintCommand = 'cpplint --extensions=ino --filter=-legal/copyright',
+                lintFormats = {
+                  '%f:%l: %m'
+                }
+              }
+            },
+            yaml = {
+              {
+                lintCommand = 'yml_lint',
+                lintIgnoreExitCode = true,
+                lintFormats = {
+                  '%f:%l: %trror: %m', '%f:%l: %tarning: %m',
+                  '%f:%l: %tote: %m'
+                }
+              }
+            },
+            markdown = {
+              {
+                lintCommand = 'md_lint.py',
+                lintIgnoreExitCode = true,
+                lintFormats = {
+                  '%f:%l: %trror: %m', '%f:%l: %tarning: %m',
+                  '%f:%l: %tote: %m'
+                }
+              }
+            },
+            ada = {
+              {
+                lintCommand = 'gprbuild_lint',
+                lintIgnoreExitCode = true,
+                lintFormats = {
+                  '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
+                  '%f:%l:%c: %tote: %m'
+                }
+              }, {
+                -- lintCommand = 'gnatprove_lint',
+                formatCommand = string.format('gnatprove_lint --project %s', vim.g.als_gpr_projectfile),
+                lintIgnoreExitCode = true,
+                lintFormats = {
+                  '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
+                  '%f:%l:%c: %tote: %m', '%f:%l:%c: %tedium: %m'
+                }
+              }, {
+                lintCommand = 'doorstop_reqs_lint',
+                lintIgnoreExitCode = true,
+                lintFormats = {
+                  '%f:%l: %trror: %m', '%f:%l: %tarning: %m',
+                  '%f:%l: %tote: %m'
+                }
+              }
+            },
+            sh = {
+              {
+                lintCommand = 'shellcheck -f gcc -x',
+                lintSource = 'shellcheck',
+                lintFormats = {
+                  '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
+                  '%f:%l:%c: %tote: %m'
+                },
+                lintIgnoreExitCode = true
+              }
+            },
+            bzl = {
+              {
+                lintCommand = 'buildifier --lint=warn \'--warnings=-module-docstring,-function-docstring,-function-docstring-args,-function-docstring-header,-function-docstring-return,+unsorted-dict-items\''
+              }
+            }
           }
-        }
-      },
-      yaml = {
-        {
-          lintCommand = 'yml_lint',
-          lintIgnoreExitCode = true,
-          lintFormats = {
-            '%f:%l: %trror: %m', '%f:%l: %tarning: %m',
-            '%f:%l: %tote: %m'
-          }
-        }
-      },
-      markdown = {
-        {
-          lintCommand = 'md_lint.py',
-          lintIgnoreExitCode = true,
-          lintFormats = {
-            '%f:%l: %trror: %m', '%f:%l: %tarning: %m',
-            '%f:%l: %tote: %m'
-          }
-        }
-      },
-      ada = {
-        {
-          lintCommand = 'gprbuild_lint',
-          lintIgnoreExitCode = true,
-          lintFormats = {
-            '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
-            '%f:%l:%c: %tote: %m'
-          }
-        }, {
-          -- lintCommand = 'gnatprove_lint',
-          formatCommand = string.format('gnatprove_lint --project %s', vim.g.als_gpr_projectfile),
-          lintIgnoreExitCode = true,
-          lintFormats = {
-            '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
-            '%f:%l:%c: %tote: %m', '%f:%l:%c: %tedium: %m'
-          }
-        }, {
-          lintCommand = 'doorstop_reqs_lint',
-          lintIgnoreExitCode = true,
-          lintFormats = {
-            '%f:%l: %trror: %m', '%f:%l: %tarning: %m',
-            '%f:%l: %tote: %m'
-          }
-        }
-      },
-      sh = {
-        {
-          lintCommand = 'shellcheck -f gcc -x',
-          lintSource = 'shellcheck',
-          lintFormats = {
-            '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
-            '%f:%l:%c: %tote: %m'
-          },
-          lintIgnoreExitCode = true
-        }
-      },
-      bzl = {
-        {
-          lintCommand = 'buildifier --lint=warn \'--warnings=-module-docstring,-function-docstring,-function-docstring-args,-function-docstring-header,-function-docstring-return,+unsorted-dict-items\''
         }
       }
-    }
-  }
-}
 
-require("clangd_extensions").setup({
-  inlay_hints = {
-    inline = vim.fn.has("nvim-0.10") == 1,
-    -- Options other than `highlight' and `priority' only work
-    -- if `inline' is disabled
-    -- Only show inlay hints for the current line
-    only_current_line = false,
-    -- Event which triggers a refresh of the inlay hints.
-    -- You can make this { "CursorMoved" } or { "CursorMoved,CursorMovedI" } but
-    -- not that this may cause  higher CPU usage.
-    -- This option is only respected when only_current_line and
-    -- autoSetHints both are true.
-    only_current_line_autocmd = {"CursorHold"},
-    -- whether to show parameter hints with the inlay hints or not
-    show_parameter_hints = true,
-    -- prefix for parameter hints
-    parameter_hints_prefix = "<- ",
-    -- prefix for all the other hints (type, chaining)
-    other_hints_prefix = "=> ",
-    -- whether to align to the length of the longest line in the file
-    max_len_align = false,
-    -- padding from the left if max_len_align is true
-    max_len_align_padding = 1,
-    -- whether to align to the extreme right or not
-    right_align = false,
-    -- padding from the right if right_align is true
-    right_align_padding = 7,
-    -- The color of the hints
-    highlight = "Comment",
-    -- The highlight group priority for extmark
-    priority = 100
-  },
-  ast = {
-    -- These are unicode, should be available in any font
-    role_icons = {
-      type = "🄣",
-      declaration = "🄓",
-      expression = "🄔",
-      statement = ";",
-      specifier = "🄢",
-      ["template argument"] = "🆃"
-    },
-    kind_icons = {
-      Compound = "🄲",
-      Recovery = "🅁",
-      TranslationUnit = "🅄",
-      PackExpansion = "🄿",
-      TemplateTypeParm = "🅃",
-      TemplateTemplateParm = "🅃",
-      TemplateParamObject = "🅃"
-    },
-    --[[ These require codicons (https://github.com/microsoft/vscode-codicons)
+      require("clangd_extensions").setup({
+        inlay_hints = {
+          inline = vim.fn.has("nvim-0.10") == 1,
+          -- Options other than `highlight' and `priority' only work
+          -- if `inline' is disabled
+          -- Only show inlay hints for the current line
+          only_current_line = false,
+          -- Event which triggers a refresh of the inlay hints.
+          -- You can make this { "CursorMoved" } or { "CursorMoved,CursorMovedI" } but
+          -- not that this may cause  higher CPU usage.
+          -- This option is only respected when only_current_line and
+          -- autoSetHints both are true.
+          only_current_line_autocmd = {"CursorHold"},
+          -- whether to show parameter hints with the inlay hints or not
+          show_parameter_hints = true,
+          -- prefix for parameter hints
+          parameter_hints_prefix = "<- ",
+          -- prefix for all the other hints (type, chaining)
+          other_hints_prefix = "=> ",
+          -- whether to align to the length of the longest line in the file
+          max_len_align = false,
+          -- padding from the left if max_len_align is true
+          max_len_align_padding = 1,
+          -- whether to align to the extreme right or not
+          right_align = false,
+          -- padding from the right if right_align is true
+          right_align_padding = 7,
+          -- The color of the hints
+          highlight = "Comment",
+          -- The highlight group priority for extmark
+          priority = 100
+        },
+        ast = {
+          -- These are unicode, should be available in any font
+          role_icons = {
+            type = "🄣",
+            declaration = "🄓",
+            expression = "🄔",
+            statement = ";",
+            specifier = "🄢",
+            ["template argument"] = "🆃"
+          },
+          kind_icons = {
+            Compound = "🄲",
+            Recovery = "🅁",
+            TranslationUnit = "🅄",
+            PackExpansion = "🄿",
+            TemplateTypeParm = "🅃",
+            TemplateTemplateParm = "🅃",
+            TemplateParamObject = "🅃"
+          },
+          --[[ These require codicons (https://github.com/microsoft/vscode-codicons)
           role_icons = {
             type = "",
             declaration = "",
@@ -377,8 +359,8 @@ require("clangd_extensions").setup({
             TemplateParamObject = "",
           }, ]]
 
-    highlights = {detail = "Comment"}
-  },
-  memory_usage = {border = "none"},
-  symbol_info = {border = "none"}
-})
+          highlights = {detail = "Comment"}
+        },
+        memory_usage = {border = "none"},
+        symbol_info = {border = "none"}
+      })
