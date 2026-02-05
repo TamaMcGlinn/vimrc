@@ -6,7 +6,7 @@ if !exists('g:docjump_defined')
   let g:docjump_defined = v:true
 
   function! GetJumpTarget(ref) abort
-    let l:cmd = "md_jump " . a:ref
+    let l:cmd = "md_jump " . a:ref . " " . expand('%')
     let l:results = systemlist(l:cmd)
     if len(l:results) < 1
       return v:null
