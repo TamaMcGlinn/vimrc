@@ -21,8 +21,8 @@ if !exists('g:docjump_defined')
     endif
     let l:file = substitute(copy(l:result), '^\([^:]*\):.*$', '\1', '')
     let l:line = v:null
-    if l:result =~# '^[^:]*:[0-9]*:.*$'
-      let l:line = substitute(copy(l:result), '^[^:]*:\([0-9]*\):.*$', '\1', '')
+    if l:result =~# '^[^:]*:[0-9]*\(:.*\)\?$'
+      let l:line = substitute(copy(l:result), '^[^:]*:\([0-9]*\)\(:.*\)\?$', '\1', '')
       if l:line == ''
         let l:line = v:null
       endif
