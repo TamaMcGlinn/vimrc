@@ -27,3 +27,4 @@ nmap <Leader>/p :Agpy<CR>
 nmap <Leader>/b :Agbazel<CR>
 nmap <Leader>/j :Agjson<CR>
 nmap <Leader>/l :Aglua<CR>
+nmap <Leader>/m :Agmd<CR>
