@@ -3,6 +3,7 @@
 nnoremap <leader>qq :call dirhere#DirToCurrentLine()<CR>
 nnoremap <leader>qw :call dirhere#TermDirToCwd()<CR>
 nnoremap <leader>qL :call RemoveLcd()<CR>
+nnoremap <leader>q~ :cd ~<CR>
 nnoremap <silent> <leader>q- :cd -<CR>:pwd<CR>
 nnoremap <leader>qc :call dirhere#TermDirToCurrentLine()<CR>
 nnoremap <silent> <leader>qg :call dirhere#CdToProjectRoot()<CR>
