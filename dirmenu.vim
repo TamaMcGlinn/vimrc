@@ -2,10 +2,18 @@
 " Dir
 nnoremap <leader>qq :call dirhere#DirToCurrentLine()<CR>
 nnoremap <leader>qw :call dirhere#TermDirToCwd()<CR>
+nnoremap <leader>qL :call RemoveLcd()<CR>
 nnoremap <silent> <leader>q- :cd -<CR>:pwd<CR>
 nnoremap <leader>qc :call dirhere#TermDirToCurrentLine()<CR>
 nnoremap <silent> <leader>qg :call dirhere#CdToProjectRoot()<CR>
 nnoremap <leader>qp :pwd<CR>
+
+function! RemoveLcd() abort
+  if haslocaldir()
+      execute 'cd' getcwd(-1)
+  endif
+endfunction
+
 
 " up/down
 nnoremap <silent> <leader>qk :call dirhere#dir_up()<CR>
@@ -26,4 +34,5 @@ let g:which_key_map['q'] = {'name': '+Dir/Quickfix',
              \'g': 'Git root',
              \'o': 'Location list',
              \'l': 'Quickfix list',
+             \'L': 'un-lcd',
              \}
