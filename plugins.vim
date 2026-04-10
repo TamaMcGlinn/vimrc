@@ -37,7 +37,7 @@ Plug 'ii14/exrc.vim'
 
 " Plug 'justinmk/vim-sneak'
 Plug 'easymotion/vim-easymotion'
-Plug 'ggandor/leap.nvim'
+Plug 'https://codeberg.org/andyg/leap.nvim'
 
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
