@@ -114,7 +114,6 @@ local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-local lsp = require('lspconfig')
 local util = require('lspconfig.util')
 
 local flake_ignores = {
@@ -127,15 +126,15 @@ local flake_ignores = {
   "D100", -- Missing docstring in public module
 }
 
-lsp.als.setup {
+vim.lsp.config("als", {
   on_attach = on_attach,
   capabilities = capabilities,
   on_init = require("gpr_selector").als_on_init,
   single_file_support = true,
   -- root_dir = function() return '/' end
   root_dir = util.root_pattern('Makefile', '.git', '*.gpr', '*.adc'),
-}
-lsp.pylsp.setup {
+})
+vim.lsp.config("pylsp", {
   cmd = {"pylsp"},
   on_attach = on_attach,
   capabilities = capabilities,
@@ -159,7 +158,7 @@ lsp.pylsp.setup {
       }
     }
   }
-}
+})
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
@@ -189,16 +188,17 @@ local settings = {
 }
 
 for _, servername in pairs(default_servers) do
-  nvim_lsp[servername].setup {
+  vim.lsp.config(servername, {
     on_attach = on_attach,
     capabilities = capabilities,
     settings = settings,
     root_dir = nvim_lsp.util.root_pattern('.git')
-  }
+  })
 end
 
+
 -- EFM setup
-require"lspconfig".efm.setup {
+vim.lsp.config("efm", {
   init_options = {documentFormatting = true},
   settings = {
     rootMarkers = {".git/"},
@@ -286,7 +286,7 @@ require"lspconfig".efm.setup {
             }
           }
         }
-      }
+      })
 
       require("clangd_extensions").setup({
         inlay_hints = {
