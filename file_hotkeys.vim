@@ -44,6 +44,7 @@ nnoremap <Leader>vpi :PlugInstall<CR>
 nnoremap <Leader>vpc :PlugClean<CR>
 nnoremap <Leader>vpu :call ResetPluginsToHttpAndUpdate()<CR>
 nnoremap <Leader>vpf :FindPlugin<CR>
+nnoremap <leader>vpn :MkPlugin 
 
 
 " Logs
