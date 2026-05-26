@@ -25,3 +25,6 @@ augroup fugitive_no_winfixbuf
   autocmd BufEnter * if &filetype == 'fugitive' | set nowinfixbuf | endif
   autocmd BufNew * if &filetype == 'fugitive' | set nowinfixbuf | endif
 augroup END
+
+nnoremap ]ge :call gitcycle#Prev()<CR>
+nnoremap [ge :call gitcycle#Next()<CR>
