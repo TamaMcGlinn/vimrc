@@ -19,6 +19,7 @@ Plug 'romainl/vim-cool'
 Plug 'yegappan/mru'
 Plug 'TamaMcGlinn/vim-termhelp'
 
+
 " Yank history
 " YankRing periodically causes me to paste the entire git history into a CMD
 " buffer, which necessitates killing the nvim process
@@ -201,6 +202,8 @@ Plug 'nvim-treesitter/nvim-treesitter-context'
 
 Plug 'farmergreg/vim-lastplace'
 
+Plug 'TamaMcGlinn/vim-mkplugin'
+
 " Plug 'dbeniamine/cheat.sh-vim'
 Plug 'RishabhRD/popfix'
 Plug 'RishabhRD/nvim-cheat.sh'
@@ -255,6 +258,8 @@ Plug 'TamaMcGlinn/vim-git-essentials'
 Plug 'TamaMcGlinn/vim-floggit-keybindings'
 Plug 'TamaMcGlinn/git-worktree.nvim'
 Plug 'Juksuu/worktrees.nvim'
+
+Plug 'TamaMcGlinn/vim-gitcycle'
 
 " chat
 Plug 'colmbus72/slim'
