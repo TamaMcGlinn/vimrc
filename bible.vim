@@ -5,7 +5,7 @@ let g:BibleDelimiter = ' '
 " k for insert, j for search, i for insert, l for anabaptist.nl reference
 " ks => Dutch
 " ku => Ukrainian
-nnoremap <leader>kk y :call bible#insert_quote('', 'KJV')<CR>
+nnoremap <leader>kk y :call bible#insert_quote('', 'engKJV2006eb')<CR>
 nnoremap <leader>kj :call Bible_search('kjv')<CR>
 nnoremap <leader>ki :call Bible_search('kjv', 'Insert_sink')<CR>
 nnoremap <leader>kl :call Bible_search('kjv', 'ABwebsite_sink')<CR> 
@@ -14,6 +14,11 @@ nnoremap <leader>ksk y :call bible#insert_quote('', 'DutSVV')<CR>
 nnoremap <leader>ksj :call Bible_search('DutSVV')<CR>
 nnoremap <leader>ksi :call Bible_search('DutSVV', 'Insert_sink')<CR>
 nnoremap <leader>ksl :call Bible_search('DutSVV', 'ABwebsite_sink')<CR> 
+
+nnoremap <leader>kuk y :call bible#insert_quote('', 'UkrOgienko')<CR>
+nnoremap <leader>kuj :call Bible_search('UkrOgienko')<CR>
+nnoremap <leader>kui :call Bible_search('UkrOgienko', 'Insert_sink')<CR>
+nnoremap <leader>kul :call Bible_search('UkrOgienko', 'ABwebsite_sink')<CR> 
 
 let g:which_key_map['k'] = {'name': '+Bible',
       \'k': 'KJV verse insert',
