@@ -263,7 +263,7 @@ Plug 'TamaMcGlinn/vim-gitcycle'
 
 " chat
 Plug 'colmbus72/slim'  " Slack
-Plug 'habamax/vim-ii'  " IRC
+" Plug 'habamax/vim-ii'  " IRC
 
 " Flog
 Plug 'TamaMcGlinn/vim-fugitive', { 'branch': 'footbazooka' }
