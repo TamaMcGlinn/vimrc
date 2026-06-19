@@ -20,12 +20,25 @@ nnoremap <leader>kuj :call Bible_search('UkrOgienko')<CR>
 nnoremap <leader>kui :call Bible_search('UkrOgienko', 'Insert_sink')<CR>
 nnoremap <leader>kul :call Bible_search('UkrOgienko', 'ABwebsite_sink')<CR> 
 
+let g:svv_menu = {'name': '+SVV',
+      \'k': 'SVV verse insert',
+      \'j': 'SVV search',
+      \'i': 'SVV search & insert',
+      \'l': 'SVV search & hugo insert',
+      \}
+let g:ukr_menu = {'name': '+UKR',
+      \'k': 'UKR verse insert',
+      \'j': 'UKR search',
+      \'i': 'UKR search & insert',
+      \'l': 'UKR search & hugo insert',
+      \}
 let g:which_key_map['k'] = {'name': '+Bible',
       \'k': 'KJV verse insert',
       \'j': 'KJV search',
       \'i': 'KJV search & insert',
       \'l': 'KJV search & hugo insert',
-      \'s': 'SVV',
+      \'s': g:svv_menu,
+      \'u': g:ukr_menu,
       \}
 
 function! Get_Bible_Root() abort
