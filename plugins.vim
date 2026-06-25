@@ -19,6 +19,9 @@ Plug 'romainl/vim-cool'
 Plug 'yegappan/mru'
 Plug 'TamaMcGlinn/vim-termhelp'
 
+Plug 'Owen-Dechow/graph_view_yaml_parser'
+Plug 'Owen-Dechow/graph_view_toml_parser'
+Plug 'Owen-Dechow/videre.nvim'
 
 " Yank history
 " YankRing periodically causes me to paste the entire git history into a CMD
