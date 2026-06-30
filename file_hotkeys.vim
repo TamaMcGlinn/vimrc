@@ -1,4 +1,4 @@
-command! -bang FindPlugin call fzf#vim#files('~/.vim/plugged', <bang>0)
+command! -bang FindPlugin call fzf#vim#files('~/.local/share/nvim/lazy', <bang>0)
 
 function! EditUltiSnips(plugin_dir) abort
   let l:ft = &filetype
@@ -39,9 +39,8 @@ function! ResetPluginsToHttpAndUpdate() abort
 endfunction
 
 " Plugin menu
-nnoremap <Leader>vpp :e ~/vimrc/plugins.vim<CR>
-nnoremap <Leader>vpi :PlugInstall<CR>
-nnoremap <Leader>vpc :PlugClean<CR>
+nnoremap <Leader>vpp :e ~/vimrc/lua/plugins/<CR>
+nnoremap <Leader>vpl :Lazy<CR>
 nnoremap <Leader>vpu :call ResetPluginsToHttpAndUpdate()<CR>
 nnoremap <Leader>vpf :FindPlugin<CR>
 nnoremap <leader>vpn :MkPlugin 
