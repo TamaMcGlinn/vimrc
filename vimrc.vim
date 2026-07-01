@@ -1,3 +1,5 @@
+source ~/vimrc/calendar.vim
+
 lua require("lazy_framework") -- includes plugins.vim
 
 source ~/vimrc/util.vim " generally useful functions for scripting
