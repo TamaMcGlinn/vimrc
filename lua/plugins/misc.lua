@@ -36,18 +36,7 @@ return {
   "3rd/image.nvim",
   "kshenoy/vim-signature",
   "nvim-lua/plenary.nvim",
-  {
-    "nvim-telescope/telescope.nvim",
-    keys = {
-      -- add a keymap to browse plugin files
-      -- stylua: ignore
-      {
-        "<leader>fp",
-        function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root }) end,
-        desc = "Find Plugin File",
-      },
-    },
-  },
+  "nvim-telescope/telescope.nvim",
   "nvim-telescope/telescope-fzy-native.nvim",
   "tknightz/telescope-termfinder.nvim",
   "junegunn/fzf",
