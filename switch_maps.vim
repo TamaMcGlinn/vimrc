@@ -6,6 +6,7 @@ let g:switch_custom_definitions = [
       \ switch#NormalizedCase(['high', 'low']),
       \ switch#NormalizedCase(['static', 'dynamic']),
       \ switch#NormalizedCase(['TRUE', 'FALSE']),
+      \ switch#NormalizedCase(['YES', 'NO']),
       \ {
       \   '\(\k\+\)\.': '\1->',
       \   '\(\k\+\)->': '\1.',

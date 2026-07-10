@@ -1,6 +1,6 @@
 
 nnoremap <leader>rr :execute 'ij '.expand('<cword>')<CR>
-nnoremap <leader>ri :LspInfo<CR>
+nnoremap <leader>ri :checkhealth vim.lsp<CR>
 nnoremap <leader>rI :Mason<CR>
 nnoremap <leader>rq :LspStop<CR>
 nnoremap <leader>rR :LspRestart<CR>

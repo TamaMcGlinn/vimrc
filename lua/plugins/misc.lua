@@ -46,7 +46,6 @@ return {
   "markonm/traces.vim",
   "ThePrimeagen/harpoon",
   "neovim/nvim-lspconfig",
-  "git@github.com:TamaMcGlinn/nvim-lspconfig-ada",
   "p00f/clangd_extensions.nvim",
   "OmniSharp/omnisharp-vim",
   "nickspoons/vim-sharpenup",
