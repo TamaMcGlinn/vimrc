@@ -1,6 +1,12 @@
 require("mason").setup {}
 require("mason-lspconfig").setup {ensure_installed = {"clangd", "pylsp"}}
 
+vim.lsp.enable('pyright')
+vim.lsp.config('ada_ls', {
+  on_init = require("gpr_selector").als_on_init,
+})
+vim.lsp.enable('ada_ls')
+
 -- Incremental live completion
 vim.o.inccommand = 'nosplit'
 
@@ -126,18 +132,12 @@ local flake_ignores = {
   "D100", -- Missing docstring in public module
 }
 
-vim.lsp.config("als", {
+vim.lsp.config("*", {
   on_attach = on_attach,
   capabilities = capabilities,
-  on_init = require("gpr_selector").als_on_init,
-  single_file_support = true,
-  -- root_dir = function() return '/' end
-  root_dir = util.root_pattern('Makefile', '.git', '*.gpr', '*.adc'),
 })
 vim.lsp.config("pylsp", {
   cmd = {"pylsp"},
-  on_attach = on_attach,
-  capabilities = capabilities,
   root_dir = function(fname) return util.find_git_ancestor(fname) end,
   settings = {
     pylsp = {
@@ -189,13 +189,10 @@ local settings = {
 
 for _, servername in pairs(default_servers) do
   vim.lsp.config(servername, {
-    on_attach = on_attach,
-    capabilities = capabilities,
     settings = settings,
     root_dir = nvim_lsp.util.root_pattern('.git')
   })
 end
-
 
 -- EFM setup
 vim.lsp.config("efm", {
