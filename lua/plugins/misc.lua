@@ -96,7 +96,6 @@ return {
   { "google/vim-codefmt", dependencies = { "google/vim-maktaba" } },
   "AndrewRadev/splitjoin.vim",
   "adelarsq/vim-matchit",
-  "auwsmit/vim-active-numbers",
   "nvim-treesitter/nvim-treesitter-context",
   "farmergreg/vim-lastplace",
   "git@github.com:TamaMcGlinn/vim-mkplugin",
