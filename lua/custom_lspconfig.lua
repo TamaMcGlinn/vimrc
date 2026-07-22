@@ -135,10 +135,10 @@ local flake_ignores = {
 vim.lsp.config("*", {
   on_attach = on_attach,
   capabilities = capabilities,
+  settings = settings,
 })
 vim.lsp.config("pylsp", {
   cmd = {"pylsp"},
-  root_dir = function(fname) return util.find_git_ancestor(fname) end,
   settings = {
     pylsp = {
       configurationSources = {"pylint"},
@@ -163,7 +163,6 @@ vim.lsp.config("pylsp", {
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local minetest_lsp_api_dir = vim.fn.expand("$HOME") .. "/code/adabots/minetest-lsp-api"
-local default_servers = {"clangd", "rust_analyzer", "bashls", "vimls", "lua_ls", "omnisharp"}
 local settings = {
   init_options = {documentFormatting = false},
   Lua = {
@@ -186,13 +185,6 @@ local settings = {
   -- Do not send telemetry data containing a randomized but unique identifier
   telemetry = {enable = false}
 }
-
-for _, servername in pairs(default_servers) do
-  vim.lsp.config(servername, {
-    settings = settings,
-    root_dir = nvim_lsp.util.root_pattern('.git')
-  })
-end
 
 -- EFM setup
 vim.lsp.config("efm", {
