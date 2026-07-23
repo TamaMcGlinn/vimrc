@@ -1,9 +1,11 @@
+let g:prompt_pattern = '\([^@]*@[^\:]*\:\~\)\?$ '
+
 function! JumpToPreviousTermPrompt() abort
-  call JumpToMsg(-1, '^$ ')
+  call JumpToMsg(-1, g:prompt_pattern)
 endfunction
 
 function! JumpToNextTermPrompt() abort
-  call JumpToMsg(1, '^$ ')
+  call JumpToMsg(1, g:prompt_pattern)
 endfunction
 
 function! JumpToPreviousMessage() abort

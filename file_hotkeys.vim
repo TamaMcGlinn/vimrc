@@ -22,6 +22,7 @@ nnoremap <Leader>vI :e ~/.ipython/profile_default/startup/00-imports.py<CR>
 nnoremap <Leader>vb :e ~/dotfiles/bashrc<CR>
 nnoremap <Leader>vB :e ~/.private_bashrc<CR>
 nnoremap <Leader>vh :e ~/private_vimrc/ssh_config<CR>
+nnoremap <Leader>vH :e /etc/hosts<CR>
 nnoremap <Leader>vs :e ~/private_vimrc/**/*
 nnoremap <Leader>vS :e ~/private_vimrc/private.vim<CR>
 nnoremap <Leader>ve :e ~/code/zenseact/scripts/**/*
@@ -71,6 +72,7 @@ let g:which_key_map['v'] = {'name': '+Config',
              \'i': 'git ignore',
              \'l': 'pycodestyle',
              \'h': 'SSH hosts',
+             \'H': '/etc/hosts',
              \'n': 'new computer',
              \'b': 'bashrc',
              \'a': 'aliases',

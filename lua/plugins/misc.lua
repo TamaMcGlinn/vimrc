@@ -4,6 +4,7 @@ return {
   "git@github.com:TamaMcGlinn/vim-ada",
   "git@github.com:TamaMcGlinn/nvim-alire-tools",
   "tpope/vim-scriptease",
+  "Valloric/ListToggle",
   "dyng/ctrlsf.vim",
   "romainl/vim-cool",
   "yegappan/mru",
