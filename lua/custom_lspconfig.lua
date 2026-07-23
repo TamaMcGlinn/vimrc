@@ -4,6 +4,7 @@ require("mason-lspconfig").setup {ensure_installed = {"clangd", "pylsp"}}
 vim.lsp.enable('pyright')
 vim.lsp.config('ada_ls', {
   on_init = require("gpr_selector").als_on_init,
+  -- root_dir = vim.fn.expand("$HOME") .. "/code/zenseact/src/popada"
 })
 vim.lsp.enable('ada_ls')
 
@@ -135,10 +136,11 @@ local flake_ignores = {
 vim.lsp.config("*", {
   on_attach = on_attach,
   capabilities = capabilities,
+  -- root_dir = git_root_dir,
 })
 vim.lsp.config("pylsp", {
   cmd = {"pylsp"},
-  root_dir = function(fname) return util.find_git_ancestor(fname) end,
+  -- root_dir = function(bufnr, on_dir) return on_dir("test_dir") end,
   settings = {
     pylsp = {
       configurationSources = {"pylint"},
@@ -203,162 +205,162 @@ vim.lsp.config("efm", {
       cs = {{ lintCommand = 'omnisharp' }},
       lua = {{formatCommand = "lua-format -i", formatStdin = true}},
       -- cpp = {
-        --     {
-          --         lintCommand = 'gccdiag --add-args=\'-S\' --',
-          --         lintIgnoreExitCode = true,
-          --         lintFormats = {
-            --             '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
-            --             '%f:%l:%c: %tote: %m'
-            --         }
-            --     }
-            -- },
-            arduino = {
-              {
-                lintCommand = 'cpplint --extensions=ino --filter=-legal/copyright',
-                lintFormats = {
-                  '%f:%l: %m'
-                }
-              }
-            },
-            yaml = {
-              {
-                lintCommand = 'yml_lint',
-                lintIgnoreExitCode = true,
-                lintFormats = {
-                  '%f:%l: %trror: %m', '%f:%l: %tarning: %m',
-                  '%f:%l: %tote: %m'
-                }
-              }
-            },
-            markdown = {
-              {
-                lintCommand = 'md_lint.py',
-                lintIgnoreExitCode = true,
-                lintFormats = {
-                  '%f:%l: %trror: %m', '%f:%l: %tarning: %m',
-                  '%f:%l: %tote: %m'
-                }
-              }
-            },
-            ada = {
-              {
-                lintCommand = 'gprbuild_lint',
-                lintIgnoreExitCode = true,
-                lintFormats = {
-                  '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
-                  '%f:%l:%c: %tote: %m'
-                }
-              }, {
-                -- lintCommand = 'gnatprove_lint',
-                formatCommand = string.format('gnatprove_lint --project %s', vim.g.als_gpr_projectfile),
-                lintIgnoreExitCode = true,
-                lintFormats = {
-                  '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
-                  '%f:%l:%c: %tote: %m', '%f:%l:%c: %tedium: %m'
-                }
-              }, {
-                lintCommand = 'doorstop_reqs_lint',
-                lintIgnoreExitCode = true,
-                lintFormats = {
-                  '%f:%l: %trror: %m', '%f:%l: %tarning: %m',
-                  '%f:%l: %tote: %m'
-                }
-              }
-            },
-            sh = {
-              {
-                lintCommand = 'shellcheck -f gcc -x',
-                lintSource = 'shellcheck',
-                lintFormats = {
-                  '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
-                  '%f:%l:%c: %tote: %m'
-                },
-                lintIgnoreExitCode = true
-              }
-            },
-            bzl = {
-              {
-                lintCommand = 'buildifier --lint=warn \'--warnings=-module-docstring,-function-docstring,-function-docstring-args,-function-docstring-header,-function-docstring-return,+unsorted-dict-items\''
-              }
-            }
+      --     {
+      --         lintCommand = 'gccdiag --add-args=\'-S\' --',
+      --         lintIgnoreExitCode = true,
+      --         lintFormats = {
+      --             '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
+      --             '%f:%l:%c: %tote: %m'
+      --         }
+      --     }
+      -- },
+      arduino = {
+        {
+          lintCommand = 'cpplint --extensions=ino --filter=-legal/copyright',
+          lintFormats = {
+            '%f:%l: %m'
           }
         }
-      })
-
-      require("clangd_extensions").setup({
-        inlay_hints = {
-          inline = vim.fn.has("nvim-0.10") == 1,
-          -- Options other than `highlight' and `priority' only work
-          -- if `inline' is disabled
-          -- Only show inlay hints for the current line
-          only_current_line = false,
-          -- Event which triggers a refresh of the inlay hints.
-          -- You can make this { "CursorMoved" } or { "CursorMoved,CursorMovedI" } but
-          -- not that this may cause  higher CPU usage.
-          -- This option is only respected when only_current_line and
-          -- autoSetHints both are true.
-          only_current_line_autocmd = {"CursorHold"},
-          -- whether to show parameter hints with the inlay hints or not
-          show_parameter_hints = true,
-          -- prefix for parameter hints
-          parameter_hints_prefix = "<- ",
-          -- prefix for all the other hints (type, chaining)
-          other_hints_prefix = "=> ",
-          -- whether to align to the length of the longest line in the file
-          max_len_align = false,
-          -- padding from the left if max_len_align is true
-          max_len_align_padding = 1,
-          -- whether to align to the extreme right or not
-          right_align = false,
-          -- padding from the right if right_align is true
-          right_align_padding = 7,
-          -- The color of the hints
-          highlight = "Comment",
-          -- The highlight group priority for extmark
-          priority = 100
-        },
-        ast = {
-          -- These are unicode, should be available in any font
-          role_icons = {
-            type = "🄣",
-            declaration = "🄓",
-            expression = "🄔",
-            statement = ";",
-            specifier = "🄢",
-            ["template argument"] = "🆃"
+      },
+      yaml = {
+        {
+          lintCommand = 'yml_lint',
+          lintIgnoreExitCode = true,
+          lintFormats = {
+            '%f:%l: %trror: %m', '%f:%l: %tarning: %m',
+            '%f:%l: %tote: %m'
+          }
+        }
+      },
+      markdown = {
+        {
+          lintCommand = 'md_lint.py',
+          lintIgnoreExitCode = true,
+          lintFormats = {
+            '%f:%l: %trror: %m', '%f:%l: %tarning: %m',
+            '%f:%l: %tote: %m'
+          }
+        }
+      },
+      ada = {
+        {
+          lintCommand = 'gprbuild_lint',
+          lintIgnoreExitCode = true,
+          lintFormats = {
+            '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
+            '%f:%l:%c: %tote: %m'
+          }
+        }, {
+          -- lintCommand = 'gnatprove_lint',
+          formatCommand = string.format('gnatprove_lint --project %s', vim.g.als_gpr_projectfile),
+          lintIgnoreExitCode = true,
+          lintFormats = {
+            '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
+            '%f:%l:%c: %tote: %m', '%f:%l:%c: %tedium: %m'
+          }
+        }, {
+          lintCommand = 'doorstop_reqs_lint',
+          lintIgnoreExitCode = true,
+          lintFormats = {
+            '%f:%l: %trror: %m', '%f:%l: %tarning: %m',
+            '%f:%l: %tote: %m'
+          }
+        }
+      },
+      sh = {
+        {
+          lintCommand = 'shellcheck -f gcc -x',
+          lintSource = 'shellcheck',
+          lintFormats = {
+            '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m',
+            '%f:%l:%c: %tote: %m'
           },
-          kind_icons = {
-            Compound = "🄲",
-            Recovery = "🅁",
-            TranslationUnit = "🅄",
-            PackExpansion = "🄿",
-            TemplateTypeParm = "🅃",
-            TemplateTemplateParm = "🅃",
-            TemplateParamObject = "🅃"
-          },
-          --[[ These require codicons (https://github.com/microsoft/vscode-codicons)
-          role_icons = {
-            type = "",
-            declaration = "",
-            expression = "",
-            specifier = "",
-            statement = "",
-            ["template argument"] = "",
-          },
+          lintIgnoreExitCode = true
+        }
+      },
+      bzl = {
+        {
+          lintCommand = 'buildifier --lint=warn \'--warnings=-module-docstring,-function-docstring,-function-docstring-args,-function-docstring-header,-function-docstring-return,+unsorted-dict-items\''
+        }
+      }
+    }
+  }
+})
 
-          kind_icons = {
-            Compound = "",
-            Recovery = "",
-            TranslationUnit = "",
-            PackExpansion = "",
-            TemplateTypeParm = "",
-            TemplateTemplateParm = "",
-            TemplateParamObject = "",
-          }, ]]
+require("clangd_extensions").setup({
+  inlay_hints = {
+    inline = vim.fn.has("nvim-0.10") == 1,
+    -- Options other than `highlight' and `priority' only work
+    -- if `inline' is disabled
+    -- Only show inlay hints for the current line
+    only_current_line = false,
+    -- Event which triggers a refresh of the inlay hints.
+    -- You can make this { "CursorMoved" } or { "CursorMoved,CursorMovedI" } but
+    -- not that this may cause  higher CPU usage.
+    -- This option is only respected when only_current_line and
+    -- autoSetHints both are true.
+    only_current_line_autocmd = {"CursorHold"},
+    -- whether to show parameter hints with the inlay hints or not
+    show_parameter_hints = true,
+    -- prefix for parameter hints
+    parameter_hints_prefix = "<- ",
+    -- prefix for all the other hints (type, chaining)
+    other_hints_prefix = "=> ",
+    -- whether to align to the length of the longest line in the file
+    max_len_align = false,
+    -- padding from the left if max_len_align is true
+    max_len_align_padding = 1,
+    -- whether to align to the extreme right or not
+    right_align = false,
+    -- padding from the right if right_align is true
+    right_align_padding = 7,
+    -- The color of the hints
+    highlight = "Comment",
+    -- The highlight group priority for extmark
+    priority = 100
+  },
+  ast = {
+    -- These are unicode, should be available in any font
+    role_icons = {
+      type = "🄣",
+      declaration = "🄓",
+      expression = "🄔",
+      statement = ";",
+      specifier = "🄢",
+      ["template argument"] = "🆃"
+    },
+    kind_icons = {
+      Compound = "🄲",
+      Recovery = "🅁",
+      TranslationUnit = "🅄",
+      PackExpansion = "🄿",
+      TemplateTypeParm = "🅃",
+      TemplateTemplateParm = "🅃",
+      TemplateParamObject = "🅃"
+    },
+    --[[ These require codicons (https://github.com/microsoft/vscode-codicons)
+    role_icons = {
+    type = "",
+    declaration = "",
+    expression = "",
+    specifier = "",
+    statement = "",
+    ["template argument"] = "",
+    },
 
-          highlights = {detail = "Comment"}
-        },
-        memory_usage = {border = "none"},
-        symbol_info = {border = "none"}
-      })
+    kind_icons = {
+    Compound = "",
+    Recovery = "",
+    TranslationUnit = "",
+    PackExpansion = "",
+    TemplateTypeParm = "",
+    TemplateTemplateParm = "",
+    TemplateParamObject = "",
+    }, ]]
+
+    highlights = {detail = "Comment"}
+  },
+  memory_usage = {border = "none"},
+  symbol_info = {border = "none"}
+})
 
