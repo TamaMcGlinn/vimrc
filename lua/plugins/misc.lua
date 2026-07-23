@@ -125,7 +125,7 @@ return {
   "nvim-tree/nvim-web-devicons",
   "sindrets/diffview.nvim",
   "git@github.com:TamaMcGlinn/vim-git-essentials",
-  "git@github.com:TamaMcGlinn/git-worktree.nvim",
+  "git@github.com:AndresYague/git-worktree.nvim",
   "Juksuu/worktrees.nvim",
   "git@github.com:TamaMcGlinn/vim-gitcycle",
   { "git@github.com:TamaMcGlinn/vim-fugitive", branch = "footbazooka" },
