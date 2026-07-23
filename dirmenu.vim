@@ -14,9 +14,6 @@ nnoremap <leader>qp :pwd<CR>
 nnoremap <silent> <leader>qk :call dirhere#dir_up()<CR>
 nnoremap <silent> <leader>qj :call dirhere#dir_down()<CR>
 
-let g:lt_location_list_toggle_map = '<leader>qo'
-let g:lt_quickfix_list_toggle_map = '<leader>ql'
-
 let g:which_key_map['q'] = {'name': '+Dir/Quickfix',
              \'q': 'Current file',
              \'c': 'Terminal to here',

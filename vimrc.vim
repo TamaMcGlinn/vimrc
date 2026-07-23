@@ -1,3 +1,4 @@
+source ~/vimrc/first.vim
 source ~/vimrc/calendar.vim
 
 lua require("lazy_framework") -- includes plugins.vim
@@ -5,7 +6,7 @@ lua require("lazy_framework") -- includes plugins.vim
 source ~/vimrc/util.vim " generally useful functions for scripting
 
 " general settings
-source ~/vimrc/first.vim
+source ~/vimrc/early.vim
 source ~/vimrc/python.vim
 source ~/vimrc/ada.vim
 source ~/vimrc/tabsettings.vim
