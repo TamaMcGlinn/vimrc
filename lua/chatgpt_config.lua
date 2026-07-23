@@ -6,10 +6,10 @@ require'nvim-gpt'.setup {
 }
 
 vim.api.nvim_command([[
-  nnoremap <Leader>ce :Chat completion
-  vnoremap <Leader>ce :Chat code_edit
-  nnoremap <Leader>cA :Chat question
-  vnoremap <Leader>cA :Chat question
+nnoremap <Leader>ce :Chat completion
+vnoremap <Leader>ce :Chat code_edit
+nnoremap <Leader>cA :Chat question
+vnoremap <Leader>cA :Chat question
 ]])
 -- TODO this one doesn't work, for visual selection and then asking about it: vnoremap <Leader>ca :Chat question
 

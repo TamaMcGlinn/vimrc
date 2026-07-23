@@ -1,4 +1,5 @@
 return {
+  "pablopunk/pi.nvim",
   "vhyrro/luarocks.nvim",
   "git@github.com:TamaMcGlinn/vim-ada",
   "git@github.com:TamaMcGlinn/nvim-alire-tools",
